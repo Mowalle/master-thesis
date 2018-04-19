@@ -1,57 +1,71 @@
-\documentclass{scrartcl}
+\documentclass[a4paper]{scrartcl}
 
+% Language
 \usepackage[british, ngerman]{babel}
 
-\usepackage{lipsum}
-\usepackage{lmodern}
-
+% Font stuff and typesetting stuff
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 
-\usepackage{float}
+% Font
+\usepackage{lmodern}
+
+% Other
 \usepackage{amsmath, amssymb}
 \usepackage{csquotes}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[obeyDraft]{todonotes}
 
 \usepackage[colorlinks]{hyperref}
+
+\usepackage[
+backend = biber, % Sets biber as backend.
+style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
+maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
+minnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
+backref = true,
+]{biblatex}
+\addbibresource{references.bib}
 
 \setkomafont{captionlabel}{%
 	\bfseries
 }
 
+% Dank Koma-Klasse
+\renewcaptionname{ngerman}{\subsectionautorefname}{Abschnitt}
+\renewcaptionname{ngerman}{\figureautorefname}{Abb.}
+\renewcaptionname{ngerman}{\tableautorefname}{Tab.}
+
 \usepackage[
-	backend = biber, % Sets biber as backend.
-	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
-	maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
-	minnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
-	backref = true,
-]{biblatex}
-\addbibresource{references.bib}
+	automark,
+	headsepline,
+%	headtopline,
+%	footsepline
+]{scrlayer-scrpage}
+%\pagestyle{scrheadings}
+\ihead{Ralf Morawe}
+\ohead[\pagemark]{\pagemark}
+\chead{Ideen für Masterarbeit}
+\cfoot[]{}
 
 \begin{document}
-	
-%\titlehead{{\Large Universität Bremen \hfill SoSe~2018\\} Fachbereich 3: Mathematik \& Informatik\\ Bibliothekstr. 1\\ 28XYZ Bremen}
-%\subject{Masterarbeit}
-%\title{VR Typeflow}
-%\subtitle{Intelligente Tastatur für virtuelle Umgebungen}
-%\author{Ralf Manuel Morawe, B.Sc.}
-%\date{\today}
-%\publishers{Begutachtet durch:\\ Prof Dr. Vorn Nachn\\ Prof. Dr. Vorn Nachn}
-%\maketitle
-%
-%\tableofcontents
-
-%\chapter{Haupttext}
 
 \section*{Idee 1: \dots}
 
 \lipsum[1-2]
 
-\url{https://www.youtube.com/watch?time_continue=17&v=XVXvk1X1Gbs}
+\begin{figure}[h]
+	\centering
+	\missingfigure[figwidth=6cm]{text}
+	\caption{Mit MagicToon \parencite{???} können 2D-Zeichnungen via Tablet augmentiert werden.}
+\end{figure}
 
-\begin{itemize}
-	\item \parencites[35--37]{vive2017}[88--120]{vive2017}[23]{vive2017}
-\end{itemize}
+%\begin{itemize}
+%	\item \parencites[35--37]{vive2017}[88--120]{vive2017}[23]{vive2017}
+%\end{itemize}
 
 \section*{Idee 2: \dots}
 
