@@ -22,11 +22,12 @@
 \usepackage[colorlinks]{hyperref}
 
 \usepackage[
-backend = biber, % Sets biber as backend.
-style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
-maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
-minnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
-backref = true,
+	backend = biber, % Sets biber as backend.
+	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
+	maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
+	minbibnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
+	mincitenames = 1,
+	%backref = true,
 ]{biblatex}
 \addbibresource{references.bib}
 
@@ -53,15 +54,35 @@ backref = true,
 
 \begin{document}
 
-\section*{Idee 1: \dots}
+\section*{Idee 1: Augmented Navigation}
 
-\lipsum[1-2]
+Heutzutage verwenden Menschen digitale Navigationssysteme, um von einem Ort zum nächsten zu gelangen.
+Bei diesen Systemen handelt es sich um GPS-Geräte oder auch mobile Apps.
+Allerdings sind diese Systeme nicht ohne Fehler.
+\textcite{Lin2017} analysieren das Phänomen \enquote{Death by GPS}.
+Dieses beschreibt negative Ereignisse, die in Folge von der Nutzung solches Systeme auftreten.
+Dazu zählen sowohl Fehlinformationen durch das System sowie schwierige Bedienung durch die Nutzer.
+Ein Ansatz um diese Navigation einfacher und sicherer zu machen ist, die bisher meist iterative Navigation durch die Referenzierung von Landzeichen als Orientierungshilfe zu erweitern \parencites{Fingas2018}{Wenig2017}.
 
 \begin{figure}[h]
 	\centering
-	\missingfigure[figwidth=6cm]{text}
-	\caption{Mit MagicToon \parencite{???} können 2D-Zeichnungen via Tablet augmentiert werden.}
+	\includegraphics[width=0.6\textwidth]{figures/SR4GPS.png}
+	\caption{In-Game GPS im Computerspiel \emph{Saints Row IV}. Der wegweisende Pfeil \enquote{schwebt} auf der Straße und zeigt die Richtung an.}
+	\label{fig:sr4_gps}
 \end{figure}
+
+Auch in Spielen nimmt Navigation eine wichtige Rolle ein.
+Ein interessanter Ansatz wird im Spiel \emph{Saints Row IV} präsentiert (siehe \autoref{fig:sr4_gps}).
+Wenn Spieler einen Wegpunkt für ihre Ziele setzen, wird nicht nur auf einer Karte die kürzeste Route markiert.
+Es werden zusätzliche Wegweiser an wichtigen Punkten der Straßenführung \emph{im direkten Sichtfeld} der Spieler angezeigt, wodurch die Navigation um einiges vereinfacht wird.
+
+Dieses Prinzip kann dank neuer Augmented-Reality-Technologien (zum Beispiel die \emph{HTC Vive} oder die \emph{Magic Leap} auf die Navigation in der realen Welt übertragen werden.
+Das Ziel dieser Arbeit wäre es, eine landzeichen-basierte Navigation mithilfe dieser AR-Headsets zu implementieren.
+Die Navigationshinweise würden dann (anstatt nur in 2D und/oder textueller Form) als Objekte im Sichtfeld der Nutzer angezeigt werden.
+Von besonderem Interesse sind hier Einblendungen von Wegweisern sowie die Hervorhebung von Landzeichen.
+Eine weitere Herausforderung könnte das Rendern dieser Objekte ohne Verdeckungen (\emph{Occlusion}) darstellen, was die Navigation negativ beeinflussen könnte.
+Während \textcite{Walton2017} ein bildbasiertes Verfahren zur Verbesserung der Echtzeit-Verdeckungsberechnung vorschlagen, stellen \textcite{Kasperi2017} ein Verfahren vor, dass Umgebungsinformationen zur Rekonstruktion virtueller Gebäude und damit für die Berechnung verwendet.
+Für diese Zwecke könnte auch die \emph{Google Maps API} genutzt werden \parencite{Google2018}.
 
 %\begin{itemize}
 %	\item \parencites[35--37]{vive2017}[88--120]{vive2017}[23]{vive2017}
