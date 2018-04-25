@@ -13,6 +13,7 @@
 
 % Other
 \usepackage{amsmath, amssymb}
+\usepackage{gensymb}
 \usepackage{csquotes}
 \usepackage{float}
 \usepackage{graphicx}
@@ -24,11 +25,16 @@
 \usepackage[
 	backend = biber, % Sets biber as backend.
 	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
-	maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
-	minbibnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
+	maxbibnames = 3, % Truncate lists above 3 entries (e.g. names).
+	minbibnames = 3, % Truncate to 3 entries (e.g. names).
+	maxcitenames = 2,
 	mincitenames = 1,
 	%backref = true,
+	giveninits=true, % See warning
 ]{biblatex}
+\DeclareNameAlias{sortname}{family-given}
+\renewcommand{\multinamedelim}{\addsemicolon\space}
+
 \addbibresource{references.bib}
 
 \setkomafont{captionlabel}{%
@@ -76,7 +82,7 @@ Ein interessanter Ansatz wird im Spiel \emph{Saints Row IV} präsentiert (siehe 
 Wenn Spieler einen Wegpunkt für ihre Ziele setzen, wird nicht nur auf einer Karte die kürzeste Route markiert.
 Es werden zusätzliche Wegweiser an wichtigen Punkten der Straßenführung \emph{im direkten Sichtfeld} der Spieler angezeigt, wodurch die Navigation um einiges vereinfacht wird.
 
-Dieses Prinzip kann dank neuer Augmented-Reality-Technologien (zum Beispiel die \emph{HTC Vive} oder die \emph{Magic Leap} auf die Navigation in der realen Welt übertragen werden.
+Dieses Prinzip kann dank neuer Augmented-Reality-Technologien (zum Beispiel die \emph{HoloLens} oder die \emph{Magic Leap} auf die Navigation in der realen Welt übertragen werden.
 Das Ziel dieser Arbeit wäre es, eine landzeichen-basierte Navigation mithilfe dieser AR-Headsets zu implementieren.
 Die Navigationshinweise würden dann (anstatt nur in 2D und/oder textueller Form) als Objekte im Sichtfeld der Nutzer angezeigt werden.
 Von besonderem Interesse sind hier Einblendungen von Wegweisern sowie die Hervorhebung von Landzeichen.
@@ -88,13 +94,33 @@ Für diese Zwecke könnte auch die \emph{Google Maps API} genutzt werden \parenc
 %	\item \parencites[35--37]{vive2017}[88--120]{vive2017}[23]{vive2017}
 %\end{itemize}
 
-\section*{Idee 2: \dots}
+\section*{Idee 2: Cardboard Gesture Pack}
+Es gibt inzwischen viele verschiedene AR/MR/VR-Headsets, die über Displays und Tracking-Technologien verfügen.
+Aber auch im Niedrigpreissegment sind Lösungen erhältlich, die zum Beispiel ein Smartphone in ein solches Headset umwandeln können.
+Die bekannteste ist Google Cardboard, bei dem ein Smartphone lediglich in ein Pappkonstrukt mit zwei einfachen Linsen gelegt wird.
+Spezielle 360\degree Videos oder gerenderte Szenen können so einfach dargestellt werden.
+Auch AR/MR ist durch Nutzen der Rückkamera des Smartphones möglich.
+Diese Einfachheit beherbergt allerdings einen Nachteil:
+da auf Controller sowie aufwendiges Tracking verzichtet wird, sind die Interaktionsmöglichkeiten mit den virtuellen Szenen begrenzt.
+Lediglich die Kopfrotation sowie eine einfache \enquote{Tap}-Eingabe mittels Magnetschalter oder \enquote{\emph{Gaze-Input}} werden in der Regel unterstützt \parencite[vgl.][]{Yoo2015}.
+Da Gaze-Input auf Dauer anstrengend ist und nicht immer geeignet ist, versuchen \textcite{Yan2016}, weitere Interaktionen über Antippen des Headsets zu implementieren.
+Die Idee des \emph{Cardboard Gesture Pack} wäre es, eine Reihe von verschiedenen Gesten mittels Bilderkennung zu ermitteln und diese für Interaktionen zu nutzen.
+Diese Gesten könnten z.B. analog zu denen der HoloLens funktionieren.
+\textcites{Xiao2018}{Harrison2011} zeigen, wie Gesten mithilfe von Tiefendaten der Headsets implementiert werden.
+Da Smartphones in der Regel keine Tiefensensoren haben, wird hier die Erkennung weniger genau sein und ist daher limitiert.
+Diese Limitierung könnte aber z.B. durch Anwenden des \emph{BinPut}-Verfahrens \parencite{Todi2017} umgangen werden, sodass auch mit simplen Gesten große Eingabemengen abgedeckt werden können.
+Als Anwendung kann z.B. mit dem Gesture Pack das spiel \emph{Augmented Invaders} um zusätzliche Inhalte erweitert werden.
+Aber auch andere Anwendungen sind denkbar.
 
-\lipsum[3-4]
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{figures/omnitouch.png}
+	\caption{Verschiedene Flächen werden für haptisches Feedback in MR eingesetzt. Die Berührungen werden mittels Gestenerkennung ermittelt. Quelle: \autocite{Harrison2011}}
+	\label{fig:omnitouch}
+\end{figure}
 
-\section*{Idee 3: \dots}
-
-\lipsum[5-6]
+\section*{Idee 3: \ldots}
+\ldots
 
 \printbibliography[nottype=online]
 \printbibliography[title={Online Referenzen}, type=online]
