@@ -100,17 +100,24 @@ Aber auch im Niedrigpreissegment sind Lösungen erhältlich, die zum Beispiel ei
 Die bekannteste ist Google Cardboard, bei dem ein Smartphone lediglich in ein Pappkonstrukt mit zwei einfachen Linsen gelegt wird.
 Spezielle 360\degree Videos oder gerenderte Szenen können so einfach dargestellt werden.
 Auch AR/MR ist durch Nutzen der Rückkamera des Smartphones möglich.
+Vor allem für Anwendungen, bei denen eine große Zahl an Headsets notwendig ist (z.B. für Schulklassen oder allgemein Multi-User-AR/VR) ist diese günstige Lösung von Vorteil.
+
 Diese Einfachheit beherbergt allerdings einen Nachteil:
 da auf Controller sowie aufwendiges Tracking verzichtet wird, sind die Interaktionsmöglichkeiten mit den virtuellen Szenen begrenzt.
 Lediglich die Kopfrotation sowie eine einfache \enquote{Tap}-Eingabe mittels Magnetschalter oder \enquote{\emph{Gaze-Input}} werden in der Regel unterstützt \parencite[vgl.][]{Yoo2015}.
 Da Gaze-Input auf Dauer anstrengend ist und nicht immer geeignet ist, versuchen \textcite{Yan2016}, weitere Interaktionen über Antippen des Headsets zu implementieren.
+Einige Geräte (z.B. das Moto G5) besitzen außerdem keinen Magnetometer, weshalb hier der einfache Schalter entfällt.
 Die Idee des \emph{Cardboard Gesture Pack} wäre es, eine Reihe von verschiedenen Gesten mittels Bilderkennung zu ermitteln und diese für Interaktionen zu nutzen.
 Diese Gesten könnten z.B. analog zu denen der HoloLens funktionieren.
-\textcites{Xiao2018}{Harrison2011} zeigen, wie Gesten mithilfe von Tiefendaten der Headsets implementiert werden.
+\textcites{Xiao2018}{Harrison2011} zeigen, wie Gesten mithilfe von Tiefendaten der Headsets implementiert werden (siehe \autoref{fig:omnitouch}).
 Da Smartphones in der Regel keine Tiefensensoren haben, wird hier die Erkennung weniger genau sein und ist daher limitiert.
 Diese Limitierung könnte aber z.B. durch Anwenden des \emph{BinPut}-Verfahrens \parencite{Todi2017} umgangen werden, sodass auch mit simplen Gesten große Eingabemengen abgedeckt werden können.
 Als Anwendung kann z.B. mit dem Gesture Pack das spiel \emph{Augmented Invaders} um zusätzliche Inhalte erweitert werden.
 Aber auch andere Anwendungen sind denkbar.
+Zum Beispiel könnte eine Screen-Sharing Lösung für Pair-Programming o.Ä. entwickelt werden.
+Jeder AR-Nutzer hätte vor sich einen eigenen virtuellen Bildschirm.
+Die Bildschirme aller Nutzer wären synchronisiert.
+Kontrollieren ließen sich die Eingaben entweder über Tap-Gesten oder (falls zu ungenau) mit dem BinPut-Verfahren, welches auch für die Steuerung eines 2D-Cursors anwendbar ist.
 
 \begin{figure}[h]
 	\centering
@@ -119,8 +126,24 @@ Aber auch andere Anwendungen sind denkbar.
 	\label{fig:omnitouch}
 \end{figure}
 
-\section*{Idee 3: \ldots}
-\ldots
+\section*{Idee 3: Dynamische Anzeige von Hindernissen in VR}
+Das Anzeigen und Vermeiden von Hindernissen ist vor allem beim Multi-User-VR interessant, damit die verschiedenen Nutzer nicht kollidieren.
+In der aktuellen Forschung werden dazu unterschiedliche Ansätze präsentiert.
+Diese lassen sich meist in zwei Gruppen einteilen:
+\begin{itemize}
+	\item Die Kollisionen werden vermieden durch eine Aufteilung des Arbeitsvolumens.
+	\item Andere Nutzer werden in der virtuellen Welt angezeigt.
+\end{itemize}
+Für den letzteren Ansatz zeigen \textcite{Lacoche2017} unterschiedliche Darstellungsmöglichkeiten.
+Allerdings werden dort nur Nutzer gezeigt, die selbst ein HMD tragen.
+Falls sich andere Menschen oder gar Gegenstände im Arbeitsvolumen befinden werden diese nicht angezeigt.
+
+Die Idee wäre, andere Nutzer und Gegenstände z.B. mittels Tiefenbildern zu ermitteln und in der virtuellen Szene zu visualisieren.
+So könnte ein HMDs-Nutzer in der virtuellen Welt vor Hindernissen gewarnt werden.
+Dadurch könnten HMDs auch in kleineren und/oder dichteren Arbeitsvolumen sicher verwendet werden.
+Zusätzlich öffnet dies die Möglichkeit für Anwendungen mit Interaktionen zwischen HMD-Nutzern und Nicht-HMD-Nutzern (Beispiel-Anwendung?).
+Auch eine Verknüpfung mit den in der aktuellen Forschung relevanten Proxy-Objekten für passives haptisches Feedback ist möglich.
+Objekte, mit denen Kollisionen für haptisches Feedback \emph{erwünscht} ist, könnten in der virtuellen Welt speziell dargestellt werden, um dem Nutzer die Interaktionsmöglichkeit zu vermitteln.
 
 \printbibliography[nottype=online]
 \printbibliography[title={Online Referenzen}, type=online]
