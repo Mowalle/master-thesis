@@ -29,13 +29,16 @@
 	minbibnames = 3, % Truncate to 3 entries (e.g. names).
 	maxcitenames = 2,
 	mincitenames = 1,
-	%backref = true,
-	giveninits=true, % See warning
+	backref = true,
+%	giveninits=true, % See warning
+	isbn = false,
 ]{biblatex}
 \DeclareNameAlias{sortname}{family-given}
 \renewcommand{\multinamedelim}{\addsemicolon\space}
 
-\addbibresource{references.bib}
+\addbibresource{../references/references.bib}
+\addbibresource{../references/websites.bib}
+\addbibresource{../references/unpublished.bib}
 
 \setkomafont{captionlabel}{%
 	\bfseries
