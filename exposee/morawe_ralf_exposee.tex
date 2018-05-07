@@ -1,0 +1,81 @@
+\documentclass[a4paper]{scrartcl}
+
+% Language
+\usepackage[british, ngerman]{babel}
+
+% Font stuff and typesetting stuff
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+% Font
+\usepackage{lmodern}
+
+% Other
+\usepackage{amsmath, amssymb}
+\usepackage{gensymb}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage[obeyDraft]{todonotes}
+
+\usepackage[colorlinks]{hyperref}
+
+\usepackage[
+	backend = biber, % Sets biber as backend.
+	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
+	maxbibnames = 3, % Truncate lists above 3 entries (e.g. names).
+	minbibnames = 3, % Truncate to 3 entries (e.g. names).
+	maxcitenames = 2,
+	mincitenames = 1,
+	backref = true,
+%	giveninits=true, % See warning
+	isbn = false,
+]{biblatex}
+\DeclareNameAlias{sortname}{family-given}
+\renewcommand{\multinamedelim}{\addsemicolon\space}
+
+\addbibresource{../references/references.bib}
+\addbibresource{../references/websites.bib}
+\addbibresource{../references/unpublished.bib}
+
+\setkomafont{captionlabel}{%
+	\bfseries
+}
+
+% Dank Koma-Klasse
+\renewcaptionname{ngerman}{\subsectionautorefname}{Abschnitt}
+\renewcaptionname{ngerman}{\figureautorefname}{Abb.}
+\renewcaptionname{ngerman}{\tableautorefname}{Tab.}
+
+\usepackage[
+	automark,
+	headsepline,
+%	headtopline,
+%	footsepline
+]{scrlayer-scrpage}
+%\pagestyle{scrheadings}
+\ihead{Ralf Manuel Morawe}
+\ohead[\pagemark]{\pagemark}
+\chead{Exposé für Masterarbeit}
+\cfoot[]{}
+
+\begin{document}
+	
+\author{Ralf Manuel Morawe}
+\title{Exposé für Masterarbeit}
+\maketitle
+
+\section{Einleitung/Fragestellung}
+\section{Aufbau der Arbeit}
+\subsection{Theoretische Grundlagen: \ldots}
+\subsection{Beitrag: Implementierung einer augmentierten \enquote{Mega-Map}}
+\subsection{Beschreibung der Methodik und Durchführung Evaluation}
+\subsection{Präsentation der Resultate und Diskussion/Interpretation der Ergebnisse}
+\subsection{Offene Fragen und \enquote{Future Work}}
+
+\printbibliography[nottype=online]
+\printbibliography[title={Online Referenzen}, type=online]
+
+\end{document}
