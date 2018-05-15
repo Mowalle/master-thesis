@@ -40,9 +40,10 @@
 \addbibresource{../references/websites.bib}
 \addbibresource{../references/unpublished.bib}
 
-\setkomafont{captionlabel}{%
-	\bfseries
-}
+%\setkomafont{captionlabel}{%
+%	\bfseries
+%}
+\usepackage[labelfont=bf, format=plain]{caption}
 
 % Dank Koma-Klasse
 \renewcaptionname{ngerman}{\subsectionautorefname}{Abschnitt}
@@ -79,7 +80,7 @@ Damit haben alle Besitzer eines Smartphones Zugang zu einem Navigationssystem.
 Allerdings sind diese Systeme keineswegs perfekt.
 Da die Navigationshinweise über ein zusätzliches Gerät laufen muss während der Navigation (z.B. bei einer Autofahrt) regelmäßig auf das Gerät geachtet werden.
 Dies lenkt jedoch von der Umgebung ab und kann im extremen Fällen zu tödlichen Unfällen führen.
-Aber auch die Darstellung der Systeme kann zu Problemen führen.
+Aber auch die Darstellung der Systeme kann Probleme verursachen.
 Da die angezeigten Karten (ob nun in 2D oder 3D) auf einem separaten Bildschirm zu sehen sind entsteht ein Bruch mit der Umgebung.
 Die gezeigten Karten müssen durch ihre Ähnlichkeit oder Beschriftungen mit der Umgebung in Verbindung gebracht werden, um so die Navigationshinweise verstehen zu können.
 Zum Beispiel wird ein in der Umgebung sehr markantes Gebäude in einer digitalen Karte nur abstrakt dargestellt.
@@ -107,15 +108,25 @@ Dadurch gilt der Großteil der Aufmerksamkeit dem kleinen Display anstatt der Um
 Durch spezielle \emph{Head-Mounted Displays} (HMDs) wie z.B. \emph{Google Cardboard} \autocite{Google2018a} können Smartphones direkt am Kopf getragen werden, wodurch die Hände frei sind.
 Allerdings wird hierdurch die ohnehin schon geringe Auflösung der Smartphones halbiert und das Blickfeld der Nutzer stark eingeschränkt.
 Dies senkt nicht nur die Immersion.
-Die Beweglichkeit der Nutzer wird zusätzlich stark beeinflusst, da diese nun Hindernisse schlechter erkennen können und daher vorsichtiger laufen \autocite[2]{Bonfert2017}.
-Diese Probleme können durch das Verwenden von \emph{Mixed-Reality-}HMDs wie z.B. der \emph{Magic Leap} \autocite{MagicLeap2018} oder der \emph{Microsoft HoloLens} \autocite{Microsoft2018} reduziert werden.
+Die Beweglichkeit der Nutzer wird zusätzlich stark beeinflusst, da diese nun Hindernisse schlechter erkennen können und aus Vorsicht langsamer bewegen \autocite[2]{Bonfert2017}.
+Diese Probleme können durch das Verwenden von \emph{Mixed-Reality-}HMDs wie z.B. der \emph{Magic Leap} \autocite{MagicLeap2018} (siehe \autoref{fig:magic_leap}) oder der \emph{Microsoft HoloLens} \autocite{Microsoft2018} reduziert werden.
 Diese HMDs integrieren Displays in durchsichtiges Glas, wodurch die Umgebung für die Nutzer direkt wahrnehmbar ist.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{figures/magic_leap.jpg}
+	\caption{%
+		Nutzer trägt die Magic Leap, bestehend aus drei Komponenten: \emph{Lightwear} (Brille), \emph{Lightpack} (Recheneinheit) und \emph{Control} (Controller).
+		Quelle: \autocite{MagicLeap2018}
+	}
+	\label{fig:magic_leap}
+\end{figure}
 
 Ein weiteres Problem mit den bisherigen Ansätzen ist die Passivität der Navigationshinweise.
 In der Regel reagieren die virtuellen Objekte nur in sofern auf die Nutzer, als dass sie ihre Positionen und Rotationen anpassen wenn die Nutzer sich bewegen.
 Andere Interaktionen (zum Beispiel das \enquote{Berühren} von virtuellen Objekten) werden häufig nicht implementiert.
 Dies führt dazu, dass tatsächlich nur der Navigationsvorgang selbst augmentiert wird.
-Anwendungen wie zum Beispiel das Planen von Routen oder das direkte Interagieren mit der Karte fehlen.
+Anwendungen wie zum Beispiel das Planen von Routen oder das direkte Interagieren mit der Karte sind nicht möglich.
 
 Ein anderer Bereich, in dem Navigation eine große Rolle spielt, sind digitale Spiele.
 Insbesondere stellt Navigation in \emph{Open-World}-Spielen (OWS) eine Herausforderung dar.
@@ -123,6 +134,17 @@ OWS sind Spiele, in denen sich Spieler frei in einer vergleichsweise großen Spi
 Diese Bewegungsfreiheit geht mit einer gewissen Anforderung an die Navigationsfähigkeiten der Spieler einher.
 Um die Spieler zu unterstützen verwenden solche Spiele diverse Navigationshinweise.
 \textcite{Lodts2015} gibt einen Überblick über verwendete Hinweise in OWS.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/the_division_megamap.jpg}
+	\caption{%
+		Die Karte in Tom Clancy's: The Division wird in der Umgebung des Charakters angezeigt.
+		Die Skalierung kann verändert werden, wodurch sich die Details der gezeigten Gebäude anpassen.
+		Quelle: \autocite{MYDIVISION.NET2014}
+	}
+	\label{fig:the_division_megamap}
+\end{figure}
 
 Von besonderem Interesse ist die sogenannte \emph{\enquote{Mega-Map}} aus \emph{Tom Clancy's: The Division} \autocite{Ubisoft2018}.
 Im Gegensatz zu den meisten anderen Navigationshinweisen handelt es sich hier nicht um ein passives System.
