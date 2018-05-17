@@ -8,8 +8,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
+\usepackage{lmodern}
 
 \usepackage{float}
+\usepackage{booktabs}
 \usepackage{amsmath, amssymb}
 \usepackage{csquotes}
 
@@ -28,30 +30,22 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
+\includeonly{titlepage, declaration_of_originality, thanks, abstract}
+
 \begin{document}
-	
-\titlehead{{\Large Universität Bremen \hfill SoSe~2018\\} Fachbereich 3: Mathematik \& Informatik\\ Bibliothekstr. 1\\ 28XYZ Bremen}
-\subject{Masterarbeit}
-\title{VR Typeflow}
-\subtitle{Intelligente Tastatur für virtuelle Umgebungen}
-\author{Ralf Manuel Morawe, B.Sc.}
-\date{\today}
-\publishers{Begutachtet durch:\\ Prof Dr. Vorn Nachn\\ Prof. Dr. Vorn Nachn}
-\maketitle
+
+\pagenumbering{roman}	
+\include{titlepage}
+\include{declaration_of_originality}
+\include{thanks}
+\include{abstract}
 
 \tableofcontents
+\cleardoublepage
 
-\chapter{Haupttext}
+\pagenumbering{arabic}
 
-\section{Einleitung}
-
-\lipsum[1-10]
-
-\url{https://www.youtube.com/watch?time_continue=17&v=XVXvk1X1Gbs}
-
-\begin{itemize}
-	\item \parencites[35--37]{vive2017}[88--120]{vive2017}[23]{vive2017}
-\end{itemize}
+\include{einleitung}
 
 \printbibliography[nottype=online]
 \printbibliography[title={Online Referenzen}, type=online]
