@@ -1,4 +1,12 @@
-\documentclass{scrreprt}
+\documentclass[
+	draft=false,
+	paper=a4,
+	fontsize=11pt,
+	twoside=true,
+]{scrreprt}
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\automark[section]{chapter}
 
 \usepackage[british, ngerman]{babel}
 
@@ -30,7 +38,7 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
-\includeonly{titlepage, declaration_of_originality, thanks, abstract}
+%\includeonly{titlepage, declaration_of_originality, thanks, abstract}
 
 \begin{document}
 
