@@ -44,6 +44,10 @@
 \addbibresource{../references/websites.bib}
 \addbibresource{../references/unpublished.bib}
 
+\usepackage[nomain, nonumberlist, toc, acronym]{glossaries}
+\loadglsentries{abkuerzungen.tex}
+\makeglossaries
+
 %\includeonly{titlepage, declaration_of_originality, thanks, abstract}
 
 \begin{document}
@@ -55,8 +59,8 @@
 %\include{abstract}
 
 \tableofcontents
+\printacronyms
 \cleardoublepage
-
 \pagenumbering{arabic}
 
 \include{einleitung}
