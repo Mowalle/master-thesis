@@ -35,11 +35,22 @@
 \usepackage[
 	backend = biber, % Sets biber as backend.
 	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
-	maxnames = 3, % Truncate lists above 3 entries (e.g. names). Both citing and bib.
-	minnames = 3, % Truncate to 3 entries (e.g. names). Both citing and bib.
-	backref = true,
+	maxcitenames = 2, % Truncate lists above 2 entries (e.g. names) when citing.
+	mincitenames = 1, % Truncate to 1 entry (e.g. names) when citing.
+	maxbibnames = 3, % Truncate lists above 3 entries (e.g. names) in bib.
+	minbibnames = 3, % Truncate to 3 entries (e.g. names) in bib.
+	backref = true, % Show reference to page.
 	isbn=false,
+	giveninits=true, % Show only initials for given names.
 ]{biblatex}
+% Space out bib entries a bit.
+\setlength\bibitemsep{1.5\itemsep}
+% Put lastname before firstname.
+\DeclareNameAlias{sortname}{family-given}
+% Separates author names with semicolon instead of comma.
+\renewcommand{\multinamedelim}{\addsemicolon\space}
+
+% Bib resources.
 \addbibresource{../references/references.bib}
 \addbibresource{../references/websites.bib}
 \addbibresource{../references/unpublished.bib}
