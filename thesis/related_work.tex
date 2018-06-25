@@ -1,83 +1,70 @@
 \chapter{Stand der Forschung}
 \label{chap:related_work}
-Ein großer Teil der Forschung setzt sich mit \acro{AR}-unterstützter Navigation beim Autofahren auseinander, da hier eine fehlerfreie Navigation wichtig ist und im Fehlerfall sogar fatale Folgen haben kann \parencite{Lin2017}.
+Bereits \textcite{Hoellerer1999} stellen ein \gls{AR}-System vor, bei dem zwei Nutzer kooperieren können.
+Der eine Nutzer bewegt sich zu Fuß mit einem \gls{HMD} und einem Tablet-Computer in der Außenwelt.
+Durch das \gls{HMD} können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
+Der andere Nutzer kann entweder über ein Desktop-Interface oder eine \gls{AR}-Darstellung der Karte Routen und Informationen in der Umgebung platzieren.
+Damit stellt diese Arbeit eine frühe Implementierung für ein \gls{HMD} dar, die sowohl Navigations- als auch Explorationsaufgaben unterstützt.
+
+Wie bereits in \autoref{sec:motivation_ziel} erwähnt fokussiert sich ein großer Teil der bisherigen Forschung auf den Usecase der Navigation von einem Punkt zu einem anderen.
+Vor allem das \gls{AR}-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Fehlerfall sogar fatale Folgen haben kann \parencite{Lin2017}.
 Ein häufig eingesetztes Mittel ist hier die virtuelle Hervorhebung der Straßenführung.
 \textcite{Narzt2006} präsentieren ein allgemeines Framework zur Darstellung einer virtuellen Route.
 Das Framwork kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
 Für den Einsatz im Auto schlagen die Autoren die Windschutzscheibe als Display vor.
 Dadurch wäre das AR-Display in der natürlichen Umgebung des Nutzers integriert.
-
 \textcite{Bark2014} erweitern diesen Ansatz.
-Sie ersetzen die statische virtuelle Route durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen in einem zuvor aufgenommenen Video.
-Ein Vergleich mit einer herkömmlichen \acro{GPS}-Top-Down-Darstellung zeigt, dass die Probanden dank der \acro{AR}-Darstellung dem Straßenverlauf besser folgen können.
-Allerdings verliert die \acro{AR}-Darstellung durch das zweidimensionale Display ihre Effektivität.
-Die Autoren betonen daher die Notwendigkeit eines dreidimensionalen Volumendisplays.
-
-\textcite{Kim2009} erweitern die Route durch eine \acro{2.5D}-Karte mithilfe eines Fahrsimulators.
+Sie ersetzen in einem zuvor aufgenommenen Video die statische virtuelle Route durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen.
+\textcite{Kim2009} ersetzen die Route sogar durch eine 2.5D-Karte mithilfe eines Fahrsimulators.
 Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld, die sich nach und nach dreidimensional mit der Straße verbindet.
-Beim Vergleich mit einem konventionellen \acro{GPS}-Navigationsdisplay zeigt sich, dass die Probanden weniger Fehler bei der Navigation machen und den Straßenverkehr aufmerksamer verfolgen können.
-
-\cite{Wiesner2017} versuchen, die Ungenauigkeit von \acro{GPS}-Systemen beim Platzieren von virtuellen Objekten in der Umgebung zu umgehen.
-Dafür wählen sie eine Pfeil-Darstellung, die mit dem Koordinatensystem des Autos registriert ist und nur von der Entfernung zur nächsten Kreuzung abhängt.
-% TODO Reultate?
-
-Neben der Navigation im Auto ist auch die Fußgängernavigation ein weit untersuchtes Thema in der Forschung.
-Bereits \textcite{Hoellerer1999} stellen ein \acro{AR}-System vor, bei dem zwei Nutzer kooperieren können.
-Der eine Nutzer läuft mit einem \acro{HMD} und einem Tablet-Computer in der Außenwelt herum.
-Durch das \acro{HMD} können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
-Der andere Nutzer kann entweder über ein Desktop-Interface oder eine \acro{AR}-Darstellung der Karte Routen und Informationen in der Umgebung platzieren.
-
-\textcite{Wen2014} gehen von der Annahme aus, dass Menschen durch verbesserte Navigationssysteme das Verständnis für die eigene Umgebung und die Fähigkeit, selbstständig zu navigieren, verlieren.
-Sie stellen ein \acro{AR}-Navigationssystem vor, dass erst dann die zu laufende Route anzeigt, wenn ein Bilderrätsel zu einem Gebäude in der Umgebung beantwortet wurde.
-Probanden des Systems reagierten gemischt.
-Während die einen das System als zu umständlich empfanden, konnten die anderen ein besseres mentales Bild von der abgelaufenen Umgebung bestätigen.
+Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einer herkömmlichen \emph{top-down }\acro{GPS}-System nach, dass die Probanden dem Straßenverlauf durch die \gls{AR}-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
 
 \textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Navigation als \emph{Android-App}.
-Die App nutzt \emph{\acro{Wifi}-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
-Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \acro{Wifi}-Fingerprintings ausgeglichen.
-Navigationshinweise werden als \acro{AR}-Pfeil angezeigt (mit zusätzlichen Textausgaben).
-Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf \acro{GPS} noch auf Infrastruktur wie \acro{Wifi} oder Marker angewiesen ist.
-\textcite{Rehman2017} zeigen \acro{AR}-Pfeile und Textinformation per \emph{Google Glass}.
-Ihr Vergleich mit der gleichen Anwendung auf einem Smartphone zeigt, dass die wahrgenommene Genauigkeit bei dem tragbarem Google Glass höher ist. Jedoch lässt sich die Umgebung in beiden digitalen Varianten schlechter einprägen als mit einer Papierkarte.
+Die App nutzt \emph{Wi-Fi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
+Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des Wi-Fi-Fingerprintings ausgeglichen.
+Navigationshinweise werden als \gls{AR}-Pfeil angezeigt (mit zusätzlichen Textausgaben).
+Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf \gls{GPS} noch auf Infrastruktur wie Wi-Fi oder Marker angewiesen ist.
+% TODO: Diesen Satz anpassen, je nachdem wie die Entwicklung der Megamap ausgeht.
+Das zeigt, dass \gls{AR}-unterstützte Kartenanwendungen durchaus auch innerhalb von Gebäuden umsetzbar sind.
+
+Zur \gls{AR}-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
+Ein projizierter Helikopter kann mit einem realen \gls{PDA} bewegt werden, wenn dieser in die Nähe gehalten wird.
+Der \gls{PDA} zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
+Der Helikopter dient als Cursor für kontextbasierte Informationen.
+Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein Bild der aktuellen Kartenposition aus ungefährer Sicht des Helikopters auf ihn.
+Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
+Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit \gls{AR} nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
+Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
 
 % WIM
-Ein weiterer Ansatz zur Unterstützung von Navigation und Interaktion, der vor allem in virtuellen Welten Anwendung findet, ist die \emph{\acro{World-in-Miniature}}-Metapher (WIM) \parencite{Stoakley1995}.
+Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
+Damit ist die Megamap eine Variante der \glsdisp{WIM}{World-in-Miniature-Metapher}.
+Dies ist ein Ansatz zur Unterstützung von Navigation und Interaktion, der vor allem in virtuellen Welten Anwendung findet.
 Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten.
-Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten.
+Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
 
-\textcites{Mulloni2011a}{Mulloni2012} nutzen einen kombinierten Ansatz aus dem zuvor beschriebenen \acro{AR}-Pfeilen und WIM.
-Während Nutzer durch ein Gebäude navigieren werden \acro{AR}-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} angezeigt.
-Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort.
-Laut dem Ergebnis der Studie der Autoren hilft die WIM-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{Landmarks}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
+\textcites{Mulloni2011a}{Mulloni2012} nutzen einen kombinierten Ansatz aus \gls{AR}-Hinweisen und \gls{WIM}.
+Während Nutzer durch ein Gebäude navigieren werden \gls{AR}-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} auf einem Smartphone angezeigt.
+Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer \gls{WIM}-Darstellung der Etage mit der hervorgehobenen Route zum Zielort.
+Laut dem Ergebnis der Studie der Autoren hilft die \gls{WIM}-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{Landmarks}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
+Von diesem Aspekt könnte auch die Megamap profitieren, welche eine \gls{WIM}-ähnliche Sicht der näheren Umgebung liefert.
 
-\textcite{Chittaro2005} erweitern das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte.
+\textcite{Chittaro2005} erweitern das Konzept von \gls{WIM} für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte.
 Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
+Dies erleichtert die Exploration von Gebäuden da diese schneller nach den gewünschten Eigenschaften durchsucht werden können.
 
-\textcite{Vallance2001} schlägt zudem eine Biegung der WIM-Umgebung vor, um so eine Verdeckung durch Wände und andere Objekte zu minimieren.
+\textcite{Vallance2001} schlägt zudem eine Biegung der \gls{WIM}-Umgebung vor, um so eine Verdeckung durch Wände und andere Objekte zu minimieren.
 
-Alle zuvor genannten Arbeiten haben gemeinsam, dass die untersuchte Hautpaufgabe die Navigation von einem Punkt zu einem anderen ist.
-Allerdings gibt es auch Anwendungen, in denen Navigation zwar eine Rolle spielt, jedoch die Start- und Zielpunkte nicht klar vorgegeben sind.
-Wenn z.B. in der Umgebung nach Kontext gesucht wird (beispielsweise alle Restaurants in einem gewissen Umkreis) spricht man von \emph{Exploration} \parencite[28]{Lodts2015}.
-
-Ein Bereich, in dem sich Navigation und Exploration die Waage halten, sind digitale Spiele.
-Einerseits müssen Spieler in einem gewissen Rahmen zum Ziel geführt werden, da sie ansonsten frustriert sind und das Spiel beenden.
-Andererseits darf durch Navigationshinweise das Spiel nicht zu einfach gestaltet werden, damit das Spiel immer noch genug Herausforderungen bietet und den Spielern die Freiheit der Entdeckung erhalten bleibt.
 % TODO Übergang?
-\textcites{Moura2014}{Moura2015} untersuchen in einer breiten Auswahl an Spielen den Zusammenhang zwischen auftretenden Navigationshelfern, Design der Level sowie Spielemechaniken zur Unterstützung der Navigation.
+Im Bereich der Video- und Computerspiele untersuchen \textcites{Moura2014}{Moura2015} den Zusammenhang zwischen eingesetzten Navigationshelfern, Design der Level, sowie Spielmechaniken zur Unterstützung der Navigation.
 Daraus leiten \textcite{Moura2015} eine Klassifikation von Navigationshelfern ab.
 Außerdem erstellen sie eine Liste von Design-Richtlinien, welche die Vor- und Nachteile der jeweiligen Helfer erläutern und als Hilfestellung für Entwicklung von neuen Spielen dienen.
+Diese Designrichtlinien werden in die Entwicklung der Megamap mit einbezogen.
 
-Aufbauend auf die Navigationshelfer in Spielen untersucht \textcite{Lodts2015}, ob diese Helfer auch in der realen Welt anwenbar sind.
-Dazu wurden unterschiedliche Helfer, wie sie aus Spielen bekannt sind, für das Google Glass implementiert.
-In einem Test, aufgeteilt in die Aufgabenbereiche Navigation, Orientierung, Exploration und Annotation, wurde ermittelt welche der Helfer den Nutzern bei der jeweiligen Aufgabe am hilfreichsten waren.
-Es zeigt sich, dass Helfer, die in der Umgebung eingebettet sind (z.B. \acro{AR}-Pfeile oder -Text, farbliche Hervorhebungen von Objekten) effektiver sind als statische Anzeigen als \acro{\emph{Head-Up Display}(HUD)}.
-
-Zur \acro{AR}-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
-Ein projizierter Helikopter kann mit einem realen \acro{PDA} bewegt werden, wenn dieser in die Nähe gehalten wird.
-Der \acro{PDA} zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
-Der Helikopter dient als Cursor für kontextbasierte Informationen.
-Sobald der Nutzer einen Rahmen auf die Karte legt, wird auf den Rahmen ein Bild der aktuellen Kartenposition aus ungefährer Sicht des Helikopters projiziert.
-Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
-
+Aufbauend auf die Navigationshelfer in Spielen untersucht \textcite{Lodts2015}, ob diese Helfer auch in der realen Welt anwendbar sind.
+Dazu wurden unterschiedliche Helfer, wie sie aus Spielen bekannt sind, für das \emph{Google Glass} implementiert.
+In einem Test, aufgeteilt in die Aufgabenbereiche Navigation, Orientierung, Exploration und Annotation, wurde ermittelt welche der Helfer den Nutzern bei der jeweiligen Aufgabe am hilfreichsten sind.
+Es zeigt sich, dass Helfer, die in der Umgebung eingebettet sind (z.B. \gls{AR}-Pfeile oder -Text, farbliche Hervorhebungen von Objekten) effektiver sind als statische Anzeigen per \glspl{HUD}.
+Daher wird bei der Entwicklung der Megamap-Anwendung der \gls{AR}-Darstellung von Inhalten mehr Beachtung geschenkt.
 %
 \cleardoublepage
