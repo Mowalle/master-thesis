@@ -89,14 +89,9 @@
 \addbibresource{../references/websites.bib}
 \addbibresource{../references/unpublished.bib}
 
-\usepackage[nomain, nonumberlist, nopostdot, toc, acronym]{glossaries}
-\loadglsentries{abkuerzungen.tex}
-\makeglossaries
-
 \newcommand{\quelle}[1]{{\normalsize \emph{(Quelle: #1)}}}
 
-% Proxy Kommando (ersteinmal) für Abkürzungen)
-\newcommand{\acro}[1]{#1}
+\input{macros.tex}
 
 %\includeonly{titlepage, declaration_of_originality, thanks, abstract}
 
@@ -109,7 +104,6 @@
 %\include{abstract}
 
 \tableofcontents
-\printacronyms[title=Abkürzungsverzeichnis]
 \cleardoublepage
 \pagenumbering{arabic}
 
