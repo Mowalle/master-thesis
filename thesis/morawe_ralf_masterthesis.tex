@@ -37,6 +37,32 @@
 }
 \setcapindent{0em}
 
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{dark-grey}{rgb}{0.3, 0.3, 0.3}
+\definecolor{comment-green}{rgb}{0.0, 0.6, 0.0}
+
+\lstset {
+	aboveskip = 1em,
+	belowskip = 1em,
+	%	abovecaptionskip=1em,
+	belowcaptionskip=1em,
+	%	backgroundcolor = \color{black!5},
+	basicstyle = \ttfamily,
+	caption = \lstname,
+	commentstyle = \itshape\color{comment-green},
+	%	frame = single,
+	rulecolor = \color{black!10},
+	keywordstyle = \color{blue},
+	numbers = left,
+	numbersep = 12pt,
+	numberstyle = \footnotesize\ttfamily\color{dark-grey},
+	stepnumber = 1,
+	showstringspaces = false,
+	tabsize = 4
+}
+
 \usepackage[
 	backend = biber, % Sets biber as backend.
 	style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
