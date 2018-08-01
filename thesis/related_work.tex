@@ -1,7 +1,50 @@
 \chapter{Stand der Forschung}
 \label{chap:related_work}
 
-\section{Von AR bis VR: Das Milgram Kontinuum}
+\section{Von Realität bis Virtualität}
+Da es sich bei den unten genannten Arbeiten und Systeme um AR-/VR-Anwendungen handelt, müssen vorab die Unterschiede zu herkömmlichen Computerprogrammen und mobilen Applikationen geklärt werden.
+Im Folgenden werden die Begriffe \emph{Augmented/Virtual Reality} definiert und ein Überblick der wichtigsten Technologien wird gegeben.
+
+\textcite{Milgram1994} stellen das Konzept eines Kontinuums von Realität zur Virtualität vor (siehe \autoref{fig:rv_kontinuum}).
+Anwendungen und Technologien lassen sich dabei in dieses Kontinuum einordnen.
+Allgemein werden dabei die Kategorien Augmented Reality, Augmented Virtuality und Virtual Reality unterschieden.
+
+\begin{figure}[h]
+    \centering
+    % TODO: Grafik sollte Reelle Umgebung <---> Virtuelle Umgebung sein (nicht VR).
+    \includegraphics[width=\textwidth]{figures/rv_kontinuum_milgram.pdf}
+    \caption{Das Realität-Virtualität-Kontinuum nach \textcite{Milgram1994}. Je nach Anwendung wird die Realität mehr und mehr mit virtuellen Objekten überlagert, bis schließlich nur noch eine virtuelle Umgebung dargestellt wird.}
+    \label{fig:rv_kontinuum}
+\end{figure}
+
+Nach \textcite{Azuma1997} bezeichnet \emph{Augmented Reality} Systeme, welche die folgenden Eigenschaften besitzen:
+\begin{itemize}
+    \item Reale und virtuelle Inhalte werden kombiniert. Häufig werden hierfür virtuelle Objekte auf die reale Umgebung überlagert.
+    \item Der Nutzer kann in Echtzeit mit den Systemen interagieren. So zählen z.B. Spezialeffekte in Filmen \emph{nicht} als AR.
+    \item Die Inhalte werden dreidimensional mit der Umgebung registriert. Demnach ist ein 2D-Interface vor einer realen Umgebung \emph{kein} AR, selbst wenn es interaktiv ist.
+\end{itemize}
+AR selbst lässt sich dabei noch in die Kategorien \emph{Spatial AR} und \emph{See-Through AR} einteilen.
+Bei Spatial AR werden digitale Informationen direkt in die Umgebung des Nutzers projiziert, z.B. mit einem Projektor auf einen Tisch.
+Beim See-Through AR hingegen werden Displays genutzt, die entweder ein Live-Video der Umgebung zeigen oder aber transparent und damit durchsichtig sind.
+Dies können See-Through HMDs wie die Microsoft HoloLens sein, aber auch Smartphones in einer entsprechenden HMD-Halterung, bei denen die Rückseitenkamera für ein Live-Bild der Umgebung genutzt wird.
+Hier werden die virtuellen Informationen direkt auf dem Display überlagert \autocite{Zachmann2015}.
+
+Bei der \emph{Augmented Virtuality} (AV) werden umgekehrt reale Informationen in eine virtuelle Umgebung eingebettet.
+Als Beispiel nennt \textcite[6]{Schroeder2017} die Wetterkarte im Fernsehen, bei der eine \emph{virtuelle} Karte \emph{reale} Wetterinformationen darstellt und um einen \emph{realen} Moderator erweitert wird.
+Es sei darauf hingewiesen, dass in diesem Beispiel die Interaktion zwischen dem Moderator und der Karte besteht, nicht etwa zwischen dem Zuschauer und der Karte.
+
+\emph{Virtual Reality} ist die Bezeichnung für Anwendungen, die sich komplett in einer virtuellen Umgebung abspielen.
+Um VR von herkömmlichen Computersimulationen abzugrenzen nennt \textcite{Zachmann2015} die intuitive Echtzeit-Interaktion als ein wichtiges Kriterium.
+Dabei können Nutzer mit der virtuellen Umgebung über Eingabegeräte wie z.B. Controller mit sechs Freiheitsgraden (6DOF) oder haptischen Eingabegeräten interagieren.
+Ein weiteres wichtiges Kriterium ist die Immersion.
+Diese ergibt sich aus der Summe der vom System stimulierten und gleichzeitig abgeschirmten Sinne.
+Aus diesem Grund werden bei VR-Anwendungen häufig HMDs eingesetzt, da diese gleichzeitig den Sehsinn vor der Außenwelt abschirmen und mit virtuellen Bildern stimulieren können.
+% TODO: Links zu den Displayarten.
+Aber auch halb-immersive Displays wie eine \emph{Cave}, eine \emph{Powerwall} oder ein Volumendisplay sind möglich.
+
+\textcite{Milgram1994} nennen ebenfalls den Begriff der \emph{Mixed Reality} (MR).
+Dieser wird in der Literatur als Oberbegriff sowohl für AR als auch AV verwendet.
+Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 
 \section{Augmentierte Navigation}
 Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
@@ -33,6 +76,7 @@ Das zeigt, dass AR-unterstützte Kartenanwendungen durchaus auch innerhalb von G
 
 \section{Digitale Kartenexploration}
 Zur AR-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
+\autoref{fig:reitmayr2005_helicopter_map} zeigt die Funktionsweise.
 Ein projizierter Helikopter kann mit einem realen \emph{Personal Digital Assistant} (PDA) bewegt werden, wenn dieser in die Nähe gehalten wird.
 Der PDA zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
 Der Helikopter dient als Cursor für kontextbasierte Informationen.
@@ -40,6 +84,12 @@ Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein 
 Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
 Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
 Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{figures/reitmayr2005_helicopter_map.png}
+    \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert. \quelle{\cite{Reitmayr2005}}}
+    \label{fig:reitmayr2005_helicopter_map}
+\end{figure}
 
 % TODO: Diesen Titel ändern?
 \section{Virtuelle Umgebungen als World-in-Miniature}
@@ -51,14 +101,62 @@ Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigen
 Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
 
 \textcites{Mulloni2011a}{Mulloni2012} nutzen einen kombinierten Ansatz aus AR-Hinweisen und WIM.
-Während Nutzer durch ein Gebäude navigieren werden AR-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} auf einem Smartphone angezeigt.
-Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort.
-Laut dem Ergebnis der Studie der Autoren hilft die WIM-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{Landmarks}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
+Während Nutzer durch ein Gebäude navigieren werden AR-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} auf einem Smartphone angezeigt (\autoref{sfig:mulloni2011_wim_b}, \subref{sfig:mulloni2011_wim_e}).
+Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort (\autoref{sfig:mulloni2011_wim_a}, \subref{sfig:mulloni2011_wim_c}, \subref{sfig:mulloni2011_wim_d}).
+Laut dem Ergebnis der Studie der Autoren hilft die WIM-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{\enquote{Landmarks}}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
 Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnliche Sicht der näheren Umgebung liefert.
 
-\textcite{Chittaro2005} erweitern das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte.
+\begin{figure}[h]
+    \begin{subfigure}{.195\textwidth}
+        \includegraphics[width=\textwidth]{figures/mulloni2011_wim_a.png}
+        \caption{}
+        \label{sfig:mulloni2011_wim_a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.195\textwidth}
+        \includegraphics[width=\textwidth]{figures/mulloni2011_wim_b.png}
+        \caption{}
+        \label{sfig:mulloni2011_wim_b}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.195\textwidth}
+        \includegraphics[width=\textwidth]{figures/mulloni2011_wim_c.png}
+        \caption{}
+        \label{sfig:mulloni2011_wim_c}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.195\textwidth}
+        \includegraphics[width=\textwidth]{figures/mulloni2011_wim_d.png}
+        \caption{}
+        \label{sfig:mulloni2011_wim_d}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.195\textwidth}
+        \includegraphics[width=\textwidth]{figures/mulloni2011_wim_e.png}
+        \caption{}
+        \label{sfig:mulloni2011_wim_e}
+    \end{subfigure}
+    \caption{AR-Interface für Indoor-Navigation basierend auf WIM. An den Lokalisierungspunkten wird die Indoor-Karte als WIM angezeigt und mit der Position/Rotation der Umgebung registriert. \quelle{\cite{Mulloni2011}}}
+    \label{fig:mulloni2011_wim}
+\end{figure}
+
+\textcite{Chittaro2005} erweitern das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte (\autoref{fig:chittaro2005_breakaway}).
 Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
 Dies erleichtert die Exploration von Gebäuden, da diese schneller nach den gewünschten Eigenschaften durchsucht werden können.
+
+\begin{figure}[h]
+    \begin{subfigure}{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_a.png}
+%        \caption{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_b.png}
+%        \caption{}
+    \end{subfigure}
+    \caption{In der \emph{\enquote{Examine View}} der BreakAway-Karte können Stockwerke zur Seite geschoben werden, um den Blick auf darunterliegende Stockwerke zu ermöglichen. \quelle{\cite{Chittaro2005}}}
+    \label{fig:chittaro2005_breakaway}
+\end{figure}
 
 \textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so eine Verdeckung durch Wände und andere Objekte zu minimieren.
 
