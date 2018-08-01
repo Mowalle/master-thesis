@@ -25,6 +25,8 @@
 \usepackage{amsmath, amssymb}
 \usepackage{csquotes}
 \usepackage{graphicx}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 
 \usepackage[
 	colorlinks=true,
@@ -34,6 +36,9 @@
 
 \setkomafont{captionlabel}{%
 	\bfseries
+}
+\setkomafont{caption}{%
+    \bfseries
 }
 \setcapindent{0em}
 
