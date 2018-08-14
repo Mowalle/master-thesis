@@ -4,12 +4,13 @@
     fontsize=11pt,
     twoside=true,
     captions=tableheading,
+    british, ngerman,
 ]{scrreprt}
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
 \automark[section]{chapter}
 
-\usepackage[british, ngerman]{babel}
+\usepackage{babel}
 
 \usepackage{lipsum}
 
@@ -27,6 +28,9 @@
 \usepackage{graphicx}
 \usepackage[labelformat=simple]{subcaption}
 \renewcommand\thesubfigure{(\alph{subfigure})}
+
+\usepackage{siunitx}
+\sisetup{locale = DE}
 
 \usepackage[
     colorlinks=true,
