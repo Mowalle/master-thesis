@@ -34,7 +34,7 @@ Aufgrund der einfach zu nutzenden AR-/VR-Funktionalität sowie der Erweiterbarke
 
 \subsection{WRLD SDK}
 
-Das \emph{WRLD SDK}\footnote{\url{https://www.wrld3d.com/}} (fortan \enquote{WRLD}) ein Framework, um interaktive 3D-Karten zu erstellen und anzuzeigen.
+Das \emph{WRLD SDK} (fortan \enquote{WRLD}) ein Framework, um interaktive 3D-Karten zu erstellen und anzuzeigen.
 Es unterstützt mehrere Plattformen und bietet zudem ein Plugin für Unity an.
 WRLD bezieht dabei seine Kartendaten von \emph{OpenSteetMap} sowie diversen proprietären Anbietern \parencite{WRLD2018}.
 Die Daten werden aufbereitet und Nutzern über WRLDs eigene Server zur Verfügung gestellt.
@@ -102,7 +102,7 @@ Die Art der Darstellung und Integration der Indoor-Karte in die Umgebung sowie d
 
 \subsection{Mapbox SDK}
 % TODO: Grafik für nicht funktionierende Pipeline?
-Als Alternative zu WRLD bietet sich das Mapbox SDK\footnote{\url{https://www.mapbox.com/}} an.
+Als Alternative zu WRLD bietet sich das Mapbox SDK an.
 Mapbox bietet Schnittstellen zur Anzeige von Karten, Routennavigation sowie Visualisierung von kartenbasierten Daten.
 Ähnlich wie bei Google Maps werden die Karten in \emph{\enquote{Tiles}} geliefert.
 Mapbox bietet sowohl Raster-Tiles (Satellitenbilder) als auch Vektor-Tiles (vektorbasierte Straßen- und Gebäudeumrisse) an.
@@ -133,8 +133,8 @@ Die Darstellung weist allerdings Probleme auf, auf die später näher eingegange
 Anders als bei WRLD gibt es bei Mapbox keine \emph{explizite} Unterstützung von Indoor-Karten.
 Jedoch lassen sich diese über einen Umweg einbinden, wie \textcites{Mapbox2018b}{Pavani2018}{Clarke2017} präsentieren.
 Zuerst muss ein georeferenzierter Lageplan des Gebäudes erstellt werden.
-Dies kann z.B. mit der Software \emph{QGIS}\footnote{\url{https://qgis.org/en/site/}} umgesetzt werden.
-Für diese Arbeit wurde zunächst die Ebene 5 des MZH an der Universität Bremen basierend auf dem Lageplan des Gebäudes\footnote{\url{https://www.uni-bremen.de/universitaet/campus/lageplan/gebaeude/building/116/}} in QGIS georeferenziert.
+Dies kann z.B. mit der Software \emph{QGIS} umgesetzt werden.
+Für diese Arbeit wurde zunächst die Ebene 5 des MZH an der Universität Bremen basierend auf dem Lageplan des Gebäudes in QGIS georeferenziert.
 Beim Georeferenzieren werden die Räume und Wände durch Polygone dargestellt.
 Jeder Vertex besitzt neben seiner x- und y-Position eine weitere Koordinate in Bezug auf ein geographisches Koordinaten-Referenz-System (KRS).
 % TODO: Mapbox' KRS einfügen
@@ -245,7 +245,7 @@ Ein Gebäude kann in OSM durch die Zusammensetzung mehrerer Polygone definiert w
 Die Technik wird auch für das MZH und das GW2 angewendet.
 Es ist unklar, warum Teile des OSM-Datensatzes in Mapbox nicht angezeigt werden.
 Zum Vergleich zeigt \autoref{fig:uni-bremen_osm2world}, wie die Gebäude eigentlich in der 3D-Darstellung aussehen sollten.
-Für das Bild wurde direkt von OSM der entsprechende Ausschnitt der Uni exportiert und mit dem Programm \emph{OSM2World}\footnote{\url{http://osm2world.org/}} gerendert.
+Für das Bild wurde direkt von OSM der entsprechende Ausschnitt der Uni exportiert und mit dem Programm \emph{OSM2World} gerendert.
 Es wird deutlich, dass die Gebäudedaten in der Tat in der OSM-Datenbank vorhanden sind, weshalb das Fehlen dieser bei der Darstellung in Unity auf Mapbox zurückzuführen ist.
 
 \begin{figure}[h]
