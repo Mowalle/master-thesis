@@ -1,7 +1,34 @@
 \chapter{Implementierung}
 % TODO: Dieses Kaptiel mit der Zeit anpassen
 
-% TODO: Unity kurz beschreiben
+\section{Unity Engine}
+\emph{Unity} \autocite{UnityTechnologies2018} ist eine \emph{Engine} zum Entwickeln von 2D- und 3D-Anwendung (vornehmlich Spiele).
+Da Unity plattformunabhängig ist werden die Applikationen gleichzeitig für mehrere Plattformen entwickelt.
+Erstellt werden die Anwendungen mit dem Unity Editor.
+
+Eine Unity-Anwendung ist in Szenen unterteilt.
+Jede Szene besitzt einen eigenen Szenengraph.
+Dieser Graph verwaltet alle Objekte einer Szene.
+Unity verwendet ein Entitäten-Komponenten-System.
+Das heißt, alle Unity-Objekte sind im Kern attribut- und funktionslose Entitäten (in Unity \emph{GameObject}s genannt).
+Die eigentliche Funktionalität wird erst durch Hinzufügen von \emph{Component}s zu den GameObjects deutlich.
+Beispielsweise verfügt das GameObject eines Würfel-Objekts über eine \emph{TransformComponent}, \emph{MeshRenderComponent} und \emph{PhysicsComponent}.
+Neben Anwendungen für den Desktop oder mobile Endgeräte bietet Unity Unterstützung für eine Vielzahl an AR- und VR-Plattformen an \parencite{UnityTechnologies2018b}.
+
+Zusätzlich zu diesen vorgefertigten Komponenten können auch Skript-Komponenten zu den GameObjects hinzugefügt werden.
+Dies ermöglicht den Entwicklern, komplett neues Verhalten für Objekte in die Engine zu integrieren.
+Die Skripte werden in C\# oder einem Javascript-Dialekt geschrieben.
+
+Eine Besonderheit bei Unity im Vergleich zu anderen Engines sind die \emph{Prefabs}.
+Dabei handelt es sich um abgespeicherte Konfigurationen von GameObjects inklusive derer Komponenten.
+Die Prefabs können dann jederzeit als vorkonfiguriertes Objekt instanziiert werden.
+
+Darüber hinaus lässt sich Unity durch das Importieren von Plugins erweitern.
+Dadurch werden \emph{Assets} (Texturen, Fonts, Musik, Materialien, Skripte) und Prefabs von anderen Entwicklern in das aktuelle Projekt übernommen.
+Ein nennenswertes Plugin, was für diese Arbeit eingesetzt wird, ist das \emph{SteamVR Plugin} \autocite{ValveCorporation2018}.
+Dieses baut die in Unity integrierte Unterstützung speziell für die HTC Vive weiter aus.
+
+Aufgrund der einfach zu nutzenden AR-/VR-Funktionalität sowie der Erweiterbarkeit wird Unity für diese Arbeit eingesetzt.
 
 \section{Existierende Frameworks}
 
