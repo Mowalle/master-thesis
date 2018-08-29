@@ -46,7 +46,7 @@ Es unterstützt mehrere Plattformen und bietet zudem ein Plugin für Unity an.
 WRLD bezieht dabei seine Kartendaten von \emph{OpenSteetMap} sowie diversen proprietären Anbietern \parencite{WRLD2018}.
 Die Daten werden aufbereitet und Nutzern über WRLDs eigene Server zur Verfügung gestellt.
 Eine AR-Beispielanwendung ist in \autoref{fig:wrld_ar} zu sehen.
-\begin{figure}[t]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/wrld_ar-web-11}
     \quelle{\cite{WRLD2018b}}
@@ -64,7 +64,7 @@ In der Karten-3D-Ansicht kann über einen Button das Gebäude betreten werden (f
 Dabei werden alle Stockwerke des Gebäudes mit einer Animation aufgefächert und mit dem Slider durchlaufen.
 Schließlich wird das ausgewählte Stockwerk angezeigt.
 Alle Stockwerke oberhalb des Aktuellen werden ausgeblendet, die darunterliegenden werden durch das Aktuelle überdeckt.
-\begin{figure}[t]
+\begin{figure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/wrdl_outdoor.png}
         \caption{}
@@ -127,7 +127,7 @@ Die hier verwendeten Gebäudedaten stammen alle von OpenStreetMap.
 Über weitere Einstellungen ließen sich weiterhin die farbliche Darstellung der Gebäude anpassen.
 Die Darstellung weist allerdings Probleme auf, auf die später näher eingegangen wird.
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/mapbox_unity_uni_bremen_markings}
     \caption{3D-Darstellung der Universität Bremen via Mapbox und Unity. %
@@ -156,7 +156,7 @@ Jeder Punkt auf der Erdoberfläche kann durch Angabe des Breiten- und Längengra
 \autoref{fig:latlong_from_globe_center} zeigt dies graphisch.
 Als Beispiel hat der Mittelpunkt des MZH in etwa den Breitengrad \ang{53,10668} und den Längengrad \ang{8,85238}.
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \imagebox{\includegraphics[width=0.35\textwidth]{figures/latlong_from_globe_center}}
     \quelle{\cite{ESRIInc2018}}
@@ -168,7 +168,7 @@ Durch das Georeferenzieren können die Räume eindeutig auf einer Karte platzier
 Der georeferenzierte Lageplan der Ebene 5 des MZH ist in \autoref{fig:qgis_mzh_e5} zu sehen.
 Die Räume werden durch die blauen Polygone dargestellt und die Wände durch die grauen.
 
-\begin{figure}[b]
+\begin{figure}
     \centering
     \imagebox{\includegraphics[width=0.3\textwidth]{figures/qgis_mzh_e5}}
     \caption{Georeferenzierter Lageplan der Ebene 5 des MZH in QGIS.\@ %
@@ -183,7 +183,7 @@ Die generierten Meshes werden an Eckpunkten jedoch nicht automatisch verbunden.
 Das heißt, dass weitere Ecken entstehen, was nicht der gewünschten Geometrie entspricht.
 Das Modellieren der Wände durch Polygone erlaubt mehr Kontrolle über das Aussehen des generierten Meshes.
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \imagebox{\includegraphics[width=0.6\textwidth]{figures/mapbox_wand_ecke_problem}}
     \vspace{2em}
@@ -199,7 +199,7 @@ Als Höhe wurde in diesem Beispiel der Wert 10 gewählt.
 Wie zu erkennen ist, wurde die generierte Indoor-Karte an der korrekten Position auf der Stadtkarte platziert.
 % TODO: Fenster u. Türen erwähnen?
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/mapbox_unity_mzh_e5_z15_working}
     \caption{3D-Darstellung des Lageplans der Ebene 5 im MZH.\@ %
@@ -217,7 +217,7 @@ Obwohl Mapbox intern die Koordinaten als 64-Bit-Werte repräsentiert \autocite{K
 Bei einem niedrigen Zoom werden einige der Wände nicht gerendert, da vereinzelte Vertices nicht mehr unterschieden werden.
 % TODO: Weiter ausführen... -> Github Issue
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/mapbox_unity_mzh_e5_z9}
@@ -255,7 +255,7 @@ Zum Vergleich zeigt \autoref{fig:uni-bremen_osm2world}, wie die Gebäude eigentl
 Für das Bild wurde direkt von OSM der entsprechende Ausschnitt der Uni exportiert und mit dem Programm \emph{OSM2World} gerendert.
 Es wird deutlich, dass die Gebäudedaten in der Tat in der OSM-Datenbank vorhanden sind, weshalb das Fehlen dieser bei der Darstellung in Unity auf Mapbox zurückzuführen ist.
 
-\begin{figure}[t]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/uni-bremen_osm2world}
     \caption{Von OSM2World gerendertes Bild der Universität Bremen, basierend auf Daten aus OSM.\@ %
