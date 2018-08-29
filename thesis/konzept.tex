@@ -1,4 +1,53 @@
 \chapter{Konzeption der Megamap-Anwendung}
+Dieses Kapitel beschreibt die Konzeption der im Rahmen dieser Arbeit entwickelten Megamap-Anwendung.
+Hierfür werden zunächst mögliche Anwendungsszenarien präsentiert und die sich darauf ergebenden Anforderungen genannt.
+Wie bereits erwähnt wird die Kartenexploration verstärkt fokussiert und weniger die Navigation.
+Zu diesem Zweck werden existierende Ansätze zur digitalen Kartenexploration analysiert und die Gemeinsamkeiten der Ansätze als Grundlage für die Megamap-Anwendung herausgearbeitet.
+Schließlich wird ein Überblick der für die Implementierung benötigten Komponenten gegeben.
+
+\section{Anwendungsszenario und Anforderungen}
+% Hier die Guidelines einarbeiten
+Bereits \textcite{Reichenbacher2001} beschreibt Konzepte zur mobilen Nutzung von digitalen Kartensystemen.
+Unter anderem gibt er eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
+Neben der Navigation finden sich auch kontextbasierte Tasks wieder.
+\citeauthor{Reichenbacher2001} nennt drei Kategorien kontextbasierter Tasks:
+
+\textbf{Lokalisierungs-Tasks (\emph{Locators})} sind Anwendungsfälle, bei denen Nutzer Positionen abfragen und diese angezeigt werden.
+Dabei kann es sich um die eigene Position handeln, aber auch um die von anderen Personen oder Objekten.
+
+\textbf{Nähe-Tasks (\emph{Proximity})} sind Anwendungsfälle, bei denen Nutzer Informationen über die Umgebung relativ zur eigenen Position erhalten.
+So können Nutzer z.B. die Umgebung nach den nächstgelegenen Geschäften oder Freizeitbeschäftigungen abfragen.
+
+\textbf{Events} sind nicht nur ortsabhängig, sondern auch zeitabhängig.
+Bei diesen Anwendungsfällen geht es um die Abfrage von Informationen, die sich mit der Zeit ändern.
+Z.B. fallen die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
+
+% TODO: Definition Exploration?
+Für diese Arbeit werden die oben gennanten kontextbasierten Geoinformationsaufgaben als Anwendungsfälle der Kartenexploration betrachtet.
+Konkretere Beispiele für Anwendungsfälle werden in den nächsten Abschnitten bei der Betrachtung existierender Systeme deutlich.
+
+\begin{table}[t]
+    \caption{Geoinformationsaufgaben in einer mobilen Umgebung.}
+    \label{tab:gis_user_tasks}
+    \begin{tabularx}{\textwidth}{lll}
+        \toprule
+        Tasks & Subtasks & Examples\\
+        \toprule
+        \multirow{3}{*}{Locators} & Own position & xy coordinates, place name \\
+                                  & Objects & Attributes of an object\\
+                                  & Other persons position & Who is this?\\
+        \midrule
+        \multirow{2}{*}{Proximity} & Objects & Next object with certain attributes\\
+                                   & Persons & Known people in the area?\\
+        \midrule
+        Navigation & Routing & Way descriptions\\
+        \midrule
+        Events & What happens at a place & Obstacles (e.g. traffic jam)?\\
+        \bottomrule
+    \end{tabularx}
+    \vspace{0.5em}
+    \quelle{\cite[47]{Reichenbacher2001}}
+\end{table}
 
 \section{Analyse der Megamap in \emph{Tom Clancy's The Division}}
 % Mechanics
@@ -6,9 +55,6 @@
 \section{Analyse der Kartenexploration in \emph{Google Maps} und co.}
 % -> Interaktionen abstrahieren
 % Content
-
-\section{Anwendungsszenario und Anforderungen}
-% Hier die Guidelines einarbeiten
 
 \section{Benötigte Komponenten}
 % Indoor-Modul, Datenprovider etc.
