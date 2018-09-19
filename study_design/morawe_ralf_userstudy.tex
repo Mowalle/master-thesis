@@ -1,0 +1,128 @@
+\documentclass[
+    draft=false,
+    paper=a4,
+    fontsize=11pt,
+    twoside=false,
+    captions=tableheading,
+    british, ngerman,
+]{scrartcl}
+
+\usepackage{babel}
+
+\usepackage{fontspec}
+\usepackage[final]{microtype}
+
+\usepackage{booktabs}
+\usepackage{csquotes}
+
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{center}
+    \LARGE\textsf{\textbf{Plan für User Study}}
+\end{center}
+
+\noindent
+Digitale Kartenanwendungen wie z.B. \emph{Google Maps} bieten Nutzern eine Vielzahl von Funktionen, um diese bei der Navigation und Kartenexploration unterstützen.
+Da diese Anwendungen allerdings auf GPS angewiesen sind, können sie nur im Freien eingesetzt werden.
+Kartenanwendungen für Innenräume sind hingegen nur für spezielle Gebäude verfügbar.
+Die Forschung befasst sich daher mit den besonderen Anforderung von Indoor-Karten, wie zum Beispiel der Darstellung mehrstöckiger Gebäude.
+Dabei wird jedoch meistens nur die Navigation von einem Punkt zu einem anderen als Nutzungsbeispiel behandelt.
+Die Kartenexploration von Gebäuden mittels digitaler Karten wir bisher wenig betrachtet.
+
+Im Rahmen dieser Masterarbeit wird untersucht, ob sich eine digitale 3D-Karte für die Anwendung der Kartenexploration eignet.
+Zu diesem Zweck wird mit VR-Technologie eine 3D-Karte direkt in der Umgebung des Nutzers platziert.
+Dieser kann die 3D-Karte für eine Reihe von Explorationstasks nutzen, die von bereits existierenden Kartenanwendungen inspiriert sind.
+
+Das Ziel dieser User Study ist zu ermitteln, ob eine in die Umgebung integrierte 3D-Karte für die Kartenexploration besser geeignet ist als eine herkömmliche Darstellung in 2D.
+
+\section*{Setup}
+Das Experiment wird (vorraussichtlich) im Laborraum 5230 des MZH an der Uni Bremen durchgeführt.
+Als Hardware wird ein Desktop-PC inklusive Monitor (für den Versuchsleiter) sowie ein \emph{HTC Vive} HMD inklusive Lighthouses eingesetzt.
+Die virtuelle Umgebung, in der der Nutzer sich wiederfindet, ist eine Nachbildung des Laborraums.
+Die Ausgangsposition, an die der Nutzer sich zu Beginn stellen soll, ist sowohl in der echten als auch der virtuellen Umgebung mit einem \textbf{X} gekennzeichnet.
+
+\section*{Hypothesen}
+\begin{itemize}
+    \item Nullhypothese $H_0$: Es gibt keinen signifikant messbaren Unterschied zwischen der Nutzung der Indoor-2D-Karte und der umgebungsintegrierten Indoor-3D-Karte.
+    \item $H_1$: Die umgebungsintegrierte 3D-Karte ist für die Indoor-Kartenexploration besser geeignet als die Darstellung in 2D.
+    \begin{itemize}
+        \item Ziele auf der Karte werden schneller gefunden und ausgewählt.
+        \item Die räumliche Vorstellung der Umgebung (insbesondere die Position der Ziele relativ zur eigenen Position) ist präziser.
+    \end{itemize}
+    \item $H_2$: Die User Experience ist mit der umgebungsintegrierten 3D-Karte besser.
+\end{itemize}
+
+\section*{Ablauf}
+Das Experiments wird in mehreren Phasen durchgeführt:
+
+\vspace{1em}
+\noindent
+\textit{Phase 1:}
+Der Proband unterschreibt eine Einverständniserklärung bezüglich der Teilnahme an der User Study, mögliche Nebenwirkungen und Risiken bei der Bedienung der VR-Equipments sowie der Aufnahme der benötigten Daten und der Veröffentlichung dieser in anonymisierter Form im Rahmen dieser Arbeit.
+
+\vspace{1em}
+\noindent
+\textit{Phase 2:}
+Diese Phase dient dazu, dass der Proband den Umgang mit VR sowie mit den beiden Kartendarstellungen lernen kann.
+Der Proband setzt das HMD auf und betritt die virtuelle Umgebung.
+Er finden sich im virtuellen Labor wieder.
+Dort werden gleichzeitig beide Kartendarstellungen angezeigt (3D im Raum, 2D an der Wand).
+Als Gebäude wird ein mehrstöckiges Testgebäude verwendet, welches in den späteren Phasen nicht weiter eingesetzt wird, um einen Lerneffekt zu verhindern.
+Der Proband kann nun frei Zielpunkte suchen und die Stockwerke wechseln.
+Diese Phase dauert 10 Minuten.
+
+\vspace{1em}
+\noindent
+\textit{Phase 3:}
+Der Proband wird einer von zwei Gruppen zugeteilt (siehe \autoref{tab:sequences}): entweder er testet zuerst die 2D- und dann die 3D-Sequenz, oder umgekehrt.
+Die Sequenzen beinhalten jeweils eine feste Reihenfolge von Tasks (siehe unten) und anschließend einen Fragebogen.
+
+\begin{table}[h]
+    \label{tab:sequences}
+    \centering
+    \caption{Testsequenzen}
+    \begin{tabular}{ccccc}
+                  & \multicolumn{2}{c}{Sequenz 1} & \multicolumn{2}{c}{Sequenz 2} \\\toprule
+        Gruppe 1: & 2D & Fragebogen & 3D & Fragebogen \\
+        Gruppe 2: & 3D & Fragebogen & 2D & Fragebogen
+    \end{tabular}
+\end{table}
+
+\section*{Konditionen}
+Für diese Studie werden zwei Konditionen miteinander verglichen: 2D und umgebungsintegriertes 3D.
+\begin{itemize}
+    \item Für die 2D-Karte wird eine 2D-Indoor-Karte an einer der Wände des virtuellen Labors platziert.
+    \item Die 3D-Karte wird so im virtuellen Labor platziert, dass sich der Nutzer um diese herum bewegen kann.
+\end{itemize}
+Damit die Konditionen vergleichbar bleiben bieten beide Darstellungen die gleichen Interaktionen an.
+Es wird nur ein Stockwerk zur Zeit angezeigt.
+Zielpunkte (Points of Interest) zeigen an, ob sie sich oberhalb oder unterhalb des aktuellen Stockwerks oder darauf befinden.
+Eine Änderung des Stockwerks sowie die Auswahl von Zielpunkten ist über grafische Elemente möglich.
+
+\section*{Tasks}
+Die Tasks laufen alle nach dem gleichen Prinzip ab.
+Zuerst sucht der Proband nach Vorgabe einen Zielpunkt auf der Karte.
+Wenn er diesen gefunden hat, wählt er den Punkt aus und bestätigt die Auswahl.
+Danach wird die Karte ausgeblendet.
+Nun muss der Proband mit dem Vive-Controller in die Richtung zeigen, in der sich der gewählte Zielpunkt in der virtuellen Umgebung befindet.
+Die Richtung wird durch einen Strahl symbolisiert.
+Der Proband bestätigt die Richtung durch Betätigen eines Knopfes und kann die Auswahl danach wiederholen, um Fehler zu korrigieren.
+
+Es werden drei Arten von Suche als Aufgabe gestellt:
+Bei der \emph{spezifischen Suche} sucht der Proband einen einzigartigen Punkt auf der Karte (z.B. \enquote{Finde das Büro von Person XY}).
+Bei der \emph{semi-offenen Suche} sucht der Proband ebenfalls einen speziellen Punkt, muss aber zwischen mehreren Ähnlichen auswählen (z.B. \enquote{Finde die \textbf{nächstgelegene} Toilette}).
+Bei der \emph{offenen Suche} kann der Proband frei innerhalb einer Kategorie wählen (z.B. \enquote{Finde einen Drucker}).
+
+\section*{Metriken und Datenerhebung}
+Zum Vergleich von 2D und 3D werden die Zeiten zur Auswahl der Zielpunkte und Fehlerrate gemessen.
+Außerdem wird der Abweichungsfehler bei der Richtungsangabe gemessen, aus dem Aussagen über das räumliche Verständnis durch Nutzung der Karte abgeleitet werden sollen.
+
+Da die 3D-Karte eine flexible Ansicht aus allen Richtungen erlaubt soll auch eine Heatmap der Position und Blickrichtung ermittelt werden.
+
+Das Videobild der Vive wird zur Dokumentation ebenso aufgenommen.
+
+Zur Erhebung der qualtiativen Daten über die User Experience der 3D-Karte werden Fragebögen verwendet, die nach entsprechenden Standards ausgewertet werden können.
+
+\end{document}
