@@ -8,14 +8,12 @@ Im Folgenden werden die Begriffe \emph{Augmented/Virtual Reality} definiert und 
 \textcite{Milgram1994} stellen das Konzept eines Kontinuums von Realität zur Virtualität vor (siehe \autoref{fig:rv_kontinuum}).
 Anwendungen und Technologien lassen sich dabei in dieses Kontinuum einordnen.
 Allgemein werden dabei die Kategorien Augmented Reality, Augmented Virtuality und Virtual Reality unterschieden.
-
-\begin{figure}
+\begin{figure}[b]
     \centering
     \imagebox{\includegraphics[width=0.9\linewidth]{figures/rv_kontinuum_milgram.pdf}}
     \caption{Das Realität-Virtualität-Kontinuum nach \textcite{Milgram1994}. Je nach Anwendung wird die Realität mehr und mehr mit virtuellen Objekten überlagert, bis schließlich nur noch eine virtuelle Umgebung dargestellt wird.}
     \label{fig:rv_kontinuum}
 \end{figure}
-
 Nach \textcite{Azuma1997} bezeichnet \emph{Augmented Reality} Systeme, welche die folgenden Eigenschaften besitzen:
 \begin{itemize}
     \item Reale und virtuelle Inhalte werden kombiniert. Häufig werden hierfür virtuelle Objekte auf die reale Umgebung überlagert.
@@ -45,7 +43,7 @@ Aber auch halb-immersive Displays wie eine \emph{Cave}, eine \emph{Powerwall} od
 Dieser wird in der Literatur als Oberbegriff sowohl für AR als auch AV verwendet.
 Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 
-\section{Virtuelle Umgebungen als World-in-Miniature}
+\section{World-in-Miniature zur Unterstützung der Indoor-Navigation}
 % WIM
 Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
 Damit ist die Megamap eine Variante der World-in-Miniature-Metapher (WIM).
@@ -58,33 +56,32 @@ Während Nutzer durch ein Gebäude navigieren werden AR-Pfeile sowie Navigations
 Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort (\autoref{sfig:mulloni2011_wim_a}, \subref{sfig:mulloni2011_wim_c}, \subref{sfig:mulloni2011_wim_d}).
 Laut dem Ergebnis der Studie der Autoren hilft die WIM-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{\enquote{Landmarks}}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
 Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnliche Sicht der näheren Umgebung liefert.
-
-\begin{figure}
-    \begin{subfigure}{.195\textwidth}
+\begin{figure}[t]
+    \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_a.png}
         \caption{}
         \label{sfig:mulloni2011_wim_a}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{.195\textwidth}
+    \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_b.png}
         \caption{}
         \label{sfig:mulloni2011_wim_b}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{.195\textwidth}
+    \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_c.png}
         \caption{}
         \label{sfig:mulloni2011_wim_c}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{.195\textwidth}
+    \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_d.png}
         \caption{}
         \label{sfig:mulloni2011_wim_d}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{.195\textwidth}
+    \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_e.png}
         \caption{}
         \label{sfig:mulloni2011_wim_e}
@@ -94,11 +91,41 @@ Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnlich
     \label{fig:mulloni2011_wim}
 \end{figure}
 
-\textcite{Chittaro2005} erweitern das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte (\autoref{fig:chittaro2005_breakaway}).
-Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
-Dies erleichtert die Exploration von Gebäuden, da diese schneller nach den gewünschten Eigenschaften durchsucht werden können.
+Eine Arbeit, die der Umsetzung dieser Thesis nahe kommt, ist die Untersuchung 2D- und 3D-Karten als Navigationshilfe für mehrstöckige Gebäude durch \autocite[siehe \autoref{fig:chittaro2006_maps}]{Chittaro2006}.
+Dabei bewegen sich die Nutzer durch ein virtuelles Gebäude von einem Zielobjekt zu einem anderen.
+Die Autoren stellen fest, dass für die reine Navigation zwischen zwei Punkten eine 2D-Karte effektiver ist.
+Allerdings liegt das räumliche Verständnis von den Positionen der Objekte im Gebäude in beiden Darstellungen gleich auf.
+Bei \parencite{Chittaro2006} werden die Karten jedoch von der Umgebung separat dargestellt und die virtuelle Umgebung wird auf einem Nicht-Stereo-Monitor angezeigt.
+% TODO: Umformulieren.
+In dieser Thesis wird hingegen die Karte mithilfe eines HMDs direkt in die Umgebung des Nutzers integriert und der Einfluss der zusätzlichen Tiefenwahrnehmung untersucht.
+\begin{figure}[ptb]
+	\centering
+	\begin{subfigure}{0.6\textwidth}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_ve.png}
+		\caption{}
+		\label{sfig:chittaro2006_ve}
+	\end{subfigure}
 
-\begin{figure}
+	\begin{subfigure}{0.6\textwidth}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_3dm.png}
+		\caption{}
+		\label{sfig:chittaro2006_3dm}
+	\end{subfigure}
+
+	\begin{subfigure}{0.6\textwidth}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_2dm.png}
+		\caption{}
+		\label{sfig:chittaro2006_2dm}
+	\end{subfigure}
+	\quelle{\cite[230]{Chittaro2006}}
+	\caption{Navigation eines virtuellen Gebäudes \subref{sfig:chittaro2006_ve}. Eine 3D-Karte \subref{sfig:chittaro2006_3dm} oder eine 2D-Karte \subref{sfig:chittaro2006_2dm} unterstützen die Navigation.}
+	\label{fig:chittaro2006_maps}
+\end{figure}
+
+% TODO: Was ist der Mehrwert meiner Arbeit gegenüber dem hier?
+In einem früheren Beitrag erweitern \textcite{Chittaro2005} das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte (\autoref{fig:chittaro2005_breakaway}).
+Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
+\begin{figure}[ptb]
     \begin{subfigure}{.49\textwidth}
         \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_a.png}
 %        \caption{}
@@ -112,9 +139,15 @@ Dies erleichtert die Exploration von Gebäuden, da diese schneller nach den gew�
     \caption{In der \emph{\enquote{Examine View}} der BreakAway-Karte können Stockwerke zur Seite geschoben werden, um den Blick auf darunterliegende Stockwerke zu ermöglichen.}
     \label{fig:chittaro2005_breakaway}
 \end{figure}
+\textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so ein Verdecken durch Wände und andere Objekte zu minimieren.
 
-\textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so eine Verdeckung durch Wände und andere Objekte zu minimieren.
-
+% TODO: Weiter ausführen?
+Auch \textcite{Li2013} untersuchen die Auswirkungen von 2D- und 3D-Darstellungen von mehrstöckigen Gebäuden.
+Satt einer detaillierten Karte wird hier nur eine strukturelle Karte (Flur und Treppen) gezeigt.
+Im Fall der 3D-Karte rotiert die Ansicht automatisch, wenn die Nutzer sich bewegen.
+Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum Aufbau eines räumlichen Verständnisses des Gebäudes eignen.
+Allerdings wurden hier nur zweistöckige Gebäude getestet.
+Für diese Arbeit ist jedoch auch die Skalierung auf Gebäude mit mehr Stockwerken interessant.
 
 \section{Augmentierte Navigation}
 Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
@@ -154,7 +187,6 @@ Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein 
 Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
 Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
 Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
-
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/reitmayr2005_helicopter_map.png}
     \quelle{\cite{Reitmayr2005}}
