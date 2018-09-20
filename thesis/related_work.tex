@@ -23,12 +23,12 @@ Nach \textcite{Azuma1997} bezeichnet \emph{Augmented Reality} Systeme, welche di
 AR selbst lässt sich dabei noch in die Kategorien \emph{Spatial AR} und \emph{See-Through AR} einteilen.
 Bei Spatial AR werden digitale Informationen direkt in die Umgebung des Nutzers projiziert, z.B. mit einem Projektor auf einen Tisch.
 Beim See-Through AR hingegen werden Displays genutzt, die entweder ein Live-Video der Umgebung zeigen oder aber transparent und damit durchsichtig sind.
-Dies können See-Through HMDs wie die Microsoft HoloLens sein, aber auch Smartphones in einer entsprechenden HMD-Halterung, bei denen die Rückseitenkamera für ein Live-Bild der Umgebung genutzt wird.
+Dies können See-Through HMDs wie die HoloLens sein, aber auch Smartphones in einer entsprechenden HMD-Halterung, bei denen die Rückseitenkamera für ein Live-Bild der Umgebung genutzt wird.
 Hier werden die virtuellen Informationen direkt auf dem Display überlagert \autocite{Zachmann2015}.
 
 Bei der \emph{Augmented Virtuality} (AV) werden umgekehrt reale Informationen in eine virtuelle Umgebung eingebettet.
 Als Beispiel nennt \textcite[6]{Schroeder2017} die Wetterkarte im Fernsehen, bei der eine \emph{virtuelle} Karte \emph{reale} Wetterinformationen darstellt und um einen \emph{realen} Moderator erweitert wird.
-Es sei darauf hingewiesen, dass in diesem Beispiel die Interaktion zwischen dem Moderator und der Karte besteht, nicht etwa zwischen dem Zuschauer und der Karte.
+%Es sei darauf hingewiesen, dass in diesem Beispiel die Interaktion zwischen dem Moderator und der Karte besteht, nicht etwa zwischen dem Zuschauer und der Karte.
 
 \emph{Virtual Reality} ist die Bezeichnung für Anwendungen, die sich komplett in einer virtuellen Umgebung abspielen.
 Um VR von herkömmlichen Computersimulationen abzugrenzen nennt \textcite{Zachmann2015} die intuitive Echtzeit-Interaktion als ein wichtiges Kriterium.
@@ -47,15 +47,15 @@ Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 % WIM
 Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
 Damit ist die Megamap eine Variante der World-in-Miniature-Metapher (WIM).
-Dies ist ein Ansatz zur Unterstützung von Navigation und Interaktion, der vor allem in virtuellen Welten Anwendung findet.
+Dies ist ein Ansatz zur Unterstützung von Navigation und Interaktion, der aus dem Bereich der VR stammt.
 Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten.
 Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
 
-\textcites{Mulloni2011a}{Mulloni2012} nutzen einen kombinierten Ansatz aus AR-Hinweisen und WIM.\@
+\textcites{Mulloni2011a}{Mulloni2012} präsentieren eine See-Through-AR-Anwendung kombiniert aus AR-Hinweisen und WIM.\@
 Während Nutzer durch ein Gebäude navigieren werden AR-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} auf einem Smartphone angezeigt (\autoref{sfig:mulloni2011_wim_b}, \subref{sfig:mulloni2011_wim_e}).
 Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort (\autoref{sfig:mulloni2011_wim_a}, \subref{sfig:mulloni2011_wim_c}, \subref{sfig:mulloni2011_wim_d}).
-Laut dem Ergebnis der Studie der Autoren hilft die WIM-Übersicht den Nutzern, gewisse Orientierungspunkte (\emph{\enquote{Landmarks}}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
-Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnliche Sicht der näheren Umgebung liefert.
+Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
+%Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnliche Sicht der näheren Umgebung liefert.
 \begin{figure}[t]
     \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_a.png}
@@ -91,13 +91,11 @@ Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnlich
     \label{fig:mulloni2011_wim}
 \end{figure}
 
-Eine Arbeit, die der Umsetzung dieser Thesis nahe kommt, ist die Untersuchung 2D- und 3D-Karten als Navigationshilfe für mehrstöckige Gebäude durch \autocite[siehe \autoref{fig:chittaro2006_maps}]{Chittaro2006}.
+Ein Ansatz, welcher der Umsetzung dieser Arbeit nahe kommt, ist die Untersuchung 2D- und 3D-Karten als Navigationshilfe für mehrstöckige Gebäude durch \autocite[siehe \autoref{fig:chittaro2006_maps}]{Chittaro2006}.
 Dabei bewegen sich die Nutzer durch ein virtuelles Gebäude von einem Zielobjekt zu einem anderen.
 Die Autoren stellen fest, dass für die reine Navigation zwischen zwei Punkten eine 2D-Karte effektiver ist.
-Allerdings liegt das räumliche Verständnis von den Positionen der Objekte im Gebäude in beiden Darstellungen gleich auf.
+Allerdings baut sich die räumliche Vorstellung der Objekte im Gebäude in beiden Darstellungen gleichermaßen auf.
 Bei \parencite{Chittaro2006} werden die Karten jedoch von der Umgebung separat dargestellt und die virtuelle Umgebung wird auf einem Nicht-Stereo-Monitor angezeigt.
-% TODO: Umformulieren.
-In dieser Thesis wird hingegen die Karte mithilfe eines HMDs direkt in die Umgebung des Nutzers integriert und der Einfluss der zusätzlichen Tiefenwahrnehmung untersucht.
 \begin{figure}[ptb]
 	\centering
 	\begin{subfigure}{0.6\textwidth}
@@ -149,7 +147,7 @@ Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum A
 Allerdings wurden hier nur zweistöckige Gebäude getestet.
 Für diese Arbeit ist jedoch auch die Skalierung auf Gebäude mit mehr Stockwerken interessant.
 
-\section{Augmentierte Navigation}
+\section{Virtuelle Navigationshelfer}
 Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
 Der eine Nutzer bewegt sich zu Fuß mit einem HMD und einem Tablet-Computer in der Außenwelt.
 Durch das HMD können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
@@ -174,11 +172,9 @@ Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartp
 Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
 Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
 Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
-% TODO: Diesen Satz anpassen, je nachdem wie die Entwicklung der Megamap ausgeht.
-Das zeigt, dass AR-unterstützte Kartenanwendungen durchaus auch innerhalb von Gebäuden umsetzbar sind.
 
 \section{Digitale Kartenexploration}
-Zur AR-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
+Zur Kartenexploration mittels Spatial AR tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
 \autoref{fig:reitmayr2005_helicopter_map} zeigt die Funktionsweise.
 Ein projizierter Helikopter kann mit einem realen \emph{Personal Digital Assistant} (PDA) bewegt werden, wenn dieser in die Nähe gehalten wird.
 Der PDA zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
@@ -206,5 +202,19 @@ Dazu wurden unterschiedliche Helfer, wie sie aus Spielen bekannt sind, für das 
 In einem Test, aufgeteilt in die Aufgabenbereiche Navigation, Orientierung, Exploration und Annotation, wurde ermittelt welche der Helfer den Nutzern bei der jeweiligen Aufgabe am hilfreichsten sind.
 Es zeigt sich, dass Helfer, die in der Umgebung eingebettet sind (z.B. AR-Pfeile oder -Text, farbliche Hervorhebungen von Objekten) effektiver sind als statische Anzeigen per \emph{Head-Up Display} (HUD).
 Daher wird bei der Entwicklung der Megamap-Anwendung der AR-Darstellung von Inhalten mehr Beachtung geschenkt.
+
+\section{Beitrag dieser Masterarbeit}
+Diese Arbeit hebt sich in zwei Aspekten vom bisherigen Stand der Forschung ab.
+Zum einen wird eine Kartenanwendung speziell für ein VR-HMD entwickelt.
+Dadurch kann die Karte direkt in die (virtuelle) Umgebung des Nutzer eingebettet werden.
+Die Verwendung des Stereodisplays im HMD erweitert die Tiefenwahrnehmung der Nutzer, was für die Betrachtung der komplexen mehrstöckigen Innenstrukturen von Gebäuden hilfreich ist. % TODO: Ist das so?
+Die Implementierung für ein VR-HMD kann als Sprungbrett für zukünftige Arbeiten betrachtet werden, die das gleiche Konzept für MR-HMDs umsetzen könnten, bei denen die Karte in die \emph{reale} Umgebung des Nutzers integriert wird (siehe \autoref{chap:closing}).
+
+Zum anderen wird der Anwendungsfall der Indoor-Kartenexploration näher beleuchtet.
+Wie zu sehen ist setzen sich die bisherigen Ansätze im Bezug auf Indoor-Orte meistens nur mit der reinen Navigation auseinander oder Lokalisierung auseinander.
+Diese Arbeit fokussiert hingegen die Kartenexploration.
+Zu diesem Zweck wird unter anderem analysiert, wie bereits existierende Kartenanwendungen den Nutzern das Erkunden ihrer Umgebung vereinfachen.
+Dabei beschränkt sich die Analyse nicht nur auf Indoor-Anwendungen, sondern bezieht auch Outdoor-Anwendungen (z.B. Google Maps) oder gar digitale Spiele mit ein.
+Schließlich werden die hieraus gewonnenen Erkenntnisse auf den Indoor-Einsatz übertragen und prototypisch implementiert.
 %
 \cleardoublepage
