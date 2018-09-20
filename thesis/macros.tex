@@ -5,4 +5,7 @@
 }
 \newcommand{\wifi}{\mbox{Wi-Fi}}
 \newcommand{\unity}[1]{#1}
-\newcommand{\imagebox}[1]{\framebox[\textwidth]{#1}}
+\newcommand{\imagebox}[1]{%
+	{\color{black!25}%
+	\framebox[\textwidth]{\normalcolor #1}}%
+}
