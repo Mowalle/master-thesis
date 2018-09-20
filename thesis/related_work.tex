@@ -45,52 +45,6 @@ Aber auch halb-immersive Displays wie eine \emph{Cave}, eine \emph{Powerwall} od
 Dieser wird in der Literatur als Oberbegriff sowohl für AR als auch AV verwendet.
 Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 
-\section{Augmentierte Navigation}
-Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
-Der eine Nutzer bewegt sich zu Fuß mit einem HMD und einem Tablet-Computer in der Außenwelt.
-Durch das HMD können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
-Der andere Nutzer kann entweder über ein Desktop-Interface oder eine AR-Darstellung der Karte Routen und Informationen in der Umgebung platzieren.
-Damit stellt diese Arbeit eine frühe Implementierung für ein HMD dar, die sowohl Navigations- als auch Explorationsaufgaben unterstützt.
-
-Wie bereits in \autoref{sec:motivation_ziel} erwähnt fokussiert sich ein großer Teil der bisherigen Forschung auf den Usecase der Navigation von einem Punkt zu einem anderen.
-Vor allem das AR-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Fehlerfall sogar fatale Folgen haben kann \parencite{Lin2017}.
-Ein häufig eingesetztes Mittel ist hier die virtuelle Hervorhebung der Straßenführung.
-\textcite{Narzt2006} präsentieren ein allgemeines Framework zur Darstellung einer virtuellen Route.
-Das Framwork kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
-Für den Einsatz im Auto schlagen die Autoren die Windschutzscheibe als Display vor.
-Dadurch wäre das AR-Display in der natürlichen Umgebung des Nutzers integriert.
-\textcite{Bark2014} erweitern diesen Ansatz.
-Sie ersetzen in einem zuvor aufgenommenen Video die statische virtuelle Route durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen.
-\textcite{Kim2009} ersetzen die Route sogar durch eine 2.5D-Karte mithilfe eines Fahrsimulators.
-Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld, die sich nach und nach dreidimensional mit der Straße verbindet.
-Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen \emph{top-down} GPS-System nach, dass die Probanden dem Straßenverlauf durch die AR-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
-
-\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Navigation als \emph{Android-App}.
-Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
-Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
-Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
-Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
-% TODO: Diesen Satz anpassen, je nachdem wie die Entwicklung der Megamap ausgeht.
-Das zeigt, dass AR-unterstützte Kartenanwendungen durchaus auch innerhalb von Gebäuden umsetzbar sind.
-
-\section{Digitale Kartenexploration}
-Zur AR-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
-\autoref{fig:reitmayr2005_helicopter_map} zeigt die Funktionsweise.
-Ein projizierter Helikopter kann mit einem realen \emph{Personal Digital Assistant} (PDA) bewegt werden, wenn dieser in die Nähe gehalten wird.
-Der PDA zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
-Der Helikopter dient als Cursor für kontextbasierte Informationen.
-Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein Bild der aktuellen Kartenposition aus ungefährer Sicht des Helikopters auf ihn.
-Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
-Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
-Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{figures/reitmayr2005_helicopter_map.png}
-    \quelle{\cite{Reitmayr2005}}
-    \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert.}
-    \label{fig:reitmayr2005_helicopter_map}
-\end{figure}
-
 \section{Virtuelle Umgebungen als World-in-Miniature}
 % WIM
 Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
@@ -160,6 +114,53 @@ Dies erleichtert die Exploration von Gebäuden, da diese schneller nach den gew�
 \end{figure}
 
 \textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so eine Verdeckung durch Wände und andere Objekte zu minimieren.
+
+
+\section{Augmentierte Navigation}
+Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
+Der eine Nutzer bewegt sich zu Fuß mit einem HMD und einem Tablet-Computer in der Außenwelt.
+Durch das HMD können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
+Der andere Nutzer kann entweder über ein Desktop-Interface oder eine AR-Darstellung der Karte Routen und Informationen in der Umgebung platzieren.
+Damit stellt diese Arbeit eine frühe Implementierung für ein HMD dar, die sowohl Navigations- als auch Explorationsaufgaben unterstützt.
+
+Wie bereits in \autoref{sec:motivation_ziel} erwähnt fokussiert sich ein großer Teil der bisherigen Forschung auf den Usecase der Navigation von einem Punkt zu einem anderen.
+Vor allem das AR-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Fehlerfall sogar fatale Folgen haben kann \parencite{Lin2017}.
+Ein häufig eingesetztes Mittel ist hier die virtuelle Hervorhebung der Straßenführung.
+\textcite{Narzt2006} präsentieren ein allgemeines Framework zur Darstellung einer virtuellen Route.
+Das Framwork kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
+Für den Einsatz im Auto schlagen die Autoren die Windschutzscheibe als Display vor.
+Dadurch wäre das AR-Display in der natürlichen Umgebung des Nutzers integriert.
+\textcite{Bark2014} erweitern diesen Ansatz.
+Sie ersetzen in einem zuvor aufgenommenen Video die statische virtuelle Route durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen.
+\textcite{Kim2009} ersetzen die Route sogar durch eine 2.5D-Karte mithilfe eines Fahrsimulators.
+Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld, die sich nach und nach dreidimensional mit der Straße verbindet.
+Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen \emph{top-down} GPS-System nach, dass die Probanden dem Straßenverlauf durch die AR-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
+
+\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Navigation als \emph{Android-App}.
+Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
+Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
+Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
+Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
+% TODO: Diesen Satz anpassen, je nachdem wie die Entwicklung der Megamap ausgeht.
+Das zeigt, dass AR-unterstützte Kartenanwendungen durchaus auch innerhalb von Gebäuden umsetzbar sind.
+
+\section{Digitale Kartenexploration}
+Zur AR-Exploration tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
+\autoref{fig:reitmayr2005_helicopter_map} zeigt die Funktionsweise.
+Ein projizierter Helikopter kann mit einem realen \emph{Personal Digital Assistant} (PDA) bewegt werden, wenn dieser in die Nähe gehalten wird.
+Der PDA zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
+Der Helikopter dient als Cursor für kontextbasierte Informationen.
+Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein Bild der aktuellen Kartenposition aus ungefährer Sicht des Helikopters auf ihn.
+Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
+Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
+Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/reitmayr2005_helicopter_map.png}
+    \quelle{\cite{Reitmayr2005}}
+    \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert.}
+    \label{fig:reitmayr2005_helicopter_map}
+\end{figure}
 
 \section{Kartenexploration in digitalen Spielen}
 % TODO Übergang?
