@@ -1,6 +1,6 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
-Durch den technischen Fortschritt in den letzten Jahren hat sich der Einsatz von Augmented Reality (AR) und Virtual Reality (VR) in vielen verschiedenen Anwendungsbereichen etabliert.
+Durch den technischen Fortschritt in den letzten Jahren hat sich der Einsatz von Augmented Reality (AR) und Virtual Reality (VR) in verschiedenen Anwendungsbereichen etabliert.
 Die weite Verbreitung von Smartphones ermöglicht die Entwicklungen von AR- und VR-Anwendungen, welche die Sensoren dieser Geräte (Kameras, Gyrosensor, etc.) ausnutzen.
 Aber auch unterschiedliche Head-Mounted Displays (HMDs), wie z.B. die \emph{Microsoft HoloLens} \parencite{Microsoft2018} oder die \emph{HTC Vive} \parencite{HTCCorporation2018}, werden zunehmend in Forschung und Industrie eingesetzt.
 
@@ -15,13 +15,13 @@ Darüber hinaus wird in der Industrie bereits versucht, solche Hinweise direkt i
 
 \section{Motivation und Ziel der Arbeit}
 \label{sec:motivation_ziel}
-Die ursprüngliche Idee für diese Masterarbeit stammt aus dem Spiel \emph{Tom Clancy's The Division} (TCTD) \parencite{Ubisoft2018}, in welches das Konzept einer \enquote{Megamap} umsetzt (\autoref{fig:megamap}).
+Die ursprüngliche Idee für diese Masterarbeit stammt aus dem Spiel \emph{Tom Clancy's The Division} (TCTD) \parencite{Ubisoft2018}, welches das Konzept einer \enquote{Megamap} umsetzt (\autoref{fig:megamap}).
 Eine Karte der Umgebung (eine kleine Variante von New York) wird mit relevanten Spielobjekten und Ortsnamen \emph{im Spiel} als AR-Interface um den Charakter herum angezeigt.
 Die Karte erlaubt dem Spieler unter anderem, Wegpunkte festzulegen (Navigation), interessante Punkte in der Umgebung anzuzeigen und zu filtern (Exploration) sowie die Ansicht durch Verschieben und Zoomen der Karte anzupassen.
 Ebenso werden Missionsziele, andere Charaktere und Events durch Icons in der Karte hervorgehoben.
 All diese Informationen sind vom aktuellen Kontext des Spiels abhängig.
 Das heißt, es werden nur Informationen angezeigt die für die aktuelle Spielsituation des Spielers relevant sind.
-\begin{figure}[bth]
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{figures/the_division_megamap.jpg}
     \quelle{\cite{MYDIVISION.NET2014}}
@@ -47,7 +47,7 @@ Dafür gibt es mehrere Gründe:
     Allgemein gesagt geht es bei der Kartenexploration um die \enquote{Entdeckung} von Orten anhand von Karten.
     Diese Anwendungsfälle werden jedoch, in Bezug auf Unterstützung durch AR/VR, seltener behandelt als die Unterstützung der reinen Navigation.
 
-    \item Die bisherigen Ansätze stützen sich meistens auf den Einsatz von Smartphones oder anderen Handgeräten.
+    \item Die Ansätze in der Literatur nutzen in der Regel Smartphones oder andere Handgeräte.
     Obwohl die Entwicklung dieser Geräte technologisch rasch voranschreitet, sind sie auf die Möglichkeiten der Kamera-Bildsensoren, Gyrosensoren und GPS-Sensoren beschränkt.
     Z.B. ist die dreidimensionale Rekonstruktion einer Szene, wenn überhaupt, nur sehr vereinfacht möglich.
 \end{enumerate}
@@ -60,9 +60,9 @@ Im schlimmsten Fall kann es zu schweren Unfällen kommen wenn die Nutzer auf die
 
 Weitere Schwierigkeiten ergeben sich bei der Darstellung von \emph{Indoor}-Karten (Karten von Gebäuden).
 Die Überlagerung von mehreren Stockwerken stellt ebenso ein Problem dar wie die Tatsache, dass das GPS innerhalb von Gebäuden nicht verfügbar ist.
-Daher setzen sich viele existierende Ansätze mit der \emph{Navigation} oder Lokalisierung innerhalb von Gebäuden auseinander.
-Der Anwendungsfall der Karten\emph{exploration} von Gebäuden wird hingegen bisher kaum behandelt.
-Weil kaum öffentliche Gebäudedaten verfügbar sind (im Gegensatz zu \emph{Outdoor}-Daten wie z.B. von \emph{Open Street Map}) wird die Situation weiter erschwert.
+Daher setzen sich viele existierende Ansätze mit der Navigation oder Lokalisierung innerhalb von Gebäuden auseinander.
+Der Anwendungsfall der Karten\emph{exploration} von Gebäuden wird hingegen bisher wenig behandelt.
+Weil kaum öffentliche Gebäudedaten verfügbar sind (im Gegensatz zu \emph{Outdoor}-Daten wie z.B. von \emph{Open Street Map} \parencite{OpenStreetMapFoundation2018}) wird die Situation weiter erschwert.
 
 Auf die gennanten Probleme wird in dieser Masterarbeit eingegangen.
 Zu diesem Zweck wird eine Indoor-Megamap-Kartenanwendung für den Anwendungsfall der Kartenexploration entwickelt.
@@ -80,9 +80,9 @@ Die reale Umgebung bleibt dank des durchsichtigen Glases weiterhin sichtbar.
 Zudem können die Hände für Gesteninteraktionen oder Kontroller verwendet werden anstatt das Display halten zu müssen.
 
 Die ursprüngliche Idee war die Implementierung der Megamap für das Magic Leap One HMD.
-Da dieses aber zum Zeitpunkt des Verfassens der Arbeit nicht öffentlich verfügbar ist, wird die Implementierung für das Vive-HMD in VR umgesetzt.
+Da dieses aber zum Zeitpunkt des Verfassens der Arbeit nicht öffentlich verfügbar ist, wird stattdessen die Implementierung für das Vive-HMD in VR umgesetzt.
 Die \enquote{reale} Umgebung des Nutzers wird dabei virtuell nachgebildet.
-Dadurch lässt sich die in dieser Arbeit entwickelte Anwendung später auf ein MR-HMD übertragen.
+Dadurch lässt sich die Megamap-Anwendung in zukünftigen Arbeiten auf ein MR-HMD übertragen.
 
 Die Implementierung der Megamap dient der Beantwortung der zentralen Fragestellung dieser Arbeit:
 \begin{quote}

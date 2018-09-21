@@ -2,7 +2,7 @@
 \label{chap:related_work}
 
 \section{Von Realität bis Virtualität}
-Um die folgenden Forschungsbeiträge richtig einordnen zu können, müssen vorab die Besonderheiten von AR/VR-Anwendungen zu herkömmlichen Computerprogrammen und mobilen Applikationen geklärt werden.
+Um die folgenden Forschungsbeiträge thematisch einordnen zu können, müssen vorab die Besonderheiten von AR/VR-Anwendungen zu herkömmlichen Computerprogrammen und mobilen Applikationen geklärt werden.
 
 \textcite{Milgram1994} stellen das Konzept eines Kontinuums von Realität zur Virtualität vor (siehe \autoref{fig:rv_kontinuum}).
 Anwendungen und Technologien lassen sich dabei in dieses Kontinuum einordnen.
@@ -44,7 +44,7 @@ Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 \section{World-in-Miniature zur Unterstützung der Indoor-Navigation}
 % WIM
 Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
-Damit ist die Megamap eine Variante der World-in-Miniature-Metapher (WIM).
+Damit ist die Megamap eine Variante der \emph{World-in-Miniature}-Metapher (WIM).
 Dies ist ein Ansatz zur Unterstützung von Navigation und Interaktion, der aus dem Bereich der VR stammt.
 Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten.
 Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
@@ -138,7 +138,7 @@ Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um
 \textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so ein Verdecken durch Wände und andere Objekte zu minimieren.
 
 % TODO: Weiter ausführen?
-Auch \textcite{Li2013} untersuchen die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen von mehrstöckigen Gebäuden.
+\textcite{Li2013} untersuchen die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen von mehrstöckigen Gebäuden.
 Satt einer detaillierten Karte wird hier nur eine strukturelle Karte (Flur und Treppen) gezeigt.
 Im Fall der 3D-Karte rotiert die Ansicht automatisch, wenn die Nutzer sich bewegen.
 Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum Aufbau eines räumlichen Verständnisses des Gebäudes eignen.
@@ -153,7 +153,7 @@ Der andere Nutzer kann entweder über ein Desktop-Interface oder eine AR-Darstel
 Damit stellt diese Arbeit eine frühe Implementierung für ein HMD dar, die sowohl Navigations- als auch Explorationsaufgaben unterstützt.
 
 Wie bereits in \autoref{sec:motivation_ziel} erwähnt fokussiert sich ein großer Teil der bisherigen Forschung auf den Usecase der Navigation von einem Punkt zu einem anderen.
-Vor allem das AR-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Fehlerfall sogar fatale Folgen haben kann \parencite{Lin2017}.
+Vor allem das AR-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Ernstfall sogar fatale Folgen haben kann \parencite{Lin2017}.
 Ein häufig eingesetztes Mittel ist hier die virtuelle Hervorhebung der Straßenführung.
 \textcite{Narzt2006} präsentieren ein allgemeines Framework zur Darstellung einer virtuellen Route.
 Das Framwork kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
@@ -165,11 +165,12 @@ Sie ersetzen in einem zuvor aufgenommenen Video die statische virtuelle Route du
 Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld, die sich nach und nach dreidimensional mit der Straße verbindet.
 Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen \emph{top-down} GPS-System nach, dass die Probanden dem Straßenverlauf durch die AR-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
 
-\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Navigation als \emph{Android-App}.
+\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Na\-vi\-ga\-tion als \emph{Android-App}.
 Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
 Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
 Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
 Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
+\clearpage % FINAL FORMATTING
 
 \section{Augmentierte Kartenexploration}
 Zur Kartenexploration mittels Spatial AR tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
@@ -190,9 +191,7 @@ Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer
 
 \section{Navigation und Exploration in digitalen Spielen}
 Wie in \autoref{sec:motivation_ziel} erwähnt nehmen Navigation und Exploration eine wichtige Rolle in digitalen Spielen ein.
-Daher finden sich zu diesen Themen verschiedene Herangehensweisen.
-
-Im Bereich der Video- und Computerspiele untersuchen \textcites{Moura2014}{Moura2015} den Zusammenhang zwischen eingesetzten Navigationshelfern, Design der Level, sowie Spielmechaniken zur Unterstützung der Navigation.
+\textcites{Moura2014}{Moura2015} untersuchen den Zusammenhang zwischen eingesetzten Navigationshelfern, Design der Level, sowie Spielmechaniken zur Unterstützung der Navigation.
 Daraus leiten \textcite{Moura2015} eine Klassifikation von Navigationshelfern ab.
 Außerdem erstellen sie eine Liste von Design-Richtlinien, welche die Vor- und Nachteile der jeweiligen Helfer erläutern und als Hilfestellung für Entwicklung von neuen Spielen dienen.
 Diese Designrichtlinien werden in die Entwicklung der Megamap mit einbezogen.
@@ -201,19 +200,20 @@ Aufbauend auf die Navigationshelfer in Spielen untersucht \textcite{Lodts2015}, 
 Dazu wurden unterschiedliche Helfer, wie sie aus Spielen bekannt sind, für das \emph{Google Glass} implementiert.
 In einem Test, aufgeteilt in die Aufgabenbereiche Navigation, Orientierung, Exploration und Annotation, wurde ermittelt welche der Helfer den Nutzern bei der jeweiligen Aufgabe am hilfreichsten sind.
 Es zeigt sich, dass Helfer, die in der Umgebung eingebettet sind (z.B. AR-Pfeile oder -Text, farbliche Hervorhebungen von Objekten) effektiver sind als statische Anzeigen per \emph{Head-Up Display} (HUD).
-Daher wird bei der Entwicklung der Megamap-Anwendung der AR-Darstellung von Inhalten mehr Beachtung geschenkt.
+Dies spricht für den Ansatz dieser Arbeit, eine Karte in die Umgebung des Nutzers zu integrieren.
 
 \section{Beitrag dieser Masterarbeit}
 Diese Arbeit hebt sich in zwei Aspekten vom bisherigen Stand der Forschung ab.
 Zum einen wird eine Kartenanwendung speziell für ein VR-HMD entwickelt.
 Dadurch kann die Karte direkt in die (virtuelle) Umgebung des Nutzer eingebettet werden.
-Die Verwendung des Stereodisplays im HMD erweitert die Tiefenwahrnehmung der Nutzer, was für die Betrachtung der komplexen mehrstöckigen Innenstrukturen von Gebäuden hilfreich ist. % TODO: Ist das so?
-Die Implementierung für ein VR-HMD kann als Sprungbrett für zukünftige Arbeiten betrachtet werden, die das gleiche Konzept für MR-HMDs umsetzen könnten, bei denen die Karte in die \emph{reale} Umgebung des Nutzers integriert wird (siehe \autoref{chap:closing}).
+Die Verwendung des Stereodisplays im HMD erweitert die Tiefenwahrnehmung der Nutzer, was für die Betrachtung der komplexen mehrstöckigen Innenstrukturen von Gebäuden hilfreich ist \parencite[vgl.][]{Rantakari2017}.
+Die Implementierung für ein VR-HMD kann als Sprungbrett für zukünftige Arbeiten betrachtet werden, die das gleiche Konzept für MR-HMDs umsetzen könnten, bei denen die Karte in die \emph{reale} Umgebung des Nutzers integriert wird.
+In \autoref{chap:closing} wird näher auf die Herausforderungen bei einer Umsetzung für MR-HMDs eingegangen.
 
 Zum anderen wird der Anwendungsfall der Indoor-Kartenexploration näher beleuchtet.
-Wie zu sehen ist setzen sich die bisherigen Ansätze im Bezug auf Indoor-Orte meistens nur mit der reinen Navigation auseinander oder Lokalisierung auseinander.
-Diese Arbeit fokussiert hingegen die Kartenexploration.
-Zu diesem Zweck wird unter anderem analysiert, wie bereits existierende Kartenanwendungen den Nutzern das Erkunden ihrer Umgebung vereinfachen.
+Wie zu sehen ist setzen sich die bisherigen Ansätze im Bezug auf Indoor-Orte meistens nur mit der reinen Navigation oder Lokalisierung auseinander.
+Diese Arbeit fokussiert hingegen die Karten\emph{exploration}.
+Zu diesem Zweck wird analysiert, wie bereits existierende Kartenanwendungen das Erkunden der Umgebung vereinfachen.
 Dabei beschränkt sich die Analyse nicht nur auf Indoor-Anwendungen, sondern bezieht auch Outdoor-Anwendungen (z.B. Google Maps) oder gar digitale Spiele mit ein.
 Schließlich werden die hieraus gewonnenen Erkenntnisse auf den Indoor-Einsatz übertragen und prototypisch implementiert.
 %
