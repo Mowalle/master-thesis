@@ -20,6 +20,7 @@
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{siunitx}
+\sisetup{locale = DE}
 
 \usepackage{hyperref}
 
@@ -80,7 +81,6 @@ Ziel dieser Studie ist, die von den Probanden prä\-fe\-rier\-ten Einstellungen 
 \end{figure}
 Für die unterschiedlichen Eigenschaften werden jeweils zwei Werte getestet: \emph{niedrig} (\emph{low}/$_l$) und \emph{hoch} (\emph{high}/$_h$).
 \autoref{tab:values} gibt die entsprechenden Werte an.
-% TODO: Werte aus Unity einsetzen.
 \begin{table}[hb]
     \centering
     \caption{Die zu testenden Parameterwerte der Megamap. %
@@ -88,8 +88,8 @@ Für die unterschiedlichen Eigenschaften werden jeweils zwei Werte getestet: \em
     \label{tab:values}
     \begin{tabular}{cccc}
         Wert & $S$ [Verhältnis Karte zu Umgebung] & $H$ [in \si{\meter}] & $W$ [???] \\\toprule
-        \emph{low} & 1 : ??? & & \\\midrule
-        \emph{high} & 1 : ??? & & \\\bottomrule
+        \emph{low} & 1 : 10 & \num{0.25}\si{\meter} & \num{0.3}\si{\meter} \\\midrule
+        \emph{high} & 1 : 30 & \num{0.5}\si{\meter} & \num{0.9}\si{\meter} \\\bottomrule
     \end{tabular}
 \end{table}
 
