@@ -1,7 +1,7 @@
 \documentclass[
     draft=false,
     paper=a4,
-    fontsize=11pt,
+    fontsize=12pt,
     twoside=false,
     captions=tableheading,
     british, ngerman,
@@ -18,7 +18,6 @@
 
 \usepackage{booktabs}
 \usepackage{csquotes}
-%\usepackage{minipage}
 \usepackage{graphicx}
 \usepackage{siunitx}
 
@@ -116,9 +115,13 @@ Hierfür müssen die Probanden auf der Megamap Zielobjekte finden, die durch vir
 Die Zielobjekte lassen sich anhand der Farbe und Icons der Stecknadeln unterscheiden.
 Die Aufgabe für die Probanden besteht darin, sich in der virtuellen Umgebung zu den gesuchten Zielobjekten bzw. deren Stecknadeln zu bewegen.
 Die Probanden \enquote{berühren} dann mit dem Vive-Controller die Stecknadel und drücken den Trigger, wodurch sich ein Informationsfeld zu dem Ort öffnet.
-Ebenfalls wird ein Button zum Auswählen des Zielobjekts dargestellt, welcher ebenfalls durch den Trigger des Controllers betätigt werden kann.
-Das Auswählen dient der Zeitmessung.
-% TODO: Mehr auf Zeitmessung eingehen.
+Ebenfalls wird ein Button zum Auswählen des Zielobjekts dargestellt, welcher durch den Trigger des Controllers betätigt werden kann (siehe \autoref{fig:concept_location_info}).
+Das Auswählen dient der Zeitmessung (siehe \autoref{sec:results}).
+\begin{figure}[hbt]
+    \includegraphics[width=\textwidth]{concept_location_info}
+    \caption{Informationen werden angezeigt wenn ein Nutzer eine Stecknadel mithilfe des Vive-Controllers auswählt.}
+    \label{fig:concept_location_info}
+\end{figure}
 
 Die drei Aufgaben laufen immer nach dem gleichen Schema ab:
 \begin{enumerate}
@@ -134,7 +137,7 @@ Nachdem das Zielobjekt ausgewählt ist (siehe oben), wird die Megamap ausgeblend
 Die Probanden sollen mit dem Vive-Controller nun in die Richtung zeigen, in der sich das Zielobjekt in ihrer Umgebung befindet.
 Ein ausgehender Strahl vom Controller assistiert bei der Visualisierung der Richtung.
 Die Probanden bestätigen die Richtung durch Betätigen eines Knopfs am Controller.
-Durch diese Zeige-Aufgaben soll ermittelt werden, ob die unterschiedlichen Konditionen Einfluss auf das räumliche Verständnis der Prbanden haben, unabhängig von deren Präferenzen.
+Durch diese Zeige-Aufgaben soll ermittelt werden, ob die unterschiedlichen Konditionen Einfluss auf das räumliche Verständnis der Probanden haben, unabhängig von deren Präferenzen (siehe \autoref{sec:results}).
 Nach der Zeige-Aufgabe folgt die nächste Such-Aufgabe bzw. die nächste Kondition.
 
 Da alle drei Aufgaben mit der selben Megamap durchgeführt werden, laufen diese immer in der oben gennanten Reihenfolge ab, um so den Lerneffekt in die gemessenen Zeiten miteinbeziehen zu können und die Vergleichbarkeit der Konditionen zu erhalten.
@@ -150,7 +153,36 @@ Zusammengefasst absolviert ein Proband demnach 24 Aufgaben (\emph{Tasks}) $T$:
     K_8: T_{8, 1}, T_{8, 2}, T_{8, 3}
 \end{gather*}
 
-% TODO: Durchführung beschreiben. Tutorial nicht vergessen.
 \section{Ablauf}
+\label{sec:execution}
+Die Probanden werden begrüßt.
+Ihnen wird erklärt, dass es um das Testen einer neuartigen Kartendarstellung in VR geht.
+Die exakte Zielsetzung des Experiments (Ermittlung angenehmer und effizienter Parameter) wird nicht bekanntgegeben.
+Die Probanden unterschreiben eine Erklärung zum Datenschutz sowie den möglichen Risiken der Verwendung des VR-Equipments.
+
+Die Probanden starten mit einem Tutorial.
+Hier wird eine Megamap gezeigt, die in keiner der Konditionen wiederverwendet wird.
+Die Megamap-Parameter sind andere als die in \autoref{tab:values} angegebenen, um eine vorzeitige Tendenz zu verhinden.
+Die Interaktion mit der Megamap sowie die Durchführung der Aufgaben wird vom Versuchsleiter erklärt.
+Nachdem sich die Probanden mit der Bedienung der Megamap-Awendung vertraut gemacht haben (maximal 5~Minuten) startet das eigentliche Experiment.
+
+Wie bereits in \autoref{sec:tasks} beschrieben Durchlaufen die Probanden nacheinander alle acht Konditionen mit jeweils drei Aufgaben (Auswahl und Zeigen).
+Nach jeder Kondition wird ein Fragebogen mit standadisierten Fragen zu den Präferenzen der Nutzer für die aktuellen Einstellungen ausgefüllt.
+Der Fragebogen wird an einem separaten Laptop ausgefüllt.
+Pro Kondition werden 5~Minuten eingeplant.
+
+Wenn alle Konditionen durchlaufen wurden wird ein abschließender Fragebogen zur Meinung der Probanden über das entwickelte System als Ganzes gestellt.
+Damit endet das Experiment.
+
+\section{Auswertung}
+\label{sec:results}
+Mit dieser Studie soll ermittelt werden, welche Einstellungen der Megamap für Nutzer die \emph{effizienteste} Kartenexploration ermöglichen.
+Zu diesem Zweck wird bei den Aufgaben die Zeit gemessen, die die Probanden zur Auswahl einer Stecknadel benötigen.
+Weiterhin wird durch die Zeige-Aufgabe die Abweichung der räumlichen Vorstellung der Probanden zur tatsächlichen Position der Zielobjekte gemessen.
+Die Gesamtabweichung ergibt sich aus den Abweichungen der horizontalen und vertikalen Winkel zwischen dem Zeige-Vector und dem tatsächlichen Vektor vom Controller zum Zielobjekt.
+Die effizienteste Einstellung ist jene, für die die Auswahlzeiten und Richtungsabweichung am niedrigsten sind.
+
+Unabhängig von der Effizienz soll ermittelt werden, welche Einstellungen für die Nutzer am \emph{angenehmsten} sind.
+Die Präferenzen der Probanden werden mit Fragebögen zwischen den Konditionen sowie zum Abschluss des Experiments ermittelt.
 
 \end{document}
