@@ -1,21 +1,33 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
-Durch den technischen Fortschritt in den letzten Jahren hat sich der Einsatz von Augmented Reality (AR) und Virtual Reality (VR) in verschiedenen Anwendungsbereichen etabliert.
-Die weite Verbreitung von Smartphones ermöglicht die Entwicklungen von AR- und VR-Anwendungen, welche die Sensoren dieser Geräte (Kameras, Gyrosensor, etc.) ausnutzen.
-Aber auch unterschiedliche Head-Mounted Displays (HMDs), wie z.B. die \emph{Microsoft HoloLens} \parencite{Microsoft2018} oder die \emph{HTC Vive} \parencite{HTCCorporation2018}, werden zunehmend in Forschung und Industrie eingesetzt.
+Durch den technischen Fortschritt in den letzten Jahren hat sich der Einsatz von \emph{Augmented Reality} (AR) und \emph{Virtual Reality} (VR) in verschiedenen Anwendungsbereichen etabliert \parencites[1]{Krevelen2010}{Zhao2009}[58]{Sharples2008}[1]{Jung2008}.
+Als Nutzungsschnittstelledienen dienen in vielen Anwendungen Smartphones, da die Sensoren (Kameras, Gyrosensor etc.) nun ausreichen, um einfache AR-/VR-Inhalte zu präsentieren \parencites{Li2017b}{Feng2017}{Yoo2015}{Mulloni2012}.
+Neben Smartphones ermöglichen Head-Mounted Displays (HMDs) die Anzeige von \emph{Mixed-Reality-} (MR) und VR-Inhalten.
+Beispielsweise sind hier die \emph{Microsoft HoloLens} \parencite{Microsoft2018} als AR-HMD oder die \emph{HTC Vive} \parencite{HTCCorporation2018} als VR-HMD zu nennen.
 
-Ein Bereich, der von dieser Entwicklung beeinflusst wird, ist die Navigation mit Karten.
-Früher musste z.B. während der Autofahrt mit Papierkarten navigiert werden.
-Mit dem technologischen Fortschritt verbreitete sich der Einsatz von speziellen GPS-Geräten (Global Positioning System), die inzwischen direkt ins Fahrzeug verbaut werden.
-Heutzutage verfügen Smartphones über einen eigenen GPS-Sensor und Apps wie \emph{Google Maps} \parencite{GoogleLLC2018} bieten eine entsprechende Software für die Routenplanung, die Suche nach den nächstgelegenen Restaurants, Öffnungszeiten und Preise von Tankstellen und mehr.
-Häufig bieten diese Apps auch die Möglichkeit der Navigation für Fußgänger, Radfahrer und sogar öffentliche Verkehrsmittel.
+%Ein Bereich, der von dieser Entwicklung beeinflusst wird, ist die Navigation mit Karten.
+%Früher musste z.B. während der Autofahrt mit Papierkarten navigiert werden.
+%Mit dem technologischen Fortschritt verbreitete sich der Einsatz von speziellen GPS-Geräten (Global Positioning System), die inzwischen direkt ins Fahrzeug verbaut werden.
+%Heutzutage verfügen Smartphones über einen eigenen GPS-Sensor und Apps wie \emph{Google Maps} \parencite{GoogleLLC2018} bieten eine entsprechende Software für die Routenplanung, die Suche nach den nächstgelegenen Restaurants, Öffnungszeiten und Preise von Tankstellen und mehr.
+%Häufig bieten diese Apps auch die Möglichkeit der Navigation für Fußgänger, Radfahrer und sogar öffentliche Verkehrsmittel.
 
-Ein großer Teil der Forschung im Bereich AR/VR befasst sich mit dem Thema, wie virtuelle Navigationshelfer die Reise zwischen zwei Punkten verbessern können.
-Darüber hinaus wird in der Industrie bereits versucht, solche Hinweise direkt in die Windschutzscheiben von Fahrzeugen zu integrieren \parencites{Cunningham2017}{Sygic2018}.
+%Ein großer Teil der Forschung im Bereich AR/VR befasst sich mit dem Thema, wie virtuelle Navigationshelfer die Reise zwischen zwei Punkten verbessern können.
+%Darüber hinaus wird in der Industrie bereits versucht, solche Hinweise direkt in die Windschutzscheiben von Fahrzeugen zu integrieren \parencites{Cunningham2017}{Sygic2018}.
+
+% TODO: Formulierung?
+Bei AR wird die Grenze zwischen dem Reellen und dem Virtuellen aufgehoben, indem virtuelle Inhalte in Echtzeit mit sechs Freiheitsgraden der realen Welt überlagert werden.
+Schon in der Vergangenheit wurde von Forschern AR eingesetzt, um räumliche Informationen in der Umgebung von Nutzern anzuzeigen, z.B. um die Navigation zwischen zwei Punkten zu augmentieren.
+Die bisherigen Ansätze fokussieren die AR-unterstützte Schritt-für-Schritt-Navigation \parencites{Hoellerer1999}{Hashish2017}{Mulloni2012} und die Augmentierung von realem Kartenmaterial \parencites{Rohs2009}{Morrison2009}{Reitmayr2005}.
 
 \section{Motivation und Ziel der Arbeit}
 \label{sec:motivation_ziel}
-Die ursprüngliche Idee für diese Masterarbeit stammt aus dem Spiel \emph{Tom Clancy's The Division} (TCTD) \parencite{Ubisoft2018}, welches das Konzept einer \enquote{Megamap} umsetzt (\autoref{fig:megamap}).
+Das Ziel \emph{dieser} Arbeit ist die Entwicklung einer neuartigen Form, räumliche Informationen mithilfe eines HMDs in eine AR-Szene zu integrieren: die \textbf{Megamap}.
+Als Megamap wird in dieser Arbeit einer Kartendarstellung definiert, bei der ein dreidimensionales Abbild der Umgebung um den Nutzer herum gezeigt wird.
+Die Karte ist in einem vekleinerten Maßstab zur Umgebung und ist in diese verankert.
+Das bedeutet, wenn sich der Nutzer in der Welt bewegt, dann bewegt er sich auch auf der Karte.
+Die virtuelle Karte verhählt sich somit, als wäre sie ein reales Objekt in der Umgebung.
+
+Die ursprüngliche Idee für die Megamap-Darstellung stammt aus dem Spiel \emph{Tom Clancy's The Division} (TCTD) \parencite{Ubisoft2018} (siehe \autoref{fig:megamap}).
 Eine Karte der Umgebung (eine kleine Variante von New York) wird mit relevanten Spielobjekten und Ortsnamen \emph{im Spiel} als AR-Interface um den Charakter herum angezeigt.
 Die Karte erlaubt dem Spieler unter anderem, Wegpunkte festzulegen (Navigation), interessante Punkte in der Umgebung anzuzeigen und zu filtern (Exploration) sowie die Ansicht durch Verschieben und Zoomen der Karte anzupassen.
 Ebenso werden Missionsziele, andere Charaktere und Events durch Icons in der Karte hervorgehoben.
@@ -28,53 +40,69 @@ Das heißt, es werden nur Informationen angezeigt die für die aktuelle Spielsit
     \label{fig:megamap}
 \end{figure}
 
-Eine Kartendarstellung existiert in dieser Form bisher nur im Spiel.
-In der realen Welt werden Karten zwar zunehmend durch AR/VR unterstützt.
-Eine Anwendung wie die Megamap aus TCTD, bei der die Karte in die Umgebung integriert ist, gibt es bisher aber noch nicht.
-Dafür gibt es mehrere Gründe:
-\begin{enumerate}
-    \item Die bisherigen Lösungen zur AR-unterstützten Kartenexploration stützen sich meistens auf die Überlagerung von virtuellen Information auf physische Objekte, beispielsweise eine reale Karte.
-    Dabei wird häufig ein Smartphone als \emph{Magic Lens} (\enquote{Magische Lupe},~\cite{Bier1994}) eingesetzt, auf dem die virtuellen Informationen vor dem Hintergrund der Kamera angezeigt werden.
-    Solch ein Ansatz ist jedoch nur Bedingt für den mobilen Einsatz geeignet.
-    Einem Fußgänger würde das gleichzeitige Halten einer Karte und eines Smartphones schwerfallen, besonders während des Laufens.
-    Auch der Einsatz eines Projektors, der die Informationen auf eine Karte projiziert, ist hierfür nicht geeignet.
+%Eine Kartendarstellung existiert in dieser Form bisher nur im Spiel.
+%In der realen Welt werden Karten zwar zunehmend durch AR/VR unterstützt.
+%Eine Anwendung wie die Megamap aus TCTD, bei der die Karte in die Umgebung integriert ist, gibt es bisher aber noch nicht.
+%Dafür gibt es mehrere Gründe:
+%\begin{enumerate}
+%    \item Die bisherigen Lösungen zur AR-unterstützten Kartenexploration stützen sich meistens auf die Überlagerung von virtuellen Information auf physische Objekte, beispielsweise eine reale Karte.
+%    Dabei wird häufig ein Smartphone als \emph{Magic Lens} (\enquote{Magische Lupe},~\cite{Bier1994}) eingesetzt, auf dem die virtuellen Informationen vor dem Hintergrund der Kamera angezeigt werden.
+%    Solch ein Ansatz ist jedoch nur Bedingt für den mobilen Einsatz geeignet.
+%    Einem Fußgänger würde das gleichzeitige Halten einer Karte und eines Smartphones schwerfallen, besonders während des Laufens.
+%    Auch der Einsatz eines Projektors, der die Informationen auf eine Karte projiziert, ist hierfür nicht geeignet.
+%
+%    \item Die durch virtuelle Helfer unterstützte Navigation ist ein Ansatz, der sich in der Forschung häufig finden lässt.
+%    Allerdings ist die reine Navigation nicht der einzige Anwendungsfall in Bezug auf Kartenanwendungen.
+%    Wie \textcite{Reichenbacher2001} detailliert beschreibt gibt es weitere Anwendungsfälle, die sich unter dem Oberbegriff der \emph{Kartenexploration} zusammenfassen lassen.
+%    Darin eingeschlossen sind zum Beispiel die zuvor erwähnten Szenarios der Restaurantsuche oder der Anzeige von Fahrt- oder Öffnungszeiten.
+%    Allgemein gesagt geht es bei der Kartenexploration um die \enquote{Entdeckung} von Orten anhand von Karten.
+%    Diese Anwendungsfälle werden jedoch, in Bezug auf Unterstützung durch AR/VR, seltener behandelt als die Unterstützung der reinen Navigation.
+%
+%    \item Die Ansätze in der Literatur nutzen in der Regel Smartphones oder andere Handgeräte.
+%    Obwohl die Entwicklung dieser Geräte technologisch rasch voranschreitet, sind sie auf die Möglichkeiten der Kamera-Bildsensoren, Gyrosensoren und GPS-Sensoren beschränkt.
+%    Z.B. ist die dreidimensionale Rekonstruktion einer Szene, wenn überhaupt, nur sehr vereinfacht möglich.
+%\end{enumerate}
+%
+%Die Integration der Karte in die Umgebung wäre jedoch von Vorteil.
+%Denn eine von der Umgebung getrennte virtuelle Karte, wie es bei vielen aktuellen Smartphone-Anwendungen der Fall ist, kann die Aufmerksamkeit des Nutzers von der eigentlichen Umgebung ablenken.
+%Die Nutzer müssen ständig das virtuelle Bild mit ihrer Umgebung abgleichen.
+%Dies ist nicht nur ein zusätzlicher mentaler Aufwand.
+%Im schlimmsten Fall kann es zu schweren Unfällen kommen wenn die Nutzer auf die virtuelle Darstellung achten oder die dargestellten Informationen beim Abgleich mit der Umgebung fehlinterpretieren \parencites{Medenica2011}{Lin2017}.
+%
+%Weitere Schwierigkeiten ergeben sich bei der Darstellung von \emph{Indoor}-Karten (Karten von Gebäuden).
+%Die Überlagerung von mehreren Stockwerken stellt ebenso ein Problem dar wie die Tatsache, dass das GPS innerhalb von Gebäuden nicht verfügbar ist.
+%Daher setzen sich viele existierende Ansätze mit der Navigation oder Lokalisierung innerhalb von Gebäuden auseinander.
+%Der Anwendungsfall der Karten\emph{exploration} von Gebäuden wird hingegen bisher wenig behandelt.
+%Weil kaum öffentliche Gebäudedaten verfügbar sind (im Gegensatz zu \emph{Outdoor}-Daten wie z.B. von \emph{Open Street Map} \parencite{OpenStreetMapFoundation2018}) wird die Situation weiter erschwert.
 
-    \item Die durch virtuelle Helfer unterstützte Navigation ist ein Ansatz, der sich in der Forschung häufig finden lässt.
-    Allerdings ist die reine Navigation nicht der einzige Anwendungsfall in Bezug auf Kartenanwendungen.
-    Wie \textcite{Reichenbacher2001} detailliert beschreibt gibt es weitere Anwendungsfälle, die sich unter dem Oberbegriff der \emph{Kartenexploration} zusammenfassen lassen.
-    Darin eingeschlossen sind zum Beispiel die zuvor erwähnten Szenarios der Restaurantsuche oder der Anzeige von Fahrt- oder Öffnungszeiten.
-    Allgemein gesagt geht es bei der Kartenexploration um die \enquote{Entdeckung} von Orten anhand von Karten.
-    Diese Anwendungsfälle werden jedoch, in Bezug auf Unterstützung durch AR/VR, seltener behandelt als die Unterstützung der reinen Navigation.
+Eine Darstellung von räumlichen Informationen als Megamap bietet gegenüber herkömmlichen Ansätzen einige Vorteile:
+\begin{itemize}
+    \item Durch die Verwendung des HMDs bleiben die Hände der Nutzer frei. %
+    Sie können die Karte nutzen und gleichzeitig mit beiden Händen mit der Umgebung interagieren.
 
-    \item Die Ansätze in der Literatur nutzen in der Regel Smartphones oder andere Handgeräte.
-    Obwohl die Entwicklung dieser Geräte technologisch rasch voranschreitet, sind sie auf die Möglichkeiten der Kamera-Bildsensoren, Gyrosensoren und GPS-Sensoren beschränkt.
-    Z.B. ist die dreidimensionale Rekonstruktion einer Szene, wenn überhaupt, nur sehr vereinfacht möglich.
-\end{enumerate}
+    \item Da die Kartenansicht in die Umgebung der Nutzer integriert ist, müssen Nutzer die Kartendarstellung mit der Umgebung nicht wiederholt abgleichen. %
+    So wird der Umgebung genug Aufmerksamkeit geschenkt und der mentale Aufwand der Nutzung wird verringert \parencites{}{}.
 
-Die Integration der Karte in die Umgebung wäre jedoch von Vorteil.
-Denn eine von der Umgebung getrennte virtuelle Karte, wie es bei vielen aktuellen Smartphone-Anwendungen der Fall ist, kann die Aufmerksamkeit des Nutzers von der eigentlichen Umgebung ablenken.
-Die Nutzer müssen ständig das virtuelle Bild mit ihrer Umgebung abgleichen.
-Dies ist nicht nur ein zusätzlicher mentaler Aufwand.
-Im schlimmsten Fall kann es zu schweren Unfällen kommen wenn die Nutzer auf die virtuelle Darstellung achten oder die dargestellten Informationen beim Abgleich mit der Umgebung fehlinterpretieren \parencites{Medenica2011}{Lin2017}.
+    \item Dadurch, dass die Karte in die Umgebung verankert ist und sich mit ihr mitbewegt, kann die Megamap auch während der Fortbewegung genutzt werden.
 
-Weitere Schwierigkeiten ergeben sich bei der Darstellung von \emph{Indoor}-Karten (Karten von Gebäuden).
-Die Überlagerung von mehreren Stockwerken stellt ebenso ein Problem dar wie die Tatsache, dass das GPS innerhalb von Gebäuden nicht verfügbar ist.
-Daher setzen sich viele existierende Ansätze mit der Navigation oder Lokalisierung innerhalb von Gebäuden auseinander.
-Der Anwendungsfall der Karten\emph{exploration} von Gebäuden wird hingegen bisher wenig behandelt.
-Weil kaum öffentliche Gebäudedaten verfügbar sind (im Gegensatz zu \emph{Outdoor}-Daten wie z.B. von \emph{Open Street Map} \parencite{OpenStreetMapFoundation2018}) wird die Situation weiter erschwert.
+    \item Mit der Megamap können sowohl Außen- als auch Innenbereiche (z.B. Gebäude) dargestellt werden.
+\end{itemize}
 
-Auf die gennanten Probleme wird in dieser Masterarbeit eingegangen.
-Zu diesem Zweck wird eine Indoor-Megamap-Kartenanwendung für den Anwendungsfall der Kartenexploration entwickelt.
-Hierfür werden öffentlich verfügbare Gebäudedaten genutzt, um eine 3D-Indoor-Repräsentation eines Gebäudes zu erstellen.
-Die 3D-Indoor-Karte wird dann in einer virtuellen Umgebung platziert.
-Nutzer können dann über virtuelle Bedienelemente mit der Karte interagieren.
-Insbesodnere stehen verschiedene explorative Funktionen bereit, beispielsweise das Suchen nach den Büros von Personen oder den Standorten von öffentlichen Druckern.
+Die Recherche des Verfassers ergab keine Anwendungen, die das zuvor beschriebene Konzept einer Megamap umsetzen.
+Daher wird im Rahmen dieser Arbeit eine Megamap-Anwendung entwickelt.
+Spezifisch zielt die Anwendung auf die Nutztung in Innenbereichen wie Gebäude ab, da bisherige MR-HMDs Probleme mit der Verwendung im Freien aufweisen \parencites{Schroeder2017}{Strange2018}.
+
+Da sich außerdem die bisherigen Ansätze mit der Karten\emph{navigation} (\enquote{von A nach B}) beschäftigen, wird in dieser Masterarbeit der Anwendungsfall der Karten\emph{exploration} fokussiert.
+Bei der Kartenexploration geht es um die Erkundung von Umgebungen anhand von kontextbasierten Ortsdaten.
+Kontextbasierte Ortsdaten sind Daten, die von der aktuellen Situation abhängig sind, wie z.B. der aktuellen Position des Nutzers (\textquote{Wo ist das von mir aus nächste Restaurant?}/\textquote{Wieviele Spielplätze sind in meiner Nähe?}).
+Ortsdaten können ebenso von der Zeit abhängen (\textquote{Welche Supermärkte in der Gegend sind geöffnet?}).
+Übertragen auf die Innenbereichsnutzung stehen mit der Megamap verschiedene explorative Funktionen bereit, beispielsweise das Suchen nach den Büros von Personen oder den Standorten von öffentlichen Druckern.
 Nutzer können sich mit der Megamap einen detaillierten Überblick über das Gebäude verschaffen, in dem sie sich befinden.
 
 Als Zielplattform dient das Vive-HMD.
 HMDs haben gegenüber Smartphones einige technische Vorteile.
 Positionen und Orientierungen der Nutzer sind über Tracking präziser möglich.
-\emph{Mixed Reality}-HMDs (MR-HMDs) wie die HoloLens oder die \emph{Magic Leap One} \parencite{MagicLeap2018} verwenden Infrarotkameras, um Strukturen der Umgebung virtuell in Echzeit zu rekonstruieren.
+MR-HMDs wie die HoloLens oder die \emph{Magic Leap One} \parencite{MagicLeap2018} verwenden Infrarotkameras, um Strukturen der Umgebung virtuell in Echzeit zu rekonstruieren.
 Die reale Umgebung bleibt dank des durchsichtigen Glases weiterhin sichtbar.
 Zudem können die Hände für Gesteninteraktionen oder Kontroller verwendet werden anstatt das Display halten zu müssen.
 
@@ -83,20 +111,24 @@ Da dieses aber zum Zeitpunkt des Verfassens der Arbeit nicht öffentlich verfüg
 Die \enquote{reale} Umgebung des Nutzers wird dabei virtuell nachgebildet.
 Dadurch lässt sich die Megamap-Anwendung in zukünftigen Arbeiten auf ein MR-HMD übertragen.
 
-Die Implementierung der Megamap dient der Beantwortung der zentralen Fragestellung dieser Arbeit:
-\begin{quote}
-    \itshape
-    Ist eine in die Umgebung integrierte 3D-Megamap geeignet, um Nutzer bei der Exploration von Gebäuden zu unterstützen?
-\end{quote}
-Der Prototyp wird daher in einer Nutztungsevaluation getestet, um seine Effektivität für die Gebäudeexploration festzustellen.
+%Die Implementierung der Megamap dient der Beantwortung der zentralen Fragestellung dieser Arbeit:
+%\begin{quote}
+%    \itshape
+%    Ist eine in die Umgebung integrierte 3D-Megamap geeignet, um Nutzer bei der Exploration von Gebäuden zu unterstützen?
+%\end{quote}
+%Der Prototyp wird daher in einer Nutztungsevaluation getestet, um seine Effektivität für die Gebäudeexploration festzustellen.
 
-Als Inspirationsquelle für die Anwendung dienen neben bereits existierenden Kartenanwendungen wie Google Maps und Ansätzen aus der Forschung auch digitale Spiele.
-Da in Spielen Aufgaben wie Navigation und Exploration von großer Bedeutung sind, kann hier unterschiedliche Ansätze zur Navigations- und Explorationsunterstützung gefunden werden.
-Dies ist am Beispiel TCTD erkennbar.
+%Als Inspirationsquelle für die Anwendung dienen neben bereits existierenden Kartenanwendungen wie Google Maps und Ansätzen aus der Forschung auch digitale Spiele.
+%Da in Spielen Aufgaben wie Navigation und Exploration von großer Bedeutung sind, kann hier unterschiedliche Ansätze zur Navigations- und Explorationsunterstützung gefunden werden.
+%Dies ist am Beispiel TCTD erkennbar.
+
+Da die Idee für die Megamap einem Videospiel entspringt ist nicht unmittelbar klar, ob sich das Konzept auf die Nutzung in der realen Welt übertragen lässt.
+Insbesondere, da die Megamap aus TCTDs Dritte-Person-Perspektive (\emph{Third-Person Perspective}) in die Egoperspektive überführt wird.
+Diese Arbeit untersucht, wie die wichtigsten Eigenschaften der Megamap (Maßstab zur Umgebung, Höhe in der Umgebung und Höhe der dargestellten Wände) die Nutzbarkeit und Effizient der Karte als Hilfsmittel zur Indoor-Kartenexploration beeinflussen.
 
 \section{Struktur der Arbeit}
 \label{sec:struktur}
-Weitergehend ist diese Arbeit in die folgenden Abschnitte unterteilt:
+Die restliche Arbeit ist in die folgenden Abschnitte unterteilt:
 
 Im nächsten Kapitel wird der Stand der Forschung und Technik zur Darstellung von dreidimensionalen Karten beleuchtet.
 Die Unterschiede zum Konzept dieser Arbeit sowie deren Beitrag zum Thema werden ebenso herausgearbeitet.
