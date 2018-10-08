@@ -72,13 +72,26 @@ Dies sind die Zielobjekte der durchzuführenden Aufgaben (\emph{Tasks}, siehe \a
 % TODO: Sind 8 Konditionen nicht zu viel?
 \section{Konditionen}
 \label{sec:conditions}
-Ziel dieser Studie ist, die von den Probanden prä\-fe\-rier\-ten Einstellungen der Megamap-Ei\-gen\-schaf\-ten Skalierung\ $S$, Kartenhöhe\ $H$ und Wandhöhe\ $W$ zu ermitteln (siehe \autoref{fig:study_design_parameters}).
+Ziel dieser Studie ist, die von den Probanden prä\-fe\-rier\-ten Konfiguration der Megamap zu ermitteln.
+Dabei spielen drei Parameter eine Rolle (siehe \autoref{fig:study_design_parameters}):
+\begin{itemize}
+    \item Die Skalierung\ $S$ bestimmt, wie groß die Megamap im Verhältnis zur tatsächlichen Umgebung des Nutzer ist (in diesem Experiment ist dies das virtuelle Labor).
+
+    \item Die Kartenhöhe\ $H$ bestimmt den Abstand der Megamap zum Fußboden, gemessen in Unity-Einheiten (Metern).
+
+    \item Die Wandhöhe\ $W$ (in Unity-Einheiten/Metern) beeinflusst die Höhe der Wände.
+\end{itemize}
 \begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{study_design_parameters}
     \caption{Für die Eigenschaften Skalierung $S$, Kartenhöhe $H$ und Wandhöhe $W$ der Megamap sind die Präferenzen der Nutzer zu ermitteln.}
     \label{fig:study_design_parameters}
 \end{figure}
+
+Da es bisher keine vergleichbare Studie zu einer Megamap-Implementierung gibt soll mit dieser Studie grundlegend eine nutzbare und effiziente Kombination dieser Parameter gefunden werden.
+Andernfalls könnten nicht zusammenpassende Werte die Megamap unbrauchbar machen.
+Beispielsweise, wenn die Kartenhöhe über der Augenhöhe der Nutzer ist, wenn die Skalierung zu klein/zu groß ist oder wenn die Wandhöhe zusammen mit der Kartenhöhe zu hoch eingestellt ist.
+
 Für die unterschiedlichen Eigenschaften werden jeweils zwei Werte getestet: \emph{niedrig} (\emph{low}/$_l$) und \emph{hoch} (\emph{high}/$_h$).
 \autoref{tab:values} gibt die entsprechenden Werte an.
 \begin{table}[hb]
