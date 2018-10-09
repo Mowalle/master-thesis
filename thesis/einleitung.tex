@@ -1,23 +1,41 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
+
 Durch den technischen Fortschritt in den letzten Jahren hat sich der Einsatz von \emph{Augmented Reality} (AR) und \emph{Virtual Reality} (VR) in verschiedenen Anwendungsbereichen etabliert \parencites[1]{Krevelen2010}{Zhao2009}[58]{Sharples2008}[1]{Jung2008}.
 Als Nutzungsschnittstelledienen dienen in vielen Anwendungen Smartphones, da die Sensoren (Kameras, Gyrosensor etc.) nun ausreichen, um einfache AR-/VR-Inhalte zu präsentieren \parencites{Li2017b}{Feng2017}{Yoo2015}{Mulloni2012}.
 Neben Smartphones ermöglichen Head-Mounted Displays (HMDs) die Anzeige von \emph{Mixed-Reality-} (MR) und VR-Inhalten.
-Beispielsweise sind hier die \emph{Microsoft HoloLens} \parencite{Microsoft2018} als AR-HMD oder die \emph{HTC Vive} \parencite{HTCCorporation2018} als VR-HMD zu nennen.
-
-%Ein Bereich, der von dieser Entwicklung beeinflusst wird, ist die Navigation mit Karten.
-%Früher musste z.B. während der Autofahrt mit Papierkarten navigiert werden.
-%Mit dem technologischen Fortschritt verbreitete sich der Einsatz von speziellen GPS-Geräten (Global Positioning System), die inzwischen direkt ins Fahrzeug verbaut werden.
-%Heutzutage verfügen Smartphones über einen eigenen GPS-Sensor und Apps wie \emph{Google Maps} \parencite{GoogleLLC2018} bieten eine entsprechende Software für die Routenplanung, die Suche nach den nächstgelegenen Restaurants, Öffnungszeiten und Preise von Tankstellen und mehr.
-%Häufig bieten diese Apps auch die Möglichkeit der Navigation für Fußgänger, Radfahrer und sogar öffentliche Verkehrsmittel.
-
-%Ein großer Teil der Forschung im Bereich AR/VR befasst sich mit dem Thema, wie virtuelle Navigationshelfer die Reise zwischen zwei Punkten verbessern können.
-%Darüber hinaus wird in der Industrie bereits versucht, solche Hinweise direkt in die Windschutzscheiben von Fahrzeugen zu integrieren \parencites{Cunningham2017}{Sygic2018}.
+Beispielsweise sind hier die \emph{Microsoft HoloLens} \parencite{Microsoft2018} als AR-HMD oder die \emph{Oculus Rift} \parencite{Facebook2018} und \emph{HTC Vive} \parencite{HTCCorporation2018} als VR-HMD zu nennen (siehe \autoref{fig:devices}).
+\begin{figure}[hb]
+    \centering
+    %\imagebox{%
+    \begin{minipage}{0.3\textwidth}
+        \includegraphics[width=.9\linewidth]{figures/Microsoft2018_HoloLens_worn}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=.9\linewidth]{figures/htc_vive}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.25\textwidth}
+        \includegraphics[width=.9\linewidth]{figures/oculus_rift}
+    \end{minipage}%
+    %}
+    \caption{Diverse MR- und VR-HMDs. Microsoft HoloLens (Links), HTC Vive (Mitte) und Oculus Rift (Rechts). \quelle{\cites{Microsoft2018}{Amazon2018b}{Amazon2018}}}
+    \label{fig:devices}
+\end{figure}
 
 % TODO: Formulierung?
 Bei AR wird die Grenze zwischen dem Reellen und dem Virtuellen aufgehoben, indem virtuelle Inhalte in Echtzeit mit sechs Freiheitsgraden der realen Welt überlagert werden.
-Schon in der Vergangenheit wurde von Forschern AR eingesetzt, um räumliche Informationen in der Umgebung von Nutzern anzuzeigen, z.B. um die Navigation zwischen zwei Punkten zu augmentieren.
+\autoref{fig:mrtouch} zeigt z.B., wie virtuelle Nutzungsschnittstellen in die physische Welt platziert werden und über Berührungsinteraktion gesteuert werden können.
+In der Vergangenheit wurde von Forschern AR unter anderem eingesetzt, um räumliche Informationen in der Umgebung von Nutzern anzuzeigen.
+Beispielsweise wird die Navigation zwischen zwei Punkten augmentiert.
 Die bisherigen Ansätze fokussieren die AR-unterstützte Schritt-für-Schritt-Navigation \parencites{Hoellerer1999}{Hashish2017}{Mulloni2012} und die Augmentierung von realem Kartenmaterial \parencites{Rohs2009}{Morrison2009}{Reitmayr2005}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/mrtouch}
+    \caption{Virtuelle Interfaces werden auf physischen Oberflächen platziert und mittels Berührungsgesten aktiviert. \quelle{\cite{Xiao2018}}}
+    \label{fig:mrtouch}
+\end{figure}
 
 \section{Motivation und Ziel der Arbeit}
 \label{sec:motivation_ziel}
@@ -81,7 +99,7 @@ Eine Darstellung von räumlichen Informationen als Megamap bietet gegenüber her
     Sie können die Karte nutzen und gleichzeitig mit beiden Händen mit der Umgebung interagieren.
 
     \item Da die Kartenansicht in die Umgebung der Nutzer integriert ist, müssen Nutzer die Kartendarstellung mit der Umgebung nicht wiederholt abgleichen. %
-    So wird der Umgebung genug Aufmerksamkeit geschenkt und der mentale Aufwand der Nutzung wird verringert \parencites{}{}.
+    So wird der Umgebung genug Aufmerksamkeit geschenkt und der mentale Aufwand der Nutzung wird verringert \parencites[4\psq]{Bark2014}{Narzt2006}{Kim2009}.
 
     \item Dadurch, dass die Karte in die Umgebung verankert ist und sich mit ihr mitbewegt, kann die Megamap auch während der Fortbewegung genutzt werden.
 
@@ -102,9 +120,15 @@ Nutzer können sich mit der Megamap einen detaillierten Überblick über das Geb
 Als Zielplattform dient das Vive-HMD.
 HMDs haben gegenüber Smartphones einige technische Vorteile.
 Positionen und Orientierungen der Nutzer sind über Tracking präziser möglich.
-MR-HMDs wie die HoloLens oder die \emph{Magic Leap One} \parencite{MagicLeap2018} verwenden Infrarotkameras, um Strukturen der Umgebung virtuell in Echzeit zu rekonstruieren.
+MR-HMDs wie die HoloLens oder die \emph{Magic Leap One} \parencite[siehe \autoref{fig:magic_leap}]{MagicLeap2018} verwenden Infrarotkameras, um Strukturen der Umgebung virtuell in Echzeit zu rekonstruieren.
 Die reale Umgebung bleibt dank des durchsichtigen Glases weiterhin sichtbar.
 Zudem können die Hände für Gesteninteraktionen oder Kontroller verwendet werden anstatt das Display halten zu müssen.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{figures/magic_leap_one}
+    \caption{Das Magic Leap One MR-HMD. \quelle{\cite{Machkovech2017}}}
+    \label{fig:magic_leap}
+\end{figure}
 
 Die ursprüngliche Idee war die Implementierung der Megamap für das Magic Leap One HMD.
 Da dieses aber zum Zeitpunkt des Verfassens der Arbeit nicht öffentlich verfügbar ist, wird stattdessen die Implementierung für das Vive-HMD in VR umgesetzt.
