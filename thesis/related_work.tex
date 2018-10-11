@@ -157,10 +157,10 @@ Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}
     \label{fig:sketch_ar_arrows}
 \end{figure}
 
-% TODO: See-Through erwähnen.
 Ansätze, bei denen virtuelle Objekte als Navigationshelfer mit sechs Freiheitsgraden in die Umgebung integriert werden, bilden die zweite Kategorie.
 Dies wird schematisch in \autoref{fig:sketch_ar_arrows} dargestellt.
-Zu dieser Kategorie lassen sich Arbeiten finden, die sowohl HMDs als auch Handgeräte wie Smartphones als Nutzungsschnittstelle einsetzen.
+Für diese Kategorie ist der Einsatz von See-Through Displays charakterisierend.
+Es lassen sich Arbeiten sowohl mit MR-HMDs als auch Handgeräte wie Smartphones als Nutzungsschnittstelle finden.
 
 Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können (siehe \autoref{fig:hoellerer_mars}).
 Der eine Nutzer bewegt sich zu Fuß mit einem HMD und einem Tablet-Computer in der Außenwelt.
@@ -209,13 +209,19 @@ Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen 
 \end{minipage}
 \end{figure}
 
-%\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Na\-vi\-ga\-tion als \emph{Android-App}.
-%Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
-%Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
-%Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
-%Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
+% TODO: Arbeit mit Sails hinzufügen.
 
-% TODO: Vor-/Nachteile
+Ein Vorteil dieser Herangehensweisen ist, dass die Hände durch die Verwendung eines MR-HMDs oder eines Windschutzscheibendisplays frei bleiben.
+Dadurch haben Nutzer die möglichkeit, Controller oder Fahrzeuge zu bedienen, Gestensteuerung durchzuführen oder direkt mit der Umgebung zu interagieren.
+
+Außerdem bleibt die Umgebung durch das See-Through-Display weiterhin sichtbar.
+So wird der Fokus der Nutzer nicht von der Umgebung auf das Ausgabegerät gelenkt.
+Dies ist vor allem für mobile Szenarios von Vorteil, bei denen längere Strecken zurückgelegt werden und eine höhere Anzahl an Gefahrenstellen (Verkehr, schwierige Straßenführung, etc.) zu erwarten ist.
+
+Die Methode der umgebungsintegrierten virtuellen Helfer hat allerdings auch Nachteile.
+Einerseits stellt die Verwendung von MR-HMDs oder Windschutzscheibendisplays einen erhöhten technischen Aufwand gegenüber Smartphones dar. % TODO: Ausführen!
+Andererseits erfordert die Platzierung der virtuellen Helfer eine hohe Präzision, da die Objekte ansonsten unnatürlich wirken. % TODO: Cite! -> Sails?
+% Nutzer irritiert statt unterstützt?
 
 \subsection{\enquote{Magische Lupe} augmentiert physische Karte}
 \begin{figure}[h]
@@ -249,7 +255,7 @@ Während ein Teil der Gruppen die Magische AR-Lupe verwendet, nutzt der andere T
 Die Autoren entdecken, dass durch die Interaktion mit der Magischen Lupe kollaborative Elemente der Gruppen gefördert werden.
 Dazu gehören Kommunikation, Diskussion und Rollentausch.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth, height=0.25\textheight]{figures/rohs2009_ar_map.png}
@@ -278,7 +284,7 @@ Die Autoren nutzen einen physischen Würfel sowie Marker, um digitale Karten auf
 Durch Rotation des Würfels kann ein angrenzender Kartenabschnitt angezeigt werden.
 Somit nutzen die Autoren den Würfel als taktile Nutzungsschnittstelle für diese AR-Kartenanwendung.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth, height=0.25\textheight]{figures/wiehr2017_artopos.png}
@@ -333,7 +339,7 @@ Die unterschiedlichen Regionen (Wasser, steiles oder flaches Gelände, Wald) wer
 Über einen physischen Avatar kann der Nutzer eine dreidimensionale Variante der Insel über ein VR-HMD betreten.
 Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden kann, um in einer rein virtuellen Umgebung zu navigieren.
 
-\begin{figure}
+\begin{figure}[h]
 \begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth, height=0.25\textheight]{figures/reitmayr2005_helicopter_map}
@@ -350,8 +356,6 @@ Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden ka
 \end{figure}
 
 % TODO: Vor-/Nachteile
-
-\subsection{Zusammenfassung}
 
 \section{Navigation und Exploration in digitalen Spielen}
 Wie in \autoref{sec:motivation_ziel} erwähnt nehmen Navigation und Exploration eine wichtige Rolle in digitalen Spielen ein.
