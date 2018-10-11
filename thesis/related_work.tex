@@ -157,6 +157,7 @@ Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}
     \label{fig:sketch_ar_arrows}
 \end{figure}
 
+% TODO: See-Through erwähnen.
 Ansätze, bei denen virtuelle Objekte als Navigationshelfer mit sechs Freiheitsgraden in die Umgebung integriert werden, bilden die zweite Kategorie.
 Dies wird schematisch in \autoref{fig:sketch_ar_arrows} dargestellt.
 Zu dieser Kategorie lassen sich Arbeiten finden, die sowohl HMDs als auch Handgeräte wie Smartphones als Nutzungsschnittstelle einsetzen.
@@ -193,14 +194,14 @@ Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld
 Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen \emph{top-down} GPS-System nach, dass die Probanden dem Straßenverlauf durch die AR-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
 
 \begin{figure}
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth, height=5cm]{figures/reitmayr2004_path}
     \caption{Virtueller Pfad hebt die Route zum ausgewählten Zielobjekt hervor und wird durch Gebäude verdeckt. \quelle{\cite{Reitmayr2004}}\hfill}
     \label{fig:reitmayr2004_path}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.49\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth, height=5cm]{figures/kim2009_concept_2_5d_map}
     \caption{Konzept einer AR-2.5D-Karte: 2D-Karte schiebt sich vom oberen Bildschirmrand hinunter und \enquote{verschmilzt} mit Straßenführung. \quelle{\cite{Kim2009}}\hfill}
@@ -227,6 +228,80 @@ Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen 
     \caption{Kategorie 3: Physische Karten werden durch virtuelle Inhalte (hier \textcolor{magenta}{Magenta} und \textcolor{cyan}{Türkis}) angereichert.}
     \label{fig:sketch_ar_physical}
 \end{figure}
+
+Ähnlich wie vorigen Abschnitt beschrieben wird in der dritten Kategorie die Realität um digitale Informationen durch See-Through-AR erweitert.
+Jedoch werden die virtuellen Informationen in diesem Fall im Kontext \emph{einzelner physischer Objekte} angezeigt.
+Die Skizze in \autoref{fig:sketch_ar_physical} stellt das Prinzip dar.
+Arbeiten, die dieser Kategorie zugeordnet werden, bedienen sich Bildausgabegeräten (Displays), die gleichzeitig über Kameratechnologie verfügen.
+Sie setzen damit die \enquote{Magische Lupe}-Metapher (\emph{Magic Lens}) um, bei der das Handgerät (wie z.B. ein Smartphone) wie eine Lupe über einem physischen Objekt entlanggeführt wird, um so neue Informationen hervorzubringen.
+Die virtuellen Informationen befinden sich effektiv auf einer transparenten Ebene vor dem Objekt und werden durch das Display des Handgeräts sichtbar gemacht \parencite{Bier1994}.
+Mit den Kameras und entsprechenden Bildverarbeitungsverfahren können einzelne physische Objekte getrackt werden.
+Zur Unterstützung dieser Verfahren werden oft spezielle Markierungen verwendet, die sich von der Umgebung abgheben und besser verfolgt werden können.
+
+Ein Vertreter dieser Kategorie ist die Arbeit von \textcite{Rohs2009}.
+Die Autoren implementieren auf einem Kamerahandy die virtuelle Anzeige von Parkplatz-Kosten vor dem Hintergrund einer physischen Karte (siehe \autoref{fig:rohs2009_ar_map}).
+Sie stellen fest, dass Nutzer mit der Magischen Lupe die gesuchten Parkplätze schneller finden, umso niedriger die Dichte der anzuzeigenden Informationen ist.
+Bei einer hohen Dichte sind die zu suchenden Informationen bereits auf dem Display zu sehen, weswegen ein Fokussieren der physischen Karte keinen Mehrwert bringt.
+
+Die gleiche Technik verwenden auch \textcite{Morrison2009}.
+Hier wird die Augmentierung einer Papierkarte für ein ortsbezogenes Spiel eingesetzt (siehe \autoref{fig:morrison2009_ar_game}).
+Während ein Teil der Gruppen die Magische AR-Lupe verwendet, nutzt der andere Teil herkömmliche 2D-Kartennavigation.
+Die Autoren entdecken, dass durch die Interaktion mit der Magischen Lupe kollaborative Elemente der Gruppen gefördert werden.
+Dazu gehören Kommunikation, Diskussion und Rollentausch.
+
+\begin{figure}
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/rohs2009_ar_map.png}
+    \caption{%
+        Eine physische Karte wird mittels eines Kamerahandys um Preise für Parkplätze angereichert.
+        \quelle{\cite{Rohs2009}}
+    }
+    \label{fig:rohs2009_ar_map}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/morrison2009_ar_game.png}
+    \caption{%
+        \quelle{\cite{Morrison2009}}
+    }
+    \label{fig:morrison2009_ar_game}
+\end{minipage}
+\end{figure}
+
+Auch \textcite{Wiehr2017} setzen die Magische AR-Lupe als kollaboratives Werkzeug ein (siehe \autoref{fig:wiehr2017_artopos}).
+Mehrere Nutzer können mit Smartphones topologische Papierkarten als 3D-Landschaft darstellen lassen und gemeinsam Routen durch die Landschaft planen.
+
+Zu dieser Kategorie gehört auch der Ansatz von \textcite{Moore2005}.
+Die Autoren nutzen einen physischen Würfel sowie Marker, um digitale Karten auf die Würfelseiten zu überlagern.
+Durch Rotation des Würfels kann ein angrenzender Kartenabschnitt angezeigt werden.
+Somit nutzen die Autoren den Würfel als taktile Nutzungsschnittstelle für diese AR-Kartenanwendung.
+
+\begin{figure}
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/wiehr2017_artopos.png}
+    \caption{%
+        Mit \emph{ARTopos} wird eine topologische Papierkarte augmentiert, um kollaborativ Routen zu planen. %
+        \quelle{\cite{Wiehr2017}}
+    }
+    \label{fig:wiehr2017_artopos}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/moore2005_cube.png}
+    \caption{%
+        Ein Würfel wird über Marker und Webcam augmentiert. %
+        Das Rotieren des Würfels ändert den Kartenausschnitt. %
+        \quelle{\cite{Moore2005}}
+    }
+    \label{fig:moore2005_cube}
+\end{minipage}%
+\end{figure}
+
+% TODO: Vor-/Nachteile
 
 \subsection{Projizierte Karteninformationen durch Spatial AR}
 \begin{figure}[h]
@@ -259,21 +334,22 @@ Die unterschiedlichen Regionen (Wasser, steiles oder flaches Gelände, Wald) wer
 Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden kann, um in einer rein virtuellen Umgebung zu navigieren.
 
 \begin{figure}
-    \begin{minipage}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth, height=0.25\textheight]{figures/reitmayr2005_helicopter_map}
-        \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert. \quelle{\cite{Reitmayr2005}}}
-        \label{fig:reitmayr2005_helicopter_map}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[t]{0.49\textwidth}
-        \centering
-        \centering
-        \includegraphics[width=\textwidth, height=0.25\textheight]{figures/roo2017_sandbox_island}
-        \caption{Ein physischer Avatar erlaubt dem Nutzer, seine Position in der dazugehörigen virtuellen Umgebung zu ändern. \quelle{\cite[1462]{Roo2017}}}
-        \label{fig:roo2017_sandbox_island}
-    \end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/reitmayr2005_helicopter_map}
+    \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert. \quelle{\cite{Reitmayr2005}}}
+    \label{fig:reitmayr2005_helicopter_map}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/roo2017_sandbox_island}
+    \caption{Ein physischer Avatar erlaubt dem Nutzer, seine Position in der dazugehörigen virtuellen Umgebung zu ändern. \quelle{\cite[1462]{Roo2017}}}
+    \label{fig:roo2017_sandbox_island}
+\end{minipage}
 \end{figure}
+
+% TODO: Vor-/Nachteile
 
 \subsection{Zusammenfassung}
 
