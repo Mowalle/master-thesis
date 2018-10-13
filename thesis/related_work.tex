@@ -13,6 +13,7 @@ Allgemein werden dabei die Kategorien Augmented Reality, Augmented Virtuality un
     \caption{Das Realität-Virtualität-Kontinuum nach \textcite{Milgram1994}. Je nach Anwendung wird die Realität mehr und mehr mit virtuellen Objekten überlagert, bis schließlich nur noch eine virtuelle Umgebung dargestellt wird.}
     \label{fig:rv_kontinuum}
 \end{figure}
+
 Nach \textcite{Azuma1997} bezeichnet \emph{Augmented Reality} Systeme, welche die folgenden Eigenschaften besitzen:
 \begin{itemize}
     \item Reale und virtuelle Inhalte werden kombiniert. Häufig werden hierfür virtuelle Objekte auf die reale Umgebung überlagert.
@@ -41,21 +42,29 @@ Aber auch halb-immersive Displays wie eine \emph{Cave}, eine \emph{Powerwall} od
 Dieser wird in der Literatur als Oberbegriff sowohl für AR als auch AV verwendet.
 Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/ar_hardware_view.pdf}
+    \caption{%
+        Übersicht der Hardware zur Bilderzeugung für AR-Displays
+        \quelle{\cite[22]{Schoening2017}; nach \cite[2]{Bimber2006}. Übersetzt und bearbeitet durch Verfasser}.
+    }
+    \label{fig:hardware}
+\end{figure}
+Eine Übersicht der Hardware, die das Spektrum von AR bis VR ermöglicht, ist in \autoref{fig:hardware} gegeben.
+Im Wesentlichen wird zwischen Netzhautdisplays, HMDs, Handgeräten, räumlichen See-Through-Displays sowie direkter Projektion auf reale Objekte unterschieden.
+Beispiele für die Anwendung dieser Hardware auf den speziellen Anwendungsfall der Navigation werden im folgenden Abschnitt genannt.
+
 % ===================
 % KATEGORISIERUNG
 % ===================
 
 \section{Ansätze zur virtuell unterstützten Navigation}
 Im Rahmen dieser Arbeit wurde in der Literatur zur AR-/VR-unterstützten Navigation recherchiert.
-Die untersuchten Forschungsbeiträge lassen sich in vier Kategorien einteilen, welche in den folgenden Abschnitten mit ihren Vor- und Nachteilen beschrieben werden.
-
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{figures/ar_hardware_view.pdf}
-    \caption{%
-        Übersicht der Hardware zur Bilderzeugung für AR-Displays.
-        \quelle{nach \cite[22]{Schoening2017}; Übersetzt und bearbeitet durch Verfasser}
-    }
-\end{figure}
+Die untersuchten Forschungsbeiträge lassen sich in vier Ansatz-Kategorien einteilen.
+Die Einordnung der Kategorien im Gesamtbild der AR ist in \autoref{fig:hardware} zu sehen.
+Teilweise sind die Kategorien hardwareübergreifend, da für unterschiedliche Geräte ähnliche Ansätze vorgestellt wurden.
+Die vier Kategorien werden in den folgenden Abschnitten mit Beispielen erläutert und die jeweiligen Vor- und Nachteile werden zusammengefasst.
 
 \subsection{Die \enquote{World-in-Miniature}}
 \begin{figure}[ht]
