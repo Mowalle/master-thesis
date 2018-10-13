@@ -50,6 +50,17 @@ Im Rahmen dieser Arbeit wurde in der Literatur zur AR-/VR-unterstützten Navigat
 Die untersuchten Forschungsbeiträge lassen sich in vier Kategorien einteilen, welche in den folgenden Abschnitten mit ihren Vor- und Nachteilen beschrieben werden.
 
 \subsection{Die \enquote{World-in-Miniature}}
+\begin{figure}[ht]
+    \centering
+    \imagebox{
+        \hfill
+        \includegraphics[height=0.4\textheight]{figures/sketch_wim.png}
+        \hfill
+    }
+    \caption{Kategorie 1 --- Eine \enquote{World-in-Miniature} wird in der Umgebung angezeigt. (Nach \textcite[265]{Stoakley1995})}
+    \label{fig:sketch_wim}
+\end{figure}
+
 Die erste Kategorie umfasst Arbeiten, welche die \emph{World-in-Miniature}-Metapher (WIM) umsetzen.
 Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten (siehe \autoref{fig:sketch_wim}).
 Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
@@ -143,7 +154,21 @@ Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}
     \label{fig:mulloni2011_wim}
 \end{figure}
 
-% TODO: Vor-/Nachteile
+Nach \textcite[272]{Stoakley1995} ergeben sich die meisten Vorteile der WIM aus der Tatsache, dass diese sich rotieren und skalieren lässt.
+So können Nutzer die Umgebungen aus mehreren Blickwinkeln betrachten und Verdeckungen durch Wände umgehen.
+Ein weiterer Vorteil ist die 3D-Struktur einer WIM.
+Durch die dreidimensionale Darstellung von besonderen Strukturen der Umgebung (z.B. die Wände in einem Gebäude) können Nutzern die entsprechenden Strukturen in der Umgebung schneller wiederzufinden.
+Dadurch fällt Nutzern die Selbstorientierung in der Umgebung leichter \parencite[215]{Mulloni2012}.
+
+Der größte Nachteil der WIM-Methode ist, dass vorab ein dreidimensionales Modell als WIM erstellt werden muss.
+Während bei den anderen Kategorien lediglich virtuelle Objekte auf die reale Welt überlagert werden, muss für eine WIM ein virtuelles Abbild der Umgebung geschaffen werden.
+Dies gilt insbesondere dann, wenn anstatt einer virtuellen Umgebung ein Szenario in der realen Welt umgesetzt wird (wie es z.B. bei \textcite{Mulloni2012} der Fall ist).
+Dies bringt Schwierigkeiten mit sich.
+Zum einen stellen \citeauthor{Mulloni2012} fest, dass es einen Kompromiss zwischen dem Modellierungsaufwand für das Erstellen der WIM und dem Realismus der Strukturen, die vom Nutzer wiedererkannt werden sollen, geben muss \parencite[215]{Mulloni2012}.
+\citeauthor{Elvezio2017} erklärt, dass auch die korrekte Skalierung einer WIM nicht trivial zu wählen ist.
+Wenn die WIM ein zu großes Modell darstellt (z.B. eine ganze Stadt), könnte dies nicht in das Sichtfeld des Nutzers passen und ein Teil des Modells würde abgeschnitten werden.
+Falls die WIM zu klein ist könnte wiederum die Erkennbarkeit von Details sowie die Interaktion mit einzelnen Objekten auf der WIM erschwert werden \parencite[1]{Elvezio2017}.
+\citeauthor{Stoakley1995} führt schließlich an, dass Irritationen bei Nutzern entstehen können, wenn die Beleuchtung des Modells nicht mit der der Umgebung übereinstimmt \parencite[269]{Stoakley1995}.
 
 \subsection{Virtuelle umgebungsintegrierte Navigationshelfer}
 \begin{figure}[ht]
@@ -209,8 +234,6 @@ Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen 
 \end{minipage}
 \end{figure}
 
-% TODO: Arbeit mit Sails hinzufügen.
-
 Ein Vorteil dieser Herangehensweisen ist, dass die Hände durch die Verwendung eines MR-HMDs oder eines Windschutzscheibendisplays frei bleiben.
 Dadurch haben Nutzer die möglichkeit, Controller oder Fahrzeuge zu bedienen, Gestensteuerung durchzuführen oder direkt mit der Umgebung zu interagieren.
 
@@ -218,10 +241,13 @@ Außerdem bleibt die Umgebung durch das See-Through-Display weiterhin sichtbar.
 So wird der Fokus der Nutzer nicht von der Umgebung auf das Ausgabegerät gelenkt.
 Dies ist vor allem für mobile Szenarios von Vorteil, bei denen längere Strecken zurückgelegt werden und eine höhere Anzahl an Gefahrenstellen (Verkehr, schwierige Straßenführung, etc.) zu erwarten ist.
 
-Die Methode der umgebungsintegrierten virtuellen Helfer hat allerdings auch Nachteile.
-Einerseits stellt die Verwendung von MR-HMDs oder Windschutzscheibendisplays einen erhöhten technischen Aufwand gegenüber Smartphones dar. % TODO: Ausführen!
-Andererseits erfordert die Platzierung der virtuellen Helfer eine hohe Präzision, da die Objekte ansonsten unnatürlich wirken. % TODO: Cite! -> Sails?
-% Nutzer irritiert statt unterstützt?
+Eine Herausforderung (und damit auch ein Nachteil) dieser Variante ist die erforderliche Präzision zur Positionierung der Navigationshelfer.
+Wie \citeauthor{Wiesner2017} und \citeauthor{Pfannmueller2015} ausführen, reicht die Präzision von Satellitensystemen wie dem \emph{Global Positioning System} (GPS) nicht aus, um virtuelle Objekte ohne Abweichung im Bereich von mehreren Metern zu platzieren.
+Dies führt in der Folge zu mehr Navigationsfehlern \parencites[378]{Wiesner2017}{Pfannmueller2015}.
+Als Alternative kann die 3D-Rekonstruktionsfunktion eines MR-HMDs wie der HoloLens genutzt werden, um eine dreidimensionale Punktwolke der Szene zu erhalten und so den Navigationshelfer in einem lokalen Referenzrahmen zu platzieren.
+\citeauthor{Schroeder2017} weist allerdings darauf hin, dass die HoloLens bei normalem Tageslicht kaum bis gar nicht verwendbar ist, da die dargestellten Bilder nicht zu erkennen sind und die Sensoren die 3D-Struktur nicht korrekt analysieren \parencite[47]{Schroeder2017}.
+Ähnliches stellt \citeauthor{Strange2018} für die MagicLeap fest.
+Dies schränkt die Möglichkeiten ein, virtuelle Navigationshelfer mit aktuell verfügbarer Technologie in die Umgebung zu integrieren.
 
 \subsection{\enquote{Magische Lupe} augmentiert physische Karte}
 \begin{figure}[h]
@@ -280,7 +306,7 @@ Auch \textcite{Wiehr2017} setzen die Magische AR-Lupe als kollaboratives Werkzeu
 Mehrere Nutzer können mit Smartphones topologische Papierkarten als 3D-Landschaft darstellen lassen und gemeinsam Routen durch die Landschaft planen.
 
 Zu dieser Kategorie gehört auch der Ansatz von \textcite{Moore2005}.
-Die Autoren nutzen einen physischen Würfel sowie Marker, um digitale Karten auf die Würfelseiten zu überlagern.
+Die Autoren nutzen eine Webcam sowie einen physischen Würfel mit Markern, um digitale Karten auf die Würfelseiten zu überlagern.
 Durch Rotation des Würfels kann ein angrenzender Kartenabschnitt angezeigt werden.
 Somit nutzen die Autoren den Würfel als taktile Nutzungsschnittstelle für diese AR-Kartenanwendung.
 
@@ -307,7 +333,13 @@ Somit nutzen die Autoren den Würfel als taktile Nutzungsschnittstelle für dies
 \end{minipage}%
 \end{figure}
 
-% TODO: Vor-/Nachteile
+% TODO: Mehr Vor-/Nachteile?
+Ein Vorteil dieser Ansätze ist, dass keine MR-HMDs benötigt werden, um die virtuellen Inhalte in der Szene zu platzieren.
+Für die Verfahren werden herkömmliche Farbkameras und Displays eingesetzt, was die technischen Anforderungen gegenüber der vorigen Kategorie reduziert.
+
+Beim Ansatz der Magischen Lupe sind jedoch die Hände durch das jeweilige Handgerät belegt, was eine gleichzeitige Interaktion mit der Umgebung unmöglich macht.
+Im Fall von \textcite{Moore2005} wird ein stationäres Setup präsentiert.
+Hierdurch sind die Hände zwar frei, jedoch ist hier der Anwendungsbereich auf das Sichtfeld der eingesetzten Webcam beschränkt.
 
 \subsection{Projizierte Karteninformationen durch Spatial AR}
 \begin{figure}[h]
@@ -355,7 +387,17 @@ Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden ka
 \end{minipage}
 \end{figure}
 
-% TODO: Vor-/Nachteile
+Bei dieser Methode sind die Hände frei, was Nutzern die Interaktion mit der Umgebung erlaubt.
+Da hier die Umgebung \emph{selbst} als Display dient, ermöglicht diese Herangehensweise taktiles Feedback für die Nutzer wenn diese mit Objekten in der Umgebung interagieren.
+Da Nutzer außerdem keine separate Displaytechnologie verwenden, ist ihr natürliches Blickfeld (\emph{Field-of-View}, FOV) nicht eingeschränkt.
+Ein begrenztes FOV würde die Immersion verringern, was hier nicht der Fall ist \parencite[3\pageff]{Krevelen2010}. % TODO: cite!
+
+Die Methode der Projektion wird jedoch durch das Umgebungslicht beeinflusst.
+In einer hell erleuchteten Umgebung sind die Projektionen schlechter zu erkennen \parencite{???} % TODO: cite!
+Ein weiteres Problem ist das Verdecken durch dynamische Objekte.
+Wie in \autoref{fig:roo2017_sandbox_island} zu sehen ist werden die virtuellen Inhalte auf die Arme und Hände projiziert, sobald sich diese über dem Sandkasten befinden.
+Außerdem können die Karten nicht nach Belieben gezoomt werden.
+Zum Beispiel kann die Größe der Karte aus \autoref{fig:reitmayr2005_helicopter_map} während der Nutzung nicht angepasst werden, wodurch sich der Detailgrad der zugrundeliegenden Karte nicht ändern lässt.
 
 \section{Navigation und Exploration in digitalen Spielen}
 Wie in \autoref{sec:motivation_ziel} erwähnt nehmen Navigation und Exploration eine wichtige Rolle in digitalen Spielen ein.
