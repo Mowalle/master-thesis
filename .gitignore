@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/macos,linux,latex,windows
 
 ### LaTeX ###
@@ -295,5 +294,6 @@ $RECYCLE.BIN/
 
 # VSCode
 *.code-workspace
+.vscode/
 
 # End of https://www.gitignore.io/api/macos,linux,latex,windows

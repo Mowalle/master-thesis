@@ -9,10 +9,11 @@ Anwendungen und Technologien lassen sich dabei in dieses Kontinuum einordnen.
 Allgemein werden dabei die Kategorien Augmented Reality, Augmented Virtuality und Virtual Reality unterschieden.
 \begin{figure}[b]
     \centering
-    \imagebox{\includegraphics[width=0.9\linewidth]{figures/rv_kontinuum_milgram.pdf}}
+    \includegraphics[width=\linewidth]{figures/rv_kontinuum_milgram.pdf}
     \caption{Das Realität-Virtualität-Kontinuum nach \textcite{Milgram1994}. Je nach Anwendung wird die Realität mehr und mehr mit virtuellen Objekten überlagert, bis schließlich nur noch eine virtuelle Umgebung dargestellt wird.}
     \label{fig:rv_kontinuum}
 \end{figure}
+
 Nach \textcite{Azuma1997} bezeichnet \emph{Augmented Reality} Systeme, welche die folgenden Eigenschaften besitzen:
 \begin{itemize}
     \item Reale und virtuelle Inhalte werden kombiniert. Häufig werden hierfür virtuelle Objekte auf die reale Umgebung überlagert.
@@ -41,20 +42,102 @@ Aber auch halb-immersive Displays wie eine \emph{Cave}, eine \emph{Powerwall} od
 Dieser wird in der Literatur als Oberbegriff sowohl für AR als auch AV verwendet.
 Der Begriff hebt die Kombination von realen und virtuellen Inhalten hervor.
 
-\section{World-in-Miniature zur Unterstützung der Indoor-Navigation}
-% WIM
-Die Idee der Megamap ist im Prinzip, ein herunterskaliertes Abbild der Umgebung um den Nutzer zu platzieren.
-Damit ist die Megamap eine Variante der \emph{World-in-Miniature}-Metapher (WIM).
-Dies ist ein Ansatz zur Unterstützung von Navigation und Interaktion, der aus dem Bereich der VR stammt.
-Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten.
-Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/ar_hardware_view.pdf}
+    \caption{%
+        Übersicht der Hardware zur Bilderzeugung für AR-Displays
+        \quelle{\cite[22]{Schoening2017}; nach \cite[2]{Bimber2006}. Übersetzt und bearbeitet durch Verfasser}.
+    }
+    \label{fig:hardware}
+\end{figure}
+Eine Übersicht der Hardware, die das Spektrum von AR bis VR ermöglicht, ist in \autoref{fig:hardware} gegeben.
+Im Wesentlichen wird zwischen Netzhautdisplays, HMDs, Handgeräten, räumlichen See-Through-Displays sowie direkter Projektion auf reale Objekte unterschieden.
+Beispiele für die Anwendung dieser Hardware auf den speziellen Anwendungsfall der Navigation werden im folgenden Abschnitt genannt.
 
-\textcites{Mulloni2011a}{Mulloni2012} präsentieren eine See-Through-AR-Anwendung kombiniert aus AR-Hinweisen und WIM.\@
+% ===================
+% KATEGORISIERUNG
+% ===================
+
+\section{Ansätze zur virtuell unterstützten Navigation}
+Im Rahmen dieser Arbeit wurde in der Literatur zur AR-/VR-unterstützten Navigation recherchiert.
+Die untersuchten Forschungsbeiträge lassen sich in vier Ansatz-Kategorien einteilen.
+Die Einordnung der Kategorien im Gesamtbild der AR ist in \autoref{fig:hardware} zu sehen.
+Teilweise sind die Kategorien hardwareübergreifend, da für unterschiedliche Geräte ähnliche Ansätze vorgestellt wurden.
+Die vier Kategorien werden in den folgenden Abschnitten mit Beispielen erläutert und die jeweiligen Vor- und Nachteile werden zusammengefasst.
+
+\subsection{Die \enquote{World-in-Miniature}}
+\begin{figure}[ht]
+    \centering
+    \imagebox{
+        \hfill
+        \includegraphics[height=0.4\textheight]{figures/sketch_wim.png}
+        \hfill
+    }
+    \caption{Kategorie 1 --- Eine \enquote{World-in-Miniature} wird in der Umgebung angezeigt. (Nach \textcite[265]{Stoakley1995})}
+    \label{fig:sketch_wim}
+\end{figure}
+
+Die erste Kategorie umfasst Arbeiten, welche die \emph{World-in-Miniature}-Metapher (WIM) umsetzen.
+Dabei wird die nähere Umgebung miniaturisiert dargestellt und häufig als eigenständiges Objekt vom Nutzer in der Hand gehalten (siehe \autoref{fig:sketch_wim}).
+Je nach Anwendung ergeben sich hieraus unterschiedliche Interaktionsmöglichkeiten \parencite{Stoakley1995}.
+WIM wird z.B. eingesetzt, um die Bewegung und Interaktion in weitläufigen virtuellen Umgebungen zu vereinfachen \parencites[vgl.]{Trueba2010}{Elvezio2017}.
+Da in VR die Umgebung bereits virtuell existiert, ist eine verkleinerte Variante als WIM einfach umzusetzen.
+
+\textcite{Chittaro2005} nutzen das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte (siehe \autoref{fig:chittaro2005_breakaway}).
+Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
+In einer späteren Arbeit untersuchen \textcite{Chittaro2006} 2D- und 3D-Karten als Navigationshilfe für mehrstöckige Gebäude (siehe \autoref{fig:chittaro2006_maps}).
+Dabei bewegen sich die Nutzer durch ein virtuelles Gebäude von einem Zielobjekt zu einem anderen.
+Die Autoren stellen fest, dass für die reine Navigation zwischen zwei Punkten eine 2D-Karte effektiver ist.
+Allerdings baut sich die räumliche Vorstellung der Objekte im Gebäude in beiden Darstellungen gleichermaßen auf.
+
+\textcite{Li2013} untersuchen ebenfalls die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen bei der Navigation mehrstöckiger Gebäuden.
+Satt einer detaillierten Karte wird hier nur eine strukturelle Karte (Flur und Treppen) gezeigt.
+Im Fall der 3D-Karte rotiert die Ansicht automatisch, wenn die Nutzer sich bewegen.
+Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum Aufbau eines räumlichen Verständnisses des Gebäudes eignen.
+
+\textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so ein Verdecken durch Wände und andere Objekte zu minimieren.
+
+Außerhalb der VR sind WIM-Anwendungen ebenfalls möglich.
+\textcites{Mulloni2011a}{Mulloni2012} präsentieren eine See-Through-AR-Anwendung kombiniert aus AR-Hinweisen und WIM.
 Während Nutzer durch ein Gebäude navigieren werden AR-Pfeile sowie Navigationsanweisungen in Form von \enquote{Aktivitäten} auf einem Smartphone angezeigt (\autoref{sfig:mulloni2011_wim_b}, \subref{sfig:mulloni2011_wim_e}).
 Sobald zuvor platzierte Poster an Infopunkten im Gebäude erreicht und gescannt werden, wechselt die Ansicht zu einer WIM-Darstellung der Etage mit der hervorgehobenen Route zum Zielort (\autoref{sfig:mulloni2011_wim_a}, \subref{sfig:mulloni2011_wim_c}, \subref{sfig:mulloni2011_wim_d}).
 Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}}) in der Umgebung wiederzuerkennen, was zu weniger Fehlern bei der Navigation führt.
-%Von diesem Aspekt könnte auch die Megamap profitieren, welche eine WIM-ähnliche Sicht der näheren Umgebung liefert.
-\begin{figure}[t]
+
+\begin{figure}
+    \begin{subfigure}{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_a.png}
+%        \caption{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_b.png}
+%        \caption{}
+    \end{subfigure}
+    \caption{In der \emph{\enquote{Examine View}} der BreakAway-Karte können Stockwerke zur Seite geschoben werden, um den Blick auf darunterliegende Stockwerke zu ermöglichen. \quelle{\cite{Chittaro2005}}}
+    \label{fig:chittaro2005_breakaway}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_ve.png}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_3dm.png}
+		\caption{}
+		\label{sfig:chittaro2006_3dm}
+    \end{subfigure}
+    \hfill
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_ve.png}
+		\includegraphics[width=\textwidth]{figures/chittaro2006_2dm.png}
+		\caption{}
+		\label{sfig:chittaro2006_2dm}
+	\end{subfigure}
+	\caption{Navigation eines virtuellen Gebäudes. Eine 3D-Karte \subref{sfig:chittaro2006_3dm} oder eine 2D-Karte \subref{sfig:chittaro2006_2dm} unterstützen die Navigation. \quelle{\cite[230]{Chittaro2006}}}
+	\label{fig:chittaro2006_maps}
+\end{figure}
+
+\begin{figure}
     \begin{subfigure}{.18\textwidth}
         \includegraphics[width=\textwidth]{figures/mulloni2011_wim_a.png}
         \caption{}
@@ -88,102 +171,253 @@ Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}
     \label{fig:mulloni2011_wim}
 \end{figure}
 
-Ein Ansatz, welcher der Umsetzung dieser Arbeit nahe kommt, ist die Untersuchung 2D- und 3D-Karten als Navigationshilfe für mehrstöckige Gebäude durch \autocite[siehe \autoref{fig:chittaro2006_maps}]{Chittaro2006}.
-Dabei bewegen sich die Nutzer durch ein virtuelles Gebäude von einem Zielobjekt zu einem anderen.
-Die Autoren stellen fest, dass für die reine Navigation zwischen zwei Punkten eine 2D-Karte effektiver ist.
-Allerdings baut sich die räumliche Vorstellung der Objekte im Gebäude in beiden Darstellungen gleichermaßen auf.
-Bei \parencite{Chittaro2006} werden die Karten jedoch von der Umgebung separat dargestellt und die virtuelle Umgebung wird auf einem Nicht-Stereo-Monitor angezeigt.
-\begin{figure}[ptb]
-	\centering
-	\begin{subfigure}{0.6\textwidth}
-		\includegraphics[width=\textwidth]{figures/chittaro2006_ve.png}
-		\caption{}
-		\label{sfig:chittaro2006_ve}
-	\end{subfigure}
+Nach \textcite[272]{Stoakley1995} ergeben sich die meisten Vorteile der WIM aus der Tatsache, dass diese sich rotieren und skalieren lässt.
+So können Nutzer die Umgebungen aus mehreren Blickwinkeln betrachten und Verdeckungen durch Wände umgehen.
+Ein weiterer Vorteil ist die 3D-Struktur einer WIM.
+Durch die dreidimensionale Darstellung von besonderen Strukturen der Umgebung (z.B. die Wände in einem Gebäude) können Nutzern die entsprechenden Strukturen in der Umgebung schneller wiederzufinden.
+Dadurch fällt Nutzern die Selbstorientierung in der Umgebung leichter \parencite[215]{Mulloni2012}.
 
-	\begin{subfigure}{0.6\textwidth}
-		\includegraphics[width=\textwidth]{figures/chittaro2006_3dm.png}
-		\caption{}
-		\label{sfig:chittaro2006_3dm}
-	\end{subfigure}
+Der größte Nachteil der WIM-Methode ist, dass vorab ein dreidimensionales Modell als WIM erstellt werden muss.
+Während bei den anderen Kategorien lediglich virtuelle Objekte auf die reale Welt überlagert werden, muss für eine WIM ein virtuelles Abbild der Umgebung geschaffen werden.
+Dies gilt insbesondere dann, wenn anstatt einer virtuellen Umgebung ein Szenario in der realen Welt umgesetzt wird (wie es z.B. bei \textcite{Mulloni2012} der Fall ist).
+Dies bringt Schwierigkeiten mit sich.
+Zum einen stellen \citeauthor{Mulloni2012} fest, dass es einen Kompromiss zwischen dem Modellierungsaufwand für das Erstellen der WIM und dem Realismus der Strukturen, die vom Nutzer wiedererkannt werden sollen, geben muss \parencite[215]{Mulloni2012}.
+\citeauthor{Elvezio2017} erklärt, dass auch die korrekte Skalierung einer WIM nicht trivial zu wählen ist.
+Wenn die WIM ein zu großes Modell darstellt (z.B. eine ganze Stadt), könnte dies nicht in das Sichtfeld des Nutzers passen und ein Teil des Modells würde abgeschnitten werden.
+Falls die WIM zu klein ist könnte wiederum die Erkennbarkeit von Details sowie die Interaktion mit einzelnen Objekten auf der WIM erschwert werden \parencite[1]{Elvezio2017}.
+\citeauthor{Stoakley1995} führt schließlich an, dass Irritationen bei Nutzern entstehen können, wenn die Beleuchtung des Modells nicht mit der der Umgebung übereinstimmt \parencite[269]{Stoakley1995}.
 
-	\begin{subfigure}{0.6\textwidth}
-		\includegraphics[width=\textwidth]{figures/chittaro2006_2dm.png}
-		\caption{}
-		\label{sfig:chittaro2006_2dm}
-	\end{subfigure}
-	\caption{Navigation eines virtuellen Gebäudes \subref{sfig:chittaro2006_ve}. Eine 3D-Karte \subref{sfig:chittaro2006_3dm} oder eine 2D-Karte \subref{sfig:chittaro2006_2dm} unterstützen die Navigation. \quelle{\cite[230]{Chittaro2006}}}
-	\label{fig:chittaro2006_maps}
+\subsection{Virtuelle umgebungsintegrierte Navigationshelfer}
+\begin{figure}[ht]
+    \centering
+    \imagebox{
+        \hfill
+        \includegraphics[height=0.4\textheight]{figures/sketch_ar_arrows}
+        \hfill
+    }
+    \caption{Kategorie 2 --- Virtuelle Navigationshelfer (z.B. Pfeile) werden in die reale Welt verankert.}
+    \label{fig:sketch_ar_arrows}
 \end{figure}
 
-% TODO: Was ist der Mehrwert meiner Arbeit gegenüber dem hier?
-In einem früheren Beitrag erweitern \textcite{Chittaro2005} das Konzept von WIM für mehrstöckige Gebäude als eine \emph{BreakAway}-Karte (\autoref{fig:chittaro2005_breakaway}).
-Hier können einzelne Stockwerke zur Seite geschoben und ausgeblendet werden, um so auf Stockwerke blicken zu können, auf denen sich der Nutzer selbst gar nicht befindet.
-\begin{figure}[ptb]
-    \begin{subfigure}{.49\textwidth}
-        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_a.png}
-%        \caption{}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.49\textwidth}
-        \includegraphics[width=\textwidth]{figures/chittaro2005_breakaway_b.png}
-%        \caption{}
-    \end{subfigure}
-    \caption{In der \emph{\enquote{Examine View}} der BreakAway-Karte können Stockwerke zur Seite geschoben werden, um den Blick auf darunterliegende Stockwerke zu ermöglichen. \quelle{\cite{Chittaro2005}}}
-    \label{fig:chittaro2005_breakaway}
-\end{figure}
-\textcite{Vallance2001} schlagen zudem eine Krümmung der WIM-Umgebung vor, um so ein Verdecken durch Wände und andere Objekte zu minimieren.
+Ansätze, bei denen virtuelle Objekte als Navigationshelfer mit sechs Freiheitsgraden in die Umgebung integriert werden, bilden die zweite Kategorie.
+Dies wird schematisch in \autoref{fig:sketch_ar_arrows} dargestellt.
+Für diese Kategorie ist der Einsatz von See-Through Displays charakterisierend.
+Es lassen sich Arbeiten sowohl mit MR-HMDs als auch Handgeräte wie Smartphones als Nutzungsschnittstelle finden.
 
-% TODO: Weiter ausführen?
-\textcite{Li2013} untersuchen die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen von mehrstöckigen Gebäuden.
-Satt einer detaillierten Karte wird hier nur eine strukturelle Karte (Flur und Treppen) gezeigt.
-Im Fall der 3D-Karte rotiert die Ansicht automatisch, wenn die Nutzer sich bewegen.
-Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum Aufbau eines räumlichen Verständnisses des Gebäudes eignen.
-Allerdings wurden hier nur zweistöckige Gebäude getestet.
-Für diese Arbeit ist jedoch auch die Skalierung auf Gebäude mit mehr Stockwerken interessant.
-
-\section{Virtuelle Navigationshelfer}
-Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können.
+Bereits \textcite{Hoellerer1999} stellen ein AR-System vor, bei dem zwei Nutzer kooperieren können (siehe \autoref{fig:hoellerer_mars}).
 Der eine Nutzer bewegt sich zu Fuß mit einem HMD und einem Tablet-Computer in der Außenwelt.
 Durch das HMD können ihm augmentierte Informationen zur Umgebung und sogar ganze virtuelle Gebäude dargestellt werden, die mit der Umgebung registriert sind.
 Der andere Nutzer kann entweder über ein Desktop-Interface oder eine AR-Darstellung der Karte Routen und Informationen in der Umgebung platzieren.
 Damit stellt diese Arbeit eine frühe Implementierung für ein HMD dar, die sowohl Navigations- als auch Explorationsaufgaben unterstützt.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/hoellerer_ar_mars}
+    \caption{Dem HMD-Nutzer wird in seiner Umgebung ein virtueller Pfad sowie Informationen zu den Gebäuden angezeigt. \quelle{\cite{Hoellerer1999}}}
+    \label{fig:hoellerer_mars}
+\end{figure}
 
-Wie bereits in \autoref{sec:motivation_ziel} erwähnt fokussiert sich ein großer Teil der bisherigen Forschung auf den Usecase der Navigation von einem Punkt zu einem anderen.
-Vor allem das AR-unterstützte Autofahren wird betrachtet, da hier eine fehlerfreie Navigation wichtig ist und im Ernstfall sogar fatale Folgen haben kann \parencite{Lin2017}.
-Ein häufig eingesetztes Mittel ist hier die virtuelle Hervorhebung der Straßenführung.
+\textcite{Reitmayr2004} erweitern diesen Ansatz um ein \emph{Extensible Markup Language} Datenmodell (XML-Datenmodell) zur Speicherung von Gebäudegeometrie, -informationen und Wegpunkten.
+Nutzer können dadurch Informationen zu einzelnen Gebäudeabschnitten erhalten.
+Weiterhin wird für die virtuellen Pfade durch die geometrischen Modelle die Verdeckung durch Gebäude korrekt berechnet.
+Das bedeutet, dass für Nutzer Pfade nicht sichbar sind, wenn diese hinter Gebäuden entlang verlaufen (siehe \autoref{fig:reitmayr2004_path}).
+
+Ein weiterer, wichtiger Gegenstand der Forschung ist die virtuell unterstütze Navigation beim Autofahren.
+Hier ist die korrekte Navigation wichtig und Fehler können im Ernstfall fatale Folgen haben \parencite{Lin2017}.
+Ein häufig eingesetztes Mittel zur Verbesserung der Navigation ist die virtuelle Hervorhebung der Straßenführung.
 \textcite{Narzt2006} präsentieren ein allgemeines Framework zur Darstellung einer virtuellen Route.
-Das Framwork kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
+Das Framework kann sowohl für Fahrzeug- als auch Fußgängernavigation und auf verschiedenen Endgeräten eingesetzt werden.
 Für den Einsatz im Auto schlagen die Autoren die Windschutzscheibe als Display vor.
 Dadurch wäre das AR-Display in der natürlichen Umgebung des Nutzers integriert.
+
 \textcite{Bark2014} erweitern diesen Ansatz.
-Sie ersetzen in einem zuvor aufgenommenen Video die statische virtuelle Route durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen.
-\textcite{Kim2009} ersetzen die Route sogar durch eine 2.5D-Karte mithilfe eines Fahrsimulators.
+Sie ersetzen in einem zuvor aufgenommenen Video den statischen, virtuell eingefügten Pfad durch eine Reihe animierter Papierflieger, die entlang der geplanten Route fliegen.
+\textcite{Kim2009} präsentieren eine 2.5D-Karte mithilfe eines Fahrsimulators.
 Von der Oberseite der Windschutzscheibe schiebt sich eine 2D-Karte ins Sichtfeld, die sich nach und nach dreidimensional mit der Straße verbindet.
 Bei beiden Ansätzen wiesen die Autoren beim Vergleich mit einem herkömmlichen \emph{top-down} GPS-System nach, dass die Probanden dem Straßenverlauf durch die AR-Unterstützung besser folgen konnten und weniger Fehler bei der Navigation machten.
 
-\textcite{Alnabhan2014} präsentieren einen Ansatz zur \emph{Indoor}-Na\-vi\-ga\-tion als \emph{Android-App}.
-Die App nutzt \emph{\wifi-Fingerprinting} und den digitalen Kompass eines Smartphones/Tablets zur Positionierung und Orientierung.
-Über vordefinierte Referenzpunkte im Gebäude wird die Ungenauigkeit des \wifi-Fingerprintings ausgeglichen.
-Navigationshinweise werden als AR-Pfeil angezeigt (mit zusätzlichen Textausgaben).
-Alternativ dazu zeigen \textcite{Liu2016} einen ähnlichen Ansatz, bei dem die Positionierung jedoch auf Magnetfeldsensoren aufbaut und daher weder auf GPS noch auf Infrastruktur wie \wifi oder Marker angewiesen ist.
-\clearpage % FINAL FORMATTING
+\begin{figure}
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5cm]{figures/reitmayr2004_path}
+    \caption{Virtueller Pfad hebt die Route zum ausgewählten Zielobjekt hervor und wird durch Gebäude verdeckt. \quelle{\cite{Reitmayr2004}}\hfill}
+    \label{fig:reitmayr2004_path}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5cm]{figures/kim2009_concept_2_5d_map}
+    \caption{Konzept einer AR-2.5D-Karte: 2D-Karte schiebt sich vom oberen Bildschirmrand hinunter und \enquote{verschmilzt} mit Straßenführung. \quelle{\cite{Kim2009}}\hfill}
+    \label{fig:kim2009_2_5d_map}
+\end{minipage}
+\end{figure}
 
-\section{Augmentierte Kartenexploration}
-Zur Kartenexploration mittels Spatial AR tragen \textcite{Reitmayr2005} bei, indem sie eine reale Papierkarte durch einen Projektor augmentieren.
+Ein Vorteil dieser Herangehensweisen ist, dass die Hände durch die Verwendung eines MR-HMDs oder eines Windschutzscheibendisplays frei bleiben.
+Dadurch haben Nutzer die möglichkeit, Controller oder Fahrzeuge zu bedienen, Gestensteuerung durchzuführen oder direkt mit der Umgebung zu interagieren.
+
+Außerdem bleibt die Umgebung durch das See-Through-Display weiterhin sichtbar.
+So wird der Fokus der Nutzer nicht von der Umgebung auf das Ausgabegerät gelenkt.
+Dies ist vor allem für mobile Szenarios von Vorteil, bei denen längere Strecken zurückgelegt werden und eine höhere Anzahl an Gefahrenstellen (Verkehr, schwierige Straßenführung, etc.) zu erwarten ist.
+
+Eine Herausforderung (und damit auch ein Nachteil) dieser Variante ist die erforderliche Präzision zur Positionierung der Navigationshelfer.
+Wie \citeauthor{Wiesner2017} und \citeauthor{Pfannmueller2015} ausführen, reicht die Präzision von Satellitensystemen wie dem \emph{Global Positioning System} (GPS) nicht aus, um virtuelle Objekte ohne Abweichung im Bereich von mehreren Metern zu platzieren.
+Dies führt in der Folge zu mehr Navigationsfehlern \parencites[378]{Wiesner2017}{Pfannmueller2015}.
+Als Alternative kann die 3D-Rekonstruktionsfunktion eines MR-HMDs wie der HoloLens genutzt werden, um eine dreidimensionale Punktwolke der Szene zu erhalten und so den Navigationshelfer in einem lokalen Referenzrahmen zu platzieren.
+\citeauthor{Schroeder2017} weist allerdings darauf hin, dass die HoloLens bei normalem Tageslicht kaum bis gar nicht verwendbar ist, da die dargestellten Bilder nicht zu erkennen sind und die Sensoren die 3D-Struktur nicht korrekt analysieren \parencite[47]{Schroeder2017}.
+Ähnliches stellt \citeauthor{Strange2018} für die MagicLeap fest.
+Dies schränkt die Möglichkeiten ein, virtuelle Navigationshelfer mit aktuell verfügbarer Technologie in die Umgebung zu integrieren.
+
+\subsection{\enquote{Magische Lupe} augmentiert physische Karte}
+\begin{figure}[h]
+    \centering
+    \imagebox{
+        \hfill
+        \includegraphics[height=0.4\textheight]{figures/sketch_ar_physical}
+        \hfill
+    }
+    \caption{Kategorie 3: Physische Karten werden durch virtuelle Inhalte (hier \textcolor{magenta}{Magenta} und \textcolor{cyan}{Türkis}) angereichert.}
+    \label{fig:sketch_ar_physical}
+\end{figure}
+
+Ähnlich wie vorigen Abschnitt beschrieben wird in der dritten Kategorie die Realität um digitale Informationen durch See-Through-AR erweitert.
+Jedoch werden die virtuellen Informationen in diesem Fall im Kontext \emph{einzelner physischer Objekte} angezeigt.
+Die Skizze in \autoref{fig:sketch_ar_physical} stellt das Prinzip dar.
+Arbeiten, die dieser Kategorie zugeordnet werden, bedienen sich Bildausgabegeräten (Displays), die gleichzeitig über Kameratechnologie verfügen.
+Sie setzen damit die \enquote{Magische Lupe}-Metapher (\emph{Magic Lens}) um, bei der das Handgerät (wie z.B. ein Smartphone) wie eine Lupe über einem physischen Objekt entlanggeführt wird, um so neue Informationen hervorzubringen.
+Die virtuellen Informationen befinden sich effektiv auf einer transparenten Ebene vor dem Objekt und werden durch das Display des Handgeräts sichtbar gemacht \parencite{Bier1994}.
+Mit den Kameras und entsprechenden Bildverarbeitungsverfahren können einzelne physische Objekte getrackt werden.
+Zur Unterstützung dieser Verfahren werden oft spezielle Markierungen verwendet, die sich von der Umgebung abgheben und besser verfolgt werden können.
+
+Ein Vertreter dieser Kategorie ist die Arbeit von \textcite{Rohs2009}.
+Die Autoren implementieren auf einem Kamerahandy die virtuelle Anzeige von Parkplatz-Kosten vor dem Hintergrund einer physischen Karte (siehe \autoref{fig:rohs2009_ar_map}).
+Sie stellen fest, dass Nutzer mit der Magischen Lupe die gesuchten Parkplätze schneller finden, umso niedriger die Dichte der anzuzeigenden Informationen ist.
+Bei einer hohen Dichte sind die zu suchenden Informationen bereits auf dem Display zu sehen, weswegen ein Fokussieren der physischen Karte keinen Mehrwert bringt.
+
+Die gleiche Technik verwenden auch \textcite{Morrison2009}.
+Hier wird die Augmentierung einer Papierkarte für ein ortsbezogenes Spiel eingesetzt (siehe \autoref{fig:morrison2009_ar_game}).
+Während ein Teil der Gruppen die Magische AR-Lupe verwendet, nutzt der andere Teil herkömmliche 2D-Kartennavigation.
+Die Autoren entdecken, dass durch die Interaktion mit der Magischen Lupe kollaborative Elemente der Gruppen gefördert werden.
+Dazu gehören Kommunikation, Diskussion und Rollentausch.
+
+\begin{figure}[h]
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/rohs2009_ar_map.png}
+    \caption{%
+        Eine physische Karte wird mittels eines Kamerahandys um Preise für Parkplätze angereichert.
+        \quelle{\cite{Rohs2009}}
+    }
+    \label{fig:rohs2009_ar_map}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/morrison2009_ar_game.png}
+    \caption{%
+        Mit \enquote{MapLens} wird eine Papierkarte virtuell erweitert. %
+        Über das rote Quadrat lassen sich augmentierte Icons (rote Punkte) auswählen. %
+        \quelle{\cite{Morrison2009}}
+    }
+    \label{fig:morrison2009_ar_game}
+\end{minipage}
+\end{figure}
+
+Auch \textcite{Wiehr2017} setzen die Magische AR-Lupe als kollaboratives Werkzeug ein (siehe \autoref{fig:wiehr2017_artopos}).
+Mehrere Nutzer können mit Smartphones topologische Papierkarten als 3D-Landschaft darstellen lassen und gemeinsam Routen durch die Landschaft planen.
+
+Zu dieser Kategorie gehört auch der Ansatz von \textcite{Moore2005}.
+Die Autoren nutzen eine Webcam sowie einen physischen Würfel mit Markern, um digitale Karten auf die Würfelseiten zu überlagern.
+Durch Rotation des Würfels kann ein angrenzender Kartenabschnitt angezeigt werden.
+Somit nutzen die Autoren den Würfel als taktile Nutzungsschnittstelle für diese AR-Kartenanwendung.
+
+\begin{figure}[h]
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/wiehr2017_artopos.png}
+    \caption{%
+        Mit \emph{ARTopos} wird eine topologische Papierkarte augmentiert, um kollaborativ Routen zu planen. %
+        \quelle{\cite{Wiehr2017}}
+    }
+    \label{fig:wiehr2017_artopos}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/moore2005_cube.png}
+    \caption{%
+        Ein Würfel wird über Marker und Webcam augmentiert. %
+        Das Rotieren des Würfels ändert den Kartenausschnitt. %
+        \quelle{\cite{Moore2005}}
+    }
+    \label{fig:moore2005_cube}
+\end{minipage}%
+\end{figure}
+
+Ein Vorteil dieser Ansätze ist, dass keine MR-HMDs benötigt werden, um die virtuellen Inhalte in der Szene zu platzieren.
+Für die Verfahren werden herkömmliche Farbkameras und Displays eingesetzt, was die technischen Anforderungen gegenüber der vorigen Kategorie reduziert.
+Smartphones kombinieren Computer-Hardware, Bildschirm, Eingabetechnologie und Kameras, sodass sie sich für den Einsatz als Magische Lupe eignen.
+Durch Mobilfunk und Wi-Fi können auch mobile Szenarios umgesetzt werden \parencite[5]{Bimber2006}.
+
+Beim Ansatz der Magischen Lupe sind jedoch die Hände durch das jeweilige Handgerät belegt, was eine gleichzeitige Interaktion mit der Umgebung unmöglich macht.
+Im Fall von \textcite{Moore2005} wird ein stationäres Setup präsentiert.
+Hierdurch sind die Hände zwar frei, jedoch ist hier der Anwendungsbereich auf das Sichtfeld der eingesetzten Webcam beschränkt.
+
+\subsection{Projizierte Karteninformationen durch Spatial AR}
+\begin{figure}[h]
+    \centering
+    \imagebox{
+        \hfill
+        \includegraphics[height=0.4\textheight]{figures/sketch_ar_projected}
+        \hfill
+    }
+    \caption{Kategorie 4: Mit Projektoren werden digitale Inhalte (hier \textcolor{magenta}{Magenta}) auf reale Objekte und Oberflächen projiziert.}
+    \label{fig:sketch_ar_projected}
+\end{figure}
+
+Die letzte Kategorie umfasst Spatial AR Arbeiten, die projizierende Technologien nutzen, um digitale Navigationsinformationen direkt auf physischen Oberflächen anzuzeigen.
+
+Dazu zählt der Ansatz von \textcite{Reitmayr2005}, bei dem eine reale Papierkarte durch einen Projektor augmentiert wird.
 \autoref{fig:reitmayr2005_helicopter_map} zeigt die Funktionsweise.
 Ein projizierter Helikopter kann mit einem realen \emph{Personal Digital Assistant} (PDA) bewegt werden, wenn dieser in die Nähe gehalten wird.
 Der PDA zeigt währenddessen ein Interface zur Kontrolle des Helikopters.
 Der Helikopter dient als Cursor für kontextbasierte Informationen.
 Sobald der Nutzer einen Rahmen auf die Karte legt, projiziert der Projektor ein Bild der aktuellen Kartenposition aus ungefährer Sicht des Helikopters auf ihn.
 Zudem kann der Zustand der Karte durch die Projektion dynamisch verändert werden (in diesem Fall werden Gezeiten von Gewässern simuliert).
-Auch wenn diese Arbeit nicht für einen mobilen Einsatz geeignet ist, wird deutlich, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
-Dies erlaubt also zusätzlich eine Exploration in der zeitlichen Dimension einer Karte.
-\begin{figure}
-    \includegraphics[width=\textwidth]{figures/reitmayr2005_helicopter_map.png}
+Die Arbeit verdeutlicht, dass mit AR nicht nur ortsbezogene sondern auch zeitbezogene Daten auf einer Karte dargestellt werden können.
+Dies erlaubt eine Exploration in der zeitlichen Dimension einer Karte.
+
+\textcite{Roo2017} präsentieren einen augmentierten Zen-Garten (siehe \autoref{fig:roo2017_sandbox_island}).
+Sie projizieren die Übersichtskarte einer Insel auf einen Sandkasten, wobei die Insel abhängig ist von der Anhäufung des Sands.
+Die unterschiedlichen Regionen (Wasser, steiles oder flaches Gelände, Wald) werden durch unterschiedliche Farben des projizierten Lichts hervorgehoben.
+Über einen physischen Avatar kann der Nutzer eine dreidimensionale Variante der Insel über ein VR-HMD betreten.
+Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden kann, um in einer rein virtuellen Umgebung zu navigieren.
+
+\begin{figure}[h]
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/reitmayr2005_helicopter_map}
     \caption{Eine reale Papierkarte wird durch einen Projektor mit virtuellen Inhalten angereichert. \quelle{\cite{Reitmayr2005}}}
     \label{fig:reitmayr2005_helicopter_map}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.25\textheight]{figures/roo2017_sandbox_island}
+    \caption{Ein physischer Avatar erlaubt dem Nutzer, seine Position in der dazugehörigen virtuellen Umgebung zu ändern. \quelle{\cite[1462]{Roo2017}}}
+    \label{fig:roo2017_sandbox_island}
+\end{minipage}
 \end{figure}
+
+Bei dieser Methode sind die Hände frei, was Nutzern die Interaktion mit der Umgebung erlaubt.
+Die Umgebung dient \emph{selbst} als Display, weshalb diese Herangehensweise taktiles Feedback für die Nutzer ermöglicht, wenn diese mit Objekten in der Umgebung interagieren.
+Da Nutzer außerdem keine separate Displaytechnologie verwenden, ist ihr natürliches Blickfeld (\emph{Field-of-View}, FOV) nicht eingeschränkt.
+Ein begrenztes FOV würde die Immersion verringern, was hier nicht der Fall ist \parencite[3\pageff]{Krevelen2010}[10]{Bimber2006}.
+
+Ein Nachteil dieser Methode ist, dass herkömmliche Projektoren nur eine Ebene fokussieren können.
+Sobald virtuelle Inhalte auf nicht-flache Oberflächen projiziert werden, kann es zu Unschärfe-Effekten kommen \parencite[10]{Bimber2006}.
+Ein weiteres Problem ist das Verdecken durch dynamische Objekte.
+Wie in \autoref{fig:roo2017_sandbox_island} zu sehen ist werden die virtuellen Inhalte auf die Arme und Hände projiziert, sobald sich diese über dem Sandkasten befinden.
+Außerdem können die Karten nicht nach Belieben gezoomt werden.
+Zum Beispiel kann die Größe der Karte aus \autoref{fig:reitmayr2005_helicopter_map} während der Nutzung nicht angepasst werden, wodurch sich der Detailgrad der zugrundeliegenden Karte nicht ändern lässt.
 
 \section{Navigation und Exploration in digitalen Spielen}
 Wie in \autoref{sec:motivation_ziel} erwähnt nehmen Navigation und Exploration eine wichtige Rolle in digitalen Spielen ein.

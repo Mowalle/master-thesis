@@ -10,15 +10,39 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="850"
-   height="200"
-   viewBox="0 0 224.89584 52.916665"
+   width="620.66821"
+   height="161.73898"
+   viewBox="0 0 164.21847 42.793438"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="rv_kontinuum_milgram.svg">
   <defs
      id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1127">
+      <stop
+         style="stop-color:#8a6aad;stop-opacity:1"
+         offset="0"
+         id="stop1123" />
+      <stop
+         style="stop-color:#d22b90;stop-opacity:1"
+         offset="1"
+         id="stop1125" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1007">
+      <stop
+         style="stop-color:#2bbdd2;stop-opacity:1"
+         offset="0"
+         id="stop1003" />
+      <stop
+         style="stop-color:#5b93bf;stop-opacity:1"
+         offset="1"
+         id="stop1005" />
+    </linearGradient>
     <linearGradient
        id="linearGradient9292"
        inkscape:collect="always">
@@ -328,17 +352,17 @@
        x2="173.07172"
        y2="92.691925"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(24.509757,-6.6973766)" />
+       gradientTransform="translate(1.2264141,-6.6973766)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient10139"
+       xlink:href="#linearGradient1007"
        id="linearGradient10128"
        gradientUnits="userSpaceOnUse"
-       x1="43.552994"
-       y1="92.691925"
-       x2="98.999222"
-       y2="92.691925"
-       gradientTransform="translate(6.9338641,-6.6973766)" />
+       x1="49.033649"
+       y1="93.069901"
+       x2="92.762611"
+       y2="93.258888"
+       gradientTransform="translate(-1.1434061,-9.9185315)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient9186-6-8"
@@ -364,7 +388,7 @@
        xlink:href="#linearGradient9186-6-8"
        id="linearGradient10227"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.1244768,0,0,1.1026236,-1.289595,-16.997669)"
+       gradientTransform="matrix(1.1244768,0,0,1.1026236,-8.1687621,-16.997669)"
        x1="46.377979"
        y1="100.91087"
        x2="173.05029"
@@ -374,11 +398,31 @@
        xlink:href="#linearGradient9292"
        id="linearGradient10227-3"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(-1.1244768,0,0,1.1026236,249.65596,-16.997668)"
+       gradientTransform="matrix(-1.1244768,0,0,1.1026236,254.41849,-16.997668)"
        x1="46.377979"
        y1="100.91087"
        x2="173.05029"
        y2="100.91087" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10139"
+       id="linearGradient10128-0"
+       gradientUnits="userSpaceOnUse"
+       x1="116.20518"
+       y1="93.413605"
+       x2="115.44923"
+       y2="93.413605"
+       gradientTransform="translate(54.865376,-9.9551448)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1127"
+       id="linearGradient10128-0-1"
+       gradientUnits="userSpaceOnUse"
+       x1="54.325314"
+       y1="92.691925"
+       x2="88.03791"
+       y2="92.880913"
+       gradientTransform="translate(110.87405,-9.7661571)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -387,9 +431,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="492.88006"
-     inkscape:cy="32.092753"
+     inkscape:zoom="1.979899"
+     inkscape:cx="271.09171"
+     inkscape:cy="92.034283"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -405,11 +449,11 @@
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
      inkscape:snap-text-baseline="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1050"
+     inkscape:window-height="1051"
      inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:window-y="29"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -433,10 +477,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-17.666499,-54.902491)">
+     transform="translate(-40.66877,-58.618892)">
     <path
        style="opacity:0.5;fill:none;stroke:url(#linearGradient10227);stroke-width:1.47306311;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.94612641, 2.94612641;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 51.605163,90.688319 v 7.316192 h 44.972913"
+       d="m 44.725992,90.688319 v 7.316192 h 44.972913"
        id="path10153"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -447,86 +491,90 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="21.186766"
-       y="66.891533"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="40.089993"
+       y="64.774864"
        id="text9902"><tspan
          sodipodi:role="line"
          id="tspan9900"
-         x="21.186766"
-         y="66.891533"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Reelle Umgebung</tspan></text>
+         x="40.089993"
+         y="64.774864"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Reelle Umgebung</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="177.20261"
-       y="67.155525"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="131.81374"
+       y="64.869064"
        id="text9902-9"><tspan
          sodipodi:role="line"
          id="tspan9900-9"
-         x="177.20261"
-         y="67.155525"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Virtuelle Umgebung</tspan></text>
+         x="131.81374"
+         y="64.869064"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Virtuelle Umgebung</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient10128);fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="78.36113"
-       y="87.509956"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="70.283852"
+       y="84.288803"
        id="text9902-7"><tspan
          sodipodi:role="line"
-         id="tspan10051"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1"
-         x="78.36113"
-         y="87.509956">Augmented Reality (AR)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:url(#linearGradient10115);fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="167.46187"
-       y="87.509956"
-       id="text9902-7-0"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1"
+         x="70.283852"
+         y="84.288803"
+         id="tspan9160">Augmented Reality</tspan><tspan
          sodipodi:role="line"
-         x="167.46187"
-         y="87.509956"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10115);fill-opacity:1;stroke-width:0.26458332"
-         id="tspan9976-1">Augmented Virtuality (AV)</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1"
+         x="70.283852"
+         y="91.34436"
+         id="tspan9164">(AR)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="124.15218"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="94.628555"
        y="99.907379"
        id="text9902-7-5"><tspan
          sodipodi:role="line"
-         id="tspan10051-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
-         x="124.15218"
-         y="99.907379">Mixed Reality (MR)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d22b90;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="219.79407"
-       y="87.414352"
-       id="text9902-7-5-0"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#d22b90;fill-opacity:1;stroke-width:0.26458332"
-         x="219.79407"
-         y="87.414352"
-         id="tspan9176">Virtual Reality</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d22b90;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
-       x="219.79407"
-       y="93.074387"
-       id="text9902-7-5-0-1"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#d22b90;fill-opacity:1;stroke-width:0.26458332;"
-         x="219.79407"
-         y="93.074387"
-         id="tspan9176-7">(VR)</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
+         x="94.628555"
+         y="99.907379"
+         id="tspan9156">Mixed Reality (MR)</tspan></text>
     <path
        style="opacity:0.5;fill:none;stroke:url(#linearGradient10227-3);stroke-width:1.47306311;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.94612644, 2.94612644;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 196.7612,90.688319 v 7.316192 h -44.97291"
+       d="m 201.52373,90.688319 v 7.316192 h -44.97291"
        id="path10153-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="126.29263"
+       y="84.25219"
+       id="text9902-7-6"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke-width:0.26458332"
+         x="126.29263"
+         y="84.25219"
+         id="tspan9160-5">Augmented Virtuality</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke-width:0.26458332"
+         x="126.29263"
+         y="91.307747"
+         id="tspan9164-2">(AV)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="182.30142"
+       y="84.441177"
+       id="text9902-7-6-8"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke-width:0.26458332"
+         x="182.30142"
+         y="84.441177"
+         id="tspan9286">Virtual Reality</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke-width:0.26458332"
+         x="182.30142"
+         y="91.496735"
+         id="tspan9280">(VR)</tspan></text>
   </g>
 </svg>
