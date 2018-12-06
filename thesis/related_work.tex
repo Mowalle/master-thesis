@@ -87,7 +87,7 @@ Dabei bewegen sich die Nutzer durch ein virtuelles Gebäude von einem Zielobjekt
 Die Autoren stellen fest, dass für die reine Navigation zwischen zwei Punkten eine 2D-Karte effektiver ist.
 Allerdings baut sich die räumliche Vorstellung der Objekte im Gebäude in beiden Darstellungen gleichermaßen auf.
 
-\textcite{Li2013} untersuchen ebenfalls die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen bei der Navigation mehrstöckiger Gebäuden.
+\textcite{Li2013} untersuchen ebenfalls die Auswirkungen von 2D- und 3D-Dar\-stel\-lun\-gen bei der Navigation mehrstöckiger Gebäude.
 Satt einer detaillierten Karte wird hier nur eine strukturelle Karte (Flur und Treppen) gezeigt.
 Im Fall der 3D-Karte rotiert die Ansicht automatisch, wenn die Nutzer sich bewegen.
 Das Ergebnis der Autoren ist, dass sich beide Darstellungen gleichermaßen zum Aufbau eines räumlichen Verständnisses des Gebäudes eignen.
@@ -170,7 +170,7 @@ Die WIM-Übersicht hilft Nutzern, Orientierungspunkte (\emph{\enquote{Landmarks}
 Nach \textcite[272]{Stoakley1995} ergeben sich die meisten Vorteile der WIM aus der Tatsache, dass diese sich rotieren und skalieren lässt.
 So können Nutzer die Umgebungen aus mehreren Blickwinkeln betrachten und Verdeckungen durch Wände umgehen.
 Ein weiterer Vorteil ist die 3D-Struktur einer WIM.
-Durch die dreidimensionale Darstellung von besonderen Strukturen der Umgebung (z.B. die Wände in einem Gebäude) können Nutzern die entsprechenden Strukturen in der Umgebung schneller wiederzufinden.
+Durch die dreidimensionale Darstellung von besonderen Strukturen der Umgebung (z.B. die Wände in einem Gebäude) können Nutzer die entsprechenden Strukturen in der Umgebung schneller wiederfinden.
 Dadurch fällt Nutzern die Selbstorientierung in der Umgebung leichter \parencite[215]{Mulloni2012}.
 
 Der größte Nachteil der WIM-Methode ist, dass vorab ein dreidimensionales Modell als WIM erstellt werden muss.
@@ -178,7 +178,7 @@ Während bei den anderen Kategorien lediglich virtuelle Objekte auf die reale We
 Dies gilt insbesondere dann, wenn anstatt einer virtuellen Umgebung ein Szenario in der realen Welt umgesetzt wird (wie es z.B. bei \textcite{Mulloni2012} der Fall ist).
 Dies bringt Schwierigkeiten mit sich.
 Zum einen stellen \citeauthor{Mulloni2012} fest, dass es einen Kompromiss zwischen dem Modellierungsaufwand für das Erstellen der WIM und dem Realismus der Strukturen, die vom Nutzer wiedererkannt werden sollen, geben muss \parencite[215]{Mulloni2012}.
-\citeauthor{Elvezio2017} erklärt, dass auch die korrekte Skalierung einer WIM nicht trivial zu wählen ist.
+\citeauthor{Elvezio2017} erklären, dass auch die korrekte Skalierung einer WIM nicht trivial zu wählen ist.
 Wenn die WIM ein zu großes Modell darstellt (z.B. eine ganze Stadt), könnte dies nicht in das Sichtfeld des Nutzers passen und ein Teil des Modells würde abgeschnitten werden.
 Falls die WIM zu klein ist könnte wiederum die Erkennbarkeit von Details sowie die Interaktion mit einzelnen Objekten auf der WIM erschwert werden \parencite[1]{Elvezio2017}.
 \citeauthor{Stoakley1995} führt schließlich an, dass Irritationen bei Nutzern entstehen können, wenn die Beleuchtung des Modells nicht mit der der Umgebung übereinstimmt \parencite[269]{Stoakley1995}.
@@ -191,7 +191,7 @@ Falls die WIM zu klein ist könnte wiederum die Erkennbarkeit von Details sowie 
     \label{fig:sketch_ar_arrows}
 \end{figure}
 
-Ansätze, bei denen virtuelle Objekte als Navigationshelfer mit sechs Freiheitsgraden in die Umgebung integriert werden, bilden die zweite Kategorie.
+Die zweite Kategorie bilden Ansätze, bei denen virtuelle Objekte als Navigationshelfer mit sechs Freiheitsgraden in die Umgebung integriert werden.
 Dies wird schematisch in \autoref{fig:sketch_ar_arrows} dargestellt.
 Für diese Kategorie ist der Einsatz von See-Through Displays charakterisierend.
 Es lassen sich Arbeiten sowohl mit MR-HMDs als auch Handgeräte wie Smartphones als Nutzungsschnittstelle finden.
@@ -251,7 +251,7 @@ So wird der Fokus der Nutzer nicht von der Umgebung auf das Ausgabegerät gelenk
 Dies ist vor allem für mobile Szenarios von Vorteil, bei denen längere Strecken zurückgelegt werden und eine höhere Anzahl an Gefahrenstellen (Verkehr, schwierige Straßenführung, etc.) zu erwarten ist.
 
 Eine Herausforderung (und damit auch ein Nachteil) dieser Variante ist die erforderliche Präzision zur Positionierung der Navigationshelfer.
-Wie \citeauthor{Wiesner2017} und \citeauthor{Pfannmueller2015} ausführen, reicht die Präzision von Satellitensystemen wie dem \emph{Global Positioning System} (GPS) nicht aus, um virtuelle Objekte ohne Abweichung im Bereich von mehreren Metern zu platzieren.
+Die Präzision von Satellitensystemen wie dem \emph{Global Positioning System} (GPS) reicht nicht aus, um virtuelle Objekte ohne Abweichung im Bereich von mehreren Metern zu platzieren.
 Dies führt in der Folge zu mehr Navigationsfehlern \parencites[378]{Wiesner2017}{Pfannmueller2015}.
 Als Alternative kann die 3D-Rekonstruktionsfunktion eines MR-HMDs wie der HoloLens genutzt werden, um eine dreidimensionale Punktwolke der Szene zu erhalten und so den Navigationshelfer in einem lokalen Referenzrahmen zu platzieren.
 \citeauthor{Schroeder2017} weist allerdings darauf hin, dass die HoloLens bei normalem Tageslicht kaum bis gar nicht verwendbar ist, da die dargestellten Bilder nicht zu erkennen sind und die Sensoren die 3D-Struktur nicht korrekt analysieren \parencite[47]{Schroeder2017}.
@@ -266,7 +266,7 @@ Dies schränkt die Möglichkeiten ein, virtuelle Navigationshelfer mit aktuell v
     \label{fig:sketch_ar_physical}
 \end{figure}
 
-Ähnlich wie vorigen Abschnitt beschrieben wird in der dritten Kategorie die Realität um digitale Informationen durch See-Through-AR erweitert.
+Ähnlich wie im vorigen Abschnitt beschrieben wird in der dritten Kategorie die Realität um digitale Informationen durch See-Through-AR erweitert.
 Jedoch werden die virtuellen Informationen in diesem Fall im Kontext \emph{einzelner physischer Objekte} angezeigt.
 Die Skizze in \autoref{fig:sketch_ar_physical} stellt das Prinzip dar.
 Arbeiten, die dieser Kategorie zugeordnet werden, bedienen sich Bildausgabegeräten (Displays), die gleichzeitig über Kameratechnologie verfügen.
@@ -282,7 +282,7 @@ Bei einer hohen Dichte sind die zu suchenden Informationen bereits auf dem Displ
 
 Die gleiche Technik verwenden auch \textcite{Morrison2009}.
 Hier wird die Augmentierung einer Papierkarte für ein ortsbezogenes Spiel eingesetzt (siehe \autoref{fig:morrison2009_ar_game}).
-Während ein Teil der Gruppen die Magische AR-Lupe verwendet, nutzt der andere Teil herkömmliche 2D-Kartennavigation.
+Während eine Gruppe die Magische AR-Lupe verwendet, nutzt die andere Gruppe herkömmliche 2D-Kartennavigation.
 Die Autoren entdecken, dass durch die Interaktion mit der Magischen Lupe kollaborative Elemente der Gruppen gefördert werden.
 Dazu gehören Kommunikation, Diskussion und Rollentausch.
 
@@ -391,9 +391,9 @@ Dieser Ansatz verdeutlicht, dass ein Spatial-AR-Interface auch genutzt werden ka
 \end{figure}
 
 Bei dieser Methode sind die Hände frei, was Nutzern die Interaktion mit der Umgebung erlaubt.
-Die Umgebung dient \emph{selbst} als Display, weshalb diese Herangehensweise taktiles Feedback für die Nutzer ermöglicht, wenn diese mit Objekten in der Umgebung interagieren.
+Die Umgebung \emph{selbst} dient als Display, weshalb diese Herangehensweise taktiles Feedback für die Nutzer ermöglicht, wenn diese mit Objekten in der Umgebung interagieren.
 Da Nutzer außerdem keine separate Displaytechnologie verwenden, ist ihr natürliches Blickfeld (\emph{Field-of-View}, FOV) nicht eingeschränkt.
-Ein begrenztes FOV würde die Immersion verringern, was hier nicht der Fall ist \parencite[3\pageff]{Krevelen2010}[10]{Bimber2006}.
+Ein begrenztes FOV würde die Immersion verringern, was hier nicht der Fall ist \parencites[3\pageff]{Krevelen2010}[10]{Bimber2006}.
 
 Ein Nachteil dieser Methode ist, dass herkömmliche Projektoren nur eine Ebene fokussieren können.
 Sobald virtuelle Inhalte auf nicht-flache Oberflächen projiziert werden, kann es zu Unschärfe-Effekten kommen \parencite[10]{Bimber2006}.
@@ -421,9 +421,10 @@ Dies spricht für den Ansatz dieser Arbeit, eine Karte in die Umgebung des Nutze
 
 \section{Beitrag dieser Masterarbeit}
 Diese Arbeit hebt sich in zwei Aspekten vom bisherigen Stand der Forschung ab.
+
 Zum einen wird eine Kartenanwendung speziell für ein VR-HMD entwickelt.
 Dadurch kann die Karte direkt in die (virtuelle) Umgebung des Nutzer eingebettet werden.
-Die Verwendung des Stereodisplays im HMD erweitert die Tiefenwahrnehmung der Nutzer, was für die Betrachtung der komplexen mehrstöckigen Innenstrukturen von Gebäuden hilfreich ist \parencite[vgl.][]{Rantakari2017}.
+Die Verwendung des Stereodisplays im HMD erweitert die Tiefenwahrnehmung der Nutzer, was für die Betrachtung der komplexen Innenstrukturen von Gebäuden hilfreich ist \parencite[vgl.][]{Rantakari2017}.
 Die Implementierung für ein VR-HMD kann als Sprungbrett für zukünftige Arbeiten betrachtet werden, die das gleiche Konzept für MR-HMDs umsetzen könnten, bei denen die Karte in die \emph{reale} Umgebung des Nutzers integriert wird.
 In \autoref{chap:closing} wird näher auf die Herausforderungen bei einer Umsetzung für MR-HMDs eingegangen.
 
@@ -432,6 +433,6 @@ Wie zu sehen ist setzen sich die bisherigen Ansätze im Bezug auf Indoor-Orte me
 Diese Arbeit fokussiert hingegen die Karten\emph{exploration}.
 Zu diesem Zweck wird analysiert, wie bereits existierende Kartenanwendungen das Erkunden der Umgebung vereinfachen.
 Dabei beschränkt sich die Analyse nicht nur auf Indoor-Anwendungen, sondern bezieht auch Outdoor-Anwendungen (z.B. Google Maps) oder gar digitale Spiele mit ein.
-Schließlich werden die hieraus gewonnenen Erkenntnisse auf den Indoor-Einsatz übertragen und prototypisch implementiert.
+Schließlich werden die hieraus gewonnenen Erkenntnisse auf den Indoor-Einsatz übertragen.
 %
 \cleardoublepage
