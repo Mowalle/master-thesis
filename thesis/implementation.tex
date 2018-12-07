@@ -12,9 +12,9 @@ Jede Szene besitzt einen eigenen Szenengraph.
 Dieser Graph verwaltet alle Objekte einer Szene.
 Unity verwendet ein Entitäten-Komponenten-System.
 Das heißt, alle Unity-Objekte sind im Kern attribut- und funktionslose Entitäten (in Unity \emph{GameObject}s genannt).
-Die eigentliche Funktionalität wird erst durch Hinzufügen von \emph{Component}s zu den GameObjects deutlich.
-Beispielsweise verfügt das GameObject eines Würfel-Objekts über eine \emph{TransformComponent}, \emph{MeshRenderComponent} und \emph{PhysicsComponent}.
-Neben Anwendungen für den Desktop oder mobile Endgeräte bietet Unity Unterstützung für eine Vielzahl an AR- und VR-Plattformen an \parencite{UnityTechnologies2018b}.
+Die eigentliche Funktionalität wird erst durch Hinzufügen von Komponenten (\emph{Components}) zu den GameObjects deutlich.
+Beispielsweise verfügt das GameObject eines Würfel-Objekts über die Komponenten \texttt{Transform} (Position, Rotation und Skalierung), \texttt{MeshRenderer} (Geometrie) und \texttt{BoxCollider} (Kollision).
+Neben Anwendungen für den Desktop oder mobile Endgeräte bietet Unity native Unterstützung für eine Vielzahl an AR- und VR-Plattformen an \parencite{UnityTechnologies2018b}.
 
 Zusätzlich zu diesen vorgefertigten Komponenten können auch Skript-Komponenten zu den GameObjects hinzugefügt werden.
 Dies ermöglicht den Entwicklern, komplett neues Verhalten für Objekte in die Engine zu integrieren.
@@ -25,20 +25,34 @@ Dabei handelt es sich um abgespeicherte Konfigurationen von GameObjects inklusiv
 Die Prefabs können dann jederzeit als vorkonfiguriertes Objekt instanziiert werden.
 
 Darüber hinaus lässt sich Unity durch das Importieren von Plugins erweitern.
-Dadurch werden \emph{Assets} (Texturen, Fonts, Musik, Materialien, Skripte) und Prefabs von anderen Entwicklern in das aktuelle Projekt übernommen.
-Ein nennenswertes Plugin, was für diese Arbeit eingesetzt wird, ist das \emph{SteamVR Plugin} \autocite{ValveCorporation2018}.
-Dieses baut die in Unity integrierte Unterstützung speziell für die HTC Vive weiter aus.
+So werden \emph{Assets} (Texturen, Fonts, Musik, Materialien, Skripte) und Prefabs von anderen Entwicklern in das aktuelle Projekt übernommen.
 
 Aufgrund der einfach zu nutzenden AR-/VR-Funktionalität sowie der Erweiterbarkeit wird Unity für diese Arbeit eingesetzt.
 
 \section{SteamVR Plugin}
+Ein nennenswertes Plugin, was für diese Arbeit eingesetzt wird, ist das \emph{SteamVR Plugin} \autocite{ValveCorporation2018}.
+Dieses baut die in Unity integrierte AR-/VR-Unterstützung weiter aus.
 
-\section{Indoor-Modul} % TODO: Diesen Titel anpassen.
+Eine zentrale Rolle nimmt das \emph{Player}-Prefab ein.
+Durch Platzieren dieses Prefabs in der Unity-Szene werden automatisch GameObjects erzeugt, welche die Positionen und Rotationen vom HMD und weiteren Controllern eines verbundenen VR-Systems tracken.
+Die Zuordnung der Geräte zu den GameObjects ist hardware-übergreifend und geschieht automatisch.
+Zudem wird dem Nutzer eine Begrenzung des Spielebereichs angezeigt, welche sich aus der verwendeten Technologie ergibt (in diesem Fall die sationären \emph{Lighthouse} Basisstationen der Vive).
+Ebenso werden 3D-Modelle der Hand angezeigt, wobei sich die Finger der virtuellen Hände zu den Knöpfen bewegen, die der Nutzer aktuell betätigt.
+Das Prefab übernimmt außerdem das stereoskopische Rendern, sodass auf dem HMD für jedes Auge ein anderes Bild angezeigt wird, wodurch der Eindruck von räumlicher Tiefe entsteht.
 
-\section{Datenmodul} % TODO: Diesen Titel anpassen.
+Für diese Arbeit wird außerdem das \texttt{Interactable}-SteamVR-Skript verwendet.
+Durch dieses Skript können GameObjects mit einer \texttt{Collider}-Komponente auf die virtuellen Hände bzw. Controller reagieren und interaktive gemacht werden (z.B. Aufnehmen und werfen von Objekten, anklicken von Knöpfen etc.).
+Die Verwendungen dieses Skripts für den Megamap-Prototypen werden an entsprechender Stelle in den folgenden Abschnitten näher beschrieben.
 
-\section{Probleme bei der Implementierung}
-% TODO: Einleitungstext für Probleme hinzufügen.
+\section{Virtuelle Laborumgebung}
+
+\section{Das Megamap-GameObject}
+
+\section{Erstellung der Indoor-Karten}
+
+\section{Interaktion mittels virtuellem Laserpointer}
+
+\section{Automatisierung durch georeferenzierte Gebäudedaten}
 
 \subsection{WRLD SDK}
 
