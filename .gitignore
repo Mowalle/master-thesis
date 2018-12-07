@@ -215,6 +215,7 @@ TSWLatexianTemp*
 
 # Kile
 *.backup
+.kile/
 
 # KBibTeX
 *~[0-9]*
