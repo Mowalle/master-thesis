@@ -45,6 +45,33 @@ Durch dieses Skript können GameObjects mit einer \texttt{Collider}-Komponente a
 Die Verwendungen dieses Skripts für den Megamap-Prototypen werden an entsprechender Stelle in den folgenden Abschnitten näher beschrieben.
 
 \section{Virtuelle Laborumgebung}
+Wie eingangs in \autoref{sec:motivation_ziel} erwähnt war die ursprüngliche Idee dieser Arbeit die Implementierung eines Megamap-Prototypen für das MR-HMD Magic Leap One.
+Dabei sollte die virtuelle Karte mithilfe des HMDs in die reale Umgebung des Nutzers integriert werden.
+
+Zu Beginn der Arbeit war allerdings statt der MR-Hardware nur ein Software-Simulator als Entwicklervorschau verfügbar.
+Im Verlauf der Arbeit wurde die MR-Hardware veröffentlicht.
+Das HMD war in der Arbeitsgruppe Human-Computer~ Interaction der Universität Bremen jedoch weiterhin nicht verfügbar.
+
+Daher wurde in dieser Arbeit ein alternativer Prototyp für das VR-HMD HTC Vive entwickelt.
+Wie die meisten VR-HMDs verdeckt die Vive das Sichtfeld des Nutzers komplett, um stattdessen die virtuellen Inhalte anzuzeigen.
+Somit ist die reale Welt für die Nutzer nicht mehr sichtbar, was die visuelle Integration der Megamap in Umgebung unmöglich macht.
+
+Der entwickelte Prototyp umgeht dieses Problem, indem ein virtuelles Modell der Umgebung im Maßstab 1:1 verwendet wird.
+So wird die reale Welt um den Nutzer herum virtuell simuliert.
+Die virtuelle Megamap kann dann in die \textit{virtuelle} Umgebung des Nutzers integriert werden.
+Die Idee hinter diesem Ansatz ist, dass durch die Ähnlichkeit der realen und der virtuellen Umgebung das Prinzip des VR-Prototypen auf eine Situation mit einem MR-HMD weiterhin übertragbar ist.
+In zukünftigen Arbeiten könnte damit der Megamap-Prototyp auf MR-HMDs eingesetzt werden, ohne grundlegende Änderungen vornehmen zu müssen.
+
+Durch die Verwendung eines 3D-Modells wird außerdem die 3D-Rekonstruktionsfunktion der Magic Leap One nachgeahmt.
+Wie auch die HoloLens erstellt die Magic Leap One durch aktives Tracking der Umwelt intern ein 3D-Modell der Umgebung.
+Dieses wird für die Kollisionsberechnung mit den virtuellen Inhalten verwendet.
+So können virtuelle Objekte mit realen Gegenständen interagieren (z.B. läuft ein Charakter über einen realen Tisch oder ein virtueller Bildschirm wird an einer realen Wand platziert).
+Durch die Verwendung eines 3D-Modells der Umgebung im Megamap-Prototypen ist Möglichkeit der Interaktion mit der Umwelt implizit gegeben.
+
+Für den Prototypen wurde ein maßstabsgetreues 3D-Modell des Laborraums der Arbeitsgruppe Human-Computer~ Interaction der Universität Bremen angefertigt, welcher der Ort der durchgeführten Nutzerstudie ist (siehe \autoref{chap:evaluation}).
+\autoref{fig:lab_environment} zeigt ein Foto des Laborraums sowie Screenshots der entsprechenden virtuellen Umgebung.
+Der Grundriss des Raums wurde im Modellierungsprogramm \emph{Blender} mithilfe des eingebauten \emph{Archimesh}-Werkzeugs zentimetergenau erstellt.
+Das Modell wurde als \texttt{.fbx} in Unity importiert und mit diversen virtuellen Requisiten ergänzt, um den Raum realistischer und dem Original ähnlicher wirken zu lassen.
 
 \begin{figure}
     \begin{subfigure}{0.49\textwidth}
@@ -79,7 +106,38 @@ Die Verwendungen dieses Skripts für den Megamap-Prototypen werden an entspreche
 	\label{fig:lab_environment}
 \end{figure}
 
+\subsection*{Synchronisation der realen und virtuellen Position}
+Damit die virtuelle Umgebung als Ersatz für die reale Umgebung verwendet werden kann muss sichergestellt werden, dass die Rotation des virtuellen Raums der des realen Raums entspricht \emph{und} dass die Position des Nutzers in der virtuellen Welt seiner Position in der realen Welt entspricht.
+Der Prototyp muss dafür vorab in zwei Schritten konfiguriert werden:
+\begin{enumerate}
+    \item Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogenannte \emph{Play~ Area}) fest.
+    Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
+    Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
+
+    Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \texttt{Player}-Objekts in Unity verläuft.
+    \autoref{fig:environment_setup} verdeutlicht den Grund dafür.
+    Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
+    Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \texttt{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
+    Effektiv hätte die virtuelle Umgebung dann eine andere Ausrichtung als die reale Umgebung.
+    Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \texttt{Player}-Objekts verlaufen.
+
+    Ginge es nur um den visuellen Reiz in der virtuellen Umgebung, würde der Nutzer diese Abweichung lediglich beim Aufsetzen des HMDs bemerken (da dann der virtuelle Raum anders rotiert wäre als der reale).
+    Wenn aber zum Beispiel der Tastsinn eine Rolle spielt, dann ist eine korrekte Ausrichtung des virtuellen Raums sinnvoll.
+    Da in dem entwickelten Prototyp nicht ausgeschlossen ist, dass der Nutzer die Play Area verlässt und beispielsweise die Säule oder Wände mit den Händen berührt, ist es für die Immersion von Vorteil, wenn das Berühren der virtuellen Objekte mit den taktilen Reizen der realen Objekte verknüpft wird.
+    Weiterhin wird durch die korrekte Ausrichtung die Messung des Abweichungsfehlers beim Zeigen auf Objekte erleichtert, was detailliert in \autoref{chap:evaluation} beschrieben wird.
+\end{enumerate}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/environment_setup}
+    \caption{Setup des virtuellen Umgebung. %
+        Links: Skizze der Unity-Szene. %
+        Das \texttt{Player}-Objekt \enquote{schaut} zu Beginn entlang der z-Achse. %
+        Rechts: Bei der SteamVR-Kalibrierung muss die Play Area die gleiche Ausrichtung haben wie das \texttt{Player}-Objekt.}
+    \label{fig:environment_setup}
+\end{figure}
+
 \section{Das Megamap-GameObject}
+
 
 \section{Erstellung der Indoor-Karten}
 
