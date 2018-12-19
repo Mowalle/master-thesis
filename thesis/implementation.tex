@@ -109,32 +109,42 @@ Das Modell wurde als \texttt{.fbx} in Unity importiert und mit diversen virtuell
 \subsection*{Synchronisation der realen und virtuellen Position}
 Damit die virtuelle Umgebung als Ersatz für die reale Umgebung verwendet werden kann muss sichergestellt werden, dass die Rotation des virtuellen Raums der des realen Raums entspricht \emph{und} dass die Position des Nutzers in der virtuellen Welt seiner Position in der realen Welt entspricht.
 Der Prototyp muss dafür vorab in zwei Schritten konfiguriert werden:
-\begin{enumerate}
-    \item Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogenannte \emph{Play~ Area}) fest.
-    Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
-    Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
 
-    Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \texttt{Player}-Objekts in Unity verläuft.
-    \autoref{fig:environment_setup} verdeutlicht den Grund dafür.
-    Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
-    Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \texttt{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
-    Effektiv hätte die virtuelle Umgebung dann eine andere Ausrichtung als die reale Umgebung.
-    Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \texttt{Player}-Objekts verlaufen.
+\paragraph{Erster Schritt:}
+Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogenannte \emph{Play Area}) fest.
+Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
+Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
 
-    Ginge es nur um den visuellen Reiz in der virtuellen Umgebung, würde der Nutzer diese Abweichung lediglich beim Aufsetzen des HMDs bemerken (da dann der virtuelle Raum anders rotiert wäre als der reale).
-    Wenn aber zum Beispiel der Tastsinn eine Rolle spielt, dann ist eine korrekte Ausrichtung des virtuellen Raums sinnvoll.
-    Da in dem entwickelten Prototyp nicht ausgeschlossen ist, dass der Nutzer die Play Area verlässt und beispielsweise die Säule oder Wände mit den Händen berührt, ist es für die Immersion von Vorteil, wenn das Berühren der virtuellen Objekte mit den taktilen Reizen der realen Objekte verknüpft wird.
-    Weiterhin wird durch die korrekte Ausrichtung die Messung des Abweichungsfehlers beim Zeigen auf Objekte erleichtert, was detailliert in \autoref{chap:evaluation} beschrieben wird.
-\end{enumerate}
+Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \texttt{Player}-Objekts in Unity verläuft.
+Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
+Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \texttt{Player}-Objekts verlaufen.
+Im Fall des entwickelten Prototypen bedeutet dies, dass die Vorderseite der Play Area parallel zu der Wand des Labors verlaufen muss, an der sich die Eingangstür und Tische befinden (siehe \autoref{fig:lab_environment}).
+Die korrekte Kalibrierung der Play Area wird in \autoref{fig:ve_setup_correct} skizziert.
+
+Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \texttt{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
+Effektiv hätte die virtuelle Umgebung dann eine andere Ausrichtung als die reale Umgebung.
+Die falsche Kalibrierung wird in \autoref{fig:ve_setup_wrong} dargestellt.
+
+Ginge es nur um den visuellen Reiz in der virtuellen Umgebung, würde der Nutzer diese Abweichung lediglich beim Aufsetzen des HMDs bemerken (da dann der virtuelle Raum anders rotiert wäre als der reale).
+Wenn aber zum Beispiel der Tastsinn eine Rolle spielt, dann ist eine korrekte Ausrichtung des virtuellen Raums sinnvoll.
+Da in dem entwickelten Prototyp nicht ausgeschlossen ist, dass der Nutzer die Play Area verlässt und beispielsweise die Säule oder Wände mit den Händen berührt, ist es für die Immersion von Vorteil, wenn das Berühren der virtuellen Objekte mit den taktilen Reizen der realen Objekte verknüpft wird.
+Weiterhin wird durch die korrekte Ausrichtung die Messung des Abweichungsfehlers beim Zeigen auf Objekte erleichtert, was detailliert in \autoref{chap:evaluation} beschrieben wird.
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{figures/environment_setup}
-    \caption{Setup des virtuellen Umgebung. %
-        Links: Skizze der Unity-Szene. %
-        Das \texttt{Player}-Objekt \enquote{schaut} zu Beginn entlang der z-Achse. %
-        Rechts: Bei der SteamVR-Kalibrierung muss die Play Area die gleiche Ausrichtung haben wie das \texttt{Player}-Objekt.}
-    \label{fig:environment_setup}
+    \includegraphics[width=\textwidth]{figures/environment_setup_correct}
+    \caption{Die Play Area hat die gleiche Ausrichtung wie das \texttt{Player}-Objekt in der Grundrotation (entlang z-Achse). %
+    Die Rotation des Nutzers in der realen und virtuellen Welt stimmt überein.}
+    \label{fig:ve_setup_correct}
 \end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/environment_setup_wrong}
+    \caption{Die Play Area hat \emph{nicht} die gleiche Ausrichtung wie das \texttt{Player}-Objekt in der Grundrotation. %
+        Der Nutzer hat einen Rotationsoffset (hier \ang[detect-weight=true]{90}), wodurch für den Nutzer effektiv die Räume unterschiedlich rotiert wirken.}
+    \label{fig:ve_setup_wrong}
+\end{figure}
+
+\paragraph{Zweiter Schritt:}
 
 \section{Das Megamap-GameObject}
 
