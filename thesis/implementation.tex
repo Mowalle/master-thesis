@@ -145,6 +145,23 @@ Weiterhin wird durch die korrekte Ausrichtung die Messung des Abweichungsfehlers
 \end{figure}
 
 \paragraph{Zweiter Schritt:}
+Neben der Orientierung des Nutzers muss die Position des virtuellen Raums angepasst werden, wenn dieser die reale Umgebung bestmöglich überlagern soll.
+Dies resultiert (wie bei der Rotation) aus der Tatsache, dass die getrackte Position des HMDs im Bezug zur Play Area gemessen wird, welche sich durch den Kalibrierungsvorgang von SteamVR ändern kann.
+Um neue Position des virtuellen Raums zu bestimmen wird für den Prototypen wie folgt vorgegangen:
+
+Der Prototyp wird mit seiner Ausgangsposition im Unity Editor ausgeführt.
+Die Ecke \enquote{links unten} aus Vogelperspektive des virtuellen Labors befindet sich an der Unity-Welt-Koordinate $(0, 0, 0)$.
+Die Controller, welche im HMD durch 3D-Modelle visualisiert sind, werden in den Ecken des virtuellen Raums platziert.
+Dabei wird darauf geachtet, dass sie von den Basisstationen weiterhin erkannt werden.
+Nun wird im realen Labor die Entfernung von den Controllern zu den entsprechenden Ecken des Raums gemessen, was der Abweichung der virtuellen Welt entspricht.
+Die Entfernungen werden gemittelt.
+Der resultierende Offset wird dann im Unity Editor verwendet, um das virtuelle Labor zu verschieben.
+Dieser Offset ist nun solange gültig, bis die Play Area neu kalibriert wird.
+
+Wie auch schon bei der Rotation ist diese Angleichung erst dann für die Nutzer bemerkbar, wenn sie versuchen physische Objekte wie Wände oder die Säule zu berühren.
+Würde die Verschiebung des Raums nicht durchgeführt werden, könnten Nutzer mit den Controllern durch die virtuellen Objekte hindurch greifen oder sie würden auf physische Barrieren stoßen, obwohl die virtuellen Objekte noch weiter entfernt sind.
+
+Nach diesen beiden Schritten kann der virtuelle Raum als Ersatz für die reale Umgebung verwendet werden, die in einer MR-Anwendung ohne vorheriges Modellieren verfügbar wäre.
 
 \section{Das Megamap-GameObject}
 
