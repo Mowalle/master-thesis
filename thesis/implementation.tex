@@ -164,14 +164,36 @@ Würde die Verschiebung des Raums nicht durchgeführt werden, könnten Nutzer mi
 Nach diesen beiden Schritten kann der virtuelle Raum als Ersatz für die reale Umgebung verwendet werden, die in einer MR-Anwendung ohne vorheriges Modellieren verfügbar wäre.
 
 \section{Das Megamap-GameObject}
-\centering
 \begin{figure}[t]
+    \centering
     \imagebox{\includegraphics[height=8.5cm]{figures/unity_megamap_object}}
     \caption{Übersicht des Megamap-GameObjects.}
     \label{fig:unity_megamap_object}
 \end{figure}
 
+Eine grundlegende Implementierung des in \autoref{chap:concept} vorgestellten Megamap-Konzepts wird im Megamap-GameObject realisiert.
+Eine strukturelle Übersicht des Objekts wird in \autoref{fig:unity_megamap_object} gegeben.
+Das Objekt setzt sich aus drei Teilen zusammen, die jeweils durch eigene Komponenten repräsentiert werden:
+
+Das Skript \textbf{\texttt{Megamap}} bietet allgemeine Einstellungsmöglichkeiten zur Darstellung der Megamap.
+Es lassen sich z.B. die Skalierung oder die Höhe vom Boden ändern.
+Weiterhin bietet das Skript die Methoden \texttt{Show()} und \texttt{Hide()}, mit denen die Karte angezeigt bzw. ausgeblendet werden kann.
+Falls dabei das Feld \texttt{useAnimation} auf \texttt{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung herunterskaliert (beim Ausblenden analog ein Hochskalieren).
+Die Megamap wird standardmäßig Nutzer-zentriert platziert.
+Das bedeutet, dass der Nutzer sowohl in der realen Welt als auch auf der Karte die gleiche Position einnimmt.
+Hierfür wird die virtuelle Umgebung referenziert und der Abstand vom HMD zum Ursprung des Labor-Modells ermittelt.
+Dieser Abstand wird dann wie die Megamap skaliert und die Karte wird um den skalierten Abstand verschoben.
+Sowohl die Animation als auch die Zentrierung auf den Nutzer sollen es ihm erleichtern, seine eigene Position auf der Karte zu finden.
+Außerdem soll hierdurch der Bezug vom Laborraum auf der Karte zum umgebenden Laborraum hervorgehoben werden.
+
+Der zweite Teil des Megamap-Objekts, das \textbf{\texttt{User Marker}}-Skript, dient ebenfalls der Orientierung für den Nutzer.
+Analog zu Kartenanwendungen wie Google Maps befindet sich ein Marker auf der Megamap, welcher die aktuelle Position des Nutzers anzeigt.
+Da es sich bei der Megamap um eine dreidimensionale Karte handelt wird hier ein Zylinder in Form ähnlich eines Pucks benutzt (siehe \autoref{fig:user_marker}).
+Mittels eines transparenten Kreissegments wird außerdem die aktuelle Rotation des Nutzers verdeutlicht.
+Um den Bezug vom Marker auf der Karte zur Umgebung zu verstärken ist auch in dieser ein Kreis platziert, welcher auf dem Nutzer zentriert ist.
+
 \section{Erstellung der Indoor-Karten}
+\label{sec:indoor_maps}
 
 \section{Interaktion mittels virtuellem Laserpointer}
 
