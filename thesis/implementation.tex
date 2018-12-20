@@ -233,10 +233,55 @@ Standardmäßig werden über das Feld \lstinline|showUpperOnly| nur die oberen v
 
 \section{Erstellung der Indoor-Karten}
 \label{sec:indoor_maps}
+Wie bereits erwähnt ist das eigentliche 3D-Modell, welches das Layout des Gebäudes repräsentiert, vom \lstinline|Megamap|-Skript getrennt.
+Für den in dieser Arbeit entwickelten Prototypen werden vorab erstellte 3D-Modelle eingesetzt, die in Blender mit dem Archimesh-Werkzeug modelliert wurden.
+Ansätze zur automatisierten Generierung von Gebäudemodellen werden in \autoref{sec:building_data_automation} untersucht.
+
+Die erstellten Karten sind 3D-Modelle, bei denen die einzelnen Räume als separate GameObjects in Unity verfügbar sind.
+\autoref{fig:room_hierarchy} zeigt schematisch, wie die Objekthierarchie für die Indoor-Karten in Unity aufgebaut ist.
+
+Für die Nutzerstudie aus \autoref{chap:evaluation} ist es notwendig, dass Nutzer mit Räumen interagieren können.
+Es wird eine Suchaufgabe implementiert, bei der die Nutzer den Raum finden müssen, der die meisten Bälle enthält.
+Die Nutzer können mit den Vive-Controllern Räume anvisieren und durch Betätigung des Triggers auswählen.
+Handelt es sich um den gesuchten Raum, wird die Karte ausgeblendet.
+Ansonsten wird der Raum als \enquote{falscher Raum} hervorgehoben.
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \centering
+    \includegraphics[width=0.85\linewidth]{figures/unity_indoor_map}
+    \caption{Objekthierarchie des IndoorMap-Objekts,}
+    \label{fig:room_hierarchy}
+\end{wrapfigure}
+Diese Interaktionsmöglichkeit wird durch das \lstinline|SelectRoom|-Skript umgesetzt.
+Das Skript verwendet die SteamVR-Komponente \lstinline|Interactable|, wodurch Räume auf An\-nä\-he\-rungs- und Interaktionsevents der Vive-Controller reagieren können.
+Im Skript werden dazu spezielle SteamVR-Methoden implementiert.
+Die Methode \lstinline|OnHandHoverBegin(...)| wird ausgelöst, sobald die \lstinline|HoverTransform| des Vive-Controllers den Collider des Raums berührt.
+In der Methode wird der Raum gelb hervorgehoben, wenn er zuvor nicht angeklickt wurde.
+Wenn er zuvor bereits angeklickt wurde (und nicht der gesuchte Raum ist) wird der Raum stattdessen rot eingefärbt.
+
+Die Methode \lstinline|OnHandHoverEnd(...)| setzt die Farbe des Raums in den Normalzustand zurück, wenn der Vive-Controller den Collider des Raums verlässt.
+Somit ist die farbliche Änderung nur sichtbar, solange der Raum mit dem Controller anvisiert wird.
+
+Die \lstinline|HandHoverUpdate(...)|-Methode wird in jedem Update-Iteration von Unity ausgeführt, solange der Vive-Controller den Collider des Raums überlappt.
+In der Methode wird überprüft, ob aktuell der Trigger des Controllers betätigt wird.
+Sobald der Trigger vom Nutzer gedrückt wird, wird ein Event ausgelöst, was die Auswahl eines Raums signalisiert.
+Handelt es sich dabei um den gesuchten Zielraum, wird das Event \lstinline|OnTargetRoomSelected| ausgelöst.
+Dieses wird an anderer Stelle benutzt, um die Karte bei Auswahl des Zielraums auszublenden.
+Wenn der falsche Raum gewählt wird, wird stattdessen das Event \lstinline|OnWrongRoomSelected| aktiviert.
+Dieses wird genutzt, um die Auswahl von falschen Räumen zu zählen und in \autoref{chap:evaluation} auszuwerten. 
+
+Um den Zugriff auf die Räume zu vereinfachen verfügt das IndoorMap-Objekt über das gleichnamige Skript \lstinline|IndoorMap|.
+Dieses bietet C\#-Eigenschaften (\emph{Properties}) an, um die Liste aller Räume bzw. die Liste aller \emph{auswählbarer} Räume zu erhalten (\lstinline|Rooms| bzw. \lstinline|SelectableRooms|).
+
+Damit die Megamap das IndoorMap-Objekt als Karte verwendet wird es an die Methode \lstinline|SetMap(...)| des \lstinline|Megamap|-Skripts übergeben.
+Hierdurch wird das IndoorMap-Objekt zu einem Kind-Objekt der Megamap.
+Die Skalierung und Translation der Megamap werden automatisch für das Kartenmodell übernommen.
+Die Karte kann durch weitere Aufrufe von \lstinline|SetMap(...)| ausgetauscht werden.
 
 \section{Interaktion mittels virtuellem Laserpointer}
 
 \section{Automatisierung durch georeferenzierte Gebäudedaten}
+\label{sec:building_data_automation}
 
 \subsection{WRLD SDK}
 
