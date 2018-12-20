@@ -186,6 +186,29 @@ Dieser Abstand wird dann wie die Megamap skaliert und die Karte wird um den skal
 Sowohl die Animation als auch die Zentrierung auf den Nutzer sollen es ihm erleichtern, seine eigene Position auf der Karte zu finden.
 Außerdem soll hierdurch der Bezug vom Laborraum auf der Karte zum umgebenden Laborraum hervorgehoben werden.
 
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth]{figures/megamap_user_marker.pdf}
+        \captionof{figure}{Der User Marker zeigt die Position des Nutzers auf der Megamap an. %
+            \textcolor{red}{A:} Marker in Umgebung. %
+            \textcolor{red}{B:} Marker auf Karte.%
+        }
+        \label{fig:user_marker}
+        \vfill
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth]{figures/megamap_room_guides}
+        \captionof{figure}{Die Room Guides verbinden die Ecken des umgebenden Raums mit dem entsprechenden Raum auf der Megamap.}
+        \label{fig:room_guides}
+    \end{minipage}
+\end{figure}
+
 Der zweite Teil des Megamap-Objekts, das \textbf{\texttt{User Marker}}-Skript, dient ebenfalls der Orientierung für den Nutzer.
 Analog zu Kartenanwendungen wie Google Maps befindet sich ein Marker auf der Megamap, welcher die aktuelle Position des Nutzers anzeigt.
 Da es sich bei der Megamap um eine dreidimensionale Karte handelt wird hier ein Zylinder in Form ähnlich eines Pucks benutzt (siehe \autoref{fig:user_marker}).
