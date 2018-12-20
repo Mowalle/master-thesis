@@ -13,7 +13,7 @@ Dieser Graph verwaltet alle Objekte einer Szene.
 Unity verwendet ein Entitäten-Komponenten-System.
 Das heißt, alle Unity-Objekte sind im Kern attribut- und funktionslose Entitäten (in Unity \emph{GameObject}s genannt).
 Die eigentliche Funktionalität wird erst durch Hinzufügen von Komponenten (\emph{Components}) zu den GameObjects deutlich.
-Beispielsweise verfügt das GameObject eines Würfel-Objekts über die Komponenten \texttt{Transform} (Position, Rotation und Skalierung), \texttt{MeshRenderer} (Geometrie) und \texttt{BoxCollider} (Kollision).
+Beispielsweise verfügt das GameObject eines Würfel-Objekts über die Komponenten \lstinline{Transform} (Position, Rotation und Skalierung), \lstinline{MeshRenderer} (Geometrie) und \lstinline{BoxCollider} (Kollision).
 Neben Anwendungen für den Desktop oder mobile Endgeräte bietet Unity native Unterstützung für eine Vielzahl an AR- und VR-Plattformen an \parencite{UnityTechnologies2018b}.
 
 Zusätzlich zu diesen vorgefertigten Komponenten können auch Skript-Komponenten zu den GameObjects hinzugefügt werden.
@@ -40,8 +40,8 @@ Zudem wird dem Nutzer eine Begrenzung des Spielebereichs angezeigt, welche sich 
 Ebenso werden 3D-Modelle der Hand angezeigt, wobei sich die Finger der virtuellen Hände zu den Knöpfen bewegen, die der Nutzer aktuell betätigt.
 Das Prefab übernimmt außerdem das stereoskopische Rendern, sodass auf dem HMD für jedes Auge ein anderes Bild angezeigt wird, wodurch der Eindruck von räumlicher Tiefe entsteht.
 
-Für diese Arbeit wird außerdem das \texttt{Interactable}-SteamVR-Skript verwendet.
-Durch dieses Skript können GameObjects mit einer \texttt{Collider}-Komponente auf die virtuellen Hände bzw. Controller reagieren und interaktive gemacht werden (z.B. Aufnehmen und werfen von Objekten, anklicken von Knöpfen etc.).
+Für diese Arbeit wird außerdem das \lstinline{Interactable}-SteamVR-Skript verwendet.
+Durch dieses Skript können GameObjects mit einer \lstinline{Collider}-Komponente auf die virtuellen Hände bzw. Controller reagieren und interaktive gemacht werden (z.B. Aufnehmen und werfen von Objekten, anklicken von Knöpfen etc.).
 Die Verwendungen dieses Skripts für den Megamap-Prototypen werden an entsprechender Stelle in den folgenden Abschnitten näher beschrieben.
 
 \section{Virtuelle Laborumgebung}
@@ -115,13 +115,13 @@ Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogena
 Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
 Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
 
-Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \texttt{Player}-Objekts in Unity verläuft.
+Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \lstinline{Player}-Objekts in Unity verläuft.
 Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
-Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \texttt{Player}-Objekts verlaufen.
+Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \lstinline{Player}-Objekts verlaufen.
 Im Fall des entwickelten Prototypen bedeutet dies, dass die Vorderseite der Play Area parallel zu der Wand des Labors verlaufen muss, an der sich die Eingangstür und Tische befinden (siehe \autoref{fig:lab_environment}).
 Die korrekte Kalibrierung der Play Area wird in \autoref{fig:ve_setup_correct} skizziert.
 
-Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \texttt{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
+Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \lstinline{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
 Effektiv hätte die virtuelle Umgebung dann eine andere Ausrichtung als die reale Umgebung.
 Die falsche Kalibrierung wird in \autoref{fig:ve_setup_wrong} dargestellt.
 
@@ -132,14 +132,14 @@ Weiterhin wird durch die korrekte Ausrichtung die Messung des Abweichungsfehlers
 
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/environment_setup_correct}
-    \caption{Die Play Area hat die gleiche Ausrichtung wie das \texttt{Player}-Objekt in der Grundrotation (entlang z-Achse). %
+    \caption{Die Play Area hat die gleiche Ausrichtung wie das \lstinline{Player}-Objekt in der Grundrotation (entlang z-Achse). %
     Die Rotation des Nutzers in der realen und virtuellen Welt stimmt überein.}
     \label{fig:ve_setup_correct}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=\textwidth]{figures/environment_setup_wrong}
-    \caption{Die Play Area hat \emph{nicht} die gleiche Ausrichtung wie das \texttt{Player}-Objekt in der Grundrotation. %
+    \caption{Die Play Area hat \emph{nicht} die gleiche Ausrichtung wie das \lstinline{Player}-Objekt in der Grundrotation. %
         Der Nutzer hat einen Rotationsoffset (hier \ang[detect-weight=true]{90}), wodurch für den Nutzer effektiv die Räume unterschiedlich rotiert wirken.}
     \label{fig:ve_setup_wrong}
 \end{figure}
@@ -175,10 +175,10 @@ Eine grundlegende Implementierung des in \autoref{chap:concept} vorgestellten Me
 Eine strukturelle Übersicht des Objekts wird in \autoref{fig:unity_megamap_object} gegeben.
 Das Objekt setzt sich aus drei Teilen zusammen, die jeweils durch eigene Komponenten repräsentiert werden:
 
-Das Skript \textbf{\texttt{Megamap}} bietet allgemeine Einstellungsmöglichkeiten zur Darstellung der Megamap.
+Das Skript \textbf{\lstinline{Megamap}} bietet allgemeine Einstellungsmöglichkeiten zur Darstellung der Megamap.
 Es lassen sich z.B. die Skalierung oder die Höhe vom Boden ändern.
-Weiterhin bietet das Skript die Methoden \texttt{Show()} und \texttt{Hide()}, mit denen die Karte angezeigt bzw. ausgeblendet werden kann.
-Falls dabei das Feld \texttt{useAnimation} auf \texttt{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung herunterskaliert (beim Ausblenden analog ein Hochskalieren).
+Weiterhin bietet das Skript die Methoden \lstinline{Show()} und \lstinline{Hide()}, mit denen die Karte angezeigt bzw. ausgeblendet werden kann.
+Falls dabei das Feld \lstinline{useAnimation} auf \lstinline{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung herunterskaliert (beim Ausblenden analog ein Hochskalieren).
 Die Megamap wird standardmäßig Nutzer-zentriert platziert.
 Das bedeutet, dass der Nutzer sowohl in der realen Welt als auch auf der Karte die gleiche Position einnimmt.
 Hierfür wird die virtuelle Umgebung referenziert und der Abstand vom HMD zum Ursprung des Labor-Modells ermittelt.
@@ -209,7 +209,7 @@ Außerdem soll hierdurch der Bezug vom Laborraum auf der Karte zum umgebenden La
     \end{minipage}
 \end{figure}
 
-Der zweite Teil des Megamap-Objekts, das \textbf{\texttt{User Marker}}-Skript, dient ebenfalls der Orientierung für den Nutzer.
+Der zweite Teil des Megamap-Objekts, das \textbf{\lstinline|User Marker|}-Skript, dient ebenfalls der Orientierung für den Nutzer.
 Analog zu Kartenanwendungen wie Google Maps befindet sich ein Marker auf der Megamap, welcher die aktuelle Position des Nutzers anzeigt.
 Da es sich bei der Megamap um eine dreidimensionale Karte handelt wird hier ein Zylinder in Form ähnlich eines Pucks benutzt (siehe \autoref{fig:user_marker}).
 Mittels eines transparenten Kreissegments wird außerdem die aktuelle Rotation des Nutzers verdeutlicht.
@@ -353,7 +353,7 @@ Die Räume werden durch die blauen Polygone dargestellt und die Wände durch die
     \centering
     \imagebox{\includegraphics[width=0.3\textwidth]{figures/qgis_mzh_e5}}
     \caption{Georeferenzierter Lageplan der Ebene 5 des MZH in QGIS.\@ %
-    Die blauen Features sind vom Typ \texttt{room}, die grauen vom Typ \texttt{wall}.}
+    Die blauen Features sind vom Typ \lstinline{room}, die grauen vom Typ \lstinline{wall}.}
     \label{fig:qgis_mzh_e5}
 \end{figure}
 
@@ -375,7 +375,7 @@ Das Modellieren der Wände durch Polygone erlaubt mehr Kontrolle über das Ausse
 Durch das Hochladen auf die Mapbox-Server wird der Lageplan in ein Vektor-Tileset konvertiert.
 Auf dieses kann mit dem Unity-Plugin zugegriffen werden.
 \autoref{fig:mapbox_unity_mzh_e5_z15} zeigt die 3D-Darstellung des zuvor erstellten Lageplans.
-Dabei werden nur Polygon-Features mit dem Attribut \texttt{type = wall} gerendert (das Attribut wird in QGIS gesetzt).
+Dabei werden nur Polygon-Features mit dem Attribut \lstinline{type = wall} gerendert (das Attribut wird in QGIS gesetzt).
 Als Höhe wurde in diesem Beispiel der Wert 10 gewählt.
 Wie zu erkennen ist, wurde die generierte Indoor-Karte an der korrekten Position auf der Stadtkarte platziert.
 % TODO: Fenster u. Türen erwähnen?
@@ -402,19 +402,19 @@ Bei einem niedrigen Zoom werden einige der Wände nicht gerendert, da vereinzelt
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/mapbox_unity_mzh_e5_z9}
-        \caption{\texttt{zoom = 9}}
+        \caption{\lstinline{zoom = 9}}
         \label{sfig:mapbox_unity_mzh_e5_z9}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/mapbox_unity_mzh_e5_z11}
-        \caption{\texttt{zoom = 11}}
+        \caption{\lstinline{zoom = 11}}
         \label{sfig:mapbox_unity_mzh_e5_z11}
     \end{subfigure}
     \newline
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/mapbox_unity_mzh_e5_z18}
-        \caption{\texttt{zoom = 18}}
+        \caption{\lstinline{zoom = 18}}
         \label{sfig:mapbox_unity_mzh_e5_z18}
     \end{subfigure}
     \caption{Fehlende Wände und visuelle Artefakte bei unterschiedlichen Zoom-Ebenen.}
@@ -446,7 +446,7 @@ Es wird deutlich, dass die Gebäudedaten in der Tat in der OSM-Datenbank vorhand
 \end{figure}
 
 Theoretisch wäre es möglich, das fehlerhafte Gebäudemodell durch ein korrigiertes zu ersetzen.
-Mapbox bietet hierfür einen \texttt{ReplaceFeatureModifier} an.
+Mapbox bietet hierfür einen \lstinline{ReplaceFeatureModifier} an.
 Diesem kann ein Breiten- und Längengrad sowie ein Unity-Prefab übergeben werden.
 Falls sich an den angegebenen Koordinaten ein Feature befindet (z.B. ein Gebäude), wird dieses gelöscht und stattdessen wird das Prefab auf der Karte platziert \autocite{Mapbox2018d}.
 
