@@ -186,6 +186,12 @@ Dieser Abstand wird dann wie die Megamap skaliert und die Karte wird um den skal
 Sowohl die Animation als auch die Zentrierung auf den Nutzer sollen es ihm erleichtern, seine eigene Position auf der Karte zu finden.
 Außerdem soll hierdurch der Bezug vom Laborraum auf der Karte zum umgebenden Laborraum hervorgehoben werden.
 
+Das \lstinline|Megamap|-Skript dient lediglich als Schnittstelle zur Manipulation der Karte.
+Das eigentliche 3D-Modell, welches als Karte verwendet wird, ist von diesem Skript unabhängig und wird erst zur Laufzeit durch andere Skripte als aktive Karte gesetzt.
+Hierfür bietet das \lstinline|Megamap|-Skript die Methode \lstinline|SetMap(...)| an, welche als Parameter unter anderem eine Referenz auf ein \lstinline|IndoorMap|-Skript erwartet.
+Dank dieser Trennung von Schnittstelle und Modell können zur Laufzeit unterschiedliche Indoor-Karten gewechselt werden, was für die Nutzerstudie in \autoref{chap:evaluation} Voraussetzung ist.
+Die Details zum \lstinline|IndoorMap|-Skript werden in \autoref{sec:indoor_maps} ausgeführt.
+
 \begin{figure}
     \centering
     \begin{minipage}[t]{.485\textwidth}
