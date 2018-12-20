@@ -209,11 +209,21 @@ Außerdem soll hierdurch der Bezug vom Laborraum auf der Karte zum umgebenden La
     \end{minipage}
 \end{figure}
 
-Der zweite Teil des Megamap-Objekts, das \textbf{\lstinline|User Marker|}-Skript, dient ebenfalls der Orientierung für den Nutzer.
+Der zweite Teil des Megamap-Objekts, das \textbf{\lstinline|User Marker|} Skript, dient ebenfalls der Orientierung für den Nutzer.
 Analog zu Kartenanwendungen wie Google Maps befindet sich ein Marker auf der Megamap, welcher die aktuelle Position des Nutzers anzeigt.
 Da es sich bei der Megamap um eine dreidimensionale Karte handelt wird hier ein Zylinder in Form ähnlich eines Pucks benutzt (siehe \autoref{fig:user_marker}).
 Mittels eines transparenten Kreissegments wird außerdem die aktuelle Rotation des Nutzers verdeutlicht.
 Um den Bezug vom Marker auf der Karte zur Umgebung zu verstärken ist auch in dieser ein Kreis platziert, welcher auf dem Nutzer zentriert ist.
+
+Der dritte Teil des Megamap-Objekts ist das \textbf{\lstinline|Room Guides|} Skript.
+Durch dieses werden Linien von den Ecken des umgebenden Laborraums zum Laborraum auf der Karte gezogen (siehe \autoref{fig:room_guides}).
+Die Linien heben den Raum hervor, in dem sich der Nutzer befindet und stellen somit einen Bezug zur Umgebung her.
+Implementiert sind diese Führungslinien als acht \lstinline|GameObject|s mit jeweils einer \lstinline|LineRenderer|-Komponente, die zusammen mit der Megamap ein- bzw. ausgeblendet werden.
+Für die Startpunkte der Linien (die Ecken des umgebenden Raums) wird über die \lstinline|Renderer|-Komponente des Labor-Modells auf dessen \emph{Bounding Box} zugegriffen.
+Die Eckpunkte der Bounding Box sind die Startpunkte der Linien.
+Die Endpunkte der Linien werden berechnet, indem die Startpunkte mit der Transformationsmatrix der Megamap multipliziert werden.
+So entsteht der Effekt, dass die Linien zu den Eckpunkten des Labors auf der Karte hinführen.
+Standardmäßig werden über das Feld \lstinline|showUpperOnly| nur die oberen vier Linien angezeigt, da die unteren Führungslinien vom Rest der Megamap verdeckt werden würden.
 
 \section{Erstellung der Indoor-Karten}
 \label{sec:indoor_maps}
