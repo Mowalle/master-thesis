@@ -246,12 +246,32 @@ Die Nutzer können mit den Vive-Controllern Räume anvisieren und durch Betätig
 Handelt es sich um den gesuchten Raum, wird die Karte ausgeblendet.
 Ansonsten wird der Raum als \enquote{falscher Raum} hervorgehoben.
 
-\begin{wrapfigure}{r}{0.35\textwidth}
-    \centering
-    \includegraphics[width=0.85\linewidth]{figures/unity_indoor_map}
-    \caption{Objekthierarchie des IndoorMap-Objekts,}
-    \label{fig:room_hierarchy}
-\end{wrapfigure}
+\begin{figure}[tbh]
+    \begin{minipage}[t]{0.35\textwidth}
+        \centering
+        \vspace{0pt}
+        \imagebox{\includegraphics[height=9.7cm]{figures/unity_indoor_map}}
+        \caption{Objekthierarchie des IndoorMap-Objekts,}
+        \label{fig:room_hierarchy}    
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.64\textwidth}
+        \centering
+        \vspace{0pt}
+        \begin{subfigure}{\linewidth}
+            \missingfigure[figwidth=\linewidth]{Screenshot vom anvisierten Raum.}
+            \caption{}
+        \end{subfigure}
+    
+        \vspace{1em}
+        \begin{subfigure}{\linewidth}
+            \missingfigure[figwidth=\linewidth]{Screenshot von falsch geklicktem Raum.}
+            \caption{}
+        \end{subfigure}
+    \caption{Screenshots.}
+    \end{minipage}
+\end{figure}
+
 Diese Interaktionsmöglichkeit wird durch das \lstinline|SelectRoom|-Skript umgesetzt.
 Das Skript verwendet die SteamVR-Komponente \lstinline|Interactable|, wodurch Räume auf An\-nä\-he\-rungs- und Interaktionsevents der Vive-Controller reagieren können.
 Im Skript werden dazu spezielle SteamVR-Methoden implementiert.
@@ -279,6 +299,7 @@ Die Skalierung und Translation der Megamap werden automatisch für das Kartenmod
 Die Karte kann durch weitere Aufrufe von \lstinline|SetMap(...)| ausgetauscht werden.
 
 \section{Interaktion mittels virtuellem Laserpointer}
+
 
 \section{Automatisierung durch georeferenzierte Gebäudedaten}
 \label{sec:building_data_automation}
