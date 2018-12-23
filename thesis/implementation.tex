@@ -300,7 +300,59 @@ Die Skalierung und Translation der Megamap werden automatisch für das Kartenmod
 Die Karte kann durch weitere Aufrufe von \lstinline|SetMap(...)| ausgetauscht werden.
 
 \section{Interaktion mittels virtuellem Laserpointer}
+Mit den \lstinline|SelectRoom|- und \lstinline|Interactable|-Skripten können Nutzer die Räume auf der Karte mit dem Vive-Controller auswählen.
+Allerdings müssten sie sich (ohne weitere Maßnahmen) zu den einzelnen Räumen hinbewegen, um diese mit dem Vive-Controllern zu berühren und auszuwählen.
+In informellen Vortests des Prototypen zeigte sich, dass die Bewegung zu den Räumen umständlich ist, wenn lediglich ein einzelner Raum gefunden werden soll.
+Die Play Area der Vive schränkt die Bewegung der Nutzer zusätzlich ein, da außerhalb der Play Area mit Hindernissen gerechnet werden muss und das Tracking durch die Basisstationen ungenauer wird.
 
+Für den aktuellsten Prototyp wurde daher eine Methode zur entfernten Auswahl von Räumen entwickelt.
+Über einen virtuellen \enquote{Laser Pointer} können Nutzer mit den Vive-Controllern auf Räume zeigen und diese mit dem Trigger auswählen.
+Das Skript \lstinline|LaserPointer| setzt dies um, indem es einen \lstinline|LineRenderer| aktiviert, welcher einen Lasterstrahl darstellt.
+Der Strahl verläuft vom Controller geradeaus in die Szene.
+In der Methode \lstinline|Update()| wird dann durch \lstinline|Physics.RaycastAll(...)| ein Schnitttest zwischen dem Strahl und Collidern in der Szene durchgeführt.
+Falls ein Collider vom Strahl getroffen wird und der Collider zu einem der Räume gehört, wird der Schnittpunkt als Endpunkt des Laserstrahls gesetzt.
+So entsteht der Effekt, dass der Laserstrahl nicht durch die Räume hindurchgeht.
+
+Wie im vorigen Abschnitt beschrieben findet die Interaktion zwischen Vive-Controller und einem Raum statt, wenn der Controller den Raum überlappt.
+Da jedoch beim Laserpointer der Controller vom Raum entfernt ist, muss hier eine Modifikation vorgenommen werden.
+Intern nutzt das SteamVR-\lstinline|Hand|-Skript (welches den Controller repräsentiert und trackt) die Felder \lstinline|HoverSphereTransform| und \lstinline|HoverSphereRadius|.
+Beide Felder definieren eine unsichtbare Kugel mit einem gegebenen Radius.
+Standardmäßig folgt diese Kugel der Position des Controllers.
+Sobald die Kugel mit einem \lstinline|Interactable|-Objekt überlappt, werden die entsprechenden SteamVR-Events ausgelöst.
+Für den Laserpointer wird diese Kugel verschoben, wenn der Raycast einen Schnittpunkt mit einem auswählbaren Raum ergibt.
+Die Position der Kugel wird auf den Schnittpunkt geändert, wodurch sie sich effektiv am Ende des Laserstrahls befindet.
+Damit werden die SteamVR-Events für den entsprechenden Raum am Ende des Strahls ausgelöst.
+\autoref{fig:laserpointer_sketch} verdeutlicht diesen Vorgang.
+Wenn der Raycast keinen Schnittpunkt mit einem auswählbaren Raum ergibt, wird die Kugel wieder auf die Controller-Position zurückgesetzt.
+\begin{figure}[tbh]
+    \centering
+    \begin{subfigure}{0.49\linewidth}
+        \missingfigure[figwidth=\linewidth]{LP Sketch No Hit}
+        \caption{}
+        \label{sfig:laserpointer_sketch_no_hit}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\linewidth}
+        \missingfigure[figwidth=\linewidth]{LP Sketch Hit}
+        \caption{}
+        \label{sfig:laserpointer_sketch_hit}
+    \end{subfigure}
+\end{figure}
+
+\begin{figure}[tbh]
+\centering
+\begin{subfigure}{0.49\linewidth}
+    \missingfigure[figwidth=\linewidth]{LP Screenshot No Hit}
+    \caption{}
+    \label{sfig:laserpointer_screenshot_no_hit}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\linewidth}
+    \missingfigure[figwidth=\linewidth]{LP Screenshot Hit}
+    \caption{}
+    \label{sfig:laserpointer_screenshot_hit}
+\end{subfigure}
+\end{figure}
 
 \section{Automatisierung durch georeferenzierte Gebäudedaten}
 \label{sec:building_data_automation}
