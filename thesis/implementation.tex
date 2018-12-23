@@ -363,6 +363,15 @@ Wenn der Raycast keinen Schnittpunkt mit einem auswählbaren Raum ergibt, wird d
 
 \section{Automatisierung durch georeferenzierte Gebäudedaten}
 \label{sec:building_data_automation}
+Der beschriebene Ansatz hat den Nachteil, dass die Gabäudekarten vorab als 3D-Modell per Hand erstellt werden müssen.
+Dies ist zum einen ein erheblicher zeitlicher Aufwand.
+Zum anderen limitiert es die Anwendung auf die modellierten Gebäude.
+Für eine (mobile) MR-Anwendung wäre es wünschenswert, wenn die Daten des Gebäudes, in dem sich der Nutzer aktuell befindet, für die Megamap verfügbar wären.
+
+Im Rahmen dieser Arbeit wurden verschiedene Ansätze untersucht, georeferenzierte Gebäudedaten für die Megamap zu nutzen.
+Bei der Implementierung der Ansätze offenbarten sich allerdings Probleme, welche die Integration von den georeferenzierten Daten in den aktuellen Prototypen unmöglich machten.
+Im Sinne der Dokumentation und als Grundlage für zukünftige Arbeiten werden die untersuchten Ansätze dennoch in den folgenden Abschnitten beschrieben.
+Leser, die lediglich am aktuellen Prototypen der Megamap interessiert sind, können mit \autoref{chap:evaluation} fortfahren.
 
 \subsection{WRLD SDK}
 
