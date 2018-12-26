@@ -10,7 +10,7 @@ Schließlich wird ein Überblick der für die Implementierung benötigten Kompon
 % Hier die Guidelines einarbeiten
 Bereits \textcite{Reichenbacher2001} beschreibt Konzepte zur mobilen Nutzung von digitalen Kartensystemen.
 Unter anderem gibt er eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
-Neben der Navigation finden sich auch kontextbasierte Tasks wieder.
+Neben der \textbf{Navigation} finden sich auch kontextbasierte Tasks wieder.
 \citeauthor{Reichenbacher2001} nennt drei Kategorien kontextbasierter Tasks:
 
 \textbf{Lokalisierungs-Tasks (\emph{Locators})} sind Anwendungsfälle, bei denen Nutzer Positionen abfragen und diese angezeigt werden.
@@ -27,25 +27,20 @@ Z.B. fallen die Abfrage von geöffneten Geschäften oder von Verkehrsinformation
 Für diese Arbeit werden die oben gennanten kontextbasierten Geoinformationsaufgaben als Anwendungsfälle der Kartenexploration betrachtet.
 Konkretere Beispiele für Anwendungsfälle werden in den nächsten Abschnitten bei der Betrachtung existierender Systeme deutlich.
 
-\begin{table}[t]
+\begin{table}[tbh]
+    \centering
     \caption{Geoinformationsaufgaben in einer mobilen Umgebung. \quelle{\cite[47]{Reichenbacher2001}}}
     \label{tab:gis_user_tasks}
-    \begin{tabularx}{\textwidth}{lll}
-        \toprule
-        Tasks & Subtasks & Examples\\
-        \toprule
+    \begin{tabular}{@{}lll@{}}\toprule
+        \textsf{\textbf{Tasks}} & \textsf{\textbf{Subtasks}} & \textsf{\textbf{Examples}}\\ \midrule
         \multirow{3}{*}{Locators} & Own position & xy coordinates, place name \\
                                   & Objects & Attributes of an object\\
-                                  & Other persons position & Who is this?\\
-        \midrule
+                                  & Other persons position & Who is this?\\ \midrule
         \multirow{2}{*}{Proximity} & Objects & Next object with certain attributes\\
-                                   & Persons & Known people in the area?\\
-        \midrule
-        Navigation & Routing & Way descriptions\\
-        \midrule
-        Events & What happens at a place & Obstacles (e.g. traffic jam)?\\
-        \bottomrule
-    \end{tabularx}
+                                   & Persons & Known people in the area?\\ \midrule
+        Navigation & Routing & Way descriptions\\ \midrule
+        Events & What happens at a place & Obstacles (e.g. traffic jam)?\\ \bottomrule
+    \end{tabular}
     \vspace{0.5em}
 \end{table}
 
