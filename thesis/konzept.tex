@@ -105,7 +105,75 @@ Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher
     \end{tabular}
 \end{table}
 
-\subsection{Lokalisierunselemente}
+\subsection{Lokalisierungselemente}
+Lokalisierungselemente sind solche, die wichtige oder interessante Orte auf der Karte markieren.
+Die Untersuchung der Beispielanwendungen ergab fünf Arten von Lokalisierungselementen:
+
+Der \emph{Positionsmarker} ist ein grafisches Element auf der Karte, der die aktuelle Position des Nutzer (und unter Umständen auch die Blickrichtung) repräsentiert.
+Ein Beispiel findet sich in \autoref{fig:gm_positionsmarker}.
+Die Standortdienste des jeweiligen Endgeräts werden benutzt, um den Marker auf der Karte zu platzieren.
+Der Positionsmarker erlaubt es dem Nutzer, seine eigene Position in der Umgebung zu bestimmen.
+
+\emph{Labels} sind Textelemente, welche die Namen von Straßen, Flüssen, Gebäuden etc. auf der Karte zeigen (siehe \autoref{fig:hwg_labels}).
+Nutzer können Kartenlabels mit Schildern und Wegweisern in der Umgebung abgleichen, was die Orientierung erleichtert.
+Zudem sind Wegbeschreibungen deutlicher, wenn Orte auf der Karte und in der Umgebung explizit benannt werden können.
+
+\emph{Gebäudemarkierungen} sind grafische Elemente, welche die Positionen von gewissen Gebäuden auf Karten markieren.
+Es gibt sowohl statische Gebäudemarkierungen, die zusammen mit den Labels auf der Karte fest verankert sind, wie auch dynamische Gebäudemarkierungen, die je nach Kontext des Nutzers ein- bzw. ausgeblendet werden.
+Die dynamischen Gebäudemarkierungen werden durch sogenannte \enquote{Stecknadeln} repräsentiert.
+Diese sind mit Icons versehen, welche die Kategorie des Gebäudes anzeigen.
+Beispiele finden sich in \autoref{fig:bm_gebaeudemarkierungen}.
+
+Eine \emph{Klickmarkierung} kann in den Kartenanwendungen durch Klicken auf den Kartenbereich erzeugt werden.
+Die Markierung wird grafisch als Stecknadel oder ein vergleichbares Symbol dargestellt (siehe \autoref{fig:gm_klickmarkierung}).
+Über eine solche Markierung kann der Nutzer auf die Adresse und / oder die Koordinaten am angeklickten Ort zugreifen.
+
+Die \emph{spezifische Suche} ist eine Lokalisierungs-Interaktion, die durch ein Suchfeld ausgelöst wird.
+Als \emph{spezifische} Suche (im Gegensatz zur \emph{offenen} Suche) wird in dieser Arbeit die Suche nach einer bekannten Adresse oder einem eindeutig benannten Ort verstanden (beispielsweise \enquote{Bremer Rathaus} oder \enquote{Bibliothekstraße 1}).
+Wird eine solche Suche durchgeführt, platziert die Anwendung eine grafische Markierung auf dem Zielobjekt.
+Den Nutzern bleibt somit eine manuelle Suche nach dem Zielort auf der Karte erspart.
+
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth, height=4.5cm]{figures/map-app_examples/gm_positionsmarker}
+        \captionof{figure}{Beispiel eines Positionsmarkers in Google Maps.}
+        \label{fig:gm_positionsmarker}
+        \vfill
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth, height=4.5cm]{figures/map-app_examples/hwg_labels}
+        \captionof{figure}{Beispiel von Labels in HERE WeGo.}
+        \label{fig:hwg_labels}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth, height=4.5cm]{figures/map-app_examples/bm_gebaeudemarkierungen_arrows}
+        \captionof{figure}{Beispiel von Gebäudemarkierungen in Bing Maps (hervorgehoben durch \textcolor{red}{rote} Pfeile). %
+        Ausgewählte Orte werden durch Stecknadeln stärker betont.}
+        \label{fig:bm_gebaeudemarkierungen}
+        \vfill
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{.485\textwidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth, height=4.5cm]{figures/map-app_examples/gm_klickmarkierung}
+        \captionof{figure}{Beispiel der Klickmarkierung in Google Maps (hervorgehoben durch \textcolor{red}{roten} Pfeil). %
+        Unterhalb der Markierung werden die Adresse und Koordinaten gezeigt.}
+        \label{fig:gm_klickmarkierung}
+    \end{minipage}
+\end{figure}
 
 \subsection{Nähe-Elemente}
 
