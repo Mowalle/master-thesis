@@ -7,7 +7,7 @@ Diese Elemente werden kategorisiert, zusammengefasst und schließlich als Grundl
 %Schließlich wird ein Überblick der für die Implementierung benötigten Komponenten gegeben.
 
 \section{Definition Kartenexploration}
-\label{sec:reichenbacher_use_cases}
+\label{sec:definition_exploration}
 % Hier die Guidelines einarbeiten
 Bereits \textcite{Reichenbacher2001} beschreibt Konzepte zur mobilen Nutzung von digitalen Kartensystemen.
 Er gibt eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
@@ -53,26 +53,24 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
 \end{table}
 
 \section{Explorationselemente in existierenden Kartenanwendungen}
-Bevor ein Konzept für die Megamap formuliert wird, werden Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen untersucht.
+Digitale Kartenanwendungen setzen unterschiedliche Elemente ein, um die Kartenexploration zu unterstützen.
+Bevor das Konzept für die Megamap formuliert wird, werden die Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen gesammelt und kategorisiert.
 Die Idee ist, diejenigen Elemente in der Megamap zu übernehmen, welche Nutzern bereits aus den anderen Anwendungen bekannt sind.
 Durch die Verwendung der bekannten Elemente und Interaktionen soll ein zusätzlicher Lernaufwand für die neuartige Megamap-Anwendung verhindert werden.
+Die gesammelten Elemente und Interaktionsmöglichkeiten werden jeweils den User Tasks aus \autoref{sec:definition_exploration} zugeordnet.
+Demnach ergeben sich drei Kategorien von Explorationselementen: \textbf{Lokalisierungselemente}, \textbf{Nähe-Elemente} und \textbf{Eventelemente}.
 
-Als Beispiele für existierende Kartenanwendungen werden in dieser Arbeit die \emph{Desktop}-Varianten von \emph{Google Maps}, \emph{Bing Maps} \parencite{Microsoft2018b} und \emph{HERE WeGo} \parencite{HERE2018} untersucht.
-Zur Kategorisierung der gefundenen Elemente werden diese den zuvor beschriebenen Anwendungsfällen Lokalisierung, Nähe und Event zugeordnet (siehe \autoref{sec:reichenbacher_use_cases}).
+Als Beispiele für existierende Kartenanwendungen wurden die \emph{Web}-Varianten von \emph{Google Maps}, \emph{Bing Maps} \parencite{Microsoft2018b} und \emph{HERE WeGo} \parencite{HERE2018} untersucht.
+Alle drei Webseiten bieten neben der Routen-Planung auch Funktionen zur Erkundung von Umgebungen an.
+\autoref{tab:exploration_elements_summary} zeigt eine Übersicht der gefundenen Explorationselemente.
+Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher erläutert.
 
-\subsection{Kartenexploration mit Google Maps}
-\subsection{Kartenexploration mit Bing Maps}
-\subsection{Kartenexploration mit HERE WeGo}
-
-\section{Megamap in \emph{Tom Clancy's The Division}}
-% Mechanics
-
-\section{Anwendung der Explorationselemente für Megamap}
 \begin{table}[tbh]
     \small
     \centering
     \caption{Übersicht der Explorationselemente in ausgewählten Anwendungen}
     \label{tab:exploration_elements_summary}
+    \todo[inline]{TCTD aus Tabelle rausnehmen?}
     \begin{tabular}{@{}lcccc@{}}\toprule
         \textsf{\textbf{Explorationselement}} & \textsf{\textbf{Google Maps}} & \textsf{\textbf{Bing Maps}} & \textsf{\textbf{Here WeGo}} & \textsf{\textbf{TCTD}}\\ \midrule
 
@@ -106,5 +104,19 @@ Zur Kategorisierung der gefundenen Elemente werden diese den zuvor beschriebenen
         \bottomrule
     \end{tabular}
 \end{table}
+
+\subsection{Lokalisierunselemente}
+
+\subsection{Nähe-Elemente}
+
+\subsection{Event-Elemente}
+
+
+
+\section{Megamap in \emph{Tom Clancy's The Division}}
+% Mechanics
+
+\section{Anwendung der Explorationselemente für Megamap}
+
 %
 \cleardoublepage
