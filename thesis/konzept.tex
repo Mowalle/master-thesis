@@ -1,19 +1,21 @@
 \chapter{Konzeption der Megamap-Anwendung}
 \label{chap:concept}
 Dieses Kapitel beschreibt die Konzeption der im Rahmen dieser Arbeit entwickelten Megamap-Anwendung.
-Hierfür werden zunächst mögliche Anwendungsszenarien präsentiert und die sich daraus ergebenden Anforderungen genannt.
-Wie bereits erwähnt wird die Kartenexploration verstärkt fokussiert als die Navigation.
-Zu diesem Zweck werden existierende Ansätze zur digitalen Kartenexploration analysiert und die Gemeinsamkeiten der Ansätze als Grundlage für die Megamap-Anwendung herausgearbeitet.
+Da in dieser Arbeit die Kartenexploration im Gegensatz zur -navigation stärker fokussiert wird, wird zunächst der Begriff der Kartenexploration definiert.
+Um zu verstehen, wie eine digital unterstütze Kartenexploration umgesetzt werden kann, werden Elemente zur Kartenexploration aus bereits existierenden Kartenanwendungen herausgearbeitet.
+Diese Elemente werden kategorisiert, zusammengefasst und schließlich als Grundlage für das Megamap-Konzept verwendet.
 %Schließlich wird ein Überblick der für die Implementierung benötigten Komponenten gegeben.
 
-\section{Anwendungsszenario der Kartenexploration}
+\section{Definition Kartenexploration}
 \label{sec:reichenbacher_use_cases}
 % Hier die Guidelines einarbeiten
 Bereits \textcite{Reichenbacher2001} beschreibt Konzepte zur mobilen Nutzung von digitalen Kartensystemen.
-Unter anderem gibt er eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
-\todo{Was heißt denn \enquote{kontextbasiert}?}
-Neben der \textbf{Navigation} finden sich auch kontextbasierte Tasks wieder.
-\citeauthor{Reichenbacher2001} nennt drei Kategorien kontextbasierter Tasks:
+Er gibt eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
+Einer dieser User Tasks ist die \textbf{Navigation}, welcher in digitalen Kartensystemen durch Wegbeschreibungen umgesetzt wird.
+Nutzer bekommen einen oder mehrere Pfade zwischen zwei Punkten angezeigt, welche den Nutzern z.B. den schnellsten oder den kürzesten Weg zum Ziel anschaulich machen.
+Zusätzlich können wegweisende Textinformationen die Navigation erleichtern.
+
+Neben der Navigation nennt \citeauthor{Reichenbacher2001} drei weitere Kategorien von User Tasks:
 
 \textbf{Lokalisierungs-Tasks (\emph{Locators})} sind Anwendungsfälle, bei denen Nutzer Positionen abfragen und diese angezeigt werden.
 Dabei kann es sich um die eigene Position handeln, aber auch um die von anderen Personen oder Objekten.
@@ -25,9 +27,13 @@ So können Nutzer z.B. die Umgebung nach den nächstgelegenen Geschäften oder F
 Bei diesen Anwendungsfällen geht es um die Abfrage von Informationen, die sich mit der Zeit ändern.
 Z.B. fallen die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
 
-% TODO: Definition Exploration?
-Für diese Arbeit werden die oben genannten kontextbasierten Geoinformationsaufgaben als Anwendungsfälle der Kartenexploration betrachtet.
-Konkretere Beispiele für Anwendungsfälle werden in den nächsten Abschnitten bei der Betrachtung existierender Systeme deutlich.
+Eine Gemeinsamkeit dieser Anwendungsfälle ist, dass hier Informationen über die Umgebung abgefragt werden.
+Die Informationen sind abhängig von \emph{mindestens} einem Kontext, zum Beispiel der aktuellen Position der Nutzers.
+Es können aber auch mehrere Kontexte gleichzeitig mit einbezogen werden (Beispiel: \enquote{Alle \emph{Geschäfte} in \emph{der Nähe}, die \emph{zurzeit} geöffnet sind} $\rightarrow$ Zweck-, Positions- und Zeitkontext).
+Dies steht im Kontrast zur Navigation, für welche immer ein Endpunkt im Kontext zu \emph{mindestens} einem Startpunkt stehen muss (weitere Kontexte wären z.B. Zwischenstopps, das genutzte Fortbewegungsmittel oder das aktuelle Verkehrsaufkommen).
+
+Da Nutzer eine Umgebung durch Abfragen ihrer Informationen \enquote{entdecken}, wird in dieser Arbeit \textbf{Kartenexploration} als Oberbegriff für die Lokalisierungs-, Nähe- und Event-Tasks betrachtet.
+Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvor beschriebenen Unterschiede ab.
 
 \begin{table}[tbh]
     \centering
@@ -46,7 +52,7 @@ Konkretere Beispiele für Anwendungsfälle werden in den nächsten Abschnitten b
     \vspace{0.5em}
 \end{table}
 
-\section{Kartenexploration in existierenden Anwendungen}
+\section{Explorationselemente in existierenden Kartenanwendungen}
 Bevor ein Konzept für die Megamap formuliert wird, werden Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen untersucht.
 Die Idee ist, diejenigen Elemente in der Megamap zu übernehmen, welche Nutzern bereits aus den anderen Anwendungen bekannt sind.
 Durch die Verwendung der bekannten Elemente und Interaktionen soll ein zusätzlicher Lernaufwand für die neuartige Megamap-Anwendung verhindert werden.
