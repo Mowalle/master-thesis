@@ -39,15 +39,15 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
     \centering
     \caption{Geoinformationsaufgaben in einer mobilen Umgebung. \quelle{\cite[47]{Reichenbacher2001}}}
     \label{tab:gis_user_tasks}
-    \begin{tabular}{@{}lll@{}}\toprule
-        \textsf{\textbf{Tasks}} & \textsf{\textbf{Subtasks}} & \textsf{\textbf{Examples}}\\ \midrule
-        \multirow{3}{*}{Locators} & Own position & xy coordinates, place name \\
-                                  & Objects & Attributes of an object\\
-                                  & Other persons position & Who is this?\\ \midrule
-        \multirow{2}{*}{Proximity} & Objects & Next object with certain attributes\\
-                                   & Persons & Known people in the area?\\ \midrule
-        Navigation & Routing & Way descriptions\\ \midrule
-        Events & What happens at a place & Obstacles (e.g. traffic jam)?\\ \bottomrule
+    \begin{tabular}{@{}lll@{}}%\toprule
+        \tableheadcolor \textsf{\textbf{Tasks}} & \textsf{\textbf{Subtasks}} & \textsf{\textbf{Examples}}\\% \midrule
+        \rowcolorodd & Own position & xy coordinates, place name \\
+        \rowcolorodd & Objects & Attributes of an object\\
+        \rowcolorodd \multirow{-3}{*}{Locators} & Other persons position & Who is this?\\% \midrule
+        \rowcoloreven & Objects & Next object with certain attributes\\
+        \rowcoloreven \multirow{-2}{*}{Proximity} & Persons & Known people in the area?\\% \midrule
+        \rowcolorodd Navigation & Routing & Way descriptions\\% \midrule
+        \rowcoloreven Events & What happens at a place & Obstacles (e.g. traffic jam)?\\% \bottomrule
     \end{tabular}
     \vspace{0.5em}
 \end{table}
@@ -71,36 +71,33 @@ Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher
     \caption{Übersicht der Explorationselemente in ausgewählten Anwendungen}
     \label{tab:exploration_elements_summary}
     \todo[inline]{TCTD aus Tabelle rausnehmen?}
-    \begin{tabular}{@{}lcccc@{}}\toprule
-        \textsf{\textbf{Explorationselement}} & \textsf{\textbf{Google Maps}} & \textsf{\textbf{Bing Maps}} & \textsf{\textbf{Here WeGo}} & \textsf{\textbf{TCTD}}\\ \midrule
+    \begin{tabular}{@{}lcccc@{}}
+        \tableheadcolor \textsf{\textbf{Explorationselement}} & \textsf{\textbf{Google Maps}} & \textsf{\textbf{Bing Maps}} & \textsf{\textbf{Here WeGo}} & \textsf{\textbf{TCTD}}\\
 
-        \multicolumn{5}{@{}l@{}}{\textsc{Lokalisierung}} \\ \midrule
-        Positionsmarker (Nutzer) & \checkmark & \checkmark & \checkmark & \\
-        Labels (Straßen, Flüsse, \dots) & \checkmark & \checkmark & \checkmark & \\
-        Gebäudemarkierungen & \checkmark & \checkmark & \checkmark & \\
-        Klickmarkierung (Adresse, Koordinaten) & \checkmark & \checkmark & \checkmark & \\
-        Spezifische Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
-        Attribute  & \checkmark & \checkmark & --- & \\
+        \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Lokalisierung}} \\
+        \rowcolorodd Positionsmarker (Nutzer) & \checkmark & \checkmark & \checkmark & \\
+        \rowcoloreven Labels (Straßen, Flüsse, \dots) & \checkmark & \checkmark & \checkmark & \\
+        \rowcolorodd Gebäudemarkierungen & \checkmark & \checkmark & \checkmark & \\
+        \rowcoloreven Klickmarkierung (Adresse, Koordinaten) & \checkmark & \checkmark & \checkmark & \\
+        \rowcolorodd Spezifische Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
+        \rowcoloreven Attribute  & \checkmark & \checkmark & --- & \\
 
-        \midrule
-        \multicolumn{5}{@{}l@{}}{\textsc{Nähe}} \\ \midrule
-        Gebäudemarkierungen (Positionsabh.) & \checkmark & \checkmark & \checkmark & \\
-        Gebäudemarkierungen (Zoomabh.) & \checkmark & \checkmark & \checkmark & \\
-        Entfernungen (außerhalb Navigation) & \checkmark & \checkmark & --- & \\
-        Offene Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
-        Nahbereichssuche & \checkmark & \checkmark & --- & \\
-        Filter u. Sortierung & \checkmark & \checkmark & --- & \\
-        Ortsnachbarschaft & \checkmark & \checkmark & Nur Transport & \\
-        Umgebungsbilder & \checkmark & \checkmark & --- & \\
+        \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Nähe}} \\
+        \rowcolorodd Gebäudemarkierungen (Positionsabh.) & \checkmark & \checkmark & \checkmark & \\
+        \rowcoloreven Gebäudemarkierungen (Zoomabh.) & \checkmark & \checkmark & \checkmark & \\
+        \rowcolorodd Entfernungen (außerhalb Navigation) & \checkmark & \checkmark & --- & \\
+        \rowcoloreven Offene Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
+        \rowcolorodd Nahbereichssuche & \checkmark & \checkmark & --- & \\
+        \rowcoloreven Filter u. Sortierung & \checkmark & \checkmark & --- & \\
+        \rowcolorodd Ortsnachbarschaft & \checkmark & \checkmark & Nur Transport & \\
+        \rowcoloreven Umgebungsbilder & \checkmark & \checkmark & --- & \\
 
-        \midrule
-        \multicolumn{5}{@{}l@{}}{\textsc{Event}} \\ \midrule
-        Öffnungszeiten & \checkmark & \checkmark & \checkmark & \\
-        Verkehrsinformationen & \checkmark & \checkmark & \checkmark & \\
-        Veranstaltungen & \checkmark & --- & --- & \\
-        Besucheraufkommen & \checkmark & --- & --- & \\
+        \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Event}} \\
+        \rowcolorodd Öffnungszeiten & \checkmark & \checkmark & \checkmark & \\
+        \rowcoloreven Verkehrsinformationen & \checkmark & \checkmark & \checkmark & \\
+        \rowcolorodd Veranstaltungen & \checkmark & --- & --- & \\
+        \rowcoloreven Besucheraufkommen & \checkmark & --- & --- & \\
 
-        \bottomrule
     \end{tabular}
 \end{table}
 
