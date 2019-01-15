@@ -53,6 +53,7 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
 \end{table}
 
 \section{Explorationselemente in existierenden Kartenanwendungen}
+\todo{Die Texte und Grafiken müssen hier noch etwas fine-tuned werden.}
 Digitale Kartenanwendungen setzen unterschiedliche Elemente ein, um die Kartenexploration zu unterstützen.
 Bevor das Konzept für die Megamap formuliert wird, werden die Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen gesammelt und kategorisiert.
 Die Idee ist, diejenigen Elemente in der Megamap zu übernehmen, welche Nutzern bereits aus den anderen Anwendungen bekannt sind.
@@ -80,7 +81,7 @@ Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher
         \rowcolorodd Gebäudemarkierungen & \checkmark & \checkmark & \checkmark & \\
         \rowcoloreven Klickmarkierung (Adresse, Koordinaten) & \checkmark & \checkmark & \checkmark & \\
         \rowcolorodd Spezifische Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Attribute  & \checkmark & \checkmark & --- & \\
+        \rowcoloreven Attributsübersicht & \checkmark & \checkmark & --- & \\
 
         \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Nähe}} \\
         \rowcolorodd Gebäudemarkierungen (Positionsabh.) & \checkmark & \checkmark & \checkmark & \\
@@ -130,7 +131,22 @@ Als \emph{spezifische} Suche (im Gegensatz zur \emph{offenen} Suche) wird in die
 Wird eine solche Suche durchgeführt, platziert die Anwendung eine grafische Markierung auf dem Zielobjekt.
 Den Nutzern bleibt somit eine manuelle Suche nach dem Zielort auf der Karte erspart.
 
-\todo[inline]{Ort Attribute beschreiben}
+Das letzte Lokalisierungselement ist die \emph{Attributsansicht}.
+Über diese Ansicht werden Nutzern Informationen über einen Ort aufgelistet.
+Die Informationen umfassen neben der Adresse und Anschrift unter anderem auch Kontaktdaten (Webseiten, Telefonnummern), Öffnungszeiten, Bilder, Bewertungen usw.
+Speziell für Gebäude werden hier auch Ausstattungen gelistet.
+\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels aufgelistet wird.
+Die Anzeige solcher Informationen ermöglicht es, die Kartenanwendungen für andere Anwendungsfälle als die reine Navigation zu nutzen.
+Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
+
+\begin{figure}
+	\centering
+	\imagebox{
+		\includegraphics[height=7cm]{figures/map-app_examples/gm_ausstattung}
+	}
+	\caption{Beispiel für die Auflistung einer Gebäudeausstattung (eines Hotels in Bremen) in der Attributansicht von Google Maps.}
+	\label{fig:gm_ausstattung}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -231,7 +247,7 @@ Schließlich finden sich \emph{Umgebungsbilder} in den Kartenanwendungen als Nä
 Sie zeigen Foto-Aufnahmen (gegebenenfalls als 360\textdegree-Aufnahme) der Umgebung.
 Wie die Gebäudemarkierungen sind die abgebildeten Orte auf einen gewissen Radius um einen Ausgangspunkt herum beschränkt, sodass für die Nutzer irrelevante Bilder nicht gezeigt werden.
 Die Einbindung der Bilder in die Anwendungen wird unterschiedlich gehandhabt.
-Zum Beispiel befindet sich in Google Maps eine Liste von Umgebungsfotos in derselben Leiste wie die Ortsattribute, wie in \autoref{sfig:gm_photos_1} zu sehen ist.
+Zum Beispiel befindet sich in Google Maps eine Liste von Umgebungsfotos in Attributsansicht, wie in \autoref{sfig:gm_photos_1} zu sehen ist.
 Wird die Liste angeklickt, öffnet sich eine Großansicht der Fotos (siehe \autoref{sfig:gm_photos_2}).
 Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus die Ansicht verändert werden.
 
@@ -252,7 +268,7 @@ Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus 
 		\label{sfig:gm_photos_2}
 	\end{subfigure}
 	\caption{Umgebungsfotos zum Universum Bremen via Google Maps. %
-	\subref{sfig:gm_photos_1} Eine Fotoliste ist in die Ortsattribute integriert. %
+	\subref{sfig:gm_photos_1} Eine Fotoliste ist in die Attributsansicht integriert. %
 	\subref{sfig:gm_photos_2} Detailansicht der Fotos.}
 	\label{fig:gm_photos}
 \end{figure}
@@ -273,7 +289,7 @@ Unter Umständen werden auch die Ticketverfügbarkeit und -preise angezeigt.
 
 \emph{Öffnungszeiten} informieren Nutzer über den Zugang zu Orten in der Umgebung, vor allem Gebäuden.
 Dank der Integration der Öffnungszeiten müssen Nutzer nicht weitere Informationen abrufen, um zu schauen, ob das Ziel zur aktuellen Zeit erreicht werden kann.
-Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten in Google Maps bei den Ortattributen zu finden.
+Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten in Google Maps in der Attributsansicht zu finden.
 
 Zuletzt sind auch Informationen über das \emph{aktuelle Besucheraufkommen an Orten} als Event-Element verfügbar.
 Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden (siehe \autoref{fig:gm_opening_hours}).
@@ -283,7 +299,7 @@ Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft b
 	\imagebox{
 		\includegraphics[width=0.45\linewidth]{figures/map-app_examples/gm_opening_hours}
 	}
-	\caption{Öffnungszeiten von Geschäften etc. werden in Google Maps bei den Ortsattributen gezeigt.}
+	\caption{Öffnungszeiten von Geschäften etc. werden in Google Maps in der Attributsansicht gezeigt.}
 	\label{fig:gm_opening_hours}
 \end{figure}
 
