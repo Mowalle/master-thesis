@@ -355,6 +355,8 @@ Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt fester 
 Damit Nutzer das aktuell gezeigte Stockwerk wechseln können, ohne sich physisch dorthin zu bewegen, werden weitere virtuelle Schaltflächen angeboten (siehe \autoref{fig:concept_indoor_view}).
 Mit diesen kann auf die gleiche Weise wie mit den Stecknadeln oder den Filterelementen über den Controller interagiert werden.
 
+\todo{Beschreibe User Marker und ggf. Room Guides.}
+
 \begin{figure}[t]
 	\centering
 	\imagebox{
@@ -374,6 +376,25 @@ Mit diesen kann auf die gleiche Weise wie mit den Stecknadeln oder den Filterele
 \end{figure}
 
 \subsection{Platzierung der Megamap im Raum}
+Um die Megamap wie ein \enquote{reales} Objekt im Raum zu platzieren wird die 3D-Rekonstruktion des HMDs eingesetzt.
+Durch die Rekonstruktion liefert das HMD 3D-Meshes des Bodens, der Wände und vereinfachte Meshes von Objekten der Umgebung.
+Die Megamap kann auf dem Boden-Mesh platziert werden, sodass sie in der realen Umgebung ebenfalls auf dem Boden steht.
+Durch einen Abstand zum Boden-Mesh wirkt es, als würde die Megamap im Raum schweben.
+
+Analog zur Karte aus TCTD soll die Megamap so um den Nutzer herum platziert werden, dass die Position des Nutzers auf der Karte mit seiner aktuellen Position übereinstimmt.
+Das bedeutet, dass zu Beginn (beim Aufrufen der Karte) der Nutzer auf seiner eigenen Markierung steht.
+Dies soll Nutzern eine schnellere Orientierung ermöglichen, da sie ihre Position auf der Karte nicht erst wiederfinden müssen.
+Damit die Position der Nutzer bestimmt werden kann ist ein System zur Indoor-Lokalisierung erforderlich.
+Mehrere Ansätze werden in der Literatur diskutiert, darunter Marker-basierte Verfahren \parencite{bibid} oder \wifi-Fingerprinting \parencite{bibid} \todo[inline]{Quellen einfügen.}.
+Weiterhin könnten die vom HMD gelieferten 3D-Meshes mit vorgefertigten Raummodellen abgeglichen werden, um den aktuellen Raum sowie die aktuelle Position des Nutzers zu bestimmen.
+
+Ein Problem, was bei der Platzierung der virtuellen Karte in die reale Umgebung auftritt, ist die Verdeckung realer Objekte.
+Durch eine Verdeckung, bei der Teile des realen Objekts noch sichtbar sind, entsteht eine Störung des Tiefeneindrucks des Nutzers, wodurch der Effekt einer integrierten Karte verloren geht.
+TCTD löst das Problem der Verdeckung von Umgebungsobjekten, indem die Karte an den Schnittpunkten mit den Objekten immer weiter ausgeblendet wird, bis schließlich nur noch die Objekte zu sehen sind.
+Die Karte wird effektiv an den Objekten \enquote{ausgeschnitten}.
+Mit den erwähnten MR-HMDs ist ein solcher Effekt ebenfalls möglich.
+Durch die 3D-Rekonstruktion ergeben sich grobe Meshes der Umgebungsobjekte und Wände.
+Die virtuelle Megamap kann an den Stellen dieser Meshes transparent gerendert werden, wodurch der Effekt aus TCTD nachgestellt wird.
 
 \subsection{Beschaffung von Gebäudedaten}
 
