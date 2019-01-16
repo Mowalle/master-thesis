@@ -53,6 +53,7 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
 \end{table}
 
 \section{Explorationselemente in existierenden Kartenanwendungen}
+\label{sec:exploration_elements}
 \todo{Die Texte und Grafiken müssen hier noch etwas fine-tuned werden.}
 Digitale Kartenanwendungen setzen unterschiedliche Elemente ein, um die Kartenexploration zu unterstützen.
 Bevor das Konzept für die Megamap formuliert wird, werden die Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen gesammelt und kategorisiert.
@@ -278,11 +279,10 @@ Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten
 
 Zuletzt sind auch Informationen über das \emph{aktuelle Besucheraufkommen an Orten} als Event-Element verfügbar.
 Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden (siehe \autoref{fig:gm_opening_hours}).
-
-\begin{figure}
+\begin{figure}[bht]
 	\centering
 	\imagebox{
-		\includegraphics[width=0.45\linewidth]{figures/map-app_examples/gm_opening_hours}
+		\includegraphics[width=0.4\linewidth]{figures/map-app_examples/gm_opening_hours}
 	}
 	\caption{Öffnungszeiten von Geschäften etc. werden in Google Maps in der Attributsansicht gezeigt.}
 	\label{fig:gm_opening_hours}
@@ -304,42 +304,78 @@ Für mehrstöckige Gebäude wird nur das aktuelle Stockwerk angezeigt, wobei Nut
 Über Interaktionselemente ist es möglich, Informationen zu Räumen und Objekten auf der Karte abzurufen.
 Die Konzeptzeichnung in \autoref{fig:concept_overview} verdeutlicht das Prinzip.
 
-Die Megamap soll Nutzer helfen, sich in ihnen unbekannten Gebäuden zu orientieren, diese zu erkunden und nach Orten in den Gebäuden zu suchen.
+Die Megamap soll Nutzern helfen, sich in unbekannten Gebäuden zu orientieren, diese zu erkunden und nach Orten in den Gebäuden zu suchen.
 Ein Beispiel ist die augmentierte Exploration der Gebäude der Universität Bremen.
 Neue Studierende oder Gäste der Universität könnten durch die Megamap bei der Suche nach Büros von Mitarbeitern, öffentlichen Druckern, Essensmöglichkeiten, Toiletten etc. unterstützt werden.
 Da die meisten der Universitätsgebäude mehrstöckig sind, wäre der Einsatz einer dreidimensionalen Karte zur Exploration der Gebäude interessant.
-Auch der Einsatz in Einkaufszentren oder Flughäfen wäre denkbar.
-
-\begin{figure}
+Auch der Einsatz in Einkaufszentren oder Flughäfen ist denkbar.
+\begin{figure}[bht]
 	\centering
 	\imagebox{
 		\includegraphics[width=0.75\linewidth]{figures/concept/overview}
 	}
 	\caption{Konzeptzeichnung einer Megamap. %
-    A:~Nutzer trägt ein HMD. %
-    B:~Indoor-Megamap wird in Umgebung des Nutzers angezeigt. %
-    C:~Stecknadel-Icons markieren Räume mit Kategorien.}
+		A:~Nutzer trägt ein HMD. %
+		B:~Indoor-Megamap wird in Umgebung des Nutzers angezeigt. %
+		C:~Stecknadel-Icons markieren Räume mit Kategorien.}
 	\label{fig:concept_overview}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \begin{subfigure}[t]{0.485\linewidth}
-        \vspace{0pt}
-        \missingfigure{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche}
-        \caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
-        \label{sfig:concept_indoor_view}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[t]{0.485\linewidth}
-        \vspace{0pt}
-        \imagebox{
-            \includegraphics[width=0.72\linewidth]{figures/concept/concept_location_info}
-        }
-        \caption{Konzeptzeichnung der Stecknadel-Informationen.}
-        \label{sfig:concept_pin_info}
-    \end{subfigure}
+\subsection{Interaktion durch Explorationselemente}
+\todo{Kon\-zept\-zeich\-nun\-gen überarbeiten.}
+Nutzern von MR-HMDs wie der HoloLens oder der Magic~Leap stehen drei Eingabemethoden zur Verfügung: Controller, Gesten- und Sprachsteuerung.
+Da die Megamap in dieser Arbeit als Prototyp in VR implementiert wird, konzentriert sich das Konzept auf die Controller-Methode.
+
+Damit das 3D-Gebäudemodell überhaupt als Karte fungieren kann, müssen Nutzer mit dem Modell interagieren können.
+Speziell muss die Karte Explorationselemente anbieten, mit denen Nutzer die Umgebung erkunden können.
+Mögliche Explorationselemente sind in \autoref{sec:exploration_elements} beschrieben.
+Für das entwickelte Konzept sowie den Prototypen wurde eine kleinere Auswahl der Elemente betrachtet.
+Ein Ziel für zukünftige Arbeiten kann daher sein, dass die Megamap die gleiche Zahl an Explorationselementen unterstützt wie herkömmliche 2D-Kartenanwendungen.
+
+Für die Indoor-Megamap werden die Gebäudemarkierungen als \emph{Raum}markierungen umfunktioniert, da bei der Anwendung nur ein Gebäude zur Zeit im Fokus steht.
+Die Raummarkierungen werden als dreidimensionale Stecknadeln über Räumen mit besonderen Funktionen dargestellt.
+So können interessante Orte im Gebäude hervorgehoben werden.
+Durch Icons auf den Stecknadeln kann die Kategorie des Raums hervorgehoben werden (beispielsweise Büro, Toilette etc.).
+Ebenso können mit den Stecknadeln wichtige Objekte im Gebäude markiert werden (Drucker, Treppen und Aufzüge, Erste-Hilfe-Kästen etc.).
+Über Filterelemente neben der Karte ließen sich dann Stecknadeln einer Art herausfiltern.
+Die Konzeptzeichnung in \autoref{fig:concept_indoor_view} zeigt die Indoor-Megamap der Ebene 5 des MZH an der Universität Bremen.
+Über eine virtuelle Filterbox werden nur Stecknadeln für öffentliche Toiletten gezeigt.
+Stecknadeln werden auch über Stockwerke hinweg angedeutet, indem sie vertikal versetzt und transparent gemacht werden.
+So können Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockwerk nicht vorhanden sind.
+
+Um mehr Informationen zu einem Ort oder Objekt zu erhalten, können Nutzer die Stecknadel entweder mit dem im Raum getrackten Controller berühren, oder sie mit einem virtuellen Laserpointer anvisieren.
+Letztere Variante hat den Vorteil, dass sich Nutzer nicht zu weiter entfernten Stecknadeln hinbewegen müssen.
+An der Position des Pins öffnet sich ein Fenster mit Informationen zum Ort bzw. Objekt, was die Aufgabe der Attributsliste aus \autoref{sec:exploration_elements} übernimmt.
+Ein Beispiel für ein solches Informationsfenster ist in \autoref{fig:concept_pin_info} skizziert.
+Wie die Karte und die Stecknadeln ist auch das Informationsfenster in der Umgebung verankert.
+Anstatt es direkt auf dem Display des Nutzers anzuzeigen befindet sich das Fenster an der Position der Stecknadel und wird so rotiert, dass der Nutzer immer auf die Vorderseite schaut.
+Seine relative Position zur Umgebung bleibt gleich.
+Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt fester Anzeige auf dem Display) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite[23]{Schroeder2017}.
+
+Damit Nutzer das aktuell gezeigte Stockwerk wechseln können, ohne sich physisch dorthin zu bewegen, werden weitere virtuelle Schaltflächen angeboten (siehe \autoref{fig:concept_indoor_view}).
+Mit diesen kann auf die gleiche Weise wie mit den Stecknadeln oder den Filterelementen über den Controller interagiert werden.
+
+\begin{figure}[t]
+	\centering
+	\imagebox{
+		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.7\linewidth]{figures/concept/3d_condition}
+	}
+	\caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
+	\label{fig:concept_indoor_view}
 \end{figure}
+
+\begin{figure}[bth]
+	\centering
+	\imagebox{
+		\includegraphics[width=0.72\linewidth]{figures/concept/concept_location_info}
+	}
+	\caption{Konzeptzeichnung der Stecknadel-Informationen.}
+	\label{fig:concept_pin_info}
+\end{figure}
+
+\subsection{Platzierung der Megamap im Raum}
+
+\subsection{Beschaffung von Gebäudedaten}
 
 %
 \cleardoublepage
