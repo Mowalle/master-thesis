@@ -70,35 +70,36 @@ Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher
 \begin{table}[tbh]
     \small
     \centering
-    \caption{Übersicht der Explorationselemente in ausgewählten Anwendungen}
+    \caption{Übersicht der Explorationselemente in ausgewählten Anwendungen, eingeschlossen der Megamap aus TCTD.}
     \label{tab:exploration_elements_summary}
-    \todo[inline]{TCTD aus Tabelle rausnehmen?}
     \begin{tabular}{@{}lcccc@{}}
-        \tableheadcolor \textsf{\textbf{Explorationselement}} & \textsf{\textbf{Google Maps}} & \textsf{\textbf{Bing Maps}} & \textsf{\textbf{Here WeGo}} & \textsf{\textbf{TCTD}}\\
+        \tableheadcolor
+        \textsf{\textbf{Explorationselement}} & \rotatebox[origin=c]{90}{\textsf{\textbf{\hspace{2mm}Google Maps\hspace{2mm}}}} & \rotatebox[origin=c]{90}{\textsf{\textbf{Bing Maps}}} & \rotatebox[origin=c]{90}{\textsf{\textbf{Here WeGo}}} & \rotatebox[origin=c]{90}{\textsf{\textbf{TCTD}}} \\
 
-        \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Lokalisierung}} \\
-        \rowcolorodd Positionsmarker (Nutzer) & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Labels (Straßen, Flüsse, \dots) & \checkmark & \checkmark & \checkmark & \\
-        \rowcolorodd Gebäudemarkierungen & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Klickmarkierung (Adresse, Koordinaten) & \checkmark & \checkmark & \checkmark & \\
-        \rowcolorodd Spezifische Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Attributsübersicht & \checkmark & \checkmark & --- & \\
+        \tableheadcolor
+        \multicolumn{5}{@{}l@{}}{\textsc{Lokalisierung}} \\
+        \rowcolorodd Positionsmarker (Nutzer) & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \rowcoloreven Labels (Straßen, Flüsse, \dots) & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \rowcolorodd Gebäudemarkierungen & \checkmark & \checkmark & \checkmark &  \checkmark \\
+        \rowcoloreven Klickmarkierung (Adresse, Koordinaten) & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \rowcolorodd Spezifische Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & --- \\
+        \rowcoloreven Attributsübersicht & \checkmark & \checkmark & --- & \checkmark \\
 
         \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Nähe}} \\
-        \rowcolorodd Gebäudemarkierungen (Positionsabh.) & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Gebäudemarkierungen (Zoomabh.) & \checkmark & \checkmark & \checkmark & \\
-        \rowcolorodd Entfernungen (außerhalb Navigation) & \checkmark & \checkmark & --- & \\
-        \rowcoloreven Offene Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & \\
-        \rowcolorodd Nahbereichssuche & \checkmark & \checkmark & --- & \\
-        \rowcoloreven Filter u. Sortierung & \checkmark & \checkmark & --- & \\
-        \rowcolorodd Ortsnachbarschaft & \checkmark & \checkmark & Nur Transport & \\
-        \rowcoloreven Umgebungsbilder & \checkmark & \checkmark & --- & \\
+        \rowcolorodd Gebäudemarkierungen (Positionsabh.) & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \rowcoloreven Gebäudemarkierungen (Zoomabh.) & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \rowcolorodd Entfernungen (außerhalb Navigation) & \checkmark & \checkmark & --- & \checkmark \\
+        \rowcoloreven Offene Suche (mittels Suchfeld) & \checkmark & \checkmark & \checkmark & --- \\
+        \rowcolorodd Nahbereichssuche & \checkmark & \checkmark & --- & --- \\
+        \rowcoloreven Filter u. Sortierung & \checkmark & \checkmark & --- & Nur Filter \\
+        \rowcolorodd Ortsnachbarschaft & \checkmark & \checkmark & Nur Transport & --- \\
+        \rowcoloreven Umgebungsbilder & \checkmark & \checkmark & --- & --- \\
 
         \tableheadcolor \multicolumn{5}{@{}l@{}}{\textsc{Event}} \\
-        \rowcolorodd Öffnungszeiten & \checkmark & \checkmark & \checkmark & \\
-        \rowcoloreven Verkehrsinformationen & \checkmark & \checkmark & \checkmark & \\
-        \rowcolorodd Veranstaltungen & \checkmark & --- & --- & \\
-        \rowcoloreven Besucheraufkommen & \checkmark & --- & --- & \\
+        \rowcolorodd Öffnungszeiten & \checkmark & \checkmark & \checkmark & --- \\
+        \rowcoloreven Verkehrsinformationen & \checkmark & \checkmark & \checkmark & --- \\
+        \rowcolorodd Veranstaltungen & \checkmark & --- & --- & --- \\
+        \rowcoloreven Besucheraufkommen & \checkmark & --- & --- & --- \\
 
     \end{tabular}
 \end{table}
