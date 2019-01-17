@@ -26,12 +26,11 @@
 \usepackage{showframe}
 
 %\usepackage{float}
-\usepackage{booktabs}
+\usepackage{booktabs, colortbl}
 \usepackage{amsmath, amssymb}
 \usepackage[autopunct]{csquotes}
 \usepackage{graphicx}
-\usepackage[labelformat=simple]{subcaption}
-\renewcommand\thesubfigure{(\alph{subfigure})}
+\usepackage[labelformat=parens, subrefformat=simple]{subcaption}
 \usepackage{multirow}
 
 \usepackage{siunitx}
@@ -53,6 +52,7 @@
 
 \usepackage{listings}
 \usepackage{tabularx}
+\renewcommand{\arraystretch}{1.2}
 
 \definecolor{dark-grey}{rgb}{0.3, 0.3, 0.3}
 \definecolor{comment-green}{rgb}{0.0, 0.6, 0.0}
@@ -108,6 +108,10 @@
 \input{macros.tex}
 
 %\includeonly{titlepage, declaration_of_originality, thanks, abstract}
+
+\newcommand{\tableheadcolor}{\rowcolor{gray!25}}
+\newcommand{\rowcolorodd}{\rowcolor{gray!10}}
+\newcommand{\rowcoloreven}{\rowcolor{gray!3}}
 
 \begin{document}
 
