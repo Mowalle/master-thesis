@@ -67,6 +67,7 @@ Alle drei Webseiten bieten neben der Routen-Planung auch Funktionen zur Erkundun
 \autoref{tab:exploration_elements_summary} zeigt eine Übersicht der gefundenen Explorationselemente.
 Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher erläutert.
 
+\todo{Gebäudemarkierungen umbenennen in Ortsmarkierungen/POI-Markierungen?}
 \begin{table}[tbh]
     \small
     \centering
@@ -291,7 +292,65 @@ Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft b
 \end{figure}
 
 \section{Megamap in \emph{Tom Clancy's The Division}}
-% Mechanics
+In \autoref{chap:einleitung} wurde bereits erwähnt, dass die grundlegende Idee für das Konzept der Megamap aus dem Spiel Tom Clancy's The Division stammt.
+Anders als die zuvor beschriebenen Kartenanwendungen implementiert die Megamap in The Division eine dreidimensionale Karte, basierend auf einem virtuellen New York.
+Die Karte wird in die Umgebung des Spielcharakters integriert, sodass dieser \enquote{in der Karte steht}.
+Aus der Sicht des Spielcharakters handelt es sich also um eine AR-Karte.
+
+Im Vergleich zu den vorigen Kartenanwendungen lassen sich sowohl Gemeinsamkeiten als auch Unterschiede bei der Umsetzung von Explorationselementen ermitteln.
+Für diese Arbeit wird die Megamap aus The Division als vierte \enquote{Kartenanwendung} nach den gleichen Kriterien wie die anderen Anwendungen betrachtet.
+Dieser Abschnitt geht auf die Explorationselemente in TCTDs Megamap ein.
+Die Erkenntnisse über den Einsatz von Explorationselementen in TCTDs Megamap fließen in die Gestaltung des Megamap-Konzepts dieser Arbeit ein.
+Eine Übersicht der gefundenen Elemente findet sich (zusammen mit denen der anderen Anwendungen) in \autoref{tab:exploration_elements_summary}.
+
+Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten:
+\begin{enumerate}
+    \item Ein kleiner Ausschnitt der Megamap wird um den Spielcharakter herum in die virtuelle Umgebung integriert.
+    Falls sich dort bereits Objekte befinden, bleiben diese weiterhin sichtbar.
+    Die Megamap ist an den Überschneidungspunkten komplett transparent.
+    \item Sobald der Zoom oder die Verschiebung der Megamap durch den Spieler geändert wird, wird ein größerer Ausschnitt der Megamap gezeigt.
+    Die virtuelle Umgebung wird ausgeblendet und wird nur noch durch die Megamap skizziert.
+\end{enumerate}
+
+Die Megamap nutzt einige der Lokalisierungselemente, die auch in der anderen Anwendungen zu finden sind.
+Ein Positionsmarker zeigt die aktuelle Position des Spielecharakters in der Welt an, wenn die Kamera nahe an die Karte herangezoomt wird (ansonsten wird weiterhin der Spielecharakter dargestellt).
+Straßen, Parks, Stadtteile etc. werden durch Text-Labels benannt.
+Wichtige Punkte auf der Karte (wie zum Beispiel andere Spieler, Missionen, Gebäude oder Items) werden durch unterscheidbare Icons und ergänzenden Text markiert.
+So können Spieler Orte auf der Karte schneller entdecken.
+Mit dem Controller können Spieler einen Cursor über die Megamap bewegen, der dabei x- und y-Koordinaten der Karte anzeigt.
+Drücken die Spieler einen entsprechenden Knopf, können sie eine Klickmarkierung auf der Karte platzieren, welche automatisch eine Route vom Spielcharakter zum angeklickten Ort berechnet.
+Falls sich stattdessen eine Markierung am angeklickten Ort befindet, werden diverse Eigenschaften des Orts auf einem HUD der Karte angezeigt.
+Beispielsweise werden bei einer Mission das notwendige Charakterlevel, die Missionsbeschreibung sowie die Belohnungen für einen Missionsabschluss aufgelistet.
+Zudem werden die Entfernungen der Orte zum Spielcharakter angezeigt.
+Dies entspricht der Attributsliste für Orte aus den anderen Anwendungen.
+
+Nähe-Elemente, wie es sie in den anderen Anwendungen gibt, sind in TCTD weniger zu finden.
+Neben den positions- und zoomabhängigen Ortsmarkierungen sowie den bereits erwähnten Entfernungsangaben bietet die Megamap in TCTD nur eine limitierte Funktionalität zum Filtern der Ortsmarkierungen.
+Sortierungen der Markierungen, Umgebungsbilder sowie eine offene Suche sind in der Megamap nicht vorhanden.
+
+Ebenso sind keine Eventelemente vorhanden, wie es sie in den anderen Anwendungen gibt.
+Stattdessen werden die Positionen von anderen Mitspielern, Gegnern und Missionszielen in Echtzeit auf der Megamap gezeigt.
+
+Da es sich bei der Megamap aus der Sicht des Spielcharakters um eine AR-Karte handelt, setzt sie einige Funktionen um, die mit den anderen Anwendungen nicht möglich sind.
+Durch ihre Platzierung im 3D-Raum kann sie die Umrisse der Gebäude des virtuellen New Yorks auch in der Höhe darstellen.
+Um die Megamap herum wird ein augmentierter Kompass-Ring eingeblendet, der den Spielern die Himmelsrichtungen anzeigt.
+Außerdem ist die Megamap mit einer augmentierten \enquote{GPS}-Routenführung für den Spielcharakter integriert.
+Dabei zieht sich eine Line durch die virtuelle Umgebung, welche den Spielern den Weg zu ausgewählten Zielen zeigt.
+
+Viele Aspekte der Megamap in TCTD sind für die Umsetzung einer AR-Kartenanwendung in der realen Welt interessant.
+Für die Realisierung einer solchen Anwendung ergeben sich jedoch Probleme, die gelöst werden müssen.
+Zum Beispiel ist im Spiel ein 3D-Modell der Umgebung implizit gegeben, da die Umgebung selbst aus 3D-Modellen aufgebaut ist.
+In der realen Welt sind solche Modelle der Umgebung unter Umständen nicht verfügbar.
+Damit eine Megamap dargestellt werden kann müssen Daten von der Umgebung bekannt sein.
+Ein weiteres Problem ist die Integration der Karte in die Umgebung.
+Da im Spiel alle Umgebungsobjekte wie die Karte virtuell sind, können Überlappungen der Karte mit den Objekten durch visuelle Effekte wie in TCTD umgangen werden.
+In der realen Welt müssen die Objekte der MR-Anwendung bekannt sein, um Überlappungen korrekt berechnen zu können.
+Außerdem ist die Megamap in TCTD nicht für den Spiel\emph{charakter}, sondern für den \emph{Spieler} selbst gedacht.
+Das heißt, der Spieler betrachtet sowohl die virtuelle Umgebung als auch die Karte aus einer Dritte-Person-Perspektive.
+In der realen Welt nehmen Nutzer jedoch die Erste-Person-Perspektive ein, wodurch die Perspektive auf die Megamap eine andere wäre, als die im Spiel.
+Es ist also nicht klar, ob sich das Konzept der Megamap auf die Anwendung in der Ersten-Person-Perspektive in der echten Welt übertragen lässt.
+
+Auf diese Probleme wird im weiteren Verlauf der Arbeit durch die Aufstellung eines Megamap-Konzepts, dessen prototypischer Implementierung sowie einer Nutzerstudie des Prototypen eingegangen.
 
 \section{Anwendung der Explorationselemente für Megamap}
 Basierend auf den Erkenntnissen der vorigen Abschnitte kann ein Konzept für eine umgebungsintegrierte Megamap entwickelt werden, deren Zielplattform Mixed-Reality-HMDs sind.
@@ -354,7 +413,6 @@ So können Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockwerk 
 	\label{fig:concept_indoor_view}
 \end{figure}
 
-\newpage
 Um mehr Informationen zu einem Ort oder Objekt zu erhalten, können Nutzer die Stecknadel entweder mit dem im Raum getrackten Controller berühren, oder sie mit einem virtuellen Laserpointer anvisieren.
 Letztere Variante hat den Vorteil, dass sich Nutzer nicht zu weiter entfernten Stecknadeln hinbewegen müssen.
 An der Position des Pins öffnet sich ein Fenster mit Informationen zum Ort bzw. Objekt, was die Aufgabe der Attributsliste aus \autoref{sec:exploration_elements} übernimmt.
