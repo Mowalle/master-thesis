@@ -116,40 +116,7 @@ Der Positionsmarker erlaubt es dem Nutzer, seine eigene Position in der Umgebung
 \emph{Labels} sind Textelemente, welche die Namen von Straßen, Flüssen, Gebäuden etc. auf der Karte zeigen (siehe \autoref{fig:hwg_labels}).
 Nutzer können Kartenlabels mit Schildern und Wegweisern in der Umgebung abgleichen, was die Orientierung erleichtert.
 Zudem sind Wegbeschreibungen deutlicher, wenn Orte auf der Karte und in der Umgebung explizit benannt werden können.
-
-\emph{Gebäudemarkierungen} sind grafische Elemente, welche die Positionen von gewissen Gebäuden auf Karten markieren.
-Es gibt sowohl statische Gebäudemarkierungen, die zusammen mit den Labels auf der Karte fest verankert sind, wie auch dynamische Gebäudemarkierungen, die je nach Kontext des Nutzers ein- bzw. ausgeblendet werden.
-Die dynamischen Gebäudemarkierungen werden durch sogenannte \enquote{Stecknadeln} repräsentiert.
-Diese sind mit Icons versehen, welche die Kategorie des Gebäudes anzeigen.
-Beispiele finden sich in \autoref{fig:bm_gebaeudemarkierungen}.
-
-Eine \emph{Klickmarkierung} kann in den Kartenanwendungen durch Klicken auf den Kartenbereich erzeugt werden.
-Die Markierung wird grafisch als Stecknadel oder ein vergleichbares Symbol dargestellt (siehe \autoref{fig:gm_klickmarkierung}).
-Über eine solche Markierung kann der Nutzer auf die Adresse und / oder die Koordinaten am angeklickten Ort zugreifen.
-
-Die \emph{spezifische Suche} ist eine Lokalisierungs-Interaktion, die durch ein Suchfeld ausgelöst wird.
-Als \emph{spezifische} Suche (im Gegensatz zur \emph{offenen} Suche) wird in dieser Arbeit die Suche nach einer bekannten Adresse oder einem eindeutig benannten Ort verstanden (beispielsweise \enquote{Bremer Rathaus} oder \enquote{Bibliothekstraße 1}).
-Wird eine solche Suche durchgeführt, platziert die Anwendung eine grafische Markierung auf dem Zielobjekt.
-Den Nutzern bleibt somit eine manuelle Suche nach dem Zielort auf der Karte erspart.
-
-Das letzte Lokalisierungselement ist die \emph{Attributsansicht}.
-Über diese Ansicht werden Nutzern Informationen über einen Ort aufgelistet.
-Die Informationen umfassen neben der Adresse und Anschrift unter anderem auch Kontaktdaten (Webseiten, Telefonnummern), Öffnungszeiten, Bilder, Bewertungen usw.
-Speziell für Gebäude werden hier auch Ausstattungen gelistet.
-\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels aufgelistet wird.
-Die Anzeige solcher Informationen ermöglicht es, die Kartenanwendungen für andere Anwendungsfälle als die reine Navigation zu nutzen.
-Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
-
-\begin{figure}
-	\centering
-	\imagebox{
-		\includegraphics[height=7cm]{figures/map-app_examples/gm_ausstattung}
-	}
-	\caption{Beispiel für die Auflistung einer Gebäudeausstattung (eines Hotels in Bremen) in der Attributansicht von Google Maps.}
-	\label{fig:gm_ausstattung}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[h]
     \centering
     \begin{minipage}[t]{.485\textwidth}
         \centering
@@ -169,7 +136,16 @@ Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkun
     \end{minipage}
 \end{figure}
 
-\begin{figure}
+\emph{Gebäudemarkierungen} sind grafische Elemente, welche die Positionen von gewissen Gebäuden auf Karten markieren.
+Es gibt sowohl statische Gebäudemarkierungen, die zusammen mit den Labels auf der Karte fest verankert sind, wie auch dynamische Gebäudemarkierungen, die je nach Kontext des Nutzers ein- bzw. ausgeblendet werden.
+Die dynamischen Gebäudemarkierungen werden durch sogenannte \enquote{Stecknadeln} repräsentiert.
+Diese sind mit Icons versehen, welche die Kategorie des Gebäudes anzeigen.
+Beispiele finden sich in \autoref{fig:bm_gebaeudemarkierungen}.
+
+Eine \emph{Klickmarkierung} kann in den Kartenanwendungen durch Klicken auf den Kartenbereich erzeugt werden.
+Die Markierung wird grafisch als Stecknadel oder ein vergleichbares Symbol dargestellt (siehe \autoref{fig:gm_klickmarkierung}).
+Über eine solche Markierung kann der Nutzer auf die Adresse und / oder die Koordinaten am angeklickten Ort zugreifen.
+\begin{figure}[t]
     \centering
     \begin{minipage}[t]{.485\textwidth}
         \centering
@@ -189,6 +165,27 @@ Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkun
         Unterhalb der Markierung werden die Adresse und Koordinaten gezeigt.}
         \label{fig:gm_klickmarkierung}
     \end{minipage}
+\end{figure}
+
+Die \emph{spezifische Suche} ist eine Lokalisierungs-Interaktion, die durch ein Suchfeld ausgelöst wird.
+Als \emph{spezifische} Suche (im Gegensatz zur \emph{offenen} Suche) wird in dieser Arbeit die Suche nach einer bekannten Adresse oder einem eindeutig benannten Ort verstanden (beispielsweise \enquote{Bremer Rathaus} oder \enquote{Bibliothekstraße 1}).
+Wird eine solche Suche durchgeführt, platziert die Anwendung eine grafische Markierung auf dem Zielobjekt.
+Den Nutzern bleibt somit eine manuelle Suche nach dem Zielort auf der Karte erspart.
+
+Das letzte Lokalisierungselement ist die \emph{Attributsansicht}.
+Über diese Ansicht werden Nutzern Informationen über einen Ort aufgelistet.
+Die Informationen umfassen neben der Adresse und Anschrift unter anderem auch Kontaktdaten (Webseiten, Telefonnummern), Öffnungszeiten, Bilder, Bewertungen usw.
+Speziell für Gebäude werden hier auch Ausstattungen gelistet.
+\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels aufgelistet wird.
+Die Anzeige solcher Informationen ermöglicht es, die Kartenanwendungen für andere Anwendungsfälle als die reine Navigation zu nutzen.
+Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
+\begin{figure}[t]
+	\centering
+	\imagebox{
+		\includegraphics[height=7cm]{figures/map-app_examples/gm_ausstattung}
+	}
+	\caption{Beispiel für die Auflistung einer Gebäudeausstattung (eines Hotels in Bremen) in der Attributansicht von Google Maps.}
+	\label{fig:gm_ausstattung}
 \end{figure}
 
 \subsection{Nähe-Elemente}
@@ -213,7 +210,8 @@ Die \emph{offene Suche} ist eine Nähe-Interaktion, die über ein Suchfeld ausge
 Anders als die \emph{spezifische} Suche wird bei der offenen Suche nach Kategorien von Orten gesucht (z.B. \enquote{Restaurants}, \enquote{Parks}, \enquote{Zoo}).
 Da bei einer solchen offenen Suche keine eindeutigen Ortsnamen verwendet werden, kommt es häufig zu mehreren Zielalternativen, die für die Nutzer zutreffen könnten.
 In den untersuchten Anwendungen werden alle möglichen Alternativen durch Gebäudemarkierungen hervorgehoben.
-\begin{figure}
+\autoref{fig:bm_open_search} zeigt eine offene Suche nach Hotels in Bremen.
+\begin{figure}[h]
 	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_open_search_2}
 	\caption{Offene Suche nach Hotels in Bing Maps liefert mehrere Alternativen.}
 	\label{fig:bm_open_search}
@@ -221,20 +219,24 @@ In den untersuchten Anwendungen werden alle möglichen Alternativen durch Gebäu
 
 Die \emph{Nahbereichssuche} ist eine Interaktion, mit der ein definierter Bereich der Karte unter Suchkriterien nach Orten durchsucht werden kann.
 Damit ist sie eine lokal begrenzte offene Suche.
-In den untersuchten Anwendungen lässt sich diese Funktion durch Öffnen des Kartenmenus mittels Rechtsklick aufrufen.
+In den untersuchten Anwendungen lässt sich diese Funktion durch Öffnen des Kartenmenus mittels Rechtsklick aufrufen (siehe \autoref{fig:bm_nearby}).
 Bei der Nahbereichssuche werden nur Gebäudemarkierungen angezeigt, die sich in einem gewissen Radius um den Ort des Anklickens herum befinden.
 Nutzer können hiermit Umgebungen erkunden, an denen sie sich selber nicht befinden.
-\begin{figure}
-	\includegraphics[width=0.485\linewidth]{figures/map-app_examples/bm_nearby}
-	\caption{Über das Rechtsklick-Menu in Bing Maps kann die Umgebung durchsucht werden.}
-	\label{fig:bm_nearby}
-\end{figure}
 
 Über die Elemente \emph{Filter und Sortierung} können die Suchkriterien weiter eingeschränkt werden.
 Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern, oder Hotels nach Preisklasse (siehe \autoref{fig:bm_sorting}).
 So müssen Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
 Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevanter Orte Zeit beim Suchen von Zielen ersparen.
-\begin{figure}
+
+\begin{figure}[p]
+    \centering
+    \imagebox{
+	    \includegraphics[width=0.485\linewidth]{figures/map-app_examples/bm_nearby}
+	}
+	\caption{Über das Rechtsklick-Menu in Bing Maps kann die Umgebung durchsucht werden.}
+	\label{fig:bm_nearby}
+\end{figure}
+\begin{figure}[p]
 	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
 	\caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
 	\label{fig:bm_sorting}
@@ -251,8 +253,7 @@ Die Einbindung der Bilder in die Anwendungen wird unterschiedlich gehandhabt.
 Zum Beispiel befindet sich in Google Maps eine Liste von Umgebungsfotos in Attributsansicht.
 Wird die Liste angeklickt, öffnet sich eine Großansicht der Fotos (siehe \autoref{fig:gm_photos}).
 Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus die Ansicht verändert werden.
-
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/map-app_examples/gm_photos_2}
 	\caption{Umgebungsfotos zum Universum Bremen via Google Maps.}
@@ -279,7 +280,7 @@ Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten
 
 Zuletzt sind auch Informationen über das \emph{aktuelle Besucheraufkommen an Orten} als Event-Element verfügbar.
 Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden (siehe \autoref{fig:gm_opening_hours}).
-\begin{figure}[bht]
+\begin{figure}[th]
 	\centering
 	\imagebox{
 		\includegraphics[width=0.4\linewidth]{figures/map-app_examples/gm_opening_hours}
@@ -342,7 +343,17 @@ Die Konzeptzeichnung in \autoref{fig:concept_indoor_view} zeigt die Indoor-Megam
 Über eine virtuelle Filterbox werden nur Stecknadeln für öffentliche Toiletten gezeigt.
 Stecknadeln werden auch über Stockwerke hinweg angedeutet, indem sie vertikal versetzt und transparent gemacht werden.
 So können Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockwerk nicht vorhanden sind.
+\vfill
+\begin{figure}[h]
+	\centering
+	\imagebox{
+		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.7\linewidth]{figures/concept/3d_condition}
+	}
+	\caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
+	\label{fig:concept_indoor_view}
+\end{figure}
 
+\newpage
 Um mehr Informationen zu einem Ort oder Objekt zu erhalten, können Nutzer die Stecknadel entweder mit dem im Raum getrackten Controller berühren, oder sie mit einem virtuellen Laserpointer anvisieren.
 Letztere Variante hat den Vorteil, dass sich Nutzer nicht zu weiter entfernten Stecknadeln hinbewegen müssen.
 An der Position des Pins öffnet sich ein Fenster mit Informationen zum Ort bzw. Objekt, was die Aufgabe der Attributsliste aus \autoref{sec:exploration_elements} übernimmt.
@@ -359,15 +370,6 @@ Damit Nutzer ihre Position auf der Karte schnell erkennen können wird der Posit
 Für die Anwendung auf einer 3D-Karte wird der Marker von einem zweidimensionalen Kreis zu einem Zylinder erweitert.
 Zusätzlich zeigt ein Kreissegment die aktuelle Blickrichtung sowie den Blickwinkel des Nutzers an.
 Somit können Nutzer nicht nur ihre Position, sondern auch ihre Orientierung innerhalb der Umgebung vom Positionsmarker ablesen.
-
-\begin{figure}[t]
-	\centering
-	\imagebox{
-		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.7\linewidth]{figures/concept/3d_condition}
-	}
-	\caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
-	\label{fig:concept_indoor_view}
-\end{figure}
 
 \begin{figure}[bth]
 	\centering
@@ -411,7 +413,7 @@ Dennoch lassen sich die Tags für die Definition eines Indoor-Layouts umfunktion
 Ergänzend hierzu unterstützt OSM das \emph{Simple Indoor Tagging Schema}.
 \autoref{fig:osm_simple-indoor-tagging} zeigt, wie das Schema auf ein Gebäudelayout angewendet werden kann.
 Da dieses Schema zum regulären Tagging in OSM kompatibel ist, können Indoor- und Outdoor-Daten in der selben Datenbank verwaltet werden \parencite{OpenStreetMapFoundation2018c}.
-\begin{figure}[bht]
+\begin{figure}[t]
     \centering
     \imagebox {
         \includegraphics[trim={17cm, 0, 0, 0}, clip, width=\linewidth]{figures/concept/osm_Indoor2_0_elements}
