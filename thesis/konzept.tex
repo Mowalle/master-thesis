@@ -396,7 +396,27 @@ Mit den erwähnten MR-HMDs ist ein solcher Effekt ebenfalls möglich.
 Durch die 3D-Rekonstruktion ergeben sich grobe Meshes der Umgebungsobjekte und Wände.
 Die virtuelle Megamap kann an den Stellen dieser Meshes transparent gerendert werden, wodurch der Effekt aus TCTD nachgestellt wird.
 
-\subsection{Beschaffung von Gebäudedaten}
+\subsection{Beschaffung von Gebäudedaten und Generierung der Karten}
+Für die Darstellung als Megamap ist ein 3D-Modell des Gebäudes erforderlich.
+Eine automatisierte Generierung des Modells basierend auf Gebäudedaten ist wünschenswert, damit das Modell nicht per Hand erstellt werden muss und immer die aktuellsten Daten des Gebäudes nutzt.
+Ein möglicher Ansatz ist, die Grundrisse des jeweiligen Gebäudes zu georeferenzieren und in einer entsprechenden Datenbank wie z.B. OpenStreetMap zu veröffentlichen.
+Die Megamap-Anwendung kann auf die georeferenzierten Grundriss-Daten über die Programmierschnittstelle (\emph{Application Programming Interface} (API)) zugreifen und daraus 3D-Modelle generieren.
+Die Wände des Gebäudes können z.B. als Polygon-Features mit dem OSM-Tag \lstinline{height} angelegt werden, die Türen würden durch Rechtecke mit dem Tag \lstinline{min_height} repräsentiert.
+Normalerweise werden in OSM mit diesen Tags Gebäude als Ganzes definiert \parencite{OpenStreetMapFoundation2018b}.
+Dennoch lassen sich die Tags für die Definition eines Indoor-Layouts umfunktionieren.
 
+Ergänzend hierzu unterstützt OSM das \emph{Simple Indoor Tagging Schema}.
+\autoref{fig:osm_simple-indoor-tagging} zeigt, wie das Schema auf ein Gebäudelayout angewendet werden kann.
+Da dieses Schema zum regulären Tagging in OSM kompatibel ist, können Indoor- und Outdoor-Daten in der selben Datenbank verwaltet werden \parencite{OpenStreetMapFoundation2018c}.
+\begin{figure}[bht]
+    \centering
+    \includegraphics[width=\linewidth]{figures/concept/osm_Indoor2_0_elements}
+    \caption{Beispiel des Simple Indoor Tagging Schemas in OpenStreetMap. %
+    \quelle{\cite{OpenStreetMapFoundation2018c}}}
+    \label{fig:osm_simple-indoor-tagging}
+\end{figure}
+\todo{Tags sind unleserlich.}
+
+Konkrete Möglichkeiten, die Daten aus OSM abzurufen und für die Megamap zu verwenden, werden im \autoref{chap:closing} diskutiert.
 %
 \cleardoublepage
