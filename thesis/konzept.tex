@@ -35,7 +35,7 @@ Dies steht im Kontrast zur Navigation, für welche immer ein Endpunkt im Kontext
 Da Nutzer eine Umgebung durch Abfragen ihrer Informationen \enquote{entdecken}, wird in dieser Arbeit \textbf{Kartenexploration} als Oberbegriff für die Lokalisierungs-, Nähe- und Event-Tasks betrachtet.
 Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvor beschriebenen Unterschiede ab.
 
-\begin{table}[tbh]
+\begin{table}[htb]
     \centering
     \caption{Geoinformationsaufgaben in einer mobilen Umgebung. \quelle{\cite[47]{Reichenbacher2001}}}
     \label{tab:gis_user_tasks}
@@ -223,13 +223,7 @@ Damit ist sie eine lokal begrenzte offene Suche.
 In den untersuchten Anwendungen lässt sich diese Funktion durch Öffnen des Kartenmenus mittels Rechtsklick aufrufen (siehe \autoref{fig:bm_nearby}).
 Bei der Nahbereichssuche werden nur Ortsmarkierungen angezeigt, die sich in einem gewissen Radius um den Ort des Anklickens herum befinden.
 Nutzer können hiermit Umgebungen erkunden, an denen sie sich selber nicht befinden.
-
-Über die Elemente \emph{Filter und Sortierung} können die Suchkriterien weiter eingeschränkt werden.
-Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern, oder Hotels nach Preisklasse (siehe \autoref{fig:bm_sorting}).
-So müssen Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
-Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevanter Orte Zeit beim Suchen von Zielen ersparen.
-
-\begin{figure}[p]
+\begin{figure}[h]
     \centering
     \imagebox{
 	    \includegraphics[width=0.485\linewidth]{figures/map-app_examples/bm_nearby}
@@ -237,11 +231,11 @@ Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevante
 	\caption{Über das Rechtsklick-Menu in Bing Maps kann die Umgebung durchsucht werden.}
 	\label{fig:bm_nearby}
 \end{figure}
-\begin{figure}[p]
-	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
-	\caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
-	\label{fig:bm_sorting}
-\end{figure}
+
+Über die Elemente \emph{Filter und Sortierung} können die Suchkriterien weiter eingeschränkt werden.
+Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern, oder Hotels nach Preisklasse (siehe \autoref{fig:bm_sorting}).
+So müssen Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
+Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevanter Orte Zeit beim Suchen von Zielen ersparen.
 
 Das Nähe-Element \emph{Ortsnachbarschaft} ist ein Element, welches in der Ansicht über die Ortsinformationen integriert sein kann.
 Hierbei handelt es sich um eine List von weiteren Orten, die für den Nutzer relevant sein könnten und sich in der Nähe des aktuell betrachteten Orts befinden.
@@ -254,7 +248,13 @@ Die Einbindung der Bilder in die Anwendungen wird unterschiedlich gehandhabt.
 Zum Beispiel befindet sich in Google Maps eine Liste von Umgebungsfotos in Attributsansicht.
 Wird die Liste angeklickt, öffnet sich eine Großansicht der Fotos (siehe \autoref{fig:gm_photos}).
 Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus die Ansicht verändert werden.
-\begin{figure}[h]
+
+\begin{figure}[p]
+	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
+	\caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
+	\label{fig:bm_sorting}
+\end{figure}
+\begin{figure}[p]
 	\centering
 	\includegraphics[width=\linewidth]{figures/map-app_examples/gm_photos_2}
 	\caption{Umgebungsfotos zum Universum Bremen via Google Maps.}
@@ -310,7 +310,7 @@ Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten (siehe \autoref{fig
     \item Sobald der Zoom oder die Verschiebung der Megamap durch den Spieler geändert wird, wird ein größerer Ausschnitt der Megamap gezeigt.
     Die virtuelle Umgebung wird ausgeblendet und wird nur noch durch die Megamap skizziert.
 \end{enumerate}
-\begin{figure}[hbt]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{figures/concept/the_division_overlap}
 
@@ -318,6 +318,15 @@ Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten (siehe \autoref{fig
     
     \caption{Übersicht der Magamap in TCTD.}
     \label{fig:tctd_overview}
+\end{figure}
+
+\begin{figure}[tbh]
+    \centering
+    \imagebox{
+        \includegraphics[width=0.3\linewidth]{figures/concept/the_division_clickmarker_x}
+    }
+    \caption{Klickmarkierung in TCTDs Megamap mit x-/y-Koordinaten.}
+    \label{fig:tctd_clickmarker}
 \end{figure}
 
 Die Megamap nutzt einige der Lokalisierungselemente, die auch in der anderen Anwendungen zu finden sind.
@@ -328,28 +337,12 @@ So können Spieler Orte auf der Karte schneller entdecken.
 Mit dem Controller können Spieler einen Cursor über die Megamap bewegen, der dabei x- und y-Koordinaten der Karte anzeigt.
 Drücken die Spieler einen entsprechenden Knopf, können sie eine Klickmarkierung auf der Karte platzieren, welche automatisch eine Route vom Spielcharakter zum angeklickten Ort berechnet.
 \autoref{fig:tctd_clickmarker} zeigt einen Screenshot von der Klickmarkierung.
-\begin{figure}[h]
-    \centering
-    \imagebox{
-        \includegraphics[width=0.3\linewidth]{figures/concept/the_division_clickmarker_x}
-    }
-    \caption{Klickmarkierung in TCTDs Megamap mit x-/y-Koordinaten.}
-    \label{fig:tctd_clickmarker}
-\end{figure}
 
 Falls sich stattdessen eine Markierung am angeklickten Ort befindet, werden diverse Eigenschaften des Orts auf einem HUD der Karte angezeigt.
 Beispielsweise werden bei einer Mission das notwendige Charakterlevel, die Missionsbeschreibung sowie die Belohnungen für einen Missionsabschluss aufgelistet.
 Zudem werden die Entfernungen der Orte zum Spielcharakter angezeigt.
 Dies entspricht der Attributsliste für Orte aus den anderen Anwendungen.
 \autoref{fig:tctd_attributes} zeigt, wie die Daten zu einem Ort im HUD angezeigt werden, wenn Spieler einen Ortsmarker anklicken.
-\begin{figure}[h]
-    \centering
-    \imagebox{
-        \includegraphics[width=\linewidth]{figures/concept/the_division_attributes_x}
-    }
-    \caption{Durch Anklicken eines Ortsmarkers werden die jeweiligen Daten zum Ort im HUD angezeigt.}
-    \label{fig:tctd_attributes}
-\end{figure}
 
 Nähe-Elemente, wie es sie in den anderen Anwendungen gibt, sind in TCTD weniger zu finden.
 Neben den positions- und zoomabhängigen Ortsmarkierungen sowie den bereits erwähnten Entfernungsangaben bietet die Megamap in TCTD nur eine limitierte Funktionalität zum Filtern der Ortsmarkierungen.
@@ -364,7 +357,16 @@ Um die Megamap herum wird ein augmentierter Kompass-Ring eingeblendet, der den S
 Außerdem ist die Megamap mit einer augmentierten \enquote{GPS}-Routenführung für den Spielcharakter integriert.
 Dabei zieht sich eine Line durch die virtuelle Umgebung, welche den Spielern den Weg zu ausgewählten Zielen zeigt.
 Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_at-gps}.
-\begin{figure}[h]
+
+\begin{figure}[p]
+    \centering
+    \imagebox{
+        \includegraphics[width=\linewidth]{figures/concept/the_division_attributes_x}
+    }
+    \caption{Durch Anklicken eines Ortsmarkers werden die jeweiligen Daten zum Ort im HUD angezeigt.}
+    \label{fig:tctd_attributes}
+\end{figure}
+\begin{figure}[p]
     \begin{minipage}{0.5\linewidth}
         \centering
         \vspace{0pt}
@@ -520,7 +522,7 @@ Dennoch lassen sich die Tags für die Definition eines Indoor-Layouts umfunktion
 Ergänzend hierzu unterstützt OSM das \emph{Simple Indoor Tagging Schema}.
 \autoref{fig:osm_simple-indoor-tagging} zeigt, wie das Schema auf ein Gebäudelayout angewendet werden kann.
 Da dieses Schema zum regulären Tagging in OSM kompatibel ist, können Indoor- und Outdoor-Daten in der selben Datenbank verwaltet werden \parencite{OpenStreetMapFoundation2018c}.
-\begin{figure}[t]
+\begin{figure}[tbh]
     \centering
     \imagebox {
         \includegraphics[trim={17cm, 0, 0, 0}, clip, width=\linewidth]{figures/concept/osm_Indoor2_0_elements}
