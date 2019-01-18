@@ -303,7 +303,7 @@ Dieser Abschnitt geht auf die Explorationselemente in TCTDs Megamap ein.
 Die Erkenntnisse über den Einsatz von Explorationselementen in TCTDs Megamap fließen in die Gestaltung des Megamap-Konzepts dieser Arbeit ein.
 Eine Übersicht der gefundenen Elemente findet sich (zusammen mit denen der anderen Anwendungen) in \autoref{tab:exploration_elements_summary}.
 
-Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten:
+Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten (siehe \autoref{fig:tctd_overview}):
 \begin{enumerate}
     \item Ein kleiner Ausschnitt der Megamap wird um den Spielcharakter herum in die virtuelle Umgebung integriert.
     Falls sich dort bereits Objekte befinden, bleiben diese weiterhin sichtbar.
@@ -311,6 +311,15 @@ Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten:
     \item Sobald der Zoom oder die Verschiebung der Megamap durch den Spieler geändert wird, wird ein größerer Ausschnitt der Megamap gezeigt.
     Die virtuelle Umgebung wird ausgeblendet und wird nur noch durch die Megamap skizziert.
 \end{enumerate}
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\linewidth]{figures/concept/the_division_overlap}
+
+    \includegraphics[width=\linewidth]{figures/concept/the_division_5}
+    
+    \caption{Übersicht der Magamap in TCTD.}
+    \label{fig:tctd_overview}
+\end{figure}
 
 Die Megamap nutzt einige der Lokalisierungselemente, die auch in der anderen Anwendungen zu finden sind.
 Ein Positionsmarker zeigt die aktuelle Position des Spielecharakters in der Welt an, wenn die Kamera nahe an die Karte herangezoomt wird (ansonsten wird weiterhin der Spielecharakter dargestellt).
@@ -319,10 +328,29 @@ Wichtige Punkte auf der Karte (wie zum Beispiel andere Spieler, Missionen, Gebä
 So können Spieler Orte auf der Karte schneller entdecken.
 Mit dem Controller können Spieler einen Cursor über die Megamap bewegen, der dabei x- und y-Koordinaten der Karte anzeigt.
 Drücken die Spieler einen entsprechenden Knopf, können sie eine Klickmarkierung auf der Karte platzieren, welche automatisch eine Route vom Spielcharakter zum angeklickten Ort berechnet.
+\autoref{fig:tctd_clickmarker} zeigt einen Screenshot von der Klickmarkierung.
+\begin{figure}[h]
+    \centering
+    \imagebox{
+        \includegraphics[width=0.3\linewidth]{figures/concept/the_division_clickmarker_x}
+    }
+    \caption{Klickmarkierung in TCTDs Megamap mit x-/y-Koordinaten.}
+    \label{fig:tctd_clickmarker}
+\end{figure}
+
 Falls sich stattdessen eine Markierung am angeklickten Ort befindet, werden diverse Eigenschaften des Orts auf einem HUD der Karte angezeigt.
 Beispielsweise werden bei einer Mission das notwendige Charakterlevel, die Missionsbeschreibung sowie die Belohnungen für einen Missionsabschluss aufgelistet.
 Zudem werden die Entfernungen der Orte zum Spielcharakter angezeigt.
 Dies entspricht der Attributsliste für Orte aus den anderen Anwendungen.
+\autoref{fig:tctd_attributes} zeigt, wie die Daten zu einem Ort im HUD angezeigt werden, wenn Spieler einen Ortsmarker anklicken.
+\begin{figure}[h]
+    \centering
+    \imagebox{
+        \includegraphics[width=\linewidth]{figures/concept/the_division_attributes_x}
+    }
+    \caption{Durch Anklicken eines Ortsmarkers werden die jeweiligen Daten zum Ort im HUD angezeigt.}
+    \label{fig:tctd_attributes}
+\end{figure}
 
 Nähe-Elemente, wie es sie in den anderen Anwendungen gibt, sind in TCTD weniger zu finden.
 Neben den positions- und zoomabhängigen Ortsmarkierungen sowie den bereits erwähnten Entfernungsangaben bietet die Megamap in TCTD nur eine limitierte Funktionalität zum Filtern der Ortsmarkierungen.
@@ -336,6 +364,27 @@ Durch ihre Platzierung im 3D-Raum kann sie die Umrisse der Gebäude des virtuell
 Um die Megamap herum wird ein augmentierter Kompass-Ring eingeblendet, der den Spielern die Himmelsrichtungen anzeigt.
 Außerdem ist die Megamap mit einer augmentierten \enquote{GPS}-Routenführung für den Spielcharakter integriert.
 Dabei zieht sich eine Line durch die virtuelle Umgebung, welche den Spielern den Weg zu ausgewählten Zielen zeigt.
+Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_at-gps}.
+\begin{figure}[h]
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \vspace{0pt}
+        \raisebox{-0.5\height}{\includegraphics[width=\linewidth]{figures/concept/the_division_gps_x}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.48\linewidth}
+        \centering
+        \vspace{0pt}
+        \includegraphics[width=\linewidth]{figures/concept/the_division_minimap}
+        
+        \vspace{1em}
+        \includegraphics[width=\linewidth]{figures/concept/the_division_arrow}
+    \end{minipage}
+    \caption{Wegpunkt in Megamap kontrolliert das augmentierte GPS. %
+    Oben~Rechts: Minikarte. %
+    Unten~Rechts: Das GPS führt in Richtung \enquote{Manhattan Bridge pass}.}
+    \label{fig:tctd_ar-gps}
+\end{figure}
 
 Viele Aspekte der Megamap in TCTD sind für die Umsetzung einer AR-Kartenanwendung in der realen Welt interessant.
 Für die Realisierung einer solchen Anwendung ergeben sich jedoch Probleme, die gelöst werden müssen.
