@@ -1,7 +1,7 @@
 \chapter{Konzeption der Megamap-Anwendung}
 \label{chap:concept}
-Dieses Kapitel beschreibt die Konzeption der im Rahmen dieser Arbeit entwickelten Megamap-Anwendung.
-Da in dieser Arbeit die Kartenexploration im Gegensatz zur -navigation stärker fokussiert wird, wird zunächst der Begriff der Kartenexploration definiert.
+In diesem Kapitel wird das Konzept der Megamap erläutert.
+Zunächst wird der Begriff der Kartenexplortaion definiert, da diese im Gegensatz zur Kartennavigation in der vorliegenden Arbeit stärker fokussiert wird.
 Um zu verstehen, wie eine digital unterstütze Kartenexploration umgesetzt werden kann, werden Elemente zur Kartenexploration aus bereits existierenden Kartenanwendungen herausgearbeitet.
 Diese Elemente werden kategorisiert, zusammengefasst und schließlich als Grundlage für das Megamap-Konzept verwendet.
 %Schließlich wird ein Überblick der für die Implementierung benötigten Komponenten gegeben.
@@ -12,7 +12,7 @@ Diese Elemente werden kategorisiert, zusammengefasst und schließlich als Grundl
 Bereits \textcite{Reichenbacher2001} beschreibt Konzepte zur mobilen Nutzung von digitalen Kartensystemen.
 Er gibt eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebungen ausgeführt werden können (siehe \autoref{tab:gis_user_tasks}).
 Einer dieser User Tasks ist die \textbf{Navigation}, welcher in digitalen Kartensystemen durch Wegbeschreibungen umgesetzt wird.
-Nutzer bekommen einen oder mehrere Pfade zwischen zwei Punkten angezeigt, welche den Nutzern z.B. den schnellsten oder den kürzesten Weg zum Ziel anschaulich machen.
+Nutzer bekommen einen oder mehrere Pfade zwischen zwei Punkten angezeigt, welche den schnellsten oder den kürzesten Weg zum Ziel anschaulich machen.
 Zusätzlich können wegweisende Textinformationen die Navigation erleichtern.
 
 Neben der Navigation nennt \citeauthor{Reichenbacher2001} drei weitere Kategorien von User Tasks:
@@ -25,7 +25,7 @@ So können Nutzer z.B. die Umgebung nach den nächstgelegenen Geschäften oder F
 
 \textbf{Events} sind nicht nur ortsabhängig, sondern auch zeitabhängig.
 Bei diesen Anwendungsfällen geht es um die Abfrage von Informationen, die sich mit der Zeit ändern.
-Z.B. fallen die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
+Z.B. fällt die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
 
 Eine Gemeinsamkeit dieser Anwendungsfälle ist, dass hier Informationen über die Umgebung abgefragt werden.
 Die Informationen sind abhängig von \emph{mindestens} einem Kontext, zum Beispiel der aktuellen Position der Nutzers.
@@ -57,8 +57,8 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
 \todo{Die Texte und Grafiken müssen hier noch etwas fine-tuned werden.}
 Digitale Kartenanwendungen setzen unterschiedliche Elemente ein, um die Kartenexploration zu unterstützen.
 Bevor das Konzept für die Megamap formuliert wird, werden die Darstellungselemente und Interaktionsmöglichkeiten zur Kartenexploration in bereits existierenden Anwendungen gesammelt und kategorisiert.
-Die Idee ist, diejenigen Elemente in der Megamap zu übernehmen, welche Nutzern bereits aus den anderen Anwendungen bekannt sind.
-Durch die Verwendung der bekannten Elemente und Interaktionen soll ein zusätzlicher Lernaufwand für die neuartige Megamap-Anwendung verhindert werden.
+Die Idee ist, diejenigen Elemente für das Megamap-Konzept zu übernehmen, welche Nutzern bereits aus den anderen Anwendungen bekannt sind.
+Durch die Verwendung der bekannten Elemente und Interaktionen soll ein zusätzlicher Lernaufwand für die neuartige Megamap-Anwendung gering gehalten werden.
 Die gesammelten Elemente und Interaktionsmöglichkeiten werden jeweils den User Tasks aus \autoref{sec:definition_exploration} zugeordnet.
 Demnach ergeben sich drei Kategorien von Explorationselementen: \textbf{Lokalisierungselemente}, \textbf{Nähe-Elemente} und \textbf{Eventelemente}.
 
@@ -106,17 +106,17 @@ Die einzelnen Elemente werden in den folgenden Abschnitten mit Beispielen näher
 
 \subsection{Lokalisierungselemente}
 \label{ssec:loc-elements}
-Lokalisierungselemente sind solche, die wichtige oder interessante Orte auf der Karte markieren.
-Die Untersuchung der Beispielanwendungen ergab fünf Arten von Lokalisierungselementen:
+Lokalisierungselemente sind solche, die wichtige oder interessante Orte auf der Karte markieren oder Eigenschaften von spezifischen Orten preisgeben.
+Die Untersuchung der Beispielanwendungen ergab sechs Arten von Lokalisierungselementen:
 
-Der \emph{Positionsmarker} ist ein grafisches Element auf der Karte, der die aktuelle Position des Nutzer (und unter Umständen auch die Blickrichtung) repräsentiert.
+Der \emph{Positionsmarker} ist ein grafisches Element auf der Karte, der die aktuelle Position des Nutzers (und unter Umständen auch die Blickrichtung) repräsentiert.
 Ein Beispiel findet sich in \autoref{fig:gm_positionsmarker}.
 Die Standortdienste des jeweiligen Endgeräts werden benutzt, um den Marker auf der Karte zu platzieren.
-Der Positionsmarker erlaubt es dem Nutzer, seine eigene Position in der Umgebung zu bestimmen.
+Der Positionsmarker erlaubt es, die eigene Position in der Umgebung zu bestimmen.
 
 \emph{Labels} sind Textelemente, welche die Namen von Straßen, Flüssen, Gebäuden etc. auf der Karte zeigen (siehe \autoref{fig:hwg_labels}).
 Nutzer können Kartenlabels mit Schildern und Wegweisern in der Umgebung abgleichen, was die Orientierung erleichtert.
-Zudem sind Wegbeschreibungen deutlicher, wenn Orte auf der Karte und in der Umgebung explizit benannt werden können.
+Da Orte auf der Karte und in der Umgebung explizit benannt sind, können die Namen für eindeutige Wegbeschreibungen eingesetzt werden.
 \begin{figure}[h]
     \centering
     \begin{minipage}[t]{.485\textwidth}
@@ -145,7 +145,7 @@ Beispiele finden sich in \autoref{fig:bm_gebaeudemarkierungen}.
 
 Eine \emph{Klickmarkierung} kann in den Kartenanwendungen durch Klicken auf den Kartenbereich erzeugt werden.
 Die Markierung wird grafisch als Stecknadel oder ein vergleichbares Symbol dargestellt (siehe \autoref{fig:gm_klickmarkierung}).
-Über eine solche Markierung kann der Nutzer auf die Adresse und / oder die Koordinaten am angeklickten Ort zugreifen.
+Über eine solche Markierung können Nutzer auf die Adresse und/oder die Koordinaten am angeklickten Ort zugreifen.
 \begin{figure}[t]
     \centering
     \begin{minipage}[t]{.485\textwidth}
@@ -177,7 +177,7 @@ Das letzte Lokalisierungselement ist die \emph{Attributsansicht}.
 Über diese Ansicht werden Nutzern Informationen über einen Ort aufgelistet.
 Die Informationen umfassen neben der Adresse und Anschrift unter anderem auch Kontaktdaten (Webseiten, Telefonnummern), Öffnungszeiten, Bilder, Bewertungen usw.
 Speziell für Gebäude werden hier auch Ausstattungen gelistet.
-\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels aufgelistet wird.
+\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels angezeigt wird.
 Die Anzeige solcher Informationen ermöglicht es, die Kartenanwendungen für andere Anwendungsfälle als die reine Navigation zu nutzen.
 Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
 \begin{figure}[t]
@@ -201,7 +201,7 @@ Die Ortsmarkierungen werden zu einem Nähe-Element, wenn nur die Markierungen in
 So können sich Nutzer auf nahegelegene Alternativen konzentrieren und die weiter entfernten Ziele ausblenden.
 Erweitert wird dies in den untersuchen Anwendungen durch die \emph{zoomabhängigen Ortsmarkierungen}.
 Hierbei werden Markierungen, die als weniger wichtig für den Nutzer betrachtet werden, erst bei einem hohen Zoom der Karte angezeigt.
-Somit können vom Anbieter der Karte zum Beispiel beliebte, häufig frequentierte Ziele hervorgehoben werden, während wenig besuchte Ziele erst später eingeblendet werden.
+Somit können vom Anbieter der Karte zum Beispiel beliebte, häufig frequentierte Ziele hervorgehoben werden, während wenig besuchte Ziele erst später zu sehen sind.
 
 \emph{Entfernungen} können als Nähe-Elemente außerhalb der reinen Navigation eingesetzt werden, um Nutzern eine konkrete Vorstellung der Umgebung zu erleichtern.
 Nutzer können dadurch Reisezeiten abschätzen und bei mehreren Zielalternativen die mit dem kürzesten Reiseweg wählen.
@@ -209,7 +209,7 @@ Entfernungen werden zum Beispiel zusammen mit anderen Ortsinformationen angezeig
 
 Die \emph{offene Suche} ist eine Nähe-Interaktion, die über ein Suchfeld ausgelöst wird.
 Anders als die \emph{spezifische} Suche wird bei der offenen Suche nach Kategorien von Orten gesucht (z.B. \enquote{Restaurants}, \enquote{Parks}, \enquote{Zoo}).
-Da bei einer solchen offenen Suche keine eindeutigen Ortsnamen verwendet werden, kommt es häufig zu mehreren Zielalternativen, die für die Nutzer zutreffen könnten.
+Da bei der offenen Suche keine eindeutigen Ortsnamen verwendet werden, kommt es häufig zu mehreren Zielalternativen, die für die Nutzer zutreffen könnten.
 In den untersuchten Anwendungen werden alle möglichen Alternativen durch Ortsmarkierungen hervorgehoben.
 \autoref{fig:bm_open_search} zeigt eine offene Suche nach Hotels in Bremen.
 \begin{figure}[h]
@@ -237,8 +237,8 @@ Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern, ode
 So müssen Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
 Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevanter Orte Zeit beim Suchen von Zielen ersparen.
 
-Das Nähe-Element \emph{Ortsnachbarschaft} ist ein Element, welches in der Ansicht über die Ortsinformationen integriert sein kann.
-Hierbei handelt es sich um eine List von weiteren Orten, die für den Nutzer relevant sein könnten und sich in der Nähe des aktuell betrachteten Orts befinden.
+Das Nähe-Element \emph{Ortsnachbarschaft} ist ein Element, welches in der Ansicht über die Ortsinformationen integriert ist.
+Hierbei handelt es sich um eine Liste von weiteren Nutzer-relevanten Orten, die sich in der Nähe des aktuell betrachteten Orts befinden.
 Auch die Information über nahegelegene Transportmöglichkeiten fällt unter diese Kategorie.
 
 Schließlich finden sich \emph{Umgebungsbilder} in den Kartenanwendungen als Nähe-Element.
@@ -264,12 +264,12 @@ Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus 
 \subsection{Event-Elemente}
 \label{ssec:event-elements}
 Event-Elemente integrieren zeitliche Geschehnisse in die digitalen Karten.
-Die Eventinformationen werden live aus diversen Datenquellen bezogen, wodurch die Karten in Echtzeit aktualisiert werden.
+Die Eventinformationen werden in Echtzeit aus diversen Datenquellen bezogen, um die Karte zu aktualisieren.
 Bei der Untersuchung der Beispielanwendungen ergaben sich vier Arten von Event-Elementen:
 
 Die \emph{Verkehrsinformationen} informieren Nutzer über die aktuelle Situation des Straßenverkehrs.
-Verkehrsaufkommen, Baustellen, Staus und Umleitungen werden in Echtzeit in die Karten integriert und visualisiert.
-Neben der aktuellen Verkehrssituation werden auch Durchschnittswerte für die Befahrung von Straßen angezeigt, sodass Nutzer bereits vorab den Verkehr in der Umgebung abschätzen können
+Verkehrsaufkommen, Baustellen, Staus und Umleitungen werden in die Karten integriert und visualisiert.
+Neben der aktuellen Verkehrssituation werden auch Durchschnittswerte für die Befahrung von Straßen angezeigt, sodass Nutzer bereits vor der Abfahrt den Verkehr in der Umgebung abschätzen können.
 
 Die \emph{Veranstaltungsinformationen} sind in die Ortsinformationen integriert.
 Hier werden die Veranstaltungen der nächsten Tage präsentiert (z.B. Konzerte).
@@ -330,7 +330,8 @@ Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten (siehe \autoref{fig
 \end{figure}
 
 Die Megamap nutzt einige der Lokalisierungselemente, die auch in der anderen Anwendungen zu finden sind.
-Ein Positionsmarker zeigt die aktuelle Position des Spielecharakters in der Welt an, wenn die Kamera nahe an die Karte herangezoomt wird (ansonsten wird weiterhin der Spielecharakter dargestellt).
+Ein Positionsmarker zeigt die aktuelle Position des Spielcharakters in der Welt an, wenn die Kamera nahe an die Karte herangezoomt wird.
+Ansonsten bleibt der Spielcharakter sichtbar.
 Straßen, Parks, Stadtteile etc. werden durch Text-Labels benannt.
 Wichtige Punkte auf der Karte (wie zum Beispiel andere Spieler, Missionen, Gebäude oder Items) werden durch unterscheidbare Icons und ergänzenden Text markiert.
 So können Spieler Orte auf der Karte schneller entdecken.
@@ -338,7 +339,7 @@ Mit dem Controller können Spieler einen Cursor über die Megamap bewegen, der d
 Drücken die Spieler einen entsprechenden Knopf, können sie eine Klickmarkierung auf der Karte platzieren, welche automatisch eine Route vom Spielcharakter zum angeklickten Ort berechnet.
 \autoref{fig:tctd_clickmarker} zeigt einen Screenshot von der Klickmarkierung.
 
-Falls sich stattdessen eine Markierung am angeklickten Ort befindet, werden diverse Eigenschaften des Orts auf einem HUD der Karte angezeigt.
+Falls stattdessen eine Ortsmarkierung angeklickt wird, werden diverse Eigenschaften des Orts auf einem HUD der Karte angezeigt.
 Beispielsweise werden bei einer Mission das notwendige Charakterlevel, die Missionsbeschreibung sowie die Belohnungen für einen Missionsabschluss aufgelistet.
 Zudem werden die Entfernungen der Orte zum Spielcharakter angezeigt.
 Dies entspricht der Attributsliste für Orte aus den anderen Anwendungen.
@@ -353,10 +354,10 @@ Stattdessen werden die Positionen von anderen Mitspielern, Gegnern und Missionsz
 
 Da es sich bei der Megamap aus der Sicht des Spielcharakters um eine AR-Karte handelt, setzt sie einige Funktionen um, die mit den anderen Anwendungen nicht möglich sind.
 Durch ihre Platzierung im 3D-Raum kann sie die Umrisse der Gebäude des virtuellen New Yorks auch in der Höhe darstellen.
-Um die Megamap herum wird ein augmentierter Kompass-Ring eingeblendet, der den Spielern die Himmelsrichtungen anzeigt.
+Um die Megamap herum wird ein augmentierter Kompass-Ring eingeblendet, der den Spielern die Himmelsrichtungen anzeigt (teilweise sichtbar in \autoref{fig:tctd_attributes}).
 Außerdem ist die Megamap mit einer augmentierten \enquote{GPS}-Routenführung für den Spielcharakter integriert.
 Dabei zieht sich eine Line durch die virtuelle Umgebung, welche den Spielern den Weg zu ausgewählten Zielen zeigt.
-Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_at-gps}.
+Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_ar-gps}.
 
 \begin{figure}[p]
     \centering
@@ -376,10 +377,9 @@ Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_at-
     \begin{minipage}{0.48\linewidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=\linewidth]{figures/concept/the_division_minimap}
+        \includegraphics[trim={0, 3mm, 0, 2mm}, clip, width=\linewidth]{figures/concept/the_division_minimap}
         
-        \vspace{1em}
-        \includegraphics[width=\linewidth]{figures/concept/the_division_arrow}
+        \includegraphics[trim={0, 1.5mm, 0, 1mm}, clip, width=\linewidth]{figures/concept/the_division_arrow}
     \end{minipage}
     \caption{Wegpunkt in Megamap kontrolliert das augmentierte GPS. %
     Oben~Rechts: Minikarte. %
@@ -391,11 +391,12 @@ Viele Aspekte der Megamap in TCTD sind für die Umsetzung einer AR-Kartenanwendu
 Für die Realisierung einer solchen Anwendung ergeben sich jedoch Probleme, die gelöst werden müssen.
 Zum Beispiel ist im Spiel ein 3D-Modell der Umgebung implizit gegeben, da die Umgebung selbst aus 3D-Modellen aufgebaut ist.
 In der realen Welt sind solche Modelle der Umgebung unter Umständen nicht verfügbar.
-Damit eine Megamap dargestellt werden kann müssen Daten von der Umgebung bekannt sein.
-Ein weiteres Problem ist die Integration der Karte in die Umgebung.
-Da im Spiel alle Umgebungsobjekte wie die Karte virtuell sind, können Überlappungen der Karte mit den Objekten durch visuelle Effekte wie in TCTD umgangen werden.
+Damit eine Megamap dargestellt werden kann muss die Geometrie der Umgebung bekannt sein.
+Dies ist auch für die Platzierung der Karte relevant.
+Da im Spiel alle Umgebungsobjekte wie auch die Karte virtuell sind, können Überlappungen der Karte mit den Objekten durch visuelle Effekte wie in TCTD umgangen werden.
 In der realen Welt müssen die Objekte der MR-Anwendung bekannt sein, um Überlappungen korrekt berechnen zu können.
-Außerdem ist die Megamap in TCTD nicht für den Spiel\emph{charakter}, sondern für den \emph{Spieler} selbst gedacht.
+Ein weiteres Problem ist der Perspektivwechsel zwischen Erster- und Dritter-Person-Perspektive.
+Die Megamap in TCTD ist nicht für den Spiel\emph{charakter}, sondern für den \emph{Spieler} selbst gedacht.
 Das heißt, der Spieler betrachtet sowohl die virtuelle Umgebung als auch die Karte aus einer Dritte-Person-Perspektive.
 In der realen Welt nehmen Nutzer jedoch die Erste-Person-Perspektive ein, wodurch die Perspektive auf die Megamap eine andere wäre, als die im Spiel.
 Es ist also nicht klar, ob sich das Konzept der Megamap auf die Anwendung in der Ersten-Person-Perspektive in der echten Welt übertragen lässt.
@@ -406,7 +407,7 @@ Auf diese Probleme wird im weiteren Verlauf der Arbeit durch die Aufstellung ein
 Basierend auf den Erkenntnissen der vorigen Abschnitte kann ein Konzept für eine umgebungsintegrierte Megamap entwickelt werden, deren Zielplattform Mixed-Reality-HMDs sind.
 
 \subsection{Nutzungsszenario}
-Die Megamap als eine dreidimensionale Karte für MR-HMDs konzipiert.
+Die Megamap ist als eine dreidimensionale Karte für MR-HMDs konzipiert.
 Vor dem Hintergrund der Umgebung des Nutzers zeigt sie ein dreidimensionales Innenmodell des Gebäudes, in dem sich der Nutzer zur Zeit befindet.
 Die Karte wird durch das HMD in die Umgebung des Nutzers integriert.
 Vor allem bleibt ihre Rotation in der Umgebung verankert, wenn der Nutzer sich bewegt.
@@ -417,8 +418,8 @@ Die Konzeptzeichnung in \autoref{fig:concept_overview} verdeutlicht das Prinzip.
 
 Die Megamap soll Nutzern helfen, sich in unbekannten Gebäuden zu orientieren, diese zu erkunden und nach Orten in den Gebäuden zu suchen.
 Ein Beispiel ist die augmentierte Exploration der Gebäude der Universität Bremen.
-Neue Studierende oder Gäste der Universität könnten durch die Megamap bei der Suche nach Büros von Mitarbeitern, öffentlichen Druckern, Essensmöglichkeiten, Toiletten etc. unterstützt werden.
-Da die meisten der Universitätsgebäude mehrstöckig sind, wäre der Einsatz einer dreidimensionalen Karte zur Exploration der Gebäude interessant.
+Neue Studierende oder Gäste der Universität können durch die Megamap bei der Suche nach Büros von Mitarbeitern, öffentlichen Druckern, Essensmöglichkeiten, Toiletten etc. unterstützt werden.
+Da die meisten der Universitätsgebäude mehrstöckig sind, ist der Einsatz einer dreidimensionalen Karte zur Exploration der Gebäude interessant.
 Auch der Einsatz in Einkaufszentren oder Flughäfen ist denkbar.
 \begin{figure}[bht]
 	\centering
@@ -440,15 +441,15 @@ Da die Megamap in dieser Arbeit als Prototyp in VR implementiert wird, konzentri
 Damit das 3D-Gebäudemodell überhaupt als Karte fungieren kann, müssen Nutzer mit dem Modell interagieren können.
 Speziell muss die Karte Explorationselemente anbieten, mit denen Nutzer die Umgebung erkunden können.
 Mögliche Explorationselemente sind in \autoref{sec:exploration_elements} beschrieben.
-Für das entwickelte Konzept sowie den Prototypen wurde eine kleinere Auswahl der Elemente betrachtet.
+Für das entwickelte Konzept sowie den Prototypen wurde eine kleine Auswahl der Elemente betrachtet.
 Ein Ziel für zukünftige Arbeiten kann daher sein, dass die Megamap die gleiche Zahl an Explorationselementen unterstützt wie herkömmliche 2D-Kartenanwendungen.
 
 Für die Indoor-Megamap werden die Ortsmarkierungen als \emph{Raum}markierungen umfunktioniert, da bei der Anwendung nur ein Gebäude zur Zeit im Fokus steht.
 Die Raummarkierungen werden als dreidimensionale Stecknadeln über Räumen mit besonderen Funktionen dargestellt.
 So können interessante Orte im Gebäude hervorgehoben werden.
-Durch Icons auf den Stecknadeln kann die Kategorie des Raums hervorgehoben werden (beispielsweise Büro, Toilette etc.).
-Ebenso können mit den Stecknadeln wichtige Objekte im Gebäude markiert werden (Drucker, Treppen und Aufzüge, Erste-Hilfe-Kästen etc.).
-Über Filterelemente neben der Karte ließen sich dann Stecknadeln einer Art herausfiltern.
+Durch Icons auf den Stecknadeln wird die Kategorie des Raums hervorgehoben (beispielsweise Büro, Toilette etc.).
+Ebenso werden mit den Stecknadeln wichtige Objekte im Gebäude markiert (Drucker, Treppen und Aufzüge, Erste-Hilfe-Kästen etc.).
+Über Filterelemente neben der Karte lassen sich Stecknadeln nach einer gewünschten Kategorie herausfiltern.
 Die Konzeptzeichnung in \autoref{fig:concept_indoor_view} zeigt die Indoor-Megamap der Ebene 5 des MZH an der Universität Bremen.
 Über eine virtuelle Filterbox werden nur Stecknadeln für öffentliche Toiletten gezeigt.
 Stecknadeln werden auch über Stockwerke hinweg angedeutet, indem sie vertikal versetzt und transparent gemacht werden.
@@ -465,29 +466,29 @@ So können Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockwerk 
 
 Um mehr Informationen zu einem Ort oder Objekt zu erhalten, können Nutzer die Stecknadel entweder mit dem im Raum getrackten Controller berühren, oder sie mit einem virtuellen Laserpointer anvisieren.
 Letztere Variante hat den Vorteil, dass sich Nutzer nicht zu weiter entfernten Stecknadeln hinbewegen müssen.
-An der Position des Pins öffnet sich ein Fenster mit Informationen zum Ort bzw. Objekt, was die Aufgabe der Attributsliste aus \autoref{sec:exploration_elements} übernimmt.
+An der Position der Stecknadel öffnet sich ein Fenster mit Informationen zum Ort bzw. Objekt, was die Aufgabe der Attributsliste aus \autoref{sec:exploration_elements} übernimmt.
 Ein Beispiel für ein solches Informationsfenster ist in \autoref{fig:concept_pin_info} skizziert.
 Wie die Karte und die Stecknadeln ist auch das Informationsfenster in der Umgebung verankert.
-Anstatt es direkt auf dem Display des Nutzers anzuzeigen befindet sich das Fenster an der Position der Stecknadel und wird so rotiert, dass der Nutzer immer auf die Vorderseite schaut.
-Seine relative Position zur Umgebung bleibt gleich.
-Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt fester Anzeige auf dem Display) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite[23]{Schroeder2017}.
+Anstatt es direkt auf dem HMD als HUD anzuzeigen befindet sich das Fenster an der Position der Stecknadel und wird so rotiert, dass Nutzer immer auf die Vorderseite schauen.
+Die relative Position des Fensters zur Umgebung bleibt gleich.
+Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt Anzeige als HUD) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite[23]{Schroeder2017}.
+\begin{figure}[thb]
+    \centering
+    \imagebox{
+        \includegraphics[width=0.72\linewidth]{figures/concept/concept_location_info}
+    }
+    \caption{Konzeptzeichnung der Stecknadel-Informationen.}
+    \label{fig:concept_pin_info}
+\end{figure}
 
-Damit Nutzer das aktuell gezeigte Stockwerk wechseln können, ohne sich physisch dorthin zu bewegen, werden weitere virtuelle Schaltflächen angeboten (siehe \autoref{fig:concept_indoor_view}).
+Zum Wechseln des aktuell gezeigten Stockwerks stehen weitere virtuelle Schaltflächen zur Verfügung (siehe \autoref{fig:concept_indoor_view}).
 Mit diesen kann auf die gleiche Weise wie mit den Stecknadeln oder den Filterelementen über den Controller interagiert werden.
+Nutzer müssen sich somit nicht tatsächlich auf das Stockwerk begeben, um es einsehen zu können.
 
 Damit Nutzer ihre Position auf der Karte schnell erkennen können wird der Positionsmarker als Lokalisierungselement für die Megamap übernommen.
 Für die Anwendung auf einer 3D-Karte wird der Marker von einem zweidimensionalen Kreis zu einem Zylinder erweitert.
 Zusätzlich zeigt ein Kreissegment die aktuelle Blickrichtung sowie den Blickwinkel des Nutzers an.
 Somit können Nutzer nicht nur ihre Position, sondern auch ihre Orientierung innerhalb der Umgebung vom Positionsmarker ablesen.
-
-\begin{figure}[bth]
-	\centering
-	\imagebox{
-		\includegraphics[width=0.72\linewidth]{figures/concept/concept_location_info}
-	}
-	\caption{Konzeptzeichnung der Stecknadel-Informationen.}
-	\label{fig:concept_pin_info}
-\end{figure}
 
 \subsection{Platzierung der Megamap im Raum}
 Um die Megamap wie ein \enquote{reales} Objekt im Raum zu platzieren wird die 3D-Rekonstruktion des HMDs eingesetzt.
@@ -504,7 +505,7 @@ Weiterhin könnten die vom HMD gelieferten 3D-Meshes mit vorgefertigten Raummode
 
 Ein Problem, was bei der Platzierung der virtuellen Karte in die reale Umgebung auftritt, ist die Verdeckung realer Objekte.
 Durch eine Verdeckung, bei der Teile des realen Objekts noch sichtbar sind, entsteht eine Störung des Tiefeneindrucks des Nutzers, wodurch der Effekt einer integrierten Karte verloren geht.
-TCTD löst das Problem der Verdeckung von Umgebungsobjekten, indem die Karte an den Schnittpunkten mit den Objekten immer weiter ausgeblendet wird, bis schließlich nur noch die Objekte zu sehen sind.
+TCTD löst das Problem der Verdeckung von Umgebungsobjekten über die Transparenz der Megamap.
 Die Karte wird effektiv an den Objekten \enquote{ausgeschnitten}.
 Mit den erwähnten MR-HMDs ist ein solcher Effekt ebenfalls möglich.
 Durch die 3D-Rekonstruktion ergeben sich grobe Meshes der Umgebungsobjekte und Wände.
