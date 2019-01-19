@@ -4,13 +4,61 @@
 \section{Aufbau}
 Das Experiment wurde im Laborraum 5220 (MZH Ebene 5) der Arbeitsgruppe Human-Computer Interaction an der Universität Bremen durchgeführt.
 Für die Präsentation der virtuellen Umgebung wurde die HTC Vive mit zwei Basisstationen eingesetzt.
-Der getrackte Bereich zwischen den Basisstationen umfasste ca. \SIrange{X}{Y}{\metre}.
+Der getrackte Bereich zwischen den Basisstationen umfasste ca. \SIrange{0}{0}{\metre}.\todo{Tatsächliche Zahlen einsetzen.}
 Die Bilddaten wurden von einem PC mit einer \emph{NVidia~GTX~1080~Ti} Grafikkarte und einem \emph{AMD~Ryzen~7~1800X} Prozessor gerendert.
 Übertragen wurden die Bilddaten an das HMD mit dem \emph{VIVE~Wireless~Adapter} \parencite{HTCCorporation2018b}.
 Die Fragebögen wurden über \emph{Google Forms} erstellt und ausgefüllt.
 Hierfür wurde ein separater Laptop bereitgestellt.
 
 \section{Konditionen und Aufgaben}
+Für die Nutzerstudie wurden drei unterschiedliche Konditionen $C_0, C_1, C_2$ getestet:
+\begin{itemize}
+    \item[$C_0$:] Die 3D-Megamap wird mit einer Skalierung von \SI{6}{\percent} (relativ zur Umgebung) und \SI{25}{\cm} über dem Boden angezeigt.
+    Diese Kondition entspricht am ehesten der Megamap aus TCTD. 
+    \item[$C_1$:] Die 3D-Megamap wird mit einer Skalierung von \SI{6}{\percent} (relativ zur Umgebung) und \SI{1}{\metre} unterhalb der HMD-Position angezeigt.
+    Dabei wird die Höhe nur beim Aufrufen der Karte berechnet.
+    Danach bleibt die Höhe fix.
+    Diese Kondition wird getestet, um zu ermitteln, wie sich die Höhe der Megamap vom Boden auf die Nutzung auswirkt (insbesondere unter dem Aspekt, dass durch die Darstellung in 3D Verdeckungen durch die Wände der Räume auftreten können).
+    \item[$C_2$]: Eine 2D-Karte wird senkrecht an der Wand vor dem Nutzer angezeigt.
+    Auch die 2D-Karte hat eine Skalierung von \SI{6}{\percent} (relativ zur Umgebung).
+    Die Karte ist so an der Wand platziert, dass sie nicht von anderen Wänden oder der Decke und dem Fußboden geschnitten wird.
+\end{itemize}
+\todo{Screenshots der Konditionen einfügen.}
+
+Jede Kondition wurde über 6~Iterationen (\emph{Tasks}) $T_0, \dots, T_5$ wiederholt.
+\todo{Bild für Megamap Varianten} Dabei wurde in jeder Iteration eine andere Indoor-Karte für die Megamap verwendet, um einen Lerneffekt für die Kartenlayouts zu minimieren.
+Damit die Konditionen vergleichbar bleiben, wurde jede Karte einmal jeder Kondition unterzogen.
+Das heißt, die Probanden durchliefen insgesamt 18~Iterationen, wobei sechs unterschiedliche Karten jeweils dreimal eingesetzt wurden.
+Die Reihenfolge der Iterationen innerhalb einer Kondition war zufällig bestimmt, wobei darauf geachtet wurde, dass bei einem Wechsel der Konditionen die gleiche Karte nicht zweimal aufeinander folgte.
+
+Um die Auswirkungen der jeweiligen Kondition auf die mentale räumliche Vorstellung des Probanden von der Umgebung zu testen, wurden eine Suchaufgabe und eine Richtungsschätzung in den Prototypen integriert.
+
+Für die Suchaufgabe wurden auf der jeweiligen Megamap in sieben räumen Bälle platziert.
+Die Probanden mussten dann den Raum suchen, der die meisten Bälle enthält und diesen mit dem VIVE Controller und dem virtuellen Laserpointer auswählen.
+Jede Megamap hatte genau einen Zielraum, welcher zufällig zwischen sieben und zehn Bällen enthielt.
+Die anderen Räume enthielten mindestens fünf Bälle und garantiert weniger als der Zielraum.
+Jede der sechs Indoor-Karten hatte denselben Zielraum in allen drei Konditionen.
+Dies wurde entschieden, damit die Karten über Konditionen hinweg vergleichbar bleiben.
+Wäre immer ein anderer Zielraum gewählt worden, wäre der Schwierigkeitsgrad des Findens zwischen den Konditionen unter Umständen verschieden gewesen, obwohl die Karte die gleiche wäre.
+
+Für den Fall, dass ein Proband einen falschen Raum auswählen würde, würde dieser rot eingefärbt werden.
+Der Proband müsste dann die Suche nach dem Zielraum fortfahren.
+Dieser Fall trat über alle Probanden hinweg außerhalb des Tutorials nur ein einziges Mal auf.
+
+Die Probanden mussten sich anhand der Megamap die Richtung vom virtuellen Laborraum zum Zielraum (horizontal und vertikal zentriert) merken.
+Sobald sie den Zielraum auswählten, wurde die Megamap ausgeblendet.
+Mit dem virtuellen Laserpointer sollten die Probanden dann möglichst mittig auf den Zielraum \emph{in ihrer Umgebung} zeigen.
+Durch Betätigen des Triggers konnte der Laserpointer \enquote{eingefroren} werden, um die Richtung entweder zu korrigieren oder zu akzeptieren.
+Wenn die Richtung akzeptiert wurde, startete die nächste Iteration.
+
+Damit die Probanden beim Suchen auf einer Karte immer die gleiche Startposition und Blickrichtung hatten wie in den anderen Konditionen, wurde vor der Suchaufgabe ein \emph{User Setup} implementiert.
+Die Probanden mussten sich dabei auf eine festgelegte Zielposition stellen und für zwei Sekunden auf ein Ziel an der Wand schauen.
+Die beiden Zielpositionen waren von der jeweiligen Karte abhängig, bleiben jedoch für eine Karte über die Konditionen hinweg gleich.
+So wurde sichergestellt, dass die Ausgangsbedingungen für die Suche auf der Karte in jeder Kondition gleich bleiben.
+
+Ebenso wurde das User Setup zwischen der Suche und der Richtungsschätzung implementiert.
+Ohne diesen Zwischenschritt hätten die Probanden in den 3D-Konditionen einfach den Laserpointer vom Raum auf der Karte anheben müssen, um die korrekte Richtung zu schätzen.
+Durch das User Setup wurde eine Ablenkung erzeugt, welche diesen Vorteil der 3D-Konditionen gegenüber der 2D-Kondition minimieren soll.
 
 \section{Ablauf}
 
