@@ -33,6 +33,10 @@
 \usepackage[labelformat=parens, subrefformat=simple]{subcaption}
 \usepackage{multirow}
 
+\usepackage[titletoc,toc,title,page]{appendix}
+\renewcommand{\appendixpagename}{\appendixname}
+\renewcommand{\appendixtocname}{\appendixname}
+
 \usepackage{siunitx}
 \sisetup{locale = DE}
 
@@ -134,5 +138,7 @@
 
 \printbibliography[heading=bibintoc, nottype=online]
 \printbibliography[heading=bibintoc, title={Online Referenzen}, type=online]
+
+\include{appendix}
 
 \end{document}
