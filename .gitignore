@@ -297,4 +297,10 @@ $RECYCLE.BIN/
 *.code-workspace
 .vscode/
 
+# Python virtual environments
+venv/
+
+# Syncthing files
+.stignore
+
 # End of https://www.gitignore.io/api/macos,linux,latex,windows
