@@ -4,11 +4,13 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
+import sys
+
 num_users = 14
 num_conditions = 3
 num_tasks = 6
 
-df = pd.read_csv("results.csv")
+df = pd.read_csv(str(sys.argv[1]))
 
 sns.set()
 sns.set_style("whitegrid", rc={"font.family": ["Linux Biolinum", "sans-serif"]})
