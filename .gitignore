@@ -303,4 +303,7 @@ venv/
 # Syncthing files
 .stignore
 
+# Jetbrains files
+.idea/
+
 # End of https://www.gitignore.io/api/macos,linux,latex,windows
