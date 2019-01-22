@@ -138,6 +138,23 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
 
 \section{Ergebnisse}
 
+%Means per condition:
+%{'conditionIndex': 0, 'Mean megamapTime': 29.526901066666667, 'Mean horizOffsetDeg': -3.0364645031111115, 'Mean vertOffsetDeg': -0.7950234819999997}
+%{'conditionIndex': 1, 'Mean megamapTime': 31.273050777777776, 'Mean horizOffsetDeg': -2.564401842888889, 'Mean vertOffsetDeg': -0.4222039351111111}
+%{'conditionIndex': 2, 'Mean megamapTime': 19.5607994, 'Mean horizOffsetDeg': -3.4658276355555553, 'Mean vertOffsetDeg': -1.8932744097777774}
+
+\begin{table}
+    \centering
+    \caption{Mittelwerte der Suchzeit und der Abweichungsfehler für die drei Konditionen.}
+    \label{tab:means_per_condition}
+    \begin{tabular}{@{}cccc@{}}%\toprule
+        \tableheadcolor \textsf{\textbf{Kondition}} & \textsf{\textbf{$\diameter$ Suchzeit}} & \textsf{\textbf{$\diameter$ Horiz. Abweichung}} & \textsf{\textbf{$\diameter$ Vert. Abweichung}}\\% \midrule
+        \rowcolorodd $3D_l$ & \SI{29.53}{\second} & \ang{-3.04} &  \ang{-0.8} \\
+        \rowcoloreven $3D_h$ & \SI{31.27}{\second} & \ang{-2.56} & \ang{-0.42} \\
+        \rowcolorodd $2D$ & \SI{19.56}{\second} & \ang{-3.47} & \ang{-1.89}
+    \end{tabular}
+\end{table}
+
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/megamap_time}
