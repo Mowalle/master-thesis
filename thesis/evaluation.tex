@@ -138,20 +138,31 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
 
 \section{Ergebnisse}
 
-%Means per condition:
-%{'conditionIndex': 0, 'Mean megamapTime': 29.526901066666667, 'Mean horizOffsetDeg': -3.0364645031111115, 'Mean vertOffsetDeg': -0.7950234819999997}
-%{'conditionIndex': 1, 'Mean megamapTime': 31.273050777777776, 'Mean horizOffsetDeg': -2.564401842888889, 'Mean vertOffsetDeg': -0.4222039351111111}
-%{'conditionIndex': 2, 'Mean megamapTime': 19.5607994, 'Mean horizOffsetDeg': -3.4658276355555553, 'Mean vertOffsetDeg': -1.8932744097777774}
+%               3D_l   3D_h     2D
+%Megamap Time  29.53  31.27  19.56
+%std Time      16.68  14.72  10.87
+%H-Error       -3.04  -2.56  -3.47
+%std H-Error    9.88  10.39   7.70
+%V-Error       -0.80  -0.42  -1.89
+%std V-Error    7.08   6.78   7.41
+%Hitrate       76.67  81.11  77.78
 
 \begin{table}
     \centering
-    \caption{Mittelwerte der Suchzeit und der Abweichungsfehler für die drei Konditionen.}
+    \caption{Mittelwerte der Suchzeit, der horizontalen und vertikalen Abweichung und der Trefferquote beim Richtungsschätzen über alle sechs Iterationen.}
     \label{tab:means_per_condition}
-    \begin{tabular}{@{}cccc@{}}%\toprule
-        \tableheadcolor \textsf{\textbf{Kondition}} & \textsf{\textbf{$\diameter$ Suchzeit}} & \textsf{\textbf{$\diameter$ Horiz. Abweichung}} & \textsf{\textbf{$\diameter$ Vert. Abweichung}}\\% \midrule
-        \rowcolorodd $3D_l$ & \SI{29.53}{\second} & \ang{-3.04} &  \ang{-0.8} \\
-        \rowcoloreven $3D_h$ & \SI{31.27}{\second} & \ang{-2.56} & \ang{-0.42} \\
-        \rowcolorodd $2D$ & \SI{19.56}{\second} & \ang{-3.47} & \ang{-1.89}
+    \begin{tabular}{@{}rccc@{}}
+        \toprule
+        {} & $3D_l$ & $3D_h$ & $2D$ \\
+        \midrule
+        Suchzeit [\SI{}{\second}]      & \num{29.53} ($\pm$ \num{16.68}) &  \num{31.27} ($\pm$ \num{14.72}) & \num{19.56} ($\pm$ \num{10.87}) \\
+
+        Horiz. Abweichung [$\degree$]  & \num{-3.04} ($\pm$ \num{9.88})  & \num{-2.56} ($\pm$ \num{10.39})  & \num{-3.47} ($\pm$ \num{7.70}) \\
+
+        Vert. Abweichung [$\degree$]   & \num{-0.80} ($\pm$ \num{7.08})  &  \num{-0.42} ($\pm$ \num{6.78})  & \num{-1.89} ($\pm$ \num{7.41}) \\
+
+        Trefferquote [\SI{}{\percent}] & \num{76.7}                      &  \num{81.1}                      & \num{77.8}\\
+        \bottomrule
     \end{tabular}
 \end{table}
 
