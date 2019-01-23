@@ -6,7 +6,6 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 import sys
-from functools import reduce
 
 df = pd.read_csv(str(sys.argv[1]))
 
