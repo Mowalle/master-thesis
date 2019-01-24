@@ -1,0 +1,16 @@
+,User ID,"Ich bin sehr gut darin, Wegbeschreibungen zu geben.","Ich habe ein schlechtes Gedächtnis dafür, wo ich die Dinge gelassen habe.","Ich bin sehr gut darin, Entfernungen zu beurteilen.","Mein ""Orientierungssinn"" ist sehr gut.","Ich neige dazu, meine Umgebung in Bezug auf die Himmelsrichtungen (N, S, O, W) zu betrachten.",Ich verirre mich sehr schnell in einer neuen Stadt.,Ich lese gerne Landkarten.,"Ich habe Schwierigkeiten, Wegbeschreibungen zu verstehen.",Ich bin sehr gut im Lesen von Landkarten.,"Ich erinnere mich nicht sehr gut an Routen, während ich als Beifahrer im Auto unterwegs bin.","Ich mag es nicht, Wegbeschreibungen zu geben.","Es ist mir nicht wichtig zu wissen, wo ich bin.",Normalerweise lasse ich die Navigationsplanung für lange Reisen von jemand anderem durchführen.,"Ich kann mich normalerweise an neue Routen erinnern, nachdem ich sie nur einmal gefahren bin.","Ich habe keine sehr gute ""mentale Karte"" von meiner Umgebung.",Score
+0,user_0,2,5,3,1,4,4,2,5,3,2,4,4,4,4,5,3.7333333333333334
+1,user_1,2,1,4,1,4,4,2,3,3,4,4,5,2,2,1,3.2
+13,user_2,4,4,3,4,5,4,2,1,4,4,2,4,1,2,4,2.8
+2,user_3,3,2,2,2,1,5,4,5,3,2,2,2,5,5,3,3.2
+3,user_4,2,3,3,2,4,1,4,4,4,3,3,4,4,3,4,3.066666666666667
+4,user_5,3,2,3,2,4,4,4,4,2,4,3,4,3,2,3,3.2666666666666666
+5,user_6,2,2,2,3,4,4,3,4,3,3,4,2,5,4,3,3.2
+6,user_7,3,2,3,2,5,3,4,4,2,4,4,5,5,3,3,3.3333333333333335
+7,user_8,2,5,1,1,4,4,4,5,2,2,3,4,4,1,5,3.933333333333333
+8,user_9,2,5,3,2,3,4,2,5,1,5,4,4,2,2,5,4.066666666666666
+9,user_10,1,4,3,1,5,4,4,5,2,2,5,5,5,2,4,3.8666666666666667
+10,user_11,2,5,3,4,5,1,4,3,2,2,2,4,4,5,2,2.6666666666666665
+14,user_12,2,4,4,3,4,4,3,4,2,3,4,5,3,3,3,3.4
+11,user_13,2,2,3,3,1,4,2,4,1,1,5,1,3,2,4,3.466666666666667
+12,user_14,2,2,2,3,5,4,5,4,4,4,3,5,4,1,4,3.3333333333333335
