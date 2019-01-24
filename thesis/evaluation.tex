@@ -138,15 +138,6 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
 
 \section{Ergebnisse}
 
-%               3D_l   3D_h     2D
-%Megamap Time  29.53  31.27  19.56
-%std Time      16.68  14.72  10.87
-%H-Error       -3.04  -2.56  -3.47
-%std H-Error    9.88  10.39   7.70
-%V-Error       -0.80  -0.42  -1.89
-%std V-Error    7.08   6.78   7.41
-%Hitrate       76.67  81.11  77.78
-
 \begin{table}
     \centering
     \caption{Mittelwerte der Suchzeit, der horizontalen und vertikalen Abweichung und der Trefferquote beim Richtungsschätzen über alle sechs Iterationen.}
@@ -156,15 +147,30 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
         {} & $3D_l$ & $3D_h$ & $2D$ \\
         \midrule
         Suchzeit [\SI{}{\second}]      & \num{29.53} ($\pm$ \num{16.68}) &  \num{31.27} ($\pm$ \num{14.72}) & \num{19.56} ($\pm$ \num{10.87}) \\
-
+        
         Horiz. Abweichung [$\degree$]  & \num{-3.04} ($\pm$ \num{9.88})  & \num{-2.56} ($\pm$ \num{10.39})  & \num{-3.47} ($\pm$ \num{7.70}) \\
-
+        
         Vert. Abweichung [$\degree$]   & \num{-0.80} ($\pm$ \num{7.08})  &  \num{-0.42} ($\pm$ \num{6.78})  & \num{-1.89} ($\pm$ \num{7.41}) \\
-
+        
         Trefferquote [\SI{}{\percent}] & \num{76.7}                      &  \num{81.1}                      & \num{77.8}\\
         \bottomrule
     \end{tabular}
 \end{table}
+
+\subsection{Santa-Barbara-Sense-of-Direction Skala}
+
+\subsection{Performance und Effizienz bei Raumsuche}
+
+%               3D_l   3D_h     2D
+%Megamap Time  29.53  31.27  19.56
+%std Time      16.68  14.72  10.87
+%H-Error       -3.04  -2.56  -3.47
+%std H-Error    9.88  10.39   7.70
+%V-Error       -0.80  -0.42  -1.89
+%std V-Error    7.08   6.78   7.41
+%Hitrate       76.67  81.11  77.78
+
+\subsubsection*{Suchzeit}
 
 \begin{figure}
     \centering
@@ -172,6 +178,12 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
     \caption{text}
     \label{fig:boxplot_times}
 \end{figure}
+
+\subsubsection*{Fehlerrate bei Raumauswahl}
+
+\subsection{Performance und Effizient bei Richtungsschätzung}
+
+\subsubsection*{Genauigkeit der Schätzung}
 
 \begin{figure}
     \centering
@@ -184,17 +196,23 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
 
 \begin{figure}
     \centering
+    \includegraphics[width=\linewidth]{figures/analysis/pointing_times}
+    \caption{text}
+    \label{fig:pointing_times}
+\end{figure}
+
+\subsubsection*{Trefferquote}
+
+\begin{figure}
+    \centering
     \includegraphics[width=\linewidth]{figures/analysis/hitrates}
     \caption{text}
     \label{fig:hitrates}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/analysis/pointing_times}
-    \caption{text}
-    \label{fig:pointing_times}
-\end{figure}
+\subsection{Fragebögen zur Nutzungsfreundlichkeit}
+
+\subsection{Präferenz der Probanden aus Interview}
 
 \section{Diskussion der Ergebnisse}
 
