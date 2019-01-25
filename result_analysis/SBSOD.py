@@ -32,20 +32,16 @@ df["Score"] = df_reversed.mean(axis=1)
 df = df.reindex([0, 1, 13] + list(range(2, 11)) + [14, 11, 12])
 df.to_csv("sbsod.csv")
 
-ax = sns.barplot(x="Score",
-                 y="User ID",
-                 data=df)
+sns.boxplot(x="Score", data=df, palette="muted")
+ax = sns.stripplot(x="Score", data=df, color="y", linewidth=1)
 ax.set_xlim(1, 5)
 ax.set_xticks(np.arange(1, 6))
-ax.set_xlabel("SBSOD Wertung\n[höher ist besser]")
-ax.set_ylabel("Proband")
+ax.set_xlabel("SBSOD-Wertung\n[höher ist besser]")
+#ax.set_ylabel("Proband")
 
-labels = df["Score"].tolist()
+#labels = df["Score"].tolist()
 # Put labels beside each bar for easier reading.
-for i in range(0, 15):
-    ax.text(x=labels[i]+0.05, y=i+0.2, s="%.2f" % labels[i], size=10, fontdict={"weight": "bold"})
-
-ax.get_figure().suptitle("Santa-Barbara Sense-of-Direction (SBSOD) Skala")
-ax.get_figure().savefig("sbsod.pdf")
+#for i in range(0, 15):
+#    ax.text(x=labels[i]+0.05, y=i+0.2, s="%.2f" % labels[i], size=10, fontdict={"weight": "bold"})
 
 plt.show()
