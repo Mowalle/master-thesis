@@ -17,21 +17,20 @@ sns.set(style="whitegrid", font="Linux Biolinum")
 
 # Time Boxplot
 
-fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
-plt.subplots_adjust(wspace=0.02)
-
 df_times = df[["taskIndex", "conditionIndex", "megamapTime"]].copy()
 
+fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
 sns.boxplot(x="taskIndex",
             y="megamapTime",
             hue="conditionIndex",
+            palette="muted",
             data=df_times,
             ax=axs[0],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[0].set_ylim(bottom=0)
 axs[0].set_xticklabels(["Karte %d" % i for i in range(1, 7)])
 axs[0].set_xlabel("")
-axs[0].set_ylabel("Suchzeit [$s$]")
+axs[0].set_ylabel("Suchzeit [s]")
 handles, _ = axs[0].get_legend_handles_labels()
 axs[0].legend(handles, ["$3D_l$", "$3D_h$", "$2D$"])
 
@@ -43,31 +42,29 @@ df_times.loc[:, "taskIndex"] = 7
 sns.boxplot(x="taskIndex",
             y="megamapTime",
             hue="conditionIndex",
+            palette="muted",
             data=df_times,
             ax=axs[1],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[1].legend_.remove()
 axs[1].set_xticklabels(["Gesamt"])
 axs[1].set_xlabel("")
 axs[1].set_ylabel("")
 
-fig.suptitle("Benötigte Zeit zum Suchen und Auswählen des Zielraums")
-fig.savefig("megamap_time.pdf")
 plt.show()
 
 # Horiz. Error Boxplot
 
-fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
-plt.subplots_adjust(wspace=0.02)
-
 df_h_error = df[["taskIndex", "conditionIndex", "horizOffsetDeg"]].copy()
 
+fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
 sns.boxplot(x="taskIndex",
             y="horizOffsetDeg",
             hue="conditionIndex",
+            palette="muted",
             data=df_h_error,
             ax=axs[0],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[0].set_xticklabels(["Karte %d" % i for i in range(1, 7)])
 axs[0].set_xlabel("")
 axs[0].set_ylabel("Horizontale Abweichung [$\\degree$]")
@@ -80,31 +77,29 @@ df_h_error.loc[:, "taskIndex"] = 7
 sns.boxplot(x="taskIndex",
             y="horizOffsetDeg",
             hue="conditionIndex",
+            palette="muted",
             data=df_h_error,
             ax=axs[1],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[1].legend_.remove()
 axs[1].set_xticklabels(["Gesamt"])
 axs[1].set_xlabel("")
 axs[1].set_ylabel("")
 
-fig.suptitle("Horizontale Abweichung bei Richtungsschätzung")
-fig.savefig("horiz_error.pdf")
 plt.show()
 
 # Vert. Error Boxplot
 
-fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
-plt.subplots_adjust(wspace=0.02)
-
 df_v_error = df[["taskIndex", "conditionIndex", "vertOffsetDeg"]].copy()
 
+fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
 sns.boxplot(x="taskIndex",
             y="vertOffsetDeg",
             hue="conditionIndex",
+            palette="muted",
             data=df_v_error,
             ax=axs[0],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[0].set_xticklabels(["Karte %d" % i for i in range(1, 7)])
 axs[0].set_xlabel("")
 axs[0].set_ylabel("Vertikale Abweichung [$\\degree$]")
@@ -116,14 +111,13 @@ df_v_error.loc[:, "taskIndex"] = 7
 sns.boxplot(x="taskIndex",
             y="vertOffsetDeg",
             hue="conditionIndex",
+            palette="muted",
             data=df_v_error,
             ax=axs[1],
-            flierprops={"marker": "x", "markersize": 4})
+            flierprops={"marker": "x", "markersize": 3})
 axs[1].legend_.remove()
 axs[1].set_xticklabels(["Gesamt"])
 axs[1].set_xlabel("")
 axs[1].set_ylabel("")
 
-fig.suptitle("Vertikale Abweichung bei Richtungsschätzung")
-fig.savefig("vert_error.pdf")
 plt.show()
