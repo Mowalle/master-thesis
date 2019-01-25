@@ -8,53 +8,48 @@ import seaborn as sns
 import sys
 
 df = pd.read_csv(str(sys.argv[1]))
-
-sns.set(style="whitegrid", font="Linux Biolinum")
-
-fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [6, 1]}, sharey=True)
-plt.subplots_adjust(wspace=0.02)
+df = df[["conditionIndex", "taskIndex", "hitRoom"]]
 
 values = []
 for condition in df["conditionIndex"].unique():
     for task in df["taskIndex"].unique():
         df_hits = df[(df["conditionIndex"] == condition) & (df["taskIndex"] == task)]
-        row = [condition, task, df_hits["hitRoom"].mean()]
+        row = [task, condition, df_hits["hitRoom"].mean()]
         values.append(row)
 
-df_hitrates = pd.DataFrame(values, columns=["conditionIndex", "taskIndex", "hitrate"])
-print(df_hitrates)
-sns.barplot(x="taskIndex",
-            y="hitrate",
-            hue="conditionIndex",
-            data=df_hitrates,
-            ax=axs[0])
-axs[0].set_xticklabels(["Karte %d" % i for i in range(1, 7)])
-axs[0].set_xlabel("")
-axs[0].set_ylim(0, 1)
-axs[0].set_yticklabels(np.arange(0, 101, step=20))
-axs[0].set_ylabel("Trefferquote [%]")
-handles, _ = axs[0].get_legend_handles_labels()
-axs[0].legend(handles, ["$3D_l$", "$3D_h$", "$2D$"])
+hitrates = pd.DataFrame(values, columns=["Map", "Condition", "Hitrate"])
+hitrates["Hitrate"] *= 100
+print(hitrates)
 
+sns.set(style="whitegrid", font="Linux Biolinum")
 
-values = []
-for condition in df["conditionIndex"].unique():
-    df_hits = df[df["conditionIndex"] == condition]
-    row = ["dummy", condition, df_hits["hitRoom"].mean()]
-    values.append(row)
+plt.figure()
+ax = sns.boxplot(x="Condition",
+                 y="Hitrate",
+                 data=hitrates,
+                 palette="muted")
+ax = sns.swarmplot(x="Condition",
+                   y="Hitrate",
+                   data=hitrates,
+                   color="k")
+ax.set_ylim(top=100)
+ax.set_ylabel("Trefferquote bei Richtungsschätzung [%]")
+ax.set_xlabel("")
+ax.set_xticklabels(["$3D_l$", "$3D_h$", "$2D$"])
+ax.text(x=2 + 0.05,
+        y=hitrates[hitrates["Condition"] == 2].iloc[4]["Hitrate"] + 1,
+        s="Karte 5")
 
-df_hitrates = pd.DataFrame(values, columns=["Gesamt", "conditionIndex", "hitrate"])
-print(df_hitrates)
-sns.barplot(x="Gesamt",
-            y="hitrate",
-            hue="conditionIndex",
-            data=df_hitrates,
-            ax=axs[1])
-axs[1].legend_.remove()
-axs[1].set_xticklabels(["Gesamt"])
-axs[1].set_xlabel("")
-axs[1].set_ylabel("")
+plt.figure()
+ax = sns.barplot(x="Map",
+                 y="Hitrate",
+                 data=hitrates,
+                 capsize=.1,
+                 errwidth=1.5,
+                 palette="muted")
+ax.set_xticklabels(["Karte %d" % (i + 1) for i in range(6)])
+ax.set_ylim(top=100, bottom=40)
+ax.set_ylabel("Trefferquote bei Richtungsschätzung [%]")
+ax.set_xlabel("")
 
-fig.suptitle("Zielraum-Trefferquote beim Richtungsschätzen")
-fig.savefig("hitrates.pdf")
 plt.show()
