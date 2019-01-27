@@ -27,6 +27,7 @@ sns.boxplot(x="taskIndex",
             data=df_times,
             ax=axs[0],
             flierprops={"marker": "x", "markersize": 3})
+print(df_times["megamapTime"])
 axs[0].set_ylim(bottom=0)
 axs[0].set_xticklabels(["Karte %d" % i for i in range(1, 7)])
 axs[0].set_xlabel("")
@@ -34,6 +35,7 @@ axs[0].set_ylabel("Suchzeit [s]")
 handles, _ = axs[0].get_legend_handles_labels()
 axs[0].legend(handles, ["$3D_l$", "$3D_h$", "$2D$"])
 
+print(df[["horizOffsetDeg", "vertOffsetDeg"]].corr())
 # Somehow gives only 16 outliers, even though 17 are plottet?
 # outliers = [y for stat in boxplot_stats(df_times["megamapTime"]) for y in stat["fliers"]]
 # print(df[df["megamapTime"].isin(outliers)])
