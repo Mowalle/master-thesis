@@ -159,17 +159,60 @@ Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und
 %Hitrate       76.67  81.11  77.78
 
 \subsubsection*{Suchzeit}
+\begin{table}
+    \centering
+    \caption{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
+    \label{tab:searchtime_overview}
+    \begin{tabular}{rccc}
+        \toprule
+        {} & \multicolumn{3}{c}{Suchzeit [\SI{}{\second}]} \\
+        {} &          $3D_l$ &          $3D_h$ &          $2D$ \\
+        \midrule
+        $\mu$    &  $\num{27.44}$     &  $\num{28.84}$     &  $\num{18.31}$ \\
+        $\sigma$ &  $\pm \num{13.39}$ &  $\pm \num{10.08}$ &   $\pm \num{9.3}$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-
-
+\autoref{tab:searchtime_overview} zeigt eine Übersicht der Suchzeit nach den Zielräumen zwischen den einzelnen Konditionen.
+Da die Stichprobenverteilungen der beobachteten Zeiten nicht-normalverteilt ist (wie in \autoref{fig:searchtime_distributions} zu sehen ist), werden nicht-parametrisierte Tests zur Bestimmung der Signifikanz angewendet.
+Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
+Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\num{18.31} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\num{27.44} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\num{28.84} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
+Der Unterschied bei der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/megamap_time}
-    \caption{text}
-    \label{fig:boxplot_times}
+    \includegraphics[width=\linewidth]{figures/analysis/searchtime_distributions}
+    \caption{Stichprobenverteilung der beobachteten Suchzeit.}
+    \label{fig:searchtime_distributions}
+\end{figure}
+
+Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer besseren Suchzeit führt.
+\autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Werten aus \autoref{fig:sbsod}.
+Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittel.
+Die Tests weisen keinen signifikanten Zusammenhang der Variablen aus.
+Probanden, die ihren Orientierungssinn besser einschätzen, sind demnach nicht zwingend schneller bei der Suche nach den Zielräumen.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/correlation_time_sbsod_scatter}
+    \caption{Scatterplot zur Überprüfung der Korrelation zwischen SBSOD Wertung und Suchzeit.}
+    \label{fig:correlation_time_sbsod}
 \end{figure}
 
 \subsubsection*{Fehlerrate bei Raumauswahl}
+Neben der Suchzeit wurde auch die Zahl der falsch ausgewählten Räume (die Nicht-Zielräume) gemessen.
+Über die insgesamt 252 Suchaufgaben (14~Probanden $\times$ 3~Konditionen $\times$ 6~Karten) wurden in drei Fällen (\SI{1,19}{\percent}) vor dem Zielraum falsche Räume ausgewählt.
+\autoref{tab:error_searching} zeigt eine Übersicht der entsprechenden Events.
+Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (jedoch nicht in der ersten Karte).
+\begin{table}
+    \centering
+    \caption{Übersicht der Anzahl der falsch ausgewählten Räume währen der Suchaufgabe.}
+    \label{tab:error_searching}
+    \begin{tabular}{rccccc}\toprule
+        Proband                  & Kondition               & Karte    & Suchzeit [\SI{}{\second}] & \# Fehler & Sequenz  \\\midrule
+        user\_8                  & $3D_h$                  & Karte\_6 & $\SI{40,61}{\second}$     & 2         & $3D_h$--$3D_l$--$2D$ \\
+        user\_9                  & $2D$                    & Karte\_5 & $\SI{38,4}{\second}$      & 1         & $2D$--$3D_l$--$3D_h$ \\\bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection{Performance und Effizient bei Richtungsschätzung}
 
