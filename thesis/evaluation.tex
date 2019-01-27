@@ -1,16 +1,252 @@
-\chapter{Evaluation}
+\chapter{Nutzerstudie}
 \label{chap:evaluation}
+\todo{Fragebögen, Flyer, Infobögen etc. in Anhang.}
+Wie bereits in \autoref{chap:related_work} erwähnt ist ein Nachteil von 2D-Karten, dass durch das Fehlen einer Dimension zum Abgleich mit der Umgebung ein gewisser mentaler Aufwand notwendig ist.
+Die 2D-Karte stellt eine Abstraktion der Umgebung dar, wodurch Informationen verloren gehen.
 
-\section{Setup/Vorgehen}
+Der Zweck dieser Nutzerstudie ist zu überprüfen, ob sich bei den Probanden durch die 3D-Megamap ein räumliches Verständnis aufbaut, welches gegenüber der 2D-Karte zu einer performanteren und effizienteren Orientierung führt.
+Unter Performanz und Effizienz wird in diesem Sinne verstanden, dass die Fehlerquote und die Zeit zum Einschätzen von Richtungen zu Orten in der Umgebung niedriger sind, als bei der 2D-Variante.
+Zudem sollen die subjektiven Eindrücke und Präferenzen der Probanden von den unterschiedlichen Kartenvarianten ermittelt werden.
+Für zukünftige Arbeiten werden außerdem Verbesserungsvorschläge und Ansichten über das Potential der Megamap gesammelt.
 
-\section{Durchführung}
-\subsection{Testgruppe}
-\subsection{Fragebogen}
-\subsection{Aufgabenstellung}
+\section{Aufbau}
+Das Experiment wurde im Laborraum 5220 (MZH Ebene 5) der Arbeitsgruppe Human-Computer Interaction an der Universität Bremen durchgeführt.
+Für die Präsentation der virtuellen Umgebung wurde die HTC Vive mit zwei Basisstationen eingesetzt.
+Der getrackte Bereich zwischen den Basisstationen umfasste ca. \SIrange{0}{0}{\metre}.\todo{Tatsächliche Zahlen einsetzen.}
+Die Bilddaten wurden von einem PC mit einer \emph{NVidia~GTX~1080~Ti} Grafikkarte und einem \emph{AMD~Ryzen~7~1800X} Prozessor gerendert.
+Übertragen wurden die Bilddaten an das HMD mit dem \emph{VIVE~Wireless~Adapter} \parencite{HTCCorporation2018b}.
+Die Fragebögen wurden über \emph{Google Forms} erstellt und ausgefüllt (siehe \autoref{appendix:study_material}).
+Hierfür wurde ein separater Laptop bereitgestellt.
+
+\section{Konditionen und Aufgaben}
+\label{sec:conditions_and_tasks}
+Für die Nutzerstudie wurden drei unterschiedliche Konditionen getestet:
+\begin{itemize}
+    \item $3D_l$ (\emph{low)}: Die 3D-Megamap wird mit einer Skalierung von \SI{6}{\percent} (relativ zur Umgebung) und \SI{25}{\cm} über dem Boden angezeigt.
+    Diese Kondition entspricht am ehesten der Megamap aus TCTD. 
+    \item $3D_h$ (\emph{high}): Die 3D-Megamap wird mit einer Skalierung von \SI{6}{\percent} (relativ zur Umgebung) und \SI{1}{\metre} unterhalb der HMD-Position angezeigt.
+    Dabei wird die Höhe nur beim Aufrufen der Karte berechnet.
+    Danach bleibt die Höhe fix.
+    Diese Kondition wird getestet, um zu ermitteln, wie sich die Höhe der Megamap vom Boden auf die Nutzung auswirkt (insbesondere unter dem Aspekt, dass durch die Darstellung in 3D Verdeckungen durch die Wände der Räume auftreten können).
+    \item $2D$: Eine 2D-Karte wird senkrecht an der Wand vor dem Nutzer angezeigt.
+    Auch die 2D-Karte hat eine Skalierung von \SI{6}{\percent} (relativ zur Umgebung).
+    Die Karte ist so an der Wand platziert, dass sie nicht von anderen Wänden oder der Decke und dem Fußboden geschnitten wird.
+\end{itemize}
+\todo{Screenshots der Konditionen einfügen.}
+
+Jede Kondition wurde über 6~Iterationen (\emph{Tasks}) $T_0, \dots, T_5$ wiederholt.
+\todo{Bild für Megamap Varianten} Dabei wurde in jeder Iteration eine andere Indoor-Karte für die Megamap verwendet, um einen Lerneffekt für die Kartenlayouts zu minimieren.
+Damit die Konditionen vergleichbar bleiben, wurde jede Karte einmal jeder Kondition unterzogen.
+Das heißt, die Probanden durchliefen insgesamt 18~Iterationen, wobei sechs unterschiedliche Karten jeweils dreimal eingesetzt wurden.
+Die Reihenfolge der Iterationen innerhalb einer Kondition war zufällig bestimmt, wobei darauf geachtet wurde, dass bei einem Wechsel der Konditionen die gleiche Karte nicht zweimal aufeinander folgte.
+
+Um die Auswirkungen der jeweiligen Kondition auf die mentale räumliche Vorstellung des Probanden von der Umgebung zu testen, wurden eine Suchaufgabe und eine Richtungsschätzung in den Prototypen integriert.
+
+Für die Suchaufgabe wurden auf der jeweiligen Megamap in sieben räumen Bälle platziert.
+Die Probanden mussten dann den Raum suchen, der die meisten Bälle enthält und diesen mit dem VIVE Controller und dem virtuellen Laserpointer auswählen.
+Jede Megamap hatte genau einen Zielraum, welcher zufällig zwischen sieben und zehn Bällen enthielt.
+Die anderen Räume enthielten mindestens fünf Bälle und garantiert weniger als der Zielraum.
+Jede der sechs Indoor-Karten hatte denselben Zielraum in allen drei Konditionen.
+Dies wurde entschieden, damit die Karten über Konditionen hinweg vergleichbar bleiben.
+Wäre immer ein anderer Zielraum gewählt worden, wäre der Schwierigkeitsgrad des Findens zwischen den Konditionen unter Umständen verschieden gewesen, obwohl die Karte die gleiche wäre.
+
+Für den Fall, dass ein Proband einen falschen Raum auswählt, würde dieser rot eingefärbt werden.
+Der Proband müsste dann die Suche nach dem Zielraum fortfahren.
+Dieser Fall trat über alle Probanden hinweg außerhalb des Tutorials nur ein einziges Mal auf.
+
+Die Probanden mussten sich anhand der Megamap die Richtung vom virtuellen Laborraum zum Zielraum (horizontal und vertikal zentriert) merken.
+Sobald sie den Zielraum auswählten, wurde die Megamap ausgeblendet.
+Mit dem virtuellen Laserpointer sollten die Probanden dann möglichst mittig auf den Zielraum \emph{in ihrer Umgebung} zeigen.
+Durch Betätigen des Triggers konnte der Laserpointer \enquote{eingefroren} werden, um die Richtung entweder zu korrigieren oder zu akzeptieren.
+Wenn die Richtung akzeptiert wurde, startete die nächste Iteration.
+
+Damit die Probanden beim Suchen auf einer Karte immer die gleiche Startposition und Blickrichtung hatten wie in den anderen Konditionen, wurde vor der Suchaufgabe ein \emph{User Setup} implementiert.
+Die Probanden mussten sich dabei auf eine festgelegte Zielposition stellen und für zwei Sekunden auf ein Ziel an der Wand schauen.
+Die beiden Zielpositionen waren von der jeweiligen Karte abhängig, bleiben jedoch für eine Karte über die Konditionen hinweg gleich.
+So wurde sichergestellt, dass die Ausgangsbedingungen für die Suche auf der Karte in jeder Kondition gleich bleiben.
+
+Ebenso wurde das User Setup zwischen der Suche und der Richtungsschätzung implementiert.
+Ohne diesen Zwischenschritt hätten die Probanden in den 3D-Konditionen einfach den Laserpointer vom Raum auf der Karte anheben müssen, um die korrekte Richtung zu schätzen.
+Durch das User Setup wurde eine Ablenkung erzeugt, welche diesen Vorteil der 3D-Konditionen gegenüber der 2D-Kondition minimieren soll.
+
+\section{Ablauf}
+Für einen Test wurden \num{45}~Minuten angesetzt.
+
+Zuerst bekamen die Probanden Hintergrundinformationen zu der Nutzerstudie.
+Unter anderem wurde erklärt, dass eine neuartige 3D-Darstellung von Indoor-Karten für MR/VR getestet wird und dass verschiedene Varianten getestet würden.
+Mit einem Informationsbogen wurden die Probanden über die Details, den Ablauf sowie die gesammelten Daten der Nutzerstudie aufgeklärt.
+Daraufhin unterschrieben die Probanden einen Zustimmungsbogen (siehe \autoref{appendix:study_material}).
+Dabei willigten zur Teilnahme an der Studie sowie der Aufzeichnung ihres Blickfelds in der virtuellen Umgebung ein.
+Die Probanden konnten frei entscheiden, ob zusätzlich eine Audioaufnahme der Gespräche während des Experiments aufgezeichnet wird.
+
+Vor dem eigentlichen Test füllten die Probanden einen allgemeinen Fragebogen aus (siehe \autoref{appendix:study_material}).
+Dieser enthielt Fragen zur Person (Alter, Geschlecht usw.) sowie Vorerfahrungen in VR/MR und mit Kartenanwendungen für Außen- und Innenbereiche. Der letzte Teil des Fragebogens ist die ins Deutsche übersetzte Santa~Barbara~Sense-of-Direction~Scale \parencite{Hegarty2002}, mit dem Probanden Selbstauskunft über ihren Orientierungssinn geben.
+Die Bewertung wurde von einer 7-Punkte- auf eine 5-Punkte-Likert-Skala abgeändert, um mit den späteren Fragebögen einheitlich zu sein.
+
+Den Probanden wurde danach das VR-Equipment (HMD und Batteriepack für den Wireless~Adapter) angelegt.
+Sie fanden sich im virtuellen Laborraum wieder.
+Die Probanden wurden kurz in der Bedienung des VIVE Controllers und der Bewegung im Raum innerhalb der Play Area unterrichtet.
+Sie wurden darauf hingewiesen, dass an einer der Wände ein Bildschirm hängt, der ihnen den nächsten Aufgabenschritt in Textform anzeigt, sollten sie den Ablauf vergessen.
+Die Probanden konnten auch jederzeit während des Experiments Fragen an den Versuchsleiter stellen.
+
+Es folgte ein Tutorial, bei dem die Probanden die zuvor beschriebenen Aufgaben (User~Setup --- Suche --- User~Setup --- Zeigen) in einer Tutorialkondition durchliefen (\SI{40}{\cm} Kartenhöhe vom Boden bei \SI{4}{\percent} Skalierung).
+Zuerst wurde die 3D-Megamap gezeigt, danach die 2D-Kondition.
+Die Probanden konnten entscheiden, ob sie das Tutorial wiederholen oder fortfahren wollen.
+Zu diesem Zeitpunkt wurde die Bildschirmaufnahme (und ggf. die Audioaufnahme) gestartet.
+
+Nach dem Tutorial durchliefen die Probanden die Konditionen und Aufgaben, wie sie in \autoref{sec:conditions_and_tasks} beschrieben sind.
+Nach jeder Kondition setzten die Probanden das HMD ab und füllten am Laptop einen Fragebogen zur zuletzt gestesteten Kartenvariante aus (siehe \autoref{appendix:study_material}).
+Die Fragebögen basieren auf der \emph{System~Usability~Scale}, wurden jedoch für das Anwendungsgebiet von Karten angepasst.
+Die Bewertung der einzelnen Aussagen erfolgte über eine 5-Punkte-Likert-Skala.
+
+Nach Abschluss des letzten Fragebogens wurde mit den Probanden ein kurzes (5--10 Minuten) Leitfadeninterview geführt.
+Unter anderem beantworteten die Probanden Fragen zu ihrer präferierten Kartenvariante fürs Suchen und Richtungsschätzen, ihr Vorgehen beim Suchen sowie Verbesserungsvorschlägen.
+Die Probanden wurden auch befragt, ob sie sich einen Einsatz von 3D-Megamaps mit MR-HMDs in der realen Welt sowohl in Innen- als auch Außenbereichen vorstellen können.
+
+\section{Testgruppe}
+An der Nutzerstudie nahmen 15~Personen teil ($user\_0, \dots, user\_14$), davon 10~männlich und 5~weiblich.
+Die Probanden befanden sich in einem Altersbereich von ?? bis ?? Jahren.
+Vier der Probanden sind Brillenträger von denen zwei die Brille aus Bequemlichkeitsgründen während des Tests abnahmen.
+Zwei der Probanden sprachen Englisch und füllten ins Englische übersetzte Versionen der Fragebögen aus.
+Die Muttersprache aller anderen Probanden ist Deutsch.
+Keiner der Probanden war in die Inhalte der Masterarbeit oder der Nutzerstudie eingeweiht.
+
+Die Probanden wurden durch an der Universität ausgehängte Flyer (siehe \autoref{appendix:study_material}), den Mailverteiler des Fachbereichs~3 und über die Arbeitsgruppe Human-Computer~Interaction rekrutiert.
+Einige Probanden wurden außerdem durch persönlichen Kontakt mit dem Versuchsleiter angeworben.
+Für die Teilnahme wurden den Probanden Snacks und Getränke angeboten.
+Eine finanzielle Aufwandsentschädigung gab es nicht.
+
+Bei $user_4$ kam es während der ersten Kondition ($3D_h$) zu einem PC-Absturz, der aus einer Inkompatibilität zwischen dem Ryzen-Prozessor und dem VIVE Wireless Adapter resultiert \parencite{HTCCorporation2018c}.
+Auch bei einem erneuten Start des Experiments kam es in der Kondition $3D_h$ zum Absturz.
+Daraufhin wurde der Test abgebrochen.
+Der Proband erschien wenige Tage später und führte das Experiment erneut ohne Absturz durch.
+Es wird darauf hingewiesen, dass dieser Nutzer durch die vorige begrenzte Teilnahme für seinen Durchlauf mehr Vorkenntnisse hatte, als die anderen Probanden.
+
+\section{Datenerhebung}
+Neben den Antworten aus den Fragebögen wird das Sichtfeld der Proband in der virtuellen Welt aufgezeichnet (und ggf. eine Audioaufnahme des Gesagten).
+
+Zum Vergleich der Performanz von 2D und 3D wird beim Richtungsschätzen die horizontale und vertikale Abweichung von der \enquote{korrekten} Richtung berechnet.
+Als korrekte Richtung gilt der Vektor von der Controllerspitze zum Zentrum des Zielraums in der Umgebung.
+Die horizontale und vertikale Abweichung ergeben sich aus den jeweiligen Winkeln zwischen der vom Probanden bestätigten Richtung und der korrekten Richtung.
+
+Zum Vergleich der Effizienz werden diverse Zeitmessungen durchgeführt.
+Zum einen wird die Zeit gemessen, die Probanden zum Finden des Zielraums benötigen.
+Zum anderen wird die Zeit gemessen, bis Probanden die geschätzte Richtung bestätigt haben.
+So sollen Aussagen über die Zuversicht der Probanden ihrer Schätzung getroffen werden.
+
+Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und des Controllers aufgezeichnet.
 
 \section{Ergebnisse}
 
-\section{Zusammenfassung und Diskussion der Ergebnisse}
+\begin{table}
+    \centering
+    \caption{Mittelwerte der Suchzeit, der horizontalen und vertikalen Abweichung und der Trefferquote beim Richtungsschätzen über alle sechs Iterationen.}
+    \label{tab:means_per_condition}
+    \begin{tabular}{@{}rccc@{}}
+        \toprule
+        {} & $3D_l$ & $3D_h$ & $2D$ \\
+        \midrule
+        Suchzeit [\SI{}{\second}]      & \num{29.53} ($\pm$ \num{16.68}) &  \num{31.27} ($\pm$ \num{14.72}) & \num{19.56} ($\pm$ \num{10.87}) \\
+        
+        Horiz. Abweichung [$\degree$]  & \num{-3.04} ($\pm$ \num{9.88})  & \num{-2.56} ($\pm$ \num{10.39})  & \num{-3.47} ($\pm$ \num{7.70}) \\
+        
+        Vert. Abweichung [$\degree$]   & \num{-0.80} ($\pm$ \num{7.08})  &  \num{-0.42} ($\pm$ \num{6.78})  & \num{-1.89} ($\pm$ \num{7.41}) \\
+        
+        Trefferquote [\SI{}{\percent}] & \num{76.7}                      &  \num{81.1}                      & \num{77.8}\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Santa-Barbara Sense-of-Direction Skala}
+
+\begin{figure}
+    \centering
+    \includegraphics[trim={2cm, 0, 2cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
+    \caption{text}
+    \label{fig:sbsod}
+\end{figure}
+
+\subsection{Performance und Effizienz bei Raumsuche}
+
+%               3D_l   3D_h     2D
+%Megamap Time  29.53  31.27  19.56
+%std Time      16.68  14.72  10.87
+%H-Error       -3.04  -2.56  -3.47
+%std H-Error    9.88  10.39   7.70
+%V-Error       -0.80  -0.42  -1.89
+%std V-Error    7.08   6.78   7.41
+%Hitrate       76.67  81.11  77.78
+
+\subsubsection*{Suchzeit}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/megamap_time}
+    \caption{text}
+    \label{fig:boxplot_times}
+\end{figure}
+
+\subsubsection*{Fehlerrate bei Raumauswahl}
+
+\subsection{Performance und Effizient bei Richtungsschätzung}
+
+\subsubsection*{Schätzungszeit}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.45\textheight]{figures/analysis/pointing_time}
+    \caption{}
+    \label{fig:pointing_time}
+\end{figure}
+
+\subsubsection*{Genauigkeit der Schätzung}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.45\textheight]{figures/analysis/horiz_error}
+
+    \includegraphics[height=0.45\textheight]{figures/analysis/vert_error}
+    \caption{}
+    \label{fig:boxplot_errors}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/pointing_times}
+    \caption{text}
+    \label{fig:pointing_times}
+\end{figure}
+
+\subsubsection*{Trefferquote}
+
+\begin{figure}
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[height=0.45\textheight]{figures/analysis/Hitrate_per_Condition}
+        \caption{text}
+        \label{sfig:hitrate_per_condition}
+    \end{subfigure}%
+
+    \begin{subfigure}{\linewidth}
+        \centering
+        \includegraphics[height=0.45\textheight]{figures/analysis/Hitrate_per_Map}
+        \caption{text}
+        \label{sfig:hitrate_per_map}
+    \end{subfigure}
+\end{figure}
+
+\subsection{Fragebögen zur Nutzungsfreundlichkeit}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/usability}
+    \caption{text}
+    \label{fig:usability}
+\end{figure}
+
+\subsection{Präferenz der Probanden aus Interview}
+
+\section{Diskussion der Ergebnisse}
 
 %
 \cleardoublepage
