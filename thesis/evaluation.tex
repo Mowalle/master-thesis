@@ -216,8 +216,10 @@ Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (je
 \subsection{Performance und Effizient bei Richtungsschätzung}
 \subsubsection*{Genauigkeit der Schätzung}
 \autoref{fig:horizontal_offset} zeigt das Ergebnis der Richtungsschätzung.
-Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(-3,15 $\pm$ \ang{10,17}), $3D_h$~(-2.87 $\pm$ \ang{10,45}) und $2D$~(-3,35 $\pm$ \ang{7,81}) nahe beieinander.
-Der Friedman-Test kann keine Signifikanten Unterschiede zwischen den Konditionen nachweisen.
+Da die Abweichung sowohl in positiven Winkeln (Abweichung nach rechts) als auch negativen Winkeln (Abweichung nach links) gemessen wurde, werden hier die absoluten Werte der Abweichung analysiert.
+Andernfalls würden die Werte sich bei der Mittelwertbildung gegenseitig aufheben.
+Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(7,79 $\pm$ \ang{7,22}), $3D_h$~(7,84 $\pm$ \ang{7,44}) und $2D$~(6,62 $\pm$ \ang{5,28}) nahe beieinander.
+Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen nachweisen.
 \begin{figure}
     \centering
     \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset}
@@ -225,37 +227,60 @@ Der Friedman-Test kann keine Signifikanten Unterschiede zwischen den Konditionen
     \label{fig:horizontal_offset}
 \end{figure}
 
-Eine Analyse der Ausreißer zeigt, dass 4 von 8 Ausreißern (\SI{50}{\percent}) von Iterationen auf Karte~4 stammen.
-\autoref{fig:horizontal_offset_per_map} zeigt die durchschnittlichen horizontalen Abweichungen zwischen den einzelnen Karten.
-Dabei sind signifikante Unterschiede in den Abweichungen vorhanden ($\chi^2(6) = \num{11.701}, p < \num{0.05}$).
-Die horizontale Abweichung in Karte~4 ($\num{-6.04} \pm \ang{12.3}$) ist signifikant größer als in Karte~1 ($\num{-2.28} \pm \ang{5.58}, z = \num{-2.182}, p = \num{0.029}$), Karte~2 ($\num{-1.02} \pm \ang{5.92}, z = \num{-3.007}, p < \num{0.005}$) und Karte~5 ($\num{-1.1} \pm \ang{8.24}, z = \num{-2.57}, p  = \num{0.01}$).
-Außerdem ist die Abweichung in Karte~3 ($\num{-5.26} \pm \ang{12.72}$) signifikant größer als in Karte~2 ($\num{-1.02} \pm \ang{5.92}, z = \num{-2.157}, p = \num{0.031}$).
-
-Weiterhin ist eine Tendenz zu erkennen, dass die Richtungsschätzungen \enquote{nach links} ausschlagen (negativer Winkel).
-Zum einen sind die Mittelwerte der horizontalen Abweichungen über alle Karten und Konditionen negativ.
-Zum anderen weichen von den insgesamt 252~Richtungsschätzungen 158 (\SI{62,7}{\percent}) nach links ab.
-
-\begin{figure}
+Ein wesentlicher Aspekt, der die Genauigkeit der Schätzung beeinflusst, ist die Position des Zielraums auf der jeweiligen Karte.
+\autoref{tab:herror_per_map} fasst die Mittelwerte und Standardabweichungen der absoluten horizontalen Abweichungen der einzelnen Karten zusammen.
+\autoref{fig:horizontal_offset_per_map} zeigt die Unterschiede zwischen den Karten grafisch.
+Es ist zu erkennen, dass vor allem die Abweichungen bei Karte 3 und 4 größer sind, als auf den anderen Karten.
+Der Friedman-Test bestätigt signifikante Unterschiede zwischen den Karten ($\chi^2(6) = \num{39.755}, p < \num{0.001}$).
+Die horizontale Abweichung bei Karte~3 ist signifikant größer als bei Karte~1 ($z = \num{-4,483}, p < \num{0,001}$), Karte~2 ($z = \num{-4,195}, p < \num{0,001}$), Karte~5 ($z = \num{-3,432}, p < \num{0,001}$) und Karte~6 ($z = \num{-3,37}, p < \num{0,001}$).
+Auch die hohe Abweichung bei Karte~4 ist gegenüber Karte~1 ($z = \num{-3,782}, p < \num{0,001}$), Karte~2 ($z = \num{-3,395}, p < \num{0,001}$), Karte~5 ($z = \num{-2,044}, p < \num{0,05}$) und Karte~6 ($z = \num{-2,17}, p < \num{0,05}$) signifikant.
+Weiterhin gibt es bei Karte~5 eine signifikant größere Abweichung als bei Karte~1 ($z = \num{-2,645}, p < \num{0,008}$), was durch die Ausreißer (siehe \autoref{fig:horizontal_offset_per_map}) begünstigt wird.
+\begin{figure}[h!]
     \centering
-    \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset_per_map}
-    \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
+    \includegraphics[width=0.75\linewidth]{figures/analysis/horizontal_offset_per_map}
+    \caption{Absolute horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
     \label{fig:horizontal_offset_per_map}
-\end{figure}
+\end{figure}%
+
+\begin{table}[h!]
+    \centering
+    \caption{Mittelwert $\mu$ und Standardabweichung der absoluten horizontalen Abweichung pro Karte in $\degree$.}
+    \label{tab:herror_per_map}
+    \begin{tabular}{cccccc}\toprule
+        Karte 1 & Karte 2 & Karte 3 & Karte 4 & Karte 5 & Karte 6 \\\midrule
+        $\mu = \ang{4,44}$ & $\mu = \ang{4,96}$ & $\mu = \ang{11,75}$ & $\mu = \ang{10,19}$ & $\mu = \ang{6,62}$ & $\mu = \ang{6,55}$ \\
+        $\pm \ang{4,03}$ & $\pm \ang{3,3}$ & $\pm \ang{6,98}$ & $\pm \ang{9,07}$ & $\pm \ang{4,94}$ & $\pm \ang{7,05}$ \\\bottomrule
+    \end{tabular}
+\end{table}
+
+Wird der Unterschied zwischen der positiven und negativen horizontalen Abweichung mit einbezogen, ist eine Tendenz zu einem Ausschlag nach links (negativ) der horizontalen Abweichungen zu erkennen.
+Von den insgesamt 252~Richtungsschätzungen weichen 158 (\SI{62,7}{\percent}) nach links ab.
 
 \subsubsection*{Schätzungszeit}
+Neben der Abweichung der Schätzung wurde auch die Zeit gemessen, welche die Probanden für die Abgabe der Schätzung benötigen.
+\autoref{fig:pointing_time} visualisiert die erhobenen Daten.
+In den meisten Iterationen (\SI{95,24}{\percent}) wurde die Richtungsschätzung innerhalb von 10~Sekunden bestätigt.
+
+% TODO: Und weiter???
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.45\textheight]{figures/analysis/pointing_time}
-    \caption{}
+    \includegraphics[width=\linewidth]{figures/analysis/pointing_time}
+    \caption{Vergleich der Zeit (zwischen den Konditionen), die die Probanden für die Abgabe einer Richtungsschätzung benötigten.}
     \label{fig:pointing_time}
 \end{figure}
 
+Einer der Gründe für die Messung der Schätzzeit war es, die Korrelation zur resultierenden horizontalen Abweichung zu testen.
+Die Überlegung ist, dass Probanden, die sich mehr Zeit für die Schätzung der Richtung nehmen, präziser sind.
+\autoref{fig:pointing_time_vs_error} zeigt die absolute horizontale Abweichung in Bezug zur benötigten Schätzzeit.
+Weder grafisch, noch doch Anwendung des Spearman-Tests, ist eine Korrelation zwischen den beiden Variablen erkennbar.
+Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgegeben haben, sind für den Zeitraum \emph{nach} 10~Sekunden zu wenig Messungen vorhanden, um eine zuverlässige Aussage über eine potentielle Korrelation treffen zu können.
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/pointing_times}
-    \caption{text}
-    \label{fig:pointing_times}
+    \includegraphics[width=\linewidth]{figures/analysis/pointing_time_vs_error}
+    \caption{Plot der Schätzungszeit gegen die absolute horizontale Abweichung. %
+    Eine Korrelation ist nicht erkennbar.}
+    \label{fig:pointing_time_vs_error}
 \end{figure}
 
 \subsection{Fragebögen zur Nutzungsfreundlichkeit}
