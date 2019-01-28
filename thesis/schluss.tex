@@ -1,8 +1,9 @@
-\chapter{Fazit und Ausblick}
+\chapter{Fazit}
 \label{chap:closing}
+% TODO: Forschungsfrage nochmal aufgreifen?
 Die digitale Unterstützung der Navigation und Exploration durch augmentierte Inhalte ist ein Thema, das in der Vergangenheit bereits ausgiebig von Forschung und Industrie behandelt wurde.
 Die Idee, eine augmentierte Karte als Megamap in die Umgebung der Nutzer zu integrieren, ist jedoch bisher nur aus Videospielen wie z.B. Tom Clancy's The Division bekannt.
-In dieser Masterarbeit wurde eingehend untersucht, ob sich eine solche Megamap auch für die \enquote{reale} Welt umsetzen lässt.
+In der vorliegenden Masterarbeit wurde eingehend untersucht, ob sich eine solche Megamap auch für die \enquote{reale} Welt umsetzen lässt.
 Zu diesem Zweck wurde das Konzept einer Megamap für den Einsatz mit einem Mixed-Reality-HMD entwickelt.
 Mit der Megamap sollen virtuelle Gebäudekarten in das reale Umfeld der Nutzer projiziert werden, sodass diese sich einen Überblick der Umgebung verschaffen können.
 Verschiedene explorative Interaktionselemente aus bereits existierenden Kartenanwendungen sind in das Konzept mit eingeflossen und wurden für den Einsatz in Innenbereichen neu interpretiert.
@@ -14,9 +15,41 @@ Die statistische Analyse der quantitativ erhobenen Daten ergab keine Vorteile de
 Weiterhin bewerteten die Probanden die Nutzbarkeit der 2D-Alternative besser als die der Megamap.
 In einem kurzen Leitfadeninterview wurden zudem die subjektiven Meinungen der Probanden zu der Megamap eingeholt.
 
-\section{Offene Fragen und Probleme dieser Arbeit}
+\section{Probleme des Megamap-Prototypen}
+Durch die Nutzerstudie, den Interviews sowie den Erfahrungen bei der Implementierung offenbaren sich drei Probleme des aktuellen Megamap-Prototypen.
+Dadurch ergeben sich Ansatzpunkte für zukünftige Verbesserungen und Erweiterungen der Megamap.
 
-\section{Potential der AR-Indoor-Navigation und -Exploration}
+\subsection*{Fehlende Suchfunktion und andere Explorationselemente}
+Der Hauptgrund für den großen Zeitunterschied zwischen der 2D-Karte und den 3D-Megamaps (siehe \autoref{ssec:searchtime}) ist das Fehlen einer Suchfunktion.
+Herkömmliche Kartenapplikationen, wie z.B. die in \autoref{chap:concept} analysierten Webanwendungen, verfügen über eine Suchfunktion für eine spezifische und/oder offene Suche nach Zielorten.
+Eine manuelle Suche auf der Karte nach Zielen ist daher nicht notwendig.
+In der Nutzerstudie war jedoch die manuelle Suche nach Zielen auf der Karte gefordert.
+Dies begünstigt die 2D-Variante, da im Gegensatz zur 3D-Megamap alle Ziel gleichzeitig von den Probanden zu sehen waren.
+Dieser Unterschied könnte durch das Implementieren einer Suchfunktion für die Megamap ausgeglichen werden.
+
+Aber auch andere Explorationselemente fehlen im Prototypen.
+Das Megamap-Konzept aus \autoref{chap:concept} sieht eine Reihe von Elementen vor, die im aktuellen Prototypen nicht umgesetzt sind.
+Dieser wurde mit dem Fokus auf die Aufgabenstellung der Nutzerstudie entwickelt und stellt somit lediglich eine begrenzte Realisierung des eigentlichen Konzepts dar.
+Die eigentliche Kartenfunktionalität kommt dabei zu kurz.
+Insofern ist die konkrete Implementierung nur teilweise repräsentativ zur Beantwortung der Forschungsfrage dieser Masterarbeit.
+Gleichzeitig bedeutet dies aber auch, dass das Potential der Megamap bei Weitem nicht ausgeschöpft ist und das Konzept der Megamap für zukünftige Arbeiten weiterhin interessant bleibt.
+
+\subsection*{Limitierung auf VR-Hardware}
+Der vorliegende Prototyp wurde für ein VR-HMD entwickelt, da das gewünschte MR-HMD (Magic Leap One) für die Implementierung nicht zur Verfügung stand.
+Wie im vorigen Punkt schränkt auch dies die Repräsentativität des Prototypen für eine Anwendung in MR weiter ein.
+Zwar wurde dieses Problem in der Nutzerstudie durch eine virtuelle 1:1-Nachbildung der Umgebung sowie die Verwendung eines Wireless-Adapters adressiert.
+Jedoch werden für die VR-Implementierungen Annahmen getroffen, die in einer MR-Anwendung nicht unbedingt gelten.
+Beispielsweise ist nicht sicher, ob die Präzision der 3D-Rekonstruktion der MR-HMDs ausreicht, um die Megamap zuverlässig in der Umgebung zu platzieren.
+Gleiches gilt für die Berechnung von Schnittpunkten zwischen der Megamap und Objekten in der Umgebung.
+Zudem ist die aktuelle Position der Nutzer in der virtuellen Umgebung implizit gegeben.
+Für eine MR-Anwendung muss jedoch eine separate Lokalisierung durchgeführt werden, was (je nach Ansatz) zusätzliche Abweichungen in das System einbringen kann.
+Diese Probleme müssen für einen zukünftigen Einsatz der Megamap in MR-Anwendungen gelöst werden.
+
+\subsection*{Beschaffung der Indoor-Kartendaten}
+
+
+\section{Ausblick}
+% TODO: Ausblick auf Multi-Stockwerk (Rückreferenz auf ...), Outdoor-MR-Megamap, 
 % Technische Neuerungen im Bereich AR (und Anderes)
 % ==> Tellerrand!
 
