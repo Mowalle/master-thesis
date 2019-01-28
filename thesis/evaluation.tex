@@ -156,17 +156,7 @@ Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
     \label{fig:sbsod}
 \end{figure}
 
-\subsection{Performance und Effizienz bei Raumsuche}
-
-%               3D_l   3D_h     2D
-%Megamap Time  29.53  31.27  19.56
-%std Time      16.68  14.72  10.87
-%H-Error       -3.04  -2.56  -3.47
-%std H-Error    9.88  10.39   7.70
-%V-Error       -0.80  -0.42  -1.89
-%std V-Error    7.08   6.78   7.41
-%Hitrate       76.67  81.11  77.78
-
+\subsection{Effektivität und Effizienz bei Raumsuche}
 \subsubsection*{Suchzeit}
 \begin{table}
     \centering
@@ -224,6 +214,33 @@ Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (je
 \end{table}
 
 \subsection{Performance und Effizient bei Richtungsschätzung}
+\subsubsection*{Genauigkeit der Schätzung}
+\autoref{fig:horizontal_offset} zeigt das Ergebnis der Richtungsschätzung.
+Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(-3,15 $\pm$ \ang{10,17}), $3D_h$~(-2.87 $\pm$ \ang{10,45}) und $2D$~(-3,35 $\pm$ \ang{7,81}) nahe beieinander.
+Der Friedman-Test kann keine Signifikanten Unterschiede zwischen den Konditionen nachweisen.
+\begin{figure}
+    \centering
+    \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset}
+    \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung von der tatsächlichen Linie zur Raummitte (ohne vertikale Abweichung).}
+    \label{fig:horizontal_offset}
+\end{figure}
+
+Eine Analyse der Ausreißer zeigt, dass 4 von 8 Ausreißern (\SI{50}{\percent}) von Iterationen auf Karte~4 stammen.
+\autoref{fig:horizontal_offset_per_map} zeigt die durchschnittlichen horizontalen Abweichungen zwischen den einzelnen Karten.
+Dabei sind signifikante Unterschiede in den Abweichungen vorhanden ($\chi^2(6) = \num{11.701}, p < \num{0.05}$).
+Die horizontale Abweichung in Karte~4 ($\num{-6.04} \pm \ang{12.3}$) ist signifikant größer als in Karte~1 ($\num{-2.28} \pm \ang{5.58}, z = \num{-2.182}, p = \num{0.029}$), Karte~2 ($\num{-1.02} \pm \ang{5.92}, z = \num{-3.007}, p < \num{0.005}$) und Karte~5 ($\num{-1.1} \pm \ang{8.24}, z = \num{-2.57}, p  = \num{0.01}$).
+Außerdem ist die Abweichung in Karte~3 ($\num{-5.26} \pm \ang{12.72}$) signifikant größer als in Karte~2 ($\num{-1.02} \pm \ang{5.92}, z = \num{-2.157}, p = \num{0.031}$).
+
+Weiterhin ist eine Tendenz zu erkennen, dass die Richtungsschätzungen \enquote{nach links} ausschlagen (negativer Winkel).
+Zum einen sind die Mittelwerte der horizontalen Abweichungen über alle Karten und Konditionen negativ.
+Zum anderen weichen von den insgesamt 252~Richtungsschätzungen 158 (\SI{62,7}{\percent}) nach links ab.
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset_per_map}
+    \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
+    \label{fig:horizontal_offset_per_map}
+\end{figure}
 
 \subsubsection*{Schätzungszeit}
 
@@ -234,40 +251,11 @@ Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (je
     \label{fig:pointing_time}
 \end{figure}
 
-\subsubsection*{Genauigkeit der Schätzung}
-
-\begin{figure}
-    \centering
-    \includegraphics[height=0.45\textheight]{figures/analysis/horiz_error}
-
-    \includegraphics[height=0.45\textheight]{figures/analysis/vert_error}
-    \caption{}
-    \label{fig:boxplot_errors}
-\end{figure}
-
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/pointing_times}
     \caption{text}
     \label{fig:pointing_times}
-\end{figure}
-
-\subsubsection*{Trefferquote}
-
-\begin{figure}
-    \begin{subfigure}{\linewidth}
-        \centering
-        \includegraphics[height=0.45\textheight]{figures/analysis/Hitrate_per_Condition}
-        \caption{text}
-        \label{sfig:hitrate_per_condition}
-    \end{subfigure}%
-
-    \begin{subfigure}{\linewidth}
-        \centering
-        \includegraphics[height=0.45\textheight]{figures/analysis/Hitrate_per_Map}
-        \caption{text}
-        \label{sfig:hitrate_per_map}
-    \end{subfigure}
 \end{figure}
 
 \subsection{Fragebögen zur Nutzungsfreundlichkeit}
