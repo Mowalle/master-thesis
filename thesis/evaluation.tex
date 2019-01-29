@@ -160,16 +160,19 @@ Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
 \subsubsection*{Suchzeit}
 \label{ssec:searchtime}
 
-\autoref{tab:searchtime_overview} zeigt eine Übersicht der Suchzeit nach den Zielräumen zwischen den einzelnen Konditionen.
+\autoref{fig:searchtimes} zeigt die durchschnittlichen Suchzeiten bis zur Auswahl des Zielraums über alle Karten pro Kondition.
+Die entsprechenden Mittelwerte und Standardabweichungen sind in \autoref{tab:searchtime_overview} aufgeführt.
 Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
 Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\num{18.31} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\num{27.44} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\num{28.84} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
-Der Unterschied bei der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
-\begin{figure}[h]
-    %\includegraphics[width=\linewidth]{figures/analysis/searchtime_boxplot}
-    \caption{text}
+Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/analysis/searchtime_boxplot}
+    \caption{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
     \label{fig:searchtimes}
 \end{figure}
-\begin{table}[h]
+
+\begin{table}[h!]
     \centering
     \caption{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
@@ -185,11 +188,10 @@ Der Unterschied bei der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht sig
 \end{table}
 
 Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer besseren Suchzeit führt.
-\autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Werten aus \autoref{fig:sbsod}.
-Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittel.
-Die Tests weisen keinen signifikanten Zusammenhang der Variablen aus.
-Probanden, die ihren Orientierungssinn besser einschätzen, sind demnach nicht zwingend schneller bei der Suche nach den Zielräumen.
-\begin{figure}
+\autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Werten.
+Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittelt.
+Die Tests weisen keinen signifikanten Zusammenhang der Variablen auf.
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/correlation_time_sbsod_scatter}
     \caption{Scatterplot zur Überprüfung der Korrelation zwischen SBSOD Wertung und Suchzeit.}
@@ -212,7 +214,7 @@ Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (je
     \end{tabular}
 \end{table}
 
-\subsection{Performance und Effizient bei Richtungsschätzung}
+\subsection{Effektivität und Effizient bei Richtungsschätzung}
 \subsubsection*{Genauigkeit der Schätzung}
 \autoref{fig:horizontal_offset} zeigt das Ergebnis der Richtungsschätzung.
 Da die Abweichung sowohl in positiven Winkeln (Abweichung nach rechts) als auch negativen Winkeln (Abweichung nach links) gemessen wurde, werden hier die absoluten Werte der Abweichung analysiert.
@@ -226,8 +228,7 @@ Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen
     \label{fig:horizontal_offset}
 \end{figure}
 
-Ein wesentlicher Aspekt, der die Genauigkeit der Schätzung beeinflusst, ist die Position des Zielraums auf der jeweiligen Karte.
-\autoref{tab:herror_per_map} fasst die Mittelwerte und Standardabweichungen der absoluten horizontalen Abweichungen der einzelnen Karten zusammen.
+Für die einzelnen Karten fasst \autoref{tab:herror_per_map} die Mittelwerte und Standardabweichungen der absoluten horizontalen Abweichungen zusammen.
 \autoref{fig:horizontal_offset_per_map} zeigt die Unterschiede zwischen den Karten grafisch.
 Es ist zu erkennen, dass vor allem die Abweichungen bei Karte 3 und 4 größer sind, als auf den anderen Karten.
 Der Friedman-Test bestätigt signifikante Unterschiede zwischen den Karten ($\chi^2(6) = \num{39.755}, p < \num{0.001}$).
@@ -259,13 +260,12 @@ Von den insgesamt 252~Richtungsschätzungen weichen 158 (\SI{62,7}{\percent}) na
 Neben der Abweichung der Schätzung wurde auch die Zeit gemessen, welche die Probanden für die Abgabe der Schätzung benötigen.
 \autoref{fig:pointing_time} visualisiert die erhobenen Daten.
 In den meisten Iterationen (\SI{95,24}{\percent}) wurde die Richtungsschätzung innerhalb von 10~Sekunden bestätigt.
-
-% TODO: Und weiter???
-
-\begin{figure}
+Der paarweise Vergleich weist nicht auf signifikante Unterschiede hin.
+Allerdings ist eine Tendenz zu erkennen, dass die Probanden sich in der $2D$ Kondition mehr Zeit gelassen haben als in $3D_l$ ($z = -7.947,	p = 0.083$).
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/pointing_time}
-    \caption{Vergleich der Zeit (zwischen den Konditionen), die die Probanden für die Abgabe einer Richtungsschätzung benötigten.}
+    \caption{Vergleich zwischen der mittleren Schätzungszeit der Konditionen, die die Probanden für die Abgabe einer Richtungsschätzung benötigten.}
     \label{fig:pointing_time}
 \end{figure}
 
@@ -274,7 +274,7 @@ Die Überlegung ist, dass Probanden, die sich mehr Zeit für die Schätzung der 
 \autoref{fig:pointing_time_vs_error} zeigt die absolute horizontale Abweichung in Bezug zur benötigten Schätzzeit.
 Weder grafisch, noch doch Anwendung des Spearman-Tests, ist eine Korrelation zwischen den beiden Variablen erkennbar.
 Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgegeben haben, sind für den Zeitraum \emph{nach} 10~Sekunden zu wenig Messungen vorhanden, um eine zuverlässige Aussage über eine potentielle Korrelation treffen zu können.
-\begin{figure}
+\begin{figure}[hb]
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/pointing_time_vs_error}
     \caption{Plot der Schätzungszeit gegen die absolute horizontale Abweichung. %
@@ -283,17 +283,36 @@ Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgege
 \end{figure}
 
 \subsubsection*{Trefferrate}
-
-\subsection{Fragebögen zur Nutzungsfreundlichkeit}
-
-\begin{figure}
+Neben der Abweichung wurde auch die Trefferrate (also ob der Zielraum bei der Schätzung getroffen wurde oder nicht) gemessen.
+\autoref{fig:hitrate_per_user} zeigt einen Boxplot der Trefferrate über alle Probanden zwischen den einzelnen Konditionen.
+Es ist anzumerken, dass für die Berechnung eines Treffers die vertikale Abweichung mit einbezogen wurde.
+Die höchste durchschnittliche Trefferrate zeigten die Nutzer in $3D_h$ ($\mu = \SI{79,8}{\percent} \pm \SI{26,3}{\percent}$), gefolgt von $2D$ ($\mu = \SI{76,2}{\percent} \pm \SI{23,3}{\percent}$) und schließlich $3D_l$ ($\mu = \SI{75}{\percent} \pm \SI{20,4}{\percent}$).
+Ein Friedman-Test ergab keine signifikanten Unterschiede zwischen den Konditionen.
+\begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/usability}
-    \caption{text}
-    \label{fig:usability}
+    \includegraphics[width=0.7\linewidth]{figures/analysis/hitrate_per_user}
+    \caption{Trefferrate des Zielraums über alle Probanden zwischen den Konditionen.}
+    \label{fig:hitrate_per_user}
 \end{figure}
 
-\subsection{Präferenz der Probanden aus Interview}
+\subsection{Fragebögen zur Nutzungsfreundlichkeit}
+Die Fragebögen enthielten sowohl positiv als auch negativ formulierte Aussagen in einer ungleichmäßigen Reihenfolge, denen die Probanden auf einer Skala von 1 bis 5 zustimmen oder sie ablehnen konnten.
+Für die Auswertung wurden die Bewertungen der positiven Aussagen invertiert.
+Die Bewertungen wurden aufaddiert und schließlich mit einem Faktor von \num{3,125} multipliziert, um so eine Wertung zwischen 0 und 100 zu erhalten.
+Es sei darauf hingewiesen, dass die Fragebögen nur acht statt, wie im \emph{System Usability Scale} vorgesehen, zehn Fragen enthalten. 
+Daher sind die Wertungen der beiden Skalen nicht direkt miteinander vergleichbar.
+
+Das Ergebnis des Fragebogens ist in \autoref{fig:usability} zusammengefasst.
+Durchschnittlich bewerteten die Probanden die $2D$-Variante am besten ($\mu = \num{83,75} \pm \num{12,11}$).
+Dahinter liegen die Megamaps mit $3D_l$ ($\mu = \num{72,29} \pm \num{17,27}$) und $3D_h$ ($\mu = \num{65,21} \pm \num{18.06}$).
+Ein paarweiser t-Test zeigt, dass die höhere Bewertung von $2D$ gegenüber $3D_l$ ($t = 2.452, p < 0.05$) und $3D_h$ ($t = 3.988, p < 0.005$) statistisch signifikant ist.
+Zwischen den beiden 3D-Konditionen gibt es keine statistisch signifikanten Unterschiede.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/analysis/usability}
+    \caption{Bewertung der Nutzbarkeit der einzelnen Konditionen.}
+    \label{fig:usability}
+\end{figure}
 
 \section{Diskussion der Ergebnisse}
 

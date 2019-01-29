@@ -44,50 +44,67 @@ df["User ID"] = ["user_%d" % i for i in df["User ID"]]
 df["Condition"] = df["Condition"].map({0: "3D_l", 1: "3D_h", 2: "2D"})
 df["Map"] = ["map_%d" % (i + 1) for i in df["Map"]]
 
-sns.set(font="Linux Biolinum")
+sns.set(font="Linux Biolinum O")
 df = df.drop(df[df["User ID"] == "user_5"].index)
 # df = df.drop(df[df["User ID"] == "user_9"].index)
 
 cond_3D_l = df[df["Condition"] == "3D_l"].reset_index()
 cond_3D_h = df[df["Condition"] == "3D_h"].reset_index()
 cond_2D = df[df["Condition"] == "2D"].reset_index()
+condition_dict = {conditions[0]: cond_3D_l, conditions[1]: cond_3D_h, conditions[2]: cond_2D}
 
 # Test Searching_Time.
-means_per_cond = [cond_3D_l["Search_Time"].mean(),
-                  cond_3D_h["Search_Time"].mean(),
-                  cond_2D["Search_Time"].mean()]
-std_per_cond = [cond_3D_l["Search_Time"].std(),
-                cond_3D_h["Search_Time"].std(),
-                cond_2D["Search_Time"].std()]
-df_times_overview = pd.DataFrame([means_per_cond, std_per_cond])
+
+# # For table.
+# means_per_cond = [cond_3D_l["Search_Time"].mean(),
+#                   cond_3D_h["Search_Time"].mean(),
+#                   cond_2D["Search_Time"].mean()]
+# std_per_cond = [cond_3D_l["Search_Time"].std(),
+#                 cond_3D_h["Search_Time"].std(),
+#                 cond_2D["Search_Time"].std()]
+# df_times_overview = pd.DataFrame([means_per_cond, std_per_cond])
 
 outliers = []
-for cond in df["Condition"].unique():
-    outliers.extend([y for stat in boxplot_stats(df[df["Condition"] == cond]["Search_Time"]) for y in stat['fliers']])
+for cond in condition_dict.keys():
+    outliers.extend([y for stat in boxplot_stats(condition_dict[cond]["Search_Time"]) for y in stat['fliers']])
 
 df_outliers = df.loc[df["Search_Time"].isin(outliers)]
-
 print("Ausreisser:")
 print(df_outliers[["User ID", "Search_Time"]])
 print(df_outliers["User ID"].value_counts())
 print()
 
-# Draw distributions of search time.
-# fig, axs = plt.subplots(1, 3, sharey=True)
-# axs = axs.flatten()
-for i in range(3):
-    time_cond = df[df["Condition"] == df["Condition"].unique()[i]]["Search_Time"]
-    k2, p = stats.normaltest(time_cond, axis=0)
-    alpha = 1e-3
-    print("k2:\t" + str(k2) + "\np:\t" + str(p))
-    print(stats.skew(time_cond, axis=0))
-
-#     sns.distplot(time_cond, color=cond_colors[i], ax=axs[i])
-#     axs[i].set_xlabel("")
-#     axs[i].set_xlim(left=-10, right=75)
-#     axs[i].set_title(cond_labels[i])
-# axs[1].set_xlabel("Suchzeit [s]")
+# output = df.copy()
+# output["Condition"] = output["Condition"].map({"3D_l": cond_labels[0],
+#                                                "3D_h": cond_labels[1],
+#                                                "2D": cond_labels[2]})
+# plt.figure()
+# ax = sns.boxplot(x="Condition",
+#             y="Search_Time",
+#             palette="muted",
+#             color=cond_colors,
+#             flierprops={"marker": "x", "markersize": 3},
+#             data=output)
+# ax.set_ylabel("Benötigte Zeit für Suche nach Zielraum [s]")
+# ax.set_xlabel("")
 # plt.show()
+
+# # Draw distributions of search time.
+# # fig, axs = plt.subplots(1, 3, sharey=True)
+# # axs = axs.flatten()
+# for i in range(3):
+#     time_cond = df[df["Condition"] == df["Condition"].unique()[i]]["Search_Time"]
+#     k2, p = stats.normaltest(time_cond, axis=0)
+#     alpha = 1e-3
+#     print("k2:\t" + str(k2) + "\np:\t" + str(p))
+#     print(stats.skew(time_cond, axis=0))
+#
+# #     sns.distplot(time_cond, color=cond_colors[i], ax=axs[i])
+# #     axs[i].set_xlabel("")
+# #     axs[i].set_xlim(left=-10, right=75)
+# #     axs[i].set_title(cond_labels[i])
+# # axs[1].set_xlabel("Suchzeit [s]")
+# # plt.show()
 
 #----------
 # Do the Friedman test and then the Wilcoxon for paired samples.

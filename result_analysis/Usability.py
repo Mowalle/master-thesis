@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
-import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
+from matplotlib.cbook import boxplot_stats
+import pandas as pd
+from scipy import stats
 import seaborn as sns
+
+import math
 import sys
 
 filenames = ["q_3D_l.csv", "q_3D_h.csv", "q_2D.csv"]
@@ -36,7 +40,7 @@ print("Usability scores:")
 print(scores)
 print(scores.mean())
 
-sns.set(style="whitegrid", font="Linux Biolinum")
+sns.set(font="Linux Biolinum O")
 
 # First, print 3D vs 2D.
 fig = plt.figure()
@@ -57,3 +61,13 @@ ax.set_ylim(bottom=30, top=100)
 ax.set_xlabel("")
 ax.set_xticklabels(["$3D_l$", "$3D_h$", "$2D$"])
 plt.show()
+
+for c in scores.columns:
+    print(c + " Mean Score:" + str(scores[c].mean()))
+    print(c + " Score Std:"  + str(scores[c].std()))
+    print()
+
+for i in range(3):
+    print(stats.shapiro(scores.iloc[:, i]))
+
+print(stats.ttest_rel(scores.iloc[:, 2], scores.iloc[:, 0]))
