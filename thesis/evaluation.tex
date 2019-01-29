@@ -137,7 +137,7 @@ So sollen Aussagen über die Zuversicht der Probanden ihrer Schätzung getroffen
 Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und des Controllers aufgezeichnet.
 
 \section{Ergebnisse}
-
+In den folgenden Abschnitten werden die Ergebnisse aus der Nutzerstudie präsentiert und statistisch analysiert.
 
 \subsection{Santa-Barbara Sense-of-Direction Skala}
 Vor dem eigentlichen Test füllten Probanden einen Fragebogen nach der SBSOD Skala aus.
@@ -149,10 +149,10 @@ Der Mittelwert entspricht der SBSOD-Wertung \parencite{Hegarty2002}.
 Von den 14 Probanden erreichten 12 (\SI{85,71}{\percent}) einen Wert über 3 (\enquote{neutral}).
 Im Schnitt wurde eine Bewertung von 3,38 ($\pm$ 0,41) erzielt.
 Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[trim={2cm, 0, 2cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
-    \caption{text}
+    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
+    \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
     \label{fig:sbsod}
 \end{figure}
 
@@ -160,7 +160,16 @@ Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
 \subsubsection*{Suchzeit}
 \label{ssec:searchtime}
 
-\begin{table}
+\autoref{tab:searchtime_overview} zeigt eine Übersicht der Suchzeit nach den Zielräumen zwischen den einzelnen Konditionen.
+Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
+Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\num{18.31} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\num{27.44} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\num{28.84} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
+Der Unterschied bei der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
+\begin{figure}[h]
+    %\includegraphics[width=\linewidth]{figures/analysis/searchtime_boxplot}
+    \caption{text}
+    \label{fig:searchtimes}
+\end{figure}
+\begin{table}[h]
     \centering
     \caption{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
@@ -174,18 +183,6 @@ Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
         \bottomrule
     \end{tabular}
 \end{table}
-
-\autoref{tab:searchtime_overview} zeigt eine Übersicht der Suchzeit nach den Zielräumen zwischen den einzelnen Konditionen.
-Da die Stichprobenverteilungen der beobachteten Zeiten nicht-normalverteilt ist (wie in \autoref{fig:searchtime_distributions} zu sehen ist), werden nicht-parametrisierte Tests zur Bestimmung der Signifikanz angewendet.
-Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
-Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\num{18.31} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\num{27.44} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\num{28.84} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
-Der Unterschied bei der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/analysis/searchtime_distributions}
-    \caption{Stichprobenverteilung der beobachteten Suchzeit.}
-    \label{fig:searchtime_distributions}
-\end{figure}
 
 Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer besseren Suchzeit führt.
 \autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Werten aus \autoref{fig:sbsod}.
@@ -206,7 +203,7 @@ Neben der Suchzeit wurde auch die Zahl der falsch ausgewählten Räume (die Nich
 Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (jedoch nicht in der ersten Karte).
 \begin{table}
     \centering
-    \caption{Übersicht der Anzahl der falsch ausgewählten Räume währen der Suchaufgabe.}
+    \caption{Übersicht der Anzahl der falsch ausgewählten Räume während der Suchaufgabe.}
     \label{tab:error_searching}
     \begin{tabular}{rccccc}\toprule
         Proband                  & Kondition               & Karte    & Suchzeit [\SI{}{\second}] & \# Fehler & Sequenz  \\\midrule
@@ -284,6 +281,8 @@ Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgege
     Eine Korrelation ist nicht erkennbar.}
     \label{fig:pointing_time_vs_error}
 \end{figure}
+
+\subsubsection*{Trefferrate}
 
 \subsection{Fragebögen zur Nutzungsfreundlichkeit}
 

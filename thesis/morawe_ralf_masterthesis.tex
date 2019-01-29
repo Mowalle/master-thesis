@@ -5,6 +5,7 @@
     twoside=true,
     captions=tableheading,
     british, ngerman,
+    numbers=noenddot
 ]{scrreprt}
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
@@ -27,10 +28,9 @@
 
 %\usepackage{float}
 \usepackage{booktabs, colortbl}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, bm}
 \usepackage[autopunct]{csquotes}
 \usepackage{graphicx}
-\usepackage[labelformat=parens, subrefformat=simple]{subcaption}
 \usepackage{multirow}
 
 \usepackage[titletoc,toc,title,page]{appendix}
@@ -46,13 +46,18 @@
     urlcolor=blue,
 ]{hyperref}
 
-\setkomafont{captionlabel}{%
-    \bfseries
-}
-\setkomafont{caption}{%
-    \bfseries
-}
-\setcapindent{0em}
+\usepackage[
+    format=plain,
+    indention=0cm,
+    labelfont=bf,
+    textfont=it,
+    justification=centerlast,
+    margin=2cm,
+    labelsep=colon,
+    figureposition=bottom, % Adjust spacing above caption for figures.
+    tableposition=top % Adjust spacing below caption for tables.
+]{caption}
+\usepackage[labelformat=parens, subrefformat=simple]{subcaption}
 
 \usepackage{listings}
 \usepackage{tabularx}
