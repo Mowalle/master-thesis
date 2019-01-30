@@ -96,7 +96,7 @@ Zu diesem Zeitpunkt wurde die Bildschirmaufnahme (und ggf. die Audioaufnahme) ge
 
 Nach dem Tutorial durchliefen die Probanden die Konditionen und Aufgaben, wie sie in \autoref{sec:conditions_and_tasks} beschrieben sind.
 Nach jeder Kondition setzten die Probanden das HMD ab und füllten am Laptop einen Fragebogen zur zuletzt gestesteten Kartenvariante aus (siehe \autoref{appendix:study_material}).
-Die Fragebögen basieren auf der \emph{System~Usability~Scale} \autocite{Brooke2013}, wurden jedoch für das Anwendungsgebiet von Karten angepasst.
+Die Fragebögen basieren auf der \emph{System~Usability~Scale} (SUS) \autocite{Brooke2013}, wurden jedoch für das Anwendungsgebiet von Karten angepasst.
 Die Bewertung der einzelnen Aussagen erfolgte über eine 5-Punkte-Likert-Skala.
 
 Nach Abschluss des letzten Fragebogens wurde mit den Probanden ein kurzes (5--10 Minuten) Leitfadeninterview geführt.
@@ -300,7 +300,7 @@ Ein Friedman-Test ergab keine signifikanten Unterschiede zwischen den Konditione
 Die Fragebögen enthielten sowohl positiv als auch negativ formulierte Aussagen in einer ungleichmäßigen Reihenfolge, denen die Probanden auf einer Skala von 1 bis 5 zustimmen oder sie ablehnen konnten.
 Für die Auswertung wurden die Bewertungen der positiven Aussagen invertiert.
 Die Bewertungen wurden aufaddiert und schließlich mit einem Faktor von \num{3,125} multipliziert, um so eine Wertung zwischen 0 und 100 zu erhalten.
-Es sei darauf hingewiesen, dass die Fragebögen nur acht statt, wie im \emph{System Usability Scale} vorgesehen, zehn Fragen enthalten \autocite{Brooke2013}. 
+Es sei darauf hingewiesen, dass die Fragebögen nur acht statt, wie in der SUS vorgesehen, zehn Fragen enthalten \autocite{Brooke2013}. 
 Daher sind die Wertungen der beiden Skalen nicht direkt miteinander vergleichbar.
 
 Das Ergebnis des Fragebogens ist in \autoref{fig:usability} zusammengefasst.
@@ -345,6 +345,7 @@ Es gibt drei Gründe durch die sich dieses Ergebnis erklären lässt:
     Bei den 3D-Megamaps hingegen sieht das Konzept vor, dass die Probanden inmitten der Karte stehen und von ihr umgeben werden.
     Das bedeutet, dass der Teil der Megamap, der sich hinter den Probanden befindet, nicht einsehbar ist.
     Demnach können sich Probanden nur auf einen kleinen Teil der Karte konzentrieren.
+    Dies ist eine direkte Konsequenz aus der Übertragung der Megamap von der Dritte-Person-Perspektive aus TCTD in die Erste-Person-Perspektive.
     Einige Probanden versuchten dieses Problem zu umgehen, indem sie sich bei jeder Karte zuerst \enquote{aus der Karte heraus} bewegten, um einen Überblick des Grundrisses zu bekommen.
     % TODO: Zitate
     Ein weiteres Problem war, dass sich bei den 3D-Karten der Positionsmarker des Probanden unter Umständen außerhalb des Blickfelds befand.
@@ -354,7 +355,7 @@ Es gibt drei Gründe durch die sich dieses Ergebnis erklären lässt:
     In der Literatur lassen sich Ansätze finden, die Gleiches für die Anwendung auf AR-VR-HMDs umsetzen \autocites{Lin2017a}{Gruenefeld2017}.
     
     \item
-    Die Probanden beschrieben, dass zum Merken der Richtung für die Schätzungsaufgabe auf den Karten unterschiedliche \enquote{Taktiken} notwendig waren.
+    Die Probanden beschrieben, dass zum Merken der Richtung für die Schätzungsaufgabe auf den Karten unterschiedliche \enquote{Taktiken} notwendig seien.
     In der Tat folgten fast alle Probanden auf den 3D-Megamaps der gleichen Vorgehensweise und kehrten vor der Auswahl des Zielraums zuerst zum Laborraum auf der Karte zurück, um sich so für die Schätzungsaufgabe die Richtung merken zu können.
     Ein Nutzer zielte während des Ablaufens der Karte mit dem Controller immer auf den Raum, in dem er die höchste Zahl an Bällen gezählt hatte ().% TODO Zitat -> Nils?)
     Auf der 2D-Karte hingegen waren diese Taktiken nicht notwendig.
@@ -363,8 +364,8 @@ Es gibt drei Gründe durch die sich dieses Ergebnis erklären lässt:
     %TODO Zitate
 \end{itemize}
 
-Ein Aspekt, der sich (laut den Probanden) weniger auf die Performance auswirkte als zuvor angenommen, war der Komfort der HMD-Nutzung.
-Da die Probanden für die 3D-Megamaps die meiste zeit in Richtung Boden schauen mussten, wurde der Kopf in einer geneigten Position gehalten.
+Ein Aspekt, der sich (laut den Probanden) weniger auf die Performance auswirkte, als zuvor angenommen, war der Komfort der HMD-Nutzung.
+Da die Probanden für die 3D-Megamaps die meiste Zeit in Richtung Boden schauen mussten, wurde der Kopf in einer geneigten Position gehalten.
 Es wurde vorab vermutet, dass das Gewicht des HMDs sowie die Befestigung am Kopf für ein unangenehmes Gefühl sorgen könnte und den Eindruck, das HMD könne vom Kopf abrutschen.
 In der Praxis war das nur für einen Probanden problematisch (user\_5).
 Die anderen Probanden berichteten von keinen Problemen mit dem Komfort.
@@ -426,10 +427,36 @@ Fast alle Probanden äußerten, dass sie sich nur die groben Richtungen gemerkt 
 Manche der Probanden erwähnten, während der Suchaufgabe versucht zu haben, sich die Wege zu den Zielräumen einzuprägen.
 % TODO: Zitate
 
-\subsection{Usability}
+\subsection{Room-Guides und Animation}
+Die Room-Guides und die Animation wurden in den Prototypen implementiert, um den Bezug des Laborraums auf der Megamap zum Laborraum in der Umgebung zu verstärken.
+Die Probanden wurden hinsichtlich dieser Idee befragt.
 
+Keiner der Probanden empfand die Room-Guides als besonders nützlich.
+Manche der Probanden hatten die Linien nicht bewusst wahrgenommen.
+Andere hatten die Linien gesehen, deren Zweck aber nicht verstanden.
+% TODO: Zitate
+Die Probanden äußerten, dass ihnen der Positionsmarker und die Säule sowohl im virtuellen Labor als auch auf der Karte für einen Bezug zwischen Megamap und Umgebung ausgereicht hat.
+Daraus lässt sich Schlussfolgern, dass wichtige Merkmale und Strukturen der Umgebung für eine Indoor-Karte wichtig sind, um eine schnelle Orientierung auf der Karte zu ermöglichen.
 
-\subsection{Animation und Room-Guides}
+Die Animation wurde von den Probanden gemischt aufgenommen.
+Ein Proband äußerte, dass \enquote{...}. % TODO: Zitat (Tim?)
+Andere Probanden empfanden die Animation jedoch als \enquote{störend} (user\_?) und sagten, dass die Animation die Orientierung nehme (user\_?).
+Ein Proband sagte, dass \enquote{die Animation [sich anfühlt] wie Herunterfallen} (user\_).
+Ein weiterer Proband verspürte während der Animation die VR-typische Motion Sickness.
+Es lässt sich daraus schließen, dass die Animation, wie sie hier implementiert wurde, nicht für einen räumlichen Bezug zwischen Megamap und Umgebung geeignet ist und sogar kontraproduktive Effekte aufweisen kann.
+
+\subsection{Nutzbarkeit}
+Die Ergebnisse zur Nutzbarkeit der drei Varianten anhand der Fragebögen spiegeln im Grunde die Ergebnisse aus der Raumsuche wieder.
+Die 2D-Karte wird von den Probanden klar bevorzugt, gefolgt von $3D_l$ und schließlich $3D_h$.
+Da die Probanden die meiste Zeit des Tests mit der Raumsuche verbrachten und die Interaktionen mit den Kartenvarianten während dieses Zeitraums stattfanden, ist dieses Resultat zu erwarten.
+Unter Anbetracht der Kategorisierung der SUS nach Stufen der Nutzbarkeit \autocite{Brooke2013} und der Skalierung von \num{3,125} der hier verwendeten Fragebögen erreicht die $3D_h$-Variante eine Einstufung von niedriger Nutzbarkeit.
+Die Probleme der hohen Megamap wurden in den vorigen Abschnitten bereits erläutert.
+Ein Vorschlag der Probanden war, die Höhe der Wände der Megamap zu verringern, sodass man bei der hohen Megamap weiterhin gut in die Räume hineinsehen kann. %TODO: Zitat
+Eine weitere Alternative wäre die Verwendung von visuellen Markierungen oberhalb der Räume, was dem Konzept in \autoref{chap:concept} entspricht.
+Hier bestünde keine Notwendigkeit, in die Räume hineinzusehen.
+
+Besonders positiv wurden die Megamap-Varianten bezüglich ihrer Eignung zur Orientierung (\enquote{Wo bin ich?}) bewertet.
+Dies unterstützt die Vermutung, dass sich durch die Megamaps ein räumliches Verständnis von der eigenen Umgebung aufbauen kann.
 
 \subsection{Zusammenfassung}
 % Referenz auf Chittaro, ?
