@@ -24,7 +24,7 @@
 
 \usepackage{xcolor}
 
-\usepackage{showframe}
+%\usepackage{showframe}
 
 %\usepackage{float}
 \usepackage{booktabs, colortbl}
@@ -87,6 +87,7 @@
 }
 
 \usepackage{todonotes}
+\usepackage{lipsum}
 
 \usepackage[
     backend = biber, % Sets biber as backend.
@@ -116,7 +117,7 @@
 
 \input{macros.tex}
 
-%\includeonly{titlepage, declaration_of_originality, thanks, abstract}
+%\includeonly{titlepage, declaration_of_originality, evaluation, schluss, appendix}
 
 \newcommand{\tableheadcolor}{\rowcolor{black!30}}
 \newcommand{\rowcolorodd}{\rowcolor{gray!25}}
@@ -127,8 +128,8 @@
 \pagenumbering{roman}
 \include{titlepage}
 \include{declaration_of_originality}
-%\include{thanks}
-%\include{abstract}
+\include{thanks}
+\include{abstract}
 
 \tableofcontents
 \cleardoublepage
