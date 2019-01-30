@@ -255,14 +255,14 @@ def test_pointing(df):
             if p < 0.05:
                 print("H_0 can be rejected.")
     print()
-    #
-    # for cond, s in zip(conditions, condition_names):
-    #     print("%s Mean:" % s)
-    #     print(cond.mean(axis=0))
-    #     print("%s STD:" % s)
-    #     print(cond.std(axis=0))
-    #     print()
-    # print()
+
+    for cond, s in zip(conditions, condition_names):
+        print("%s Mean:" % s)
+        print(cond.mean(axis=0))
+        print("%s STD:" % s)
+        print(cond.std(axis=0))
+        print()
+    print()
     #
     # #----------
     # # Correlate Time to precision.
@@ -431,8 +431,8 @@ def main():
     for user in dropped_users:
         df = df.drop(df[df["User ID"] == user].index)
 
-    #test_pointing(df)
-    test_hitrate(df)
+    test_pointing(df)
+    #test_hitrate(df)
 
 
 if __name__ == "__main__":
