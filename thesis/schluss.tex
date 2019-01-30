@@ -104,7 +104,7 @@ Mapbox bietet sowohl Raster-Tiles (Satellitenbilder) als auch Vektor-Tiles (vekt
 Es bezieht seine Daten über unterschiedliche Provider, einschließlich OpenStreetMap \autocite{Mapbox2018}.
 Sofern die OpenStreetMap-Daten Informationen über die Beschaffenheit der Gebäude liefern, wie z.B. die Höhe, können diese Daten für eine 3D-Visualisierung mit Mapbox ausgelesen werden.
 Für die Umrisse der Gebäude werden Polygone generiert und entsprechend der Höhe extrudiert.
-Da Mapbox keine \emph{explizite} Unterstützung für Indoor-Karten anbietet, müssen diese über einen Umweg eingebunden werden (wie von \textcites{Mapbox2018b}{Pavani2018}{Clarke2017} beschrieben).
+Da Mapbox keine \emph{explizite} Unterstützung für Indoor-Karten anbietet, müssen diese über einen Umweg eingebunden werden (wie von \textcite{Mapbox2018b, Pavani2018, Clarke2017} beschrieben).
 Ein georeferenzierter Lageplan des Gebäudes kann auf die Mapbox-Server geladen und in Unity ausgelesen werden.
 \autoref{fig:mapbox_unity_mzh_e5_z15} zeigt die 3D-Darstellung eines zuvor erstellten Lageplans.
 \begin{figure}[h]
@@ -113,7 +113,7 @@ Ein georeferenzierter Lageplan des Gebäudes kann auf die Mapbox-Server geladen 
     \caption{3D-Darstellung des Lageplans des MZH Ebene 5 über das Mapbox Unity Plugin.}
     \label{fig:mapbox_unity_mzh_e5_z15}
 \end{figure}
-Bei der Verwendung von Mapbox für Gebäudelayouts entstanden visuelle Artefakte (fehlende oder hinzugefügte Wände, Artefaktpolygone) die aus Rundungs- und Präzisionsfehlern resultierten \parencites{Kahyaoglu2017}{Mapbox2018c}.
+Bei der Verwendung von Mapbox für Gebäudelayouts entstanden visuelle Artefakte (fehlende oder hinzugefügte Wände, Artefaktpolygone) die aus Rundungs- und Präzisionsfehlern resultierten \parencite{Kahyaoglu2017, Mapbox2018c}.
 Daher wurde der Ansatz mit Mapbox verworfen.
 Für Anwendungen, bei denen eine Megamap für Außenbereiche entworfen werden soll bietet sich das Mapbox SDK jedoch weiterhin an.
 

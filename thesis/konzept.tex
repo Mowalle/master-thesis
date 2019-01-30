@@ -407,7 +407,7 @@ Basierend auf den Erkenntnissen der vorigen Abschnitte kann ein Konzept für ein
 Obwohl die untersuchten Kartenanwendungen für Außenbereiche ausgelegt sind, betrifft das in dieser Arbeit entwickelte Konzept Innenbereiche (Gebäude).
 Wie \autoref{sec:motivation_ziel} bereits erwähnt ist der Grund hierfür, dass aktuelle MR-HMDs wie die HoloLens oder die Magic Leap in Außenbereichen kaum nutzbar sind.
 Einerseits können sie die 3D-Strukturen der Umgebung nicht korrekt rekonstruieren.
-Andererseits sind die virtuellen Inhalte auf den lichtdurchlässigen Brillen kaum erkennbar \parencites[47]{Schroeder2017}{Strange2018}.
+Andererseits sind die virtuellen Inhalte auf den lichtdurchlässigen Brillen kaum erkennbar \parencite{Schroeder2017, Strange2018}.
 Da das Konzept für Außenbereiche auf diesen HMDs nicht umsetzbar ist, wird die Megamap stattdessen für Innenbereiche entwickelt.
 Das Konzept lässt sich dann zu einem späteren Zeitpunkt auf die Anwendung in Außenbereichen übertragen, sobald MR-HMDs die Nutzung im Freien unterstützen.
 
@@ -476,7 +476,7 @@ Ein Beispiel für ein solches Informationsfenster ist in \autoref{fig:concept_pi
 Wie die Karte und die Stecknadeln ist auch das Informationsfenster in der Umgebung verankert.
 Anstatt es direkt auf dem HMD als HUD anzuzeigen befindet sich das Fenster an der Position der Stecknadel und wird so rotiert, dass Nutzer immer auf die Vorderseite schauen.
 Die relative Position des Fensters zur Umgebung bleibt gleich.
-Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt Anzeige als HUD) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite[23]{Schroeder2017}.
+Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt Anzeige als HUD) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite{Schroeder2017}.
 \begin{figure}[thb]
     \centering
     \imagebox{
@@ -505,7 +505,7 @@ Analog zur Karte aus TCTD soll die Megamap so um den Nutzer herum platziert werd
 Das bedeutet, dass zu Beginn (beim Aufrufen der Karte) der Nutzer auf seiner eigenen Markierung steht.
 Dies soll Nutzern eine schnellere Orientierung ermöglichen, da sie ihre Position auf der Karte nicht erst wiederfinden müssen.
 Damit die Position der Nutzer bestimmt werden kann ist ein System zur Indoor-Lokalisierung erforderlich.
-Mehrere Ansätze werden in der Literatur diskutiert, darunter \wifi-Fingerprinting \parencites{Lautenschlaeger2012}{Alnabhan2014}, Magnetfeld-Fingerprinting \parencites{Hashish2017}{Ang2018} oder Bild-basierte Verfahren \parencites{Kalkusch2002}{Moeller2014}{Silva2015}.
+Mehrere Ansätze werden in der Literatur diskutiert, darunter \wifi-Fingerprinting \parencite{Lautenschlaeger2012, Alnabhan2014}, Magnetfeld-Fingerprinting \parencite{Hashish2017, Ang2018} oder Bild-basierte Verfahren \parencite{Kalkusch2002, Moeller2014, Silva2015}.
 Weiterhin könnten die vom HMD gelieferten 3D-Meshes mit vorgefertigten Raummodellen abgeglichen werden, um den aktuellen Raum sowie die aktuelle Position des Nutzers zu bestimmen.
 
 Ein Problem, was bei der Platzierung der virtuellen Karte in die reale Umgebung auftritt, ist die Verdeckung realer Objekte.

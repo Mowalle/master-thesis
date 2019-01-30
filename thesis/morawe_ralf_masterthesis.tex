@@ -91,9 +91,10 @@
 
 \usepackage[
     backend = biber, % Sets biber as backend.
-    %style = authoryear-icomp, % Use [author, year] citing with ibid. when duplicate.
-    %maxcitenames = 2, % Truncate lists above 2 entries (e.g. names) when citing.
-    %mincitenames = 1, % Truncate to 1 entry (e.g. names) when citing.
+    style = numeric-comp,
+    sorting = none,
+    maxcitenames = 2, % Truncate lists above 2 entries (e.g. names) when citing.
+    mincitenames = 1, % Truncate to 1 entry (e.g. names) when citing.
     maxbibnames = 3, % Truncate lists above 3 entries (e.g. names) in bib.
     minbibnames = 3, % Truncate to 3 entries (e.g. names) in bib.
     backref = true, % Show reference to page.
@@ -108,7 +109,7 @@
 % Put lastname before firstname.
 \DeclareNameAlias{sortname}{family-given}
 % Separates author names with semicolon instead of comma.
-\renewcommand{\multinamedelim}{\addsemicolon\space}
+%\renewcommand{\multinamedelim}{\addsemicolon\space}
 
 % Bib resources.
 \addbibresource{../references/references.bib}
