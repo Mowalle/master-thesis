@@ -41,6 +41,15 @@ def test_pointing(df):
     cond_2D = df[df["Condition"] == condition_names[2]].reset_index()
     conditions = [cond_3D_l, cond_3D_h, cond_2D]
 
+    output = df.copy()
+    output["Vertical_Offset"] = output["Vertical_Offset"].abs()
+    plt.figure()
+    sns.boxplot(x="Condition", y="Vertical_Offset", data=output)
+    plt.show()
+    for c in conditions:
+        print ("Vertical Offset Mean: " + str(c["Vertical_Offset"].abs().mean()))
+        print ("Vertical Offset STD: " + str(c["Vertical_Offset"].abs().std()))
+
     # Test horizontal offset.
 
     # # Test for normal distribution.
@@ -416,8 +425,8 @@ def main():
     df = pd.read_csv(str(sys.argv[1]))
 
     # Cleaning data a bit.
-    df = df[["User ID", "conditionIndex", "taskIndex", "horizOffsetDeg", "pointingTime", "hitRoom"]]
-    df.columns = ["User ID", "Condition", "Map", "Horizontal_Offset", "Pointing_Time", "Hit_Room"]
+    df = df[["User ID", "conditionIndex", "taskIndex", "horizOffsetDeg", "pointingTime", "hitRoom", "vertOffsetDeg"]]
+    df.columns = ["User ID", "Condition", "Map", "Horizontal_Offset", "Pointing_Time", "Hit_Room", "Vertical_Offset"]
     df["User ID"] = ["user_%d" % i for i in df["User ID"]]
     df["Condition"] = df["Condition"].map({0: condition_names[0],
                                            1: condition_names[1],

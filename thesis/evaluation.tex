@@ -1,26 +1,31 @@
 \chapter{Nutzerstudie}
 \label{chap:evaluation}
-\todo{Fragebögen, Flyer, Infobögen etc. in Anhang.}
 Wie bereits in \autoref{chap:related_work} erwähnt ist ein Nachteil von 2D-Karten, dass durch das Fehlen einer Dimension zum Abgleich mit der Umgebung ein gewisser mentaler Aufwand notwendig ist.
 Die 2D-Karte stellt eine Abstraktion der Umgebung dar, wodurch Informationen verloren gehen.
-
-Der Zweck dieser Nutzerstudie ist zu überprüfen, ob sich bei den Probanden durch die 3D-Megamap ein räumliches Verständnis aufbaut, welches gegenüber der 2D-Karte zu einer performanteren und effizienteren Orientierung führt.
-Unter Performanz und Effizienz wird in diesem Sinne verstanden, dass die Fehlerquote und die Zeit zum Einschätzen von Richtungen zu Orten in der Umgebung niedriger sind, als bei der 2D-Variante.
+Der Zweck dieser Nutzerstudie ist zu überprüfen, ob sich bei den Probanden durch die 3D-Megamap ein räumliches Verständnis aufbaut, welches gegenüber der 2D-Karte zu einer effektiveren und effizienteren Orientierung führt.
+Darunter wird verstanden, dass die Fehlerquote und die Zeit zum Einschätzen von Richtungen zu Orten in der Umgebung niedriger sind, als bei der 2D-Variante.
 Zudem sollen die subjektiven Eindrücke und Präferenzen der Probanden von den unterschiedlichen Kartenvarianten ermittelt werden.
 Für zukünftige Arbeiten werden außerdem Verbesserungsvorschläge und Ansichten über das Potential der Megamap gesammelt.
+
+Die Hypothesen, die mit dieser Studie getestet wird, sind wie folgt definiert:
+\begin{itemize}
+    \item Nullhypothese ($H_0$): Es gibt keine messbaren Unterschiede zwischen der 2D-Karte und den Megamaps bezüglich Effektivität und Effizienz.
+    \item $H_a$: Die Effektivität und Effizienz der Megamaps unterscheiden sich von der 2D-Karte.
+\end{itemize}
 
 \section{Aufbau}
 Das Experiment wurde im Laborraum 5220 (MZH Ebene 5) der Arbeitsgruppe Human-Computer Interaction an der Universität Bremen durchgeführt.
 Für die Präsentation der virtuellen Umgebung wurde die HTC Vive mit zwei Basisstationen eingesetzt.
-Der getrackte Bereich zwischen den Basisstationen umfasste ca. \SIrange{0}{0}{\metre}.\todo{Tatsächliche Zahlen einsetzen.}
-Die Bilddaten wurden von einem PC mit einer \emph{NVidia~GTX~1080~Ti} Grafikkarte und einem \emph{AMD~Ryzen~7~1800X} Prozessor gerendert.
+Der getrackte Bereich zwischen den Basisstationen umfasste ca. \SIrange{3}{3}{\metre}.
+Die Bilddaten wurden von einem PC mit einer \emph{Nvidia~GTX~1080~Ti} Grafikkarte und einem \emph{AMD~Ryzen~7~1800X} Prozessor mit Unity~2018.2.12f1 gerendert.
 Übertragen wurden die Bilddaten an das HMD mit dem \emph{VIVE~Wireless~Adapter} \parencite{HTCCorporation2018b}.
 Die Fragebögen wurden über \emph{Google Forms} erstellt und ausgefüllt (siehe \autoref{appendix:study_material}).
 Hierfür wurde ein separater Laptop bereitgestellt.
 
 \section{Konditionen und Aufgaben}
 \label{sec:conditions_and_tasks}
-Für die Nutzerstudie wurden drei unterschiedliche Konditionen getestet:
+Die Studie wurde als Experiment innerhalb einer Gruppe (\emph{Within-Subject}) gestaltet.
+Für die Nutzerstudie wurden drei unterschiedliche Konditionen getestet (siehe \autoref{fig:conditions}):
 \begin{itemize}
     \item $3D_l$ (\emph{low)}: Die 3D-Megamap wird mit einer Skalierung von \SI{6}{\percent} (relativ zur Umgebung) und \SI{25}{\cm} über dem Boden angezeigt.
     Diese Kondition entspricht am ehesten der Megamap aus TCTD. 
@@ -32,42 +37,93 @@ Für die Nutzerstudie wurden drei unterschiedliche Konditionen getestet:
     Auch die 2D-Karte hat eine Skalierung von \SI{6}{\percent} (relativ zur Umgebung).
     Die Karte ist so an der Wand platziert, dass sie nicht von anderen Wänden oder der Decke und dem Fußboden geschnitten wird.
 \end{itemize}
-\todo{Screenshots der Konditionen einfügen.}
+\begin{figure}[h]
+    \begin{subfigure}{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/screenshots/condition_3d_l_x}
+        \caption{$3D_l$}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/screenshots/condition_3d_h_x}
+        \caption{$3D_h$}
+    \end{subfigure}%\\
+    \hfill
+    \begin{subfigure}{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/screenshots/condition_2d_x}
+        \caption{$2D$}
+    \end{subfigure}%
+    \caption{Die drei getesteten Konditionen.}
+    \label{fig:conditions}
+\end{figure}
+Jedem Proband wurde vor dem Experiment eine von sechs möglichen Sequenzen zugeordnet.
+Die Verteilung der Probanden auf die Sequenzen findet sich im Anhang in \autoref{appendix:condition_sequences}.
+Da 15~Probanden teilgenommen haben sind die Sequenzen ungleichmäßig verteilt.
 
-Jede Kondition wurde über 6~Iterationen (\emph{Tasks}) $T_0, \dots, T_5$ wiederholt.
-\todo{Bild für Megamap Varianten} Dabei wurde in jeder Iteration eine andere Indoor-Karte für die Megamap verwendet, um einen Lerneffekt für die Kartenlayouts zu minimieren.
+Jede Kondition wurde über 6~Iterationen wiederholt.
+Dabei wurde in jeder Iteration eine andere Indoor-Karte für die Megamap verwendet, um einen Lerneffekt für die Kartenlayouts zu minimieren.
+Die unterschiedlichen Kartenlayouts sind in \autoref{fig:maps} zu sehen.
 Damit die Konditionen vergleichbar bleiben, wurde jede Karte einmal jeder Kondition unterzogen.
 Das heißt, die Probanden durchliefen insgesamt 18~Iterationen, wobei sechs unterschiedliche Karten jeweils dreimal eingesetzt wurden.
 Die Reihenfolge der Iterationen innerhalb einer Kondition war zufällig bestimmt, wobei darauf geachtet wurde, dass bei einem Wechsel der Konditionen die gleiche Karte nicht zweimal aufeinander folgte.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/screenshots/maps_all}
+    \caption{Die sechs verwendeten Kartenlayouts. %
+    Alle \textcolor{red}{rot} markierte Räume werden mit Bällen gefüllt. %
+    Der Zielraum ist \textcolor{green}{grün} markiert. %
+    Der Laborraum ist der Raum mit der Säule (weißer Punkt).}
+    \label{fig:maps}
+\end{figure}
 
 Um die Auswirkungen der jeweiligen Kondition auf die mentale räumliche Vorstellung des Probanden von der Umgebung zu testen, wurden eine Suchaufgabe und eine Richtungsschätzung in den Prototypen integriert.
 
-Für die Suchaufgabe wurden auf der jeweiligen Megamap in sieben räumen Bälle platziert.
+Für die Suchaufgabe wurden auf der jeweiligen Megamap in sieben Räumen Bälle platziert.
 Die Probanden mussten dann den Raum suchen, der die meisten Bälle enthält und diesen mit dem VIVE Controller und dem virtuellen Laserpointer auswählen.
 Jede Megamap hatte genau einen Zielraum, welcher zufällig zwischen sieben und zehn Bällen enthielt.
 Die anderen Räume enthielten mindestens fünf Bälle und garantiert weniger als der Zielraum.
 Jede der sechs Indoor-Karten hatte denselben Zielraum in allen drei Konditionen.
 Dies wurde entschieden, damit die Karten über Konditionen hinweg vergleichbar bleiben.
-Wäre immer ein anderer Zielraum gewählt worden, wäre der Schwierigkeitsgrad des Findens zwischen den Konditionen unter Umständen verschieden gewesen, obwohl die Karte die gleiche wäre.
+Wäre immer ein anderer Zielraum gewählt worden, wäre der Schwierigkeitsgrad des Findens zwischen den Konditionen bei gleicher Karte unter Umständen verschieden gewesen.
+Für den Fall, dass ein Proband einen falschen Raum auswählt, wurde dieser rot eingefärbt.
+Der Proband musste dann die Suche nach dem Zielraum fortfahren.
 
-Für den Fall, dass ein Proband einen falschen Raum auswählt, würde dieser rot eingefärbt werden.
-Der Proband müsste dann die Suche nach dem Zielraum fortfahren.
-Dieser Fall trat über alle Probanden hinweg außerhalb des Tutorials nur ein einziges Mal auf.
-
-Die Probanden mussten sich anhand der Megamap die Richtung vom virtuellen Laborraum zum Zielraum (horizontal und vertikal zentriert) merken.
+Anhand der Megamap mussten sich die Probanden die Richtung vom virtuellen Laborraum zum Zielraum (horizontal und vertikal zentriert) merken.
 Sobald sie den Zielraum auswählten, wurde die Megamap ausgeblendet.
 Mit dem virtuellen Laserpointer sollten die Probanden dann möglichst mittig auf den Zielraum \emph{in ihrer Umgebung} zeigen.
 Durch Betätigen des Triggers konnte der Laserpointer \enquote{eingefroren} werden, um die Richtung entweder zu korrigieren oder zu akzeptieren.
 Wenn die Richtung akzeptiert wurde, startete die nächste Iteration.
 
 Damit die Probanden beim Suchen auf einer Karte immer die gleiche Startposition und Blickrichtung hatten wie in den anderen Konditionen, wurde vor der Suchaufgabe ein \emph{User Setup} implementiert.
+Die beiden Schritte des User Setups sind in \autoref{fig:user_setup} zu sehen.
 Die Probanden mussten sich dabei auf eine festgelegte Zielposition stellen und für zwei Sekunden auf ein Ziel an der Wand schauen.
 Die beiden Zielpositionen waren von der jeweiligen Karte abhängig, bleiben jedoch für eine Karte über die Konditionen hinweg gleich.
 So wurde sichergestellt, dass die Ausgangsbedingungen für die Suche auf der Karte in jeder Kondition gleich bleiben.
-
 Ebenso wurde das User Setup zwischen der Suche und der Richtungsschätzung implementiert.
 Ohne diesen Zwischenschritt hätten die Probanden in den 3D-Konditionen einfach den Laserpointer vom Raum auf der Karte anheben müssen, um die korrekte Richtung zu schätzen.
 Durch das User Setup wurde eine Ablenkung erzeugt, welche diesen Vorteil der 3D-Konditionen gegenüber der 2D-Kondition minimieren soll.
+\begin{figure}[h]
+    \begin{subfigure}{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth, height=5cm]{figures/screenshots/user_setup_floor}
+        \caption{}
+        \label{sfig:user_setup_floor}
+    \end{subfigure}%
+    \hfill
+    \begin{subfigure}{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/screenshots/user_setup_wall}
+        \caption{}
+        \label{sfig:user_setup_wall}
+    \end{subfigure}
+    \caption{Mit dem \enquote{User Setup} wird vor der Raumsuche die Startposition zwischen den Karten gleichgesetzt. %
+    Vor der Schätzung der Richtung werden die Probanden außerdem abgelenkt. %
+    \textbf{(\subref{sfig:user_setup_floor})} Der Proband muss sich zuerst auf das 'X' stellen. %
+    \textbf{(\subref{sfig:user_setup_wall})} Danach muss der Proband für \SI{2}{\second} auf das Ziel an der Wand schauen.}
+    \label{fig:user_setup}
+\end{figure}
 
 \section{Ablauf}
 Für einen Test wurden \num{45}~Minuten angesetzt.
@@ -104,8 +160,13 @@ Unter anderem beantworteten die Probanden Fragen zu ihrer präferierten Kartenva
 Die Probanden wurden auch befragt, ob sie sich einen Einsatz von 3D-Megamaps mit MR-HMDs in der realen Welt sowohl in Innen- als auch Außenbereichen vorstellen können.
 
 \section{Testgruppe}
-An der Nutzerstudie nahmen 15~Personen teil ($user\_0, \dots, user\_14$), davon 10~männlich und 5~weiblich.
-Die Probanden befanden sich in einem Altersbereich von 23 bis 35 Jahren.
+An der Nutzerstudie nahmen 15~Personen teil ($P_0, \dots, P_{14}$), davon 10~männlich und 5~weiblich.
+Die Probanden befinden sich in einem Altersbereich von 23 bis 35 Jahren.
+12 der Probanden gaben an, bereits Vorerfahrungen mit VR oder MR gemacht zu haben.
+Alle Probanden verwenden Kartenanwendung zur Orientierung und Navigation im Freien.
+8 der Probanden benutzen außerdem Karten zur Navigation innerhalb von Gebäuden.
+Darunter sind 4 Probanden, die digitale Indoor-Kartenanwendung nutzen.
+
 Vier der Probanden sind Brillenträger von denen zwei die Brille aus Bequemlichkeitsgründen während des Tests abnahmen.
 Zwei der Probanden sprachen Englisch und füllten ins Englische übersetzte Versionen der Fragebögen aus.
 Die Muttersprache aller anderen Probanden ist Deutsch.
@@ -116,28 +177,36 @@ Einige Probanden wurden außerdem durch persönlichen Kontakt mit dem Versuchsle
 Für die Teilnahme wurden den Probanden Snacks und Getränke angeboten.
 Eine finanzielle Aufwandsentschädigung gab es nicht.
 
-Bei $user_4$ kam es während der ersten Kondition ($3D_h$) zu einem PC-Absturz, der aus einer Inkompatibilität zwischen dem Ryzen-Prozessor und dem VIVE Wireless Adapter resultiert \parencite{HTCCorporation2018c}.
-Auch bei einem erneuten Start des Experiments kam es in der Kondition $3D_h$ zum Absturz.
-Daraufhin wurde der Test abgebrochen.
-Der Proband erschien wenige Tage später und führte das Experiment erneut ohne Absturz durch.
-Es wird darauf hingewiesen, dass dieser Nutzer durch die vorige begrenzte Teilnahme für seinen Durchlauf mehr Vorkenntnisse hatte, als die anderen Probanden.
-
 \section{Datenerhebung}
-Neben den Antworten aus den Fragebögen wird das Sichtfeld der Proband in der virtuellen Welt aufgezeichnet (und ggf. eine Audioaufnahme des Gesagten).
-
-Zum Vergleich der Performanz von 2D und 3D wird beim Richtungsschätzen die horizontale und vertikale Abweichung von der \enquote{korrekten} Richtung berechnet.
+Neben den Antworten aus den Fragebögen wurde das Sichtfeld der Probanden in der virtuellen Welt aufgezeichnet (und ggf. eine Audioaufnahme des Gesagten).
+Zum Vergleich der Effektivität von 2D und 3D wurde beim Richtungsschätzen die horizontale und vertikale Abweichung von der \enquote{korrekten} Richtung berechnet.
 Als korrekte Richtung gilt der Vektor von der Controllerspitze zum Zentrum des Zielraums in der Umgebung.
 Die horizontale und vertikale Abweichung ergeben sich aus den jeweiligen Winkeln zwischen der vom Probanden bestätigten Richtung und der korrekten Richtung.
-
-Zum Vergleich der Effizienz werden diverse Zeitmessungen durchgeführt.
-Zum einen wird die Zeit gemessen, die Probanden zum Finden des Zielraums benötigen.
-Zum anderen wird die Zeit gemessen, bis Probanden die geschätzte Richtung bestätigt haben.
-So sollen Aussagen über die Zuversicht der Probanden ihrer Schätzung getroffen werden.
-
-Darüber hinaus werden kontinuierlich die Positionen und Rotationen des HMDs und des Controllers aufgezeichnet.
+Zum Vergleich der Effizienz wurden diverse Zeitmessungen durchgeführt.
+Zum einen wurde die Zeit gemessen, die Probanden zum Finden des Zielraums benötigten.
+Zum anderen wurde die Zeit gemessen, bis Probanden die geschätzte Richtung bestätigten.
+Darüber hinaus wurden kontinuierlich die Positionen und Rotationen des HMDs und des Controllers aufgezeichnet.
 
 \section{Ergebnisse}
 In den folgenden Abschnitten werden die Ergebnisse aus der Nutzerstudie präsentiert und statistisch analysiert.
+
+\subsection*{Einschränkungen}
+Bei der Analyse der Suchzeiten nach dem Zielraum viel auf, dass einer der Probanden ($P_5$) für über \SI{50}{\percent} der ausreißenden Messungen verantwortlich war.
+Dies ist auf Probleme mit dem HMD-Setup zurückzuführen.
+Bei dem Proband saß das HMD locker, sodass er bei der Suche das Gefühl hatte, es würde ihm vom Kopf rutschen.
+Eine Neujustierung konnte das Problem nicht beheben.
+Der Proband hielt das HMD mit einer Hand fest, wodurch das Tracking des HMD häufig versagte und das Bild auf dem HMD ausfiel.
+Da die Werte dieses Probanden nicht für einen regulären Versuchsablauf repräsentativ sind, werden seine Messungen von der Analyse ausgeschlossen.
+
+Bei $P_4$ kam es während der ersten Kondition ($3D_h$) zu einem PC-Absturz, der aus einer Inkompatibilität zwischen dem Ryzen-Prozessor und dem VIVE Wireless Adapter resultiert \parencite{HTCCorporation2018c}.
+Auch bei einem erneuten Start des Experiments stürzte der PC in der Kondition $3D_h$ ab.
+Daraufhin wurde der Test abgebrochen.
+Der Proband erschien wenige Tage später und führte das Experiment erneut ohne Absturz durch.
+Es wird darauf hingewiesen, dass dieser Nutzer durch die vorige kurze Teilnahme für seinen Durchlauf mehr Vorkenntnisse hatte, als die anderen Probanden.
+
+Da in den Tests nur Layouts mit einem Stockwerk eingesetzt wurden, spiegelt die vertikale Abweichung bei der Richtungsschätzung lediglich die Fähigkeit der Probanden wieder, auf die Mitte des Laborraums zu zielen.
+Folglich sind die Werte im Vergleich zur horizontalen Abweichung kleiner und unterscheiden sich kaum zwischen den Konditionen ($3D_l$: $\mu = \ang{5,74} \pm \ang{4,47}$; $3D_h$: $\mu = \ang{5,63} \pm \ang{4,06}$; $2D:$ $\mu = \ang{6,08} \pm \ang{4,8}$; absolute vertikale Abweichung).
+Daher werden die Ergebnisse der vertikalen Abweichung in den folgenden Abschnitten nicht weiter beachtet.
 
 \subsection{Santa Barbara Sense-of-Direction Skala}
 Vor dem eigentlichen Test füllten Probanden einen Fragebogen nach der SBSOD Skala aus.
@@ -219,7 +288,7 @@ Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (je
 \autoref{fig:horizontal_offset} zeigt das Ergebnis der Richtungsschätzung.
 Da die Abweichung sowohl in positiven Winkeln (Abweichung nach rechts) als auch negativen Winkeln (Abweichung nach links) gemessen wurde, werden hier die absoluten Werte der Abweichung analysiert.
 Andernfalls würden die Werte sich bei der Mittelwertbildung gegenseitig aufheben.
-Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(7,79 $\pm$ \ang{7,22}), $3D_h$~(7,84 $\pm$ \ang{7,44}) und $2D$~(6,62 $\pm$ \ang{5,28}) nahe beieinander.
+Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(\ang{7,79} $\pm$ \ang{7,22}), $3D_h$~(\ang{7,84} $\pm$ \ang{7,44}) und $2D$~(\ang{6,62} $\pm$ \ang{5,28}) nahe beieinander.
 Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen nachweisen.
 \begin{figure}
     \centering
@@ -330,7 +399,7 @@ Es gibt drei Gründe, durch die sich dieses Ergebnis erklären lässt:
     Auf den 3D-Megamaps wurden sie dabei teilweise durch die Wände der Räume und die geöffneten Türen verdeckt.
     Die Probanden mussten sich von Raum zu Raum bewegen, um in die Räume zu schauen und die Bälle sehen zu können, was zusätzliche Zeit in Anspruch nahm.
     Aus den Gesprächen ergab sich, dass dieser Effekt auf der hohen Megamap zusätzlich verstärkt wurde.
-    user\_14 meint, dass man \enquote{bei 3D [\dots] gefühlt in jeden Raum reingucken [muss].}
+    $P_{14}$ meint, dass man \enquote{bei 3D [\dots] gefühlt in jeden Raum reingucken [muss].}
     Die zusätzliche Höhe der Megamap vom Boden sorgte für einen flacheren Blickwinkel auf die Karte, wodurch die Räume schlechter eingesehen werden konnten als auf der niedrigen Megamap.
     Einige Male wurde Bälle nicht gesehen, wodurch die Probanden die Räume mehrmals ablaufen mussten, bis sie den Zielraum entdeckten.
     Auf der 2D-Karte bestand dieser Nachteil nicht, da es in der zweidimensionalen Ansicht in diesem Sinn keine Wände gibt und die Bälle nicht verdeckt werden.
@@ -345,29 +414,29 @@ Es gibt drei Gründe, durch die sich dieses Ergebnis erklären lässt:
     Demnach können sich Probanden nur auf einen kleinen Teil der Karte konzentrieren.
     Dies ist eine direkte Konsequenz aus der Übertragung der Megamap von der Dritte-Person-Perspektive aus TCTD in die Erste-Person-Perspektive.
     Einige Probanden versuchten dieses Problem zu umgehen, indem sie sich bei jeder Karte zuerst \enquote{aus der Karte heraus} bewegten, um einen Überblick des Grundrisses zu bekommen.
-    user\_7 fühlte sich von der hohen Megamap eingeengt und sagt dazu, dass er \enquote{erst einmal da rausgehen und außen herum laufen [muss].}
+    $P_7$ fühlte sich von der hohen Megamap eingeengt und sagt dazu, dass er \enquote{erst einmal da rausgehen und außen herum laufen [muss].}
     
     Ein weiteres Problem war, dass sich bei den 3D-Karten der Positionsmarker des Probanden unter Umständen außerhalb des Blickfelds befand.
     Die Probanden verloren somit während der Suche den Bezug zum Laborraum.
-    user\_9 beschreibt, dass sie jedes Mal nach dem Lab-Raum suchen musste, weil sie \enquote{voll auf die Bälle fixiert} war.
+    $P_9$ beschreibt, dass sie jedes Mal nach dem Lab-Raum suchen musste, weil sie \enquote{voll auf die Bälle fixiert} war.
     Der Verlust von visuellem Kontext außerhalb des Blickfelds wird z.B. in Videospielen durch die Anzeige von Markern auf Kompassleisten oder Minikarten ausgeglichen.
     In der Literatur lassen sich Ansätze finden, die Gleiches für die Anwendung auf AR-VR-HMDs umsetzen \autocites{Lin2017a}{Gruenefeld2017}.
-    Für den konkreten Prototyp schlägt user\_3 vor, eine visuelle Line vom Positionsmarker zur aktuellen Position des Nutzers zu ziehen.
+    Für den konkreten Prototyp schlägt $P_3$ vor, eine visuelle Line vom Positionsmarker zur aktuellen Position des Nutzers zu ziehen.
     
     \item
     Die Probanden beschrieben, dass zum Merken der Richtung für die Schätzungsaufgabe auf den Karten unterschiedliche \enquote{Taktiken} notwendig seien.
     In der Tat folgten fast alle Probanden auf den 3D-Megamaps der gleichen Vorgehensweise und kehrten vor der Auswahl des Zielraums zuerst zum Laborraum auf der Karte zurück, um sich so für die Schätzungsaufgabe die Richtung merken zu können.
-    Ein Nutzer zielte während des Ablaufens der Karte mit dem Controller immer auf den Raum, in dem er die höchste Zahl an Bällen gezählt hatte (user\_14).
+    Ein Nutzer zielte während des Ablaufens der Karte mit dem Controller immer auf den Raum, in dem er die höchste Zahl an Bällen gezählt hatte ($P_{14}$).
     Auf der 2D-Karte hingegen waren diese Taktiken nicht notwendig.
     Hier orientierten sich die Probanden für das Merken der Richtung an besonderen Merkmalen auf der Karte, z.B. der Säule im Laborraum oder den Türen.
     Einige der Probanden nutzen auch die Rotation des Positionsmarkers aus, um sich den Winkel für die korrekte Drehung zum Zielraum zu merken.
-    Z.B. bevorzugten user\_4 und user\_6 die 2D-Karte für die Richtungsschätzung, da diese Variante \enquote{gewohnter} sei.
+    Z.B. bevorzugten $P_4$ und $P_6$ die 2D-Karte für die Richtungsschätzung, da diese Variante \enquote{gewohnter} sei.
 \end{itemize}
 
 Ein Aspekt, der sich (laut den Probanden) weniger auf die Performance auswirkte, als zuvor angenommen, war der Komfort der HMD-Nutzung.
 Da die Probanden für die 3D-Megamaps die meiste Zeit in Richtung Boden schauen mussten, wurde der Kopf in einer geneigten Position gehalten.
 Es wurde vorab vermutet, dass das Gewicht des HMDs sowie die Befestigung am Kopf für ein unangenehmes Gefühl sorgen könnte und den Eindruck, das HMD könne vom Kopf abrutschen.
-In der Praxis war das nur für einen Probanden problematisch (user\_5).
+In der Praxis war das nur für $P_5$.
 Die anderen Probanden berichteten von keinen Problemen mit dem Komfort.
 Die Tatsache, dass an den Rändern der Linse das Bild (und somit auch die Bälle in den Räumen) verschwommen war, wurde jedoch angemerkt.
 
@@ -396,22 +465,23 @@ Es wird vermutet, dass für die beiden Karten dieser kleine Versatz von den Prob
 Folglich entsteht für die beiden Layouts eine größere Abweichung als für die anderen Karten.
 Für den Ausbau dieser Theorie bedarf es einer weiteren Studie, die sich speziell mit dem Versatz von Zielpunkten in der Umgebung im Bezug zu einem Referenzpunkt auseinandersetzt.
 \begin{figure}[h]
-    \begin{subfigure}{0.5\linewidth}
+    \begin{subfigure}{0.49\linewidth}
         \centering
-        \missingfigure{Layout Karte 3}
+        \includegraphics[width=\linewidth]{figures/screenshots/map_3_x}
         \caption{}
         \label{sfig:map_3}
     \end{subfigure}%
-    \begin{subfigure}{0.5\linewidth}
+    \hfill
+    \begin{subfigure}{0.49\linewidth}
         \centering
-        \missingfigure{Layout Karte 4}
+        \includegraphics[width=\linewidth]{figures/screenshots/map_4_x}
         \caption{}
         \label{sfig:map_4}
     \end{subfigure}%
     \caption{Layouts der Karten 3 (\subref{sfig:map_3}) und 4 (\subref{sfig:map_4}). %
     Die blauen Räume wurden während des Tests mit Bällen gefüllt. %
-    \textcolor{green}{Grüner Pfeil}: Laborraum. %
-    \textcolor{red}{Roter Pfeil}: Zielraum.}
+    \textcolor{red}{Roter Pfeil}: Laborraum. %
+    \textcolor{green}{Grüner Pfeil}: Zielraum.}
     \label{fig:map_3_and_4}
 \end{figure}
 
@@ -425,7 +495,7 @@ Weitere Tests mit einer ausbalancierten Zahl von Rechts- und Linkshändern sind 
 In den Interviews wurden die Probanden gefragt, ob sie sich (neben der Richtung zum Zielraum) auch die Pfade für eine potentielle Navigation zum Zielraum gemerkt hätten.
 Fast alle Probanden äußerten, dass sie sich nur die groben Richtungen gemerkt hätten.
 Manche der Probanden erwähnten, während der Suchaufgabe versucht zu haben, sich die Wege zu den Zielräumen einzuprägen.
-user\_13 hat z.B. darüber nachgedacht, durch welche Türen er zum Ziel laufen muss.
+$P_13$ hat z.B. darüber nachgedacht, durch welche Türen er zum Ziel laufen muss.
 
 \subsection{Room-Guides und Animation}
 Die Room-Guides und die Animation wurden in den Prototypen implementiert, um den Bezug des Laborraums auf der Megamap zum Laborraum in der Umgebung zu verstärken.
@@ -439,9 +509,9 @@ Daraus lässt sich Schlussfolgern, dass wichtige Merkmale und Strukturen der Umg
 
 Die Animation wurde von den Probanden gemischt aufgenommen.
 Ein Proband äußerte, dass die Animation \enquote{mega entscheidend} war, da er \enquote{manchmal Schwierigkeiten [habe], die [Karten] auf den echten Raum zu mappen}.
-Andere Probanden empfanden die Animation jedoch als \enquote{irritierend} (user\_14).
-Ein Proband sagte, dass \enquote{die Animation [sich anfühlt] wie Herunterfallen} (user\_9).
-Weitere Probanden verspürte während der Animation die VR-typische Motion Sickness (user\_0, user\_7).
+Andere Probanden empfanden die Animation jedoch als \enquote{irritierend} ($P_{14}$).
+Ein Proband sagte, dass \enquote{die Animation [sich anfühlt] wie Herunterfallen} ($P_9$).
+Weitere Probanden verspürte während der Animation die VR-typische Motion Sickness ($P_0$, $P_7$).
 Es lässt sich daraus schließen, dass die Animation, wie sie hier implementiert wurde, keine allgemeingültige Lösung für einen Bezug zur Umgebung ist und sogar kontraproduktive Effekte aufweisen kann.
 
 \subsection{Nutzbarkeit}
@@ -450,7 +520,7 @@ Die 2D-Karte wird von den Probanden klar bevorzugt, gefolgt von $3D_l$ und schli
 Da die Probanden die meiste Zeit des Tests mit der Raumsuche verbrachten und die Interaktionen mit den Kartenvarianten während dieses Zeitraums stattfanden, ist dieses Resultat zu erwarten.
 Unter Anbetracht der Kategorisierung der SUS nach Stufen der Nutzbarkeit \autocite{Brooke2013} und der Skalierung von \num{3,125} der hier verwendeten Fragebögen erreicht die $3D_h$-Variante eine Einstufung von niedriger Nutzbarkeit.
 Die Probleme der hohen Megamap wurden in den vorigen Abschnitten bereits erläutert.
-Ein Vorschlag der Probanden war, die Höhe der Wände der Megamap zu verringern, sodass man bei der hohen Megamap weiterhin gut in die Räume hineinsehen kann (user\_11, user\_13).
+Ein Vorschlag der Probanden war, die Höhe der Wände der Megamap zu verringern, sodass man bei der hohen Megamap weiterhin gut in die Räume hineinsehen kann ($P_{11}$, $P_{13}$).
 Eine weitere Alternative wäre die Verwendung von visuellen Markierungen oberhalb der Räume, was dem Konzept in \autoref{chap:concept} entspricht.
 Hier bestünde keine Notwendigkeit, in die Räume hineinzusehen.
 
@@ -465,7 +535,7 @@ Zweitens, ob die Effektivität und Effizienz der Megamap mit einer herkömmliche
 Die Studie zeigt, dass durch die Verwendung der Megamap in der Tat ein räumliches Verständnis der Indoor-Umgebung des Nutzers vorhanden ist.
 Nutzer können mit der Karte aus einer Reihe von Räumen unter festgelegten Suchkriterien einen Zielraum finden und sich die Richtung zu diesem Raum merken.
 Außerhalb der Kartenansicht bleibt die Vorstellung, wo sich dieser Raum in der Umgebung befindet, erhalten.
-Wie user\_3 und user\_7 richtig erkennen, gehört für eine explorative Kartenanwendung mehr dazu, als ein simples räumliches Verständnis von Richtungen.
+Wie $P_3$ und $P_7$ richtig erkennen, gehört für eine explorative Kartenanwendung mehr dazu, als ein simples räumliches Verständnis von Richtungen.
 Erst durch die Einbindung einer Suchfunktion für Objekte und die Integration von Informationen über die Umguseebung kann eine Megamap als Kartenanwendung verwendet werden.
 Der vorliegende Prototyp setzt viele der Aspekte aus \autoref{chap:concept} nicht um, weshalb er nur als sehr limitierte Variante einer Megamap bezeichnet werden kann.
 Der eigentliche Mehrwert der Megamap entsteht erst durch die \emph{inhaltliche} Integration in die Umgebung und umgekehrt.
