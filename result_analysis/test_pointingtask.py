@@ -109,14 +109,14 @@ def test_pointing(df):
     # # ax.set_ylabel("Absolute horiz. Abweichung der Schätzung [$\\degree$]")
     # # plt.show()
     #
-    # print("Ausreißer Horizontaler Offset:")
-    # outliers = []
-    # for cond in conditions:
-    #     outliers.extend([y for stat in boxplot_stats(cond["Abs_Horizontal_Offset"]) for y in stat["fliers"]])
-    #
-    # df_outliers = df.loc[df["Abs_Horizontal_Offset"].isin(outliers)]
-    # print(df_outliers[["User ID", "Condition", "Map", "Abs_Horizontal_Offset"]])
-    # print()
+    print("Ausreißer Horizontaler Offset:")
+    outliers = []
+    for cond in conditions:
+        outliers.extend([y for stat in boxplot_stats(cond["Abs_Horizontal_Offset"]) for y in stat["fliers"]])
+
+    df_outliers = df.loc[df["Abs_Horizontal_Offset"].isin(outliers)]
+    print(df_outliers[["User ID", "Condition", "Map", "Abs_Horizontal_Offset"]])
+    print()
 
     # # ----------
     # # Per Map Testing (bc. of outliers).
