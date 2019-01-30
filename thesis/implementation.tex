@@ -1,6 +1,11 @@
 \chapter{Implementierung}
 \label{chap:implementation}
-% TODO: Dieses Kaptiel mit der Zeit anpassen
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/screenshots/condition_3d_l_x}
+    \caption{Beispiel des finalen Megamap-Prototypen in der Übersicht.}
+    \label{fig:megamap_overview}
+\end{figure}
 
 \section{Unity Engine}
 \emph{Unity} \autocite{UnityTechnologies2018} ist eine \emph{Engine} zum Entwickeln von 2D- und 3D-Anwendung (vornehmlich Spiele).
@@ -24,10 +29,8 @@ Die Skripte erben von der Unity-Klasse \lstinline|MonoBehaviour|, wodurch sie in
 Eine Besonderheit bei Unity im Vergleich zu anderen Engines sind die \emph{Prefabs}.
 Dabei handelt es sich um abgespeicherte Konfigurationen von GameObjects inklusive derer Komponenten.
 Die Prefabs können dann jederzeit als vorkonfiguriertes Objekt instanziiert werden.
-
 Darüber hinaus lässt sich Unity durch das Importieren von Plugins erweitern.
 So werden \emph{Assets} (Texturen, Fonts, Musik, Materialien, Skripte) und Prefabs von anderen Entwicklern in das aktuelle Projekt übernommen.
-
 Aufgrund der einfach zu nutzenden AR-/VR-Funktionalität sowie der Erweiterbarkeit wird Unity für diese Arbeit eingesetzt.
 
 \section{SteamVR Plugin}
@@ -52,7 +55,6 @@ Dabei sollte die virtuelle Karte mithilfe des HMDs in die reale Umgebung des Nut
 Zu Beginn der Arbeit war allerdings statt der MR-Hardware nur ein Software-Simulator als Entwicklervorschau verfügbar.
 Im Verlauf der Arbeit wurde die MR-Hardware veröffentlicht.
 Das HMD war in der Arbeitsgruppe Human-Computer~ Interaction der Universität Bremen jedoch weiterhin nicht verfügbar.
-
 Daher wurde in dieser Arbeit ein alternativer Prototyp für das VR-HMD HTC Vive entwickelt.
 Wie die meisten VR-HMDs verdeckt die Vive das Sichtfeld des Nutzers komplett, um stattdessen die virtuellen Inhalte anzuzeigen.
 Somit ist die reale Welt für die Nutzer nicht mehr sichtbar, was die visuelle Integration der Megamap in Umgebung unmöglich macht.
@@ -62,7 +64,6 @@ So wird die reale Welt um den Nutzer herum virtuell simuliert.
 Die virtuelle Megamap kann dann in die \textit{virtuelle} Umgebung des Nutzers integriert werden.
 Die Idee hinter diesem Ansatz ist, dass durch die Ähnlichkeit der realen und der virtuellen Umgebung das Prinzip des VR-Prototypen auf eine Situation mit einem MR-HMD weiterhin übertragbar ist.
 In zukünftigen Arbeiten könnte damit der Megamap-Prototyp auf MR-HMDs eingesetzt werden, ohne grundlegende Änderungen vornehmen zu müssen.
-
 Durch die Verwendung eines 3D-Modells wird außerdem die 3D-Rekonstruktionsfunktion der Magic Leap One nachgeahmt.
 Wie auch die HoloLens erstellt die Magic Leap One durch aktives Tracking der Umwelt intern ein 3D-Modell der Umgebung.
 Dieses wird für die Kollisionsberechnung mit den virtuellen Inhalten verwendet.
@@ -73,8 +74,7 @@ Für den Prototypen wurde ein maßstabsgetreues 3D-Modell des Laborraums der Arb
 \autoref{fig:lab_environment} zeigt ein Foto des Laborraums sowie Screenshots der entsprechenden virtuellen Umgebung.
 Der Grundriss des Raums wurde im Modellierungsprogramm \emph{Blender} mithilfe des eingebauten \emph{Archimesh}-Werkzeugs zentimetergenau erstellt.
 Das Modell wurde als \texttt{.fbx} in Unity importiert und mit diversen virtuellen Requisiten ergänzt, um den Raum realistischer und dem Original ähnlicher wirken zu lassen.
-
-\begin{figure}
+\begin{figure}[thb]
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=0.755\textwidth]{figures/photo_lab}
@@ -115,13 +115,11 @@ Der Prototyp muss dafür vorab in zwei Schritten konfiguriert werden:
 Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogenannte \emph{Play Area}) fest.
 Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
 Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
-
 Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \lstinline{Player}-Objekts in Unity verläuft.
 Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
 Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \lstinline{Player}-Objekts verlaufen.
 Im Fall des entwickelten Prototypen bedeutet dies, dass die Vorderseite der Play Area parallel zu der Wand des Labors verlaufen muss, an der sich die Eingangstür und Tische befinden (siehe \autoref{fig:lab_environment}).
 Die korrekte Kalibrierung der Play Area wird in \autoref{fig:ve_setup_correct} skizziert.
-
 Wenn bei der Kalibrierung der Play Area eine andere Ausrichtung gewählt wird, als die Ausgangsrotation des \lstinline{Player}-Objekts, weicht die virtuelle Rotation des Nutzers von der realen Rotation im Bezug zum Raum ab.
 Effektiv hätte die virtuelle Umgebung dann eine andere Ausrichtung als die reale Umgebung.
 Die falsche Kalibrierung wird in \autoref{fig:ve_setup_wrong} dargestellt.
@@ -158,10 +156,8 @@ Nun wird im realen Labor die Entfernung von den Controllern zu den entsprechende
 Die Entfernungen werden gemittelt.
 Der resultierende Offset wird dann im Unity Editor verwendet, um das virtuelle Labor zu verschieben.
 Dieser Offset ist nun solange gültig, bis die Play Area neu kalibriert wird.
-
 Wie auch schon bei der Rotation ist diese Angleichung erst dann für die Nutzer bemerkbar, wenn sie versuchen physische Objekte wie Wände oder die Säule zu berühren.
 Würde die Verschiebung des Raums nicht durchgeführt werden, könnten Nutzer mit den Controllern durch die virtuellen Objekte hindurch greifen oder sie würden auf physische Barrieren stoßen, obwohl die virtuellen Objekte noch weiter entfernt sind.
-
 Nach diesen beiden Schritten kann der virtuelle Raum als Ersatz für die reale Umgebung verwendet werden, die in einer MR-Anwendung ohne vorheriges Modellieren verfügbar wäre.
 
 \section{Das Megamap-GameObject}
@@ -179,7 +175,7 @@ Das Objekt setzt sich aus drei Teilen zusammen, die jeweils durch eigene Kompone
 Das Skript \textbf{\lstinline{Megamap}} bietet allgemeine Einstellungsmöglichkeiten zur Darstellung der Megamap.
 Es lassen sich z.B. die Skalierung oder die Höhe vom Boden ändern.
 Weiterhin bietet das Skript die Methoden \lstinline{Show()} und \lstinline{Hide()}, mit denen die Karte angezeigt bzw. ausgeblendet werden kann.
-Falls dabei das Feld \lstinline{useAnimation} auf \lstinline{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung herunterskaliert (beim Ausblenden analog ein Hochskalieren).
+Falls dabei das Feld \lstinline{useAnimation} auf \lstinline{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung nach und nach herunterskaliert (beim Ausblenden analog ein Hochskalieren).
 Die Megamap wird standardmäßig Nutzer-zentriert platziert.
 Das bedeutet, dass der Nutzer sowohl in der realen Welt als auch auf der Karte die gleiche Position einnimmt.
 Hierfür wird die virtuelle Umgebung referenziert und der Abstand vom HMD zum Ursprung des Labor-Modells ermittelt.
@@ -210,7 +206,7 @@ Die Details zum \lstinline|IndoorMap|-Skript werden in \autoref{sec:indoor_maps}
     \begin{minipage}[t]{.485\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=\linewidth]{figures/megamap_room_guides}
+        \includegraphics[width=\linewidth, height=4.2cm]{figures/megamap_room_guides}
         \captionof{figure}{Die Room Guides verbinden die Ecken des umgebenden Raums mit dem entsprechenden Raum auf der Megamap.}
         \label{fig:room_guides}
     \end{minipage}
@@ -248,29 +244,10 @@ Handelt es sich um den gesuchten Raum, wird die Karte ausgeblendet.
 Ansonsten wird der Raum als \enquote{falscher Raum} hervorgehoben.
 
 \begin{figure}[tbh]
-    \begin{minipage}[t]{0.35\textwidth}
-        \centering
-        \vspace{0pt}
-        \imagebox{\includegraphics[height=9.7cm]{figures/unity_indoor_map}}
-        \caption{Objekthierarchie des IndoorMap-Objekts,}
-        \label{fig:room_hierarchy}    
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.64\textwidth}
-        \centering
-        \vspace{0pt}
-        \begin{subfigure}{\linewidth}
-            \missingfigure[figwidth=\linewidth]{Screenshot vom anvisierten Raum.}
-            \caption{}
-        \end{subfigure}
-    
-        \vspace{1em}
-        \begin{subfigure}{\linewidth}
-            \missingfigure[figwidth=\linewidth]{Screenshot von falsch geklicktem Raum.}
-            \caption{}
-        \end{subfigure}
-    \caption{Screenshots.}
-    \end{minipage}
+    \centering
+    \includegraphics[height=9cm]{figures/unity_indoor_map}
+    \caption{Objekthierarchie des IndoorMap-Objekts,}
+    \label{fig:room_hierarchy}
 \end{figure}
 
 Diese Interaktionsmöglichkeit wird durch das \lstinline|SelectRoom|-Skript umgesetzt.
@@ -307,11 +284,18 @@ Die Play Area der Vive schränkt die Bewegung der Nutzer zusätzlich ein, da au�
 
 Für den aktuellsten Prototyp wurde daher eine Methode zur entfernten Auswahl von Räumen entwickelt.
 Über einen virtuellen \enquote{Laser Pointer} können Nutzer mit den Vive-Controllern auf Räume zeigen und diese mit dem Trigger auswählen.
+Der Screenshot in \autoref{fig:laserpointer_screenshot} zeigt ein Beispiel.
 Das Skript \lstinline|LaserPointer| setzt dies um, indem es einen \lstinline|LineRenderer| aktiviert, welcher einen Lasterstrahl darstellt.
 Der Strahl verläuft vom Controller geradeaus in die Szene.
 In der Methode \lstinline|Update()| wird dann durch \lstinline|Physics.RaycastAll(...)| ein Schnitttest zwischen dem Strahl und Collidern in der Szene durchgeführt.
 Falls ein Collider vom Strahl getroffen wird und der Collider zu einem der Räume gehört, wird der Schnittpunkt als Endpunkt des Laserstrahls gesetzt.
 So entsteht der Effekt, dass der Laserstrahl nicht durch die Räume hindurchgeht.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=6cm]{figures/screenshots/laserpointer}
+    \caption{Mit dem Laserpointer wird ein Raum anvisiert.}
+    \label{fig:laserpointer_screenshot}    
+\end{figure}
 
 Wie im vorigen Abschnitt beschrieben findet die Interaktion zwischen Vive-Controller und einem Raum statt, wenn der Controller den Raum überlappt.
 Da jedoch beim Laserpointer der Controller vom Raum entfernt ist, muss hier eine Modifikation vorgenommen werden.
@@ -324,8 +308,7 @@ Die Position der Kugel wird auf den Schnittpunkt geändert, wodurch sie sich eff
 Damit werden die SteamVR-Events für den entsprechenden Raum am Ende des Strahls ausgelöst.
 \autoref{fig:laserpointer_sketch} verdeutlicht diesen Vorgang.
 Wenn der Raycast keinen Schnittpunkt mit einem auswählbaren Raum ergibt, wird die Kugel wieder auf die Controller-Position zurückgesetzt.
-
-\begin{figure}[tbh]
+\begin{figure}[hbt]
     \centering
     \imagebox{%
     \begin{subfigure}{0.45\linewidth}
@@ -344,21 +327,6 @@ Wenn der Raycast keinen Schnittpunkt mit einem auswählbaren Raum ergibt, wird d
         Die \lstinline|HoverSphere| wird verschoben, sodass der Raum auf den Vive-Controller reagiert. %
         \textbf{A:} Laserpointer. \textbf{B:} SteamVR-\lstinline|HoverSphere|. \textbf{C:} Auswählbarer Raum.}
     \label{fig:laserpointer_sketch}
-\end{figure}
-
-\begin{figure}[tbh]
-\centering
-\begin{subfigure}{0.49\linewidth}
-    \missingfigure[figwidth=\linewidth]{LP Screenshot No Hit}
-    \caption{}
-    \label{sfig:laserpointer_screenshot_no_hit}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.49\linewidth}
-    \missingfigure[figwidth=\linewidth]{LP Screenshot Hit}
-    \caption{}
-    \label{sfig:laserpointer_screenshot_hit}
-\end{subfigure}
 \end{figure}
 
 %
