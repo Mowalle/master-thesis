@@ -1,32 +1,29 @@
+\appendix
 \begin{appendices}
-
+    %\renewcommand\thechapter{\appendixname\space\Alph{chapter}}
+    
 \chapter{Material für Nutzerstudie}
 \label{appendix:study_material}
-\todo{Fragebögen einfügen.}
+\begin{center}
+    \framebox{\includegraphics[width=0.8\linewidth]{appendix/study_flyer}}
+    \captionof{figure}{Flyer für Nutzerstudie.}
+    \label{appendix:flyer}
+\end{center}
+%\clearpage
 
-\begin{figure}[hbt]
-    \centering
-    \framebox{\includegraphics[width=0.725\linewidth]{appendix/study_flyer}}
-    \caption{Flyer für Nutzerstudie.}
-\end{figure}
+\begin{center}
+    \framebox[\width]{\includegraphics[page=1, trim={0, 1cm, 0, 2cm}, clip, width=0.7\linewidth]{appendix/study_infos}}
+    \vfill
+    \framebox[\width]{\includegraphics[page=2, trim={0, 15cm, 0, 2cm}, clip, width=0.7\linewidth]{appendix/study_infos}}%
+    \captionof{figure}{Informationsbogen für Probanden.}
+    \label{appendix:study_infos}
+\end{center}
 
-\begin{figure}[hbt]
-    \centering
-    \begin{subfigure}{0.6\linewidth}
-        \framebox[\width]{\includegraphics[page=1, width=\linewidth]{appendix/study_infos}}
-    \end{subfigure}
-
-    \begin{subfigure}{0.6\linewidth}
-        \framebox[\width]{\includegraphics[page=2, trim={0, 13cm, 0, 0}, clip, width=\linewidth]{appendix/study_infos}}%
-    \end{subfigure}%
-    \caption{Informationsbogen für Probanden.}
-\end{figure}
-
-\begin{figure}[hbt]
-    \centering
-    \framebox{\includegraphics[width=0.725\linewidth]{appendix/Zustimmung-Studienteilnahme}}
-    \caption{Zustimmungsbogen für Probanden.}
-\end{figure}
+\begin{center}
+    \framebox{\includegraphics[width=0.9\linewidth]{appendix/Zustimmung-Studienteilnahme}}
+    \captionof{figure}{Zustimmungsbogen für Probanden.}
+    \label{appendix:study_confirmation}
+\end{center}
 
 \chapter{Konditionssequenzen für die Nutzerstudie}
 \begin{table}[h]
@@ -52,5 +49,5 @@
         $P_{14}$ & $2D$ & $3D_l$ & $3D_h$ \\\bottomrule        
     \end{tabular}
 \end{table}
-
+    
 \end{appendices}

@@ -5,7 +5,8 @@
     twoside=true,
     captions=tableheading,
     british, ngerman,
-    numbers=noenddot
+    numbers=noenddot,
+    appendixprefix
 ]{scrreprt}
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
@@ -32,8 +33,7 @@
 \usepackage[autopunct]{csquotes}
 \usepackage{graphicx}
 \usepackage{multirow}
-
-\usepackage[titletoc,toc,title,page]{appendix}
+\usepackage[title, titletoc]{appendix}
 \renewcommand{\appendixpagename}{\appendixname}
 \renewcommand{\appendixtocname}{\appendixname}
 
@@ -93,6 +93,7 @@
     backend = biber, % Sets biber as backend.
     style = numeric-comp,
     sorting = none,
+    defernumbers = true,
     maxcitenames = 2, % Truncate lists above 2 entries (e.g. names) when citing.
     mincitenames = 1, % Truncate to 1 entry (e.g. names) when citing.
     maxbibnames = 3, % Truncate lists above 3 entries (e.g. names) in bib.
