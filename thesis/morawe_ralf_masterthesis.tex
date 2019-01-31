@@ -33,9 +33,20 @@
 \usepackage[autopunct]{csquotes}
 \usepackage{graphicx}
 \usepackage{multirow}
+
 \usepackage[title, titletoc]{appendix}
 \renewcommand{\appendixpagename}{\appendixname}
 \renewcommand{\appendixtocname}{\appendixname}
+\makeatletter
+\addto\extrasngerman{%
+    \renewcommand{\appendixautorefname}{\appendixname}%
+    \@ifundefined{Anhangautorefname}{%
+        \newcommand{\Anhangautorefname}{\appendixname}%
+    }{%
+        \renewcommand{\Anhangautorefname}{\appendixname}%
+    }
+}
+\makeatother
 
 \usepackage{siunitx}
 \sisetup{locale = DE}
