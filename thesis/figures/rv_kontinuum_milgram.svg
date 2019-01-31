@@ -10,27 +10,15 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="620.66821"
-   height="161.73898"
-   viewBox="0 0 164.21847 42.793438"
+   width="866.93427"
+   height="193.16754"
+   viewBox="0 0 229.37637 51.10891"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="rv_kontinuum_milgram.svg">
   <defs
      id="defs2">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient1127">
-      <stop
-         style="stop-color:#8a6aad;stop-opacity:1"
-         offset="0"
-         id="stop1123" />
-      <stop
-         style="stop-color:#d22b90;stop-opacity:1"
-         offset="1"
-         id="stop1125" />
-    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient1007">
@@ -362,7 +350,7 @@
        y1="93.069901"
        x2="92.762611"
        y2="93.258888"
-       gradientTransform="translate(-1.1434061,-9.9185315)" />
+       gradientTransform="translate(9.4399273,-9.9185315)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient9186-6-8"
@@ -412,17 +400,7 @@
        y1="93.413605"
        x2="115.44923"
        y2="93.413605"
-       gradientTransform="translate(54.865376,-9.9551448)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1127"
-       id="linearGradient10128-0-1"
-       gradientUnits="userSpaceOnUse"
-       x1="54.325314"
-       y1="92.691925"
-       x2="88.03791"
-       y2="92.880913"
-       gradientTransform="translate(110.87405,-9.7661571)" />
+       gradientTransform="translate(91.907045,-9.9551448)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -431,9 +409,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="271.09171"
-     inkscape:cy="92.034283"
+     inkscape:zoom="1.4"
+     inkscape:cx="403.42677"
+     inkscape:cy="79.406818"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -451,9 +429,9 @@
      inkscape:snap-text-baseline="true"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1051"
+     inkscape:window-height="1015"
      inkscape:window-x="0"
-     inkscape:window-y="29"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -477,10 +455,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-40.66877,-58.618892)">
+     transform="translate(-10.137905,-50.303416)">
     <path
        style="opacity:0.5;fill:none;stroke:url(#linearGradient10227);stroke-width:1.47306311;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.94612641, 2.94612641;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 44.725992,90.688319 v 7.316192 h 44.972913"
+       d="m 60.600992,90.688319 v 7.316192 l 31.904243,0"
        id="path10153"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
@@ -492,39 +470,39 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="40.089993"
-       y="64.774864"
+       x="9.308877"
+       y="56.459389"
        id="text9902"><tspan
          sodipodi:role="line"
-         id="tspan9900"
-         x="40.089993"
-         y="64.774864"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Reelle Umgebung</tspan></text>
+         x="9.308877"
+         y="56.459389"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan3799">Reelle Umgebung</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="131.81374"
-       y="64.869064"
+       x="166.44075"
+       y="56.459389"
        id="text9902-9"><tspan
          sodipodi:role="line"
-         id="tspan9900-9"
-         x="131.81374"
-         y="64.869064"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332">Virtuelle Umgebung</tspan></text>
+         x="166.44075"
+         y="56.459389"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan3803">Virtuelle Umgebung</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="70.283852"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#2bbdd2;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="80.86718"
        y="84.288803"
        id="text9902-7"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1"
-         x="70.283852"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#2bbdd2;fill-opacity:1;"
+         x="80.86718"
          y="84.288803"
          id="tspan9160">Augmented Reality</tspan><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128);fill-opacity:1"
-         x="70.283852"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#2bbdd2;fill-opacity:1;"
+         x="80.86718"
          y="91.34436"
          id="tspan9164">(AR)</tspan></text>
     <text
@@ -540,41 +518,55 @@
          id="tspan9156">Mixed Reality (MR)</tspan></text>
     <path
        style="opacity:0.5;fill:none;stroke:url(#linearGradient10227-3);stroke-width:1.47306311;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.94612644, 2.94612644;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 201.52373,90.688319 v 7.316192 h -44.97291"
+       d="m 185.64873,90.688319 v 7.316192 h -32.03787"
        id="path10153-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="126.29263"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#c63695;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       x="163.33434"
        y="84.25219"
        id="text9902-7-6"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke-width:0.26458332"
-         x="126.29263"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#c63695;fill-opacity:1;stroke-width:0.26458332;"
+         x="163.33434"
          y="84.25219"
          id="tspan9160-5">Augmented Virtuality</tspan><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0);fill-opacity:1;stroke-width:0.26458332"
-         x="126.29263"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#c63695;fill-opacity:1;stroke-width:0.26458332;"
+         x="163.33434"
          y="91.307747"
          id="tspan9164-2">(AV)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="182.30142"
-       y="84.441177"
-       id="text9902-7-6-8"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="26.583483"
+       y="66.447647"
+       id="text9902-3"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke-width:0.26458332"
-         x="182.30142"
-         y="84.441177"
-         id="tspan9286">Virtual Reality</tspan><tspan
+         x="26.583483"
+         y="66.447647"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan3799-6">(<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start"
+   id="tspan3825">Reality</tspan>)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;line-height:1.25;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="174.36247"
+       y="66.447647"
+       id="text9902-3-1"
+       inkscape:transform-center-x="114.14881"
+       inkscape:transform-center-y="0.7559524"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:url(#linearGradient10128-0-1);fill-opacity:1;stroke-width:0.26458332"
-         x="182.30142"
-         y="91.496735"
-         id="tspan9280">(VR)</tspan></text>
+         x="174.36247"
+         y="66.447647"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#2d2d2d;fill-opacity:1;stroke-width:0.26458332"
+         id="tspan3799-6-8">(<tspan
+   style="-inkscape-font-specification:'Linux Biolinum O, Italic';font-family:'Linux Biolinum O';font-weight:normal;font-style:italic;font-stretch:normal;font-variant:normal;font-size:8.81944444px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"
+   id="tspan3848">Virtual</tspan> <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944466px;font-family:'Linux Biolinum O';-inkscape-font-specification:'Linux Biolinum O, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
+   id="tspan3825-9">Reality</tspan>)</tspan></text>
   </g>
 </svg>

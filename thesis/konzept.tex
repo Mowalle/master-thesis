@@ -14,30 +14,9 @@ Er gibt eine Übersicht verschiedener \emph{User Tasks}, die in mobilen Umgebung
 Einer dieser User Tasks ist die \textbf{Navigation}, welcher in digitalen Kartensystemen durch Wegbeschreibungen umgesetzt wird.
 Nutzer bekommen einen oder mehrere Pfade zwischen zwei Punkten angezeigt, welche den schnellsten oder den kürzesten Weg zum Ziel anschaulich machen.
 Zusätzlich können wegweisende Textinformationen die Navigation erleichtern.
-
-Neben der Navigation nennt \citeauthor{Reichenbacher2001} drei weitere Kategorien von User Tasks:
-
-\textbf{Lokalisierungs-Tasks (\emph{Locators})} sind Anwendungsfälle, bei denen Nutzer Positionen abfragen und diese angezeigt werden.
-Dabei kann es sich um die eigene Position handeln, aber auch um die von anderen Personen oder Objekten.
-
-\textbf{Nähe-Tasks (\emph{Proximity})} sind Anwendungsfälle, bei denen Nutzer Informationen über die Umgebung relativ zur eigenen Position erhalten.
-So können Nutzer z.B. die Umgebung nach den nächstgelegenen Geschäften oder Freizeitbeschäftigungen abfragen.
-
-\textbf{Events} sind nicht nur ortsabhängig, sondern auch zeitabhängig.
-Bei diesen Anwendungsfällen geht es um die Abfrage von Informationen, die sich mit der Zeit ändern.
-Z.B. fällt die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
-
-Eine Gemeinsamkeit dieser Anwendungsfälle ist, dass hier Informationen über die Umgebung abgefragt werden.
-Die Informationen sind abhängig von \emph{mindestens} einem Kontext, zum Beispiel der aktuellen Position der Nutzers.
-Es können aber auch mehrere Kontexte gleichzeitig mit einbezogen werden (Beispiel: \enquote{Alle \emph{Geschäfte} in \emph{der Nähe}, die \emph{zurzeit} geöffnet sind} $\rightarrow$ Zweck-, Positions- und Zeitkontext).
-Dies steht im Kontrast zur Navigation, für welche immer ein Endpunkt im Kontext zu \emph{mindestens} einem Startpunkt stehen muss (weitere Kontexte wären z.B. Zwischenstopps, das genutzte Fortbewegungsmittel oder das aktuelle Verkehrsaufkommen).
-
-Da Nutzer eine Umgebung durch Abfragen ihrer Informationen \enquote{entdecken}, wird in dieser Arbeit \textbf{Kartenexploration} als Oberbegriff für die Lokalisierungs-, Nähe- und Event-Tasks betrachtet.
-Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvor beschriebenen Unterschiede ab.
-
 \begin{table}[htb]
     \centering
-    \caption{Geoinformationsaufgaben in einer mobilen Umgebung. \quelle{\cite[47]{Reichenbacher2001}}}
+    \caption{Geoinformationsaufgaben in einer mobilen Umgebung. \quelle{\cite{Reichenbacher2001}}}
     \label{tab:gis_user_tasks}
     \begin{tabular}{@{}lll@{}}%\toprule
         \tableheadcolor \textsf{\textbf{Tasks}} & \textsf{\textbf{Subtasks}} & \textsf{\textbf{Examples}}\\% \midrule
@@ -51,6 +30,26 @@ Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvo
     \end{tabular}
     \vspace{0.5em}
 \end{table}
+
+Neben der Navigation nennt \citeauthor{Reichenbacher2001} drei weitere Kategorien von User Tasks:
+\begin{itemize}
+    \item \textbf{Lokalisierungs-Tasks (\emph{Locators})} sind Anwendungsfälle, bei denen Nutzer Positionen abfragen und diese angezeigt werden.
+    Dabei kann es sich um die eigene Position handeln, aber auch um die von anderen Personen oder Objekten.
+    
+    \item \textbf{Nähe-Tasks (\emph{Proximity})} sind Anwendungsfälle, bei denen Nutzer Informationen über die Umgebung relativ zur eigenen Position erhalten.
+    So können Nutzer z.B. die Umgebung nach den nächstgelegenen Geschäften oder Freizeitbeschäftigungen abfragen.
+    
+    \item \textbf{Events} sind nicht nur ortsabhängig, sondern auch zeitabhängig.
+    Bei diesen Anwendungsfällen geht es um die Abfrage von Informationen, die sich mit der Zeit ändern.
+    Z.B. fällt die Abfrage von geöffneten Geschäften oder von Verkehrsinformationen in diese Kategorie.
+\end{itemize}
+
+Eine Gemeinsamkeit dieser Anwendungsfälle ist, dass hier Informationen über die Umgebung abgefragt werden.
+Die Informationen sind abhängig von \emph{mindestens} einem Kontext, zum Beispiel der aktuellen Position der Nutzers.
+Es können aber auch mehrere Kontexte gleichzeitig mit einbezogen werden (Beispiel: \enquote{Alle \emph{Geschäfte} in \emph{der Nähe}, die \emph{zurzeit} geöffnet sind} $\rightarrow$ Zweck-, Positions- und Zeitkontext).
+Dies steht im Kontrast zur Navigation, für welche immer ein Endpunkt im Kontext zu \emph{mindestens} einem Startpunkt stehen muss (weitere Kontexte wären z.B. Zwischenstopps, das genutzte Fortbewegungsmittel oder das aktuelle Verkehrsaufkommen).
+Da Nutzer eine Umgebung durch Abfragen ihrer Informationen \enquote{entdecken}, wird in dieser Arbeit \textbf{Kartenexploration} als Oberbegriff für die Lokalisierungs-, Nähe- und Event-Tasks betrachtet.
+Somit grenzt sich die Kartenexploration von der reinen Navigation durch die zuvor beschriebenen Unterschiede ab.
 
 \section{Explorationselemente in existierenden Kartenanwendungen}
 \label{sec:exploration_elements}
@@ -176,17 +175,8 @@ Das letzte Lokalisierungselement ist die \emph{Attributsansicht}.
 Über diese Ansicht werden Nutzern Informationen über einen Ort aufgelistet.
 Die Informationen umfassen neben der Adresse und Anschrift unter anderem auch Kontaktdaten (Webseiten, Telefonnummern), Öffnungszeiten, Bilder, Bewertungen usw.
 Speziell für Gebäude werden hier auch Ausstattungen gelistet.
-\autoref{fig:gm_ausstattung} zeigt beispielsweise, wie in der Attributansicht von Google Maps die Ausstattung eines Hotels angezeigt wird.
 Die Anzeige solcher Informationen ermöglicht es, die Kartenanwendungen für andere Anwendungsfälle als die reine Navigation zu nutzen.
-Dem obigen Beispiel folgend können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
-\begin{figure}[t]
-	\centering
-	\imagebox{
-		\includegraphics[height=7cm]{figures/map-app_examples/gm_ausstattung}
-	}
-	\caption{Beispiel für die Auflistung einer Gebäudeausstattung (eines Hotels in Bremen) in der Attributansicht von Google Maps.}
-	\label{fig:gm_ausstattung}
-\end{figure}
+Beispielsweise können Nutzer mit der Kartenanwendung ihre Unterkunft während einer Reise planen und werden dann zur Buchung auf die jeweilige Seite des Hotels weitergeleitet.
 
 \subsection{Nähe-Elemente}
 \label{ssec:prox-elements}
@@ -195,10 +185,9 @@ Nutzer können diese Elemente verwenden, um sich ein Bild von der Umgebung zu ma
 Vor allem bei der offenen Suche nach unspezifischen Orten (z.B. \enquote{Restaurants in der Nähe}) kommen die Nähe-Elemente zum Einsatz, indem mehrere Alternativen als Zielorte angeboten werden.
 Bei der Untersuchung der Beispielanwendungen ergaben sich acht Arten von Nähe-Elementen:
 
-\emph{Positionsabhängige Ortsmarkierungen} sind, wie bereits in \autoref{ssec:loc-elements} beschrieben, grafische Elemente, die für den Nutzer relevante POI markieren.
-Die Ortsmarkierungen werden zu einem Nähe-Element, wenn nur die Markierungen in der näheren Umgebung des Nutzers eingeblendet werden.
+\emph{Positionsabhängige Ortsmarkierungen} werden nur in der näheren Umgebung des Nutzers eingeblendet.
 So können sich Nutzer auf nahegelegene Alternativen konzentrieren und die weiter entfernten Ziele ausblenden.
-Erweitert wird dies in den untersuchen Anwendungen durch die \emph{zoomabhängigen Ortsmarkierungen}.
+Erweitert wird dies durch die \emph{zoomabhängigen Ortsmarkierungen}.
 Hierbei werden Markierungen, die als weniger wichtig für den Nutzer betrachtet werden, erst bei einem hohen Zoom der Karte angezeigt.
 Somit können vom Anbieter der Karte zum Beispiel beliebte, häufig frequentierte Ziele hervorgehoben werden, während wenig besuchte Ziele erst später zu sehen sind.
 
@@ -219,22 +208,19 @@ In den untersuchten Anwendungen werden alle möglichen Alternativen durch Ortsma
 
 Die \emph{Nahbereichssuche} ist eine Interaktion, mit der ein definierter Bereich der Karte unter Suchkriterien nach Orten durchsucht werden kann.
 Damit ist sie eine lokal begrenzte offene Suche.
-In den untersuchten Anwendungen lässt sich diese Funktion durch Öffnen des Kartenmenus mittels Rechtsklick aufrufen (siehe \autoref{fig:bm_nearby}).
+In den Anwendungen lässt sich diese Funktion durch Öffnen des Kartenmenus mittels Rechtsklick aufrufen.
 Bei der Nahbereichssuche werden nur Ortsmarkierungen angezeigt, die sich in einem gewissen Radius um den Ort des Anklickens herum befinden.
 Nutzer können hiermit Umgebungen erkunden, an denen sie sich selber nicht befinden.
-\begin{figure}[h]
-    \centering
-    \imagebox{
-	    \includegraphics[width=0.485\linewidth]{figures/map-app_examples/bm_nearby}
-	}
-	\caption{Über das Rechtsklick-Menu in Bing Maps kann die Umgebung durchsucht werden.}
-	\label{fig:bm_nearby}
-\end{figure}
 
 Über die Elemente \emph{Filter und Sortierung} können die Suchkriterien weiter eingeschränkt werden.
 Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern, oder Hotels nach Preisklasse (siehe \autoref{fig:bm_sorting}).
 So müssen Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
 Die Filterung und Sortierung kann Nutzern somit durch das Ausblenden irrelevanter Orte Zeit beim Suchen von Zielen ersparen.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
+    \caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
+    \label{fig:bm_sorting}
+\end{figure}
 
 Das Nähe-Element \emph{Ortsnachbarschaft} ist ein Element, welches in der Ansicht über die Ortsinformationen integriert ist.
 Hierbei handelt es sich um eine Liste von weiteren Nutzer-relevanten Orten, die sich in der Nähe des aktuell betrachteten Orts befinden.
@@ -245,20 +231,8 @@ Sie zeigen Foto-Aufnahmen (gegebenenfalls als 360\textdegree-Aufnahme) der Umgeb
 Wie die Ortsmarkierungen sind die abgebildeten Orte auf einen gewissen Radius um einen Ausgangspunkt herum beschränkt, sodass für die Nutzer irrelevante Bilder nicht gezeigt werden.
 Die Einbindung der Bilder in die Anwendungen wird unterschiedlich gehandhabt.
 Zum Beispiel befindet sich in Google Maps eine Liste von Umgebungsfotos in Attributsansicht.
-Wird die Liste angeklickt, öffnet sich eine Großansicht der Fotos (siehe \autoref{fig:gm_photos}).
+Wird die Liste angeklickt, öffnet sich eine Großansicht der Fotos.
 Handelt es sich bei dem Bild um eine 360\textdegree-Aufnahme, kann mit der Maus die Ansicht verändert werden.
-
-\begin{figure}[p]
-	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
-	\caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
-	\label{fig:bm_sorting}
-\end{figure}
-\begin{figure}[p]
-	\centering
-	\includegraphics[width=\linewidth]{figures/map-app_examples/gm_photos_2}
-	\caption{Umgebungsfotos zum Universum Bremen via Google Maps.}
-	\label{fig:gm_photos}
-\end{figure}
 
 \subsection{Event-Elemente}
 \label{ssec:event-elements}
@@ -277,17 +251,8 @@ Unter Umständen werden auch die Ticketverfügbarkeit und -preise angezeigt.
 \emph{Öffnungszeiten} informieren Nutzer über den Zugang zu Orten in der Umgebung, vor allem Gebäuden.
 Dank der Integration der Öffnungszeiten müssen Nutzer nicht weitere Informationen abrufen, um zu schauen, ob das Ziel zur aktuellen Zeit erreicht werden kann.
 Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten in Google Maps in der Attributsansicht zu finden.
-
 Zuletzt sind auch Informationen über das \emph{aktuelle Besucheraufkommen an Orten} als Event-Element verfügbar.
-Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden (siehe \autoref{fig:gm_opening_hours}).
-\begin{figure}[th]
-	\centering
-	\imagebox{
-		\includegraphics[width=0.4\linewidth]{figures/map-app_examples/gm_opening_hours}
-	}
-	\caption{Öffnungszeiten von Geschäften etc. werden in Google Maps in der Attributsansicht gezeigt.}
-	\label{fig:gm_opening_hours}
-\end{figure}
+Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden.
 
 \section{Megamap in \emph{Tom Clancy's The Division}}
 In \autoref{chap:einleitung} wurde bereits erwähnt, dass die grundlegende Idee für das Konzept der Megamap aus dem Spiel Tom Clancy's The Division stammt.
@@ -321,9 +286,7 @@ Das Aufrufen der Megamap in TCTD geschieht in zwei Schritten (siehe \autoref{fig
 
 \begin{figure}[tbh]
     \centering
-    \imagebox{
-        \includegraphics[width=0.3\linewidth]{figures/concept/the_division_clickmarker_x}
-    }
+    \includegraphics[width=0.3\linewidth]{figures/concept/the_division_clickmarker_x}
     \caption{Klickmarkierung in TCTDs Megamap mit x-/y-Koordinaten.}
     \label{fig:tctd_clickmarker}
 \end{figure}
@@ -360,9 +323,7 @@ Einen Beispielscreenshot vom AR-GPS in TCTD findet sich in \autoref{fig:tctd_ar-
 
 \begin{figure}[p]
     \centering
-    \imagebox{
-        \includegraphics[width=\linewidth]{figures/concept/the_division_attributes_x}
-    }
+    \includegraphics[width=\linewidth]{figures/concept/the_division_attributes_x}
     \caption{Durch Anklicken eines Ortsmarkers werden die jeweiligen Daten zum Ort im HUD angezeigt.}
     \label{fig:tctd_attributes}
 \end{figure}
@@ -428,7 +389,7 @@ Da die meisten der Universitätsgebäude mehrstöckig sind, ist der Einsatz eine
 Auch der Einsatz in Einkaufszentren oder Flughäfen ist denkbar.
 \begin{figure}[bht]
 	\centering
-	\imagebox{
+    \framebox[\width]{
 		\includegraphics[width=0.75\linewidth]{figures/concept/overview}
 	}
 	\caption{Konzeptzeichnung einer Megamap. %
@@ -439,7 +400,6 @@ Auch der Einsatz in Einkaufszentren oder Flughäfen ist denkbar.
 \end{figure}
 
 \subsection{Interaktion durch Explorationselemente}
-\todo{Kon\-zept\-zeich\-nun\-gen überarbeiten.}
 Nutzern von MR-HMDs wie der HoloLens oder der Magic~Leap stehen drei Eingabemethoden zur Verfügung: Controller, Gesten- und Sprachsteuerung.
 Da die Megamap in dieser Arbeit als Prototyp in VR implementiert wird, konzentriert sich das Konzept auf die Controller-Methode.
 
@@ -462,7 +422,7 @@ So können Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockwerk 
 \vfill
 \begin{figure}[h]
 	\centering
-	\imagebox{
+    \framebox[\width]{
 		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.7\linewidth]{figures/concept/3d_condition}
 	}
 	\caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
@@ -479,9 +439,7 @@ Die relative Position des Fensters zur Umgebung bleibt gleich.
 Eine Integration von 2D-Elementen als 3D-Objekt in die Umgebung (anstatt Anzeige als HUD) verhindert Unwohlsein bei Nutzern sowie eine Verdeckung der Umgebung und anderer virtueller Inhalte \parencite{Schroeder2017}.
 \begin{figure}[thb]
     \centering
-    \imagebox{
-        \includegraphics[width=0.72\linewidth]{figures/concept/concept_location_info}
-    }
+        \includegraphics[width=0.5\linewidth]{figures/concept/concept_location_info}
     \caption{Konzeptzeichnung der Stecknadel-Informationen.}
     \label{fig:concept_pin_info}
 \end{figure}
@@ -530,11 +488,11 @@ Ergänzend hierzu unterstützt OSM das \emph{Simple Indoor Tagging Schema}.
 Da dieses Schema zum regulären Tagging in OSM kompatibel ist, können Indoor- und Outdoor-Daten in der selben Datenbank verwaltet werden \parencite{OpenStreetMapFoundation2018c}.
 \begin{figure}[tbh]
     \centering
-    \imagebox {
+    \framebox[\width] {
         \includegraphics[trim={17cm, 0, 0, 0}, clip, width=\linewidth]{figures/concept/osm_Indoor2_0_elements}
     }
     \caption{Beispiel des Simple Indoor Tagging Schemas in OpenStreetMap. %
-    \quelle{\cite{OpenStreetMapFoundation2018c}, Ausschnitt durch Verfasser}}
+    \quelle{\cite{OpenStreetMapFoundation2018c}; Ausschnitt durch Verfasser.}}
     \label{fig:osm_simple-indoor-tagging}
 \end{figure}
 

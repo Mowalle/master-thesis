@@ -38,19 +38,19 @@ Für die Nutzerstudie wurden drei unterschiedliche Konditionen getestet (siehe \
     Die Karte ist so an der Wand platziert, dass sie nicht von anderen Wänden oder der Decke und dem Fußboden geschnitten wird.
 \end{itemize}
 \begin{figure}[h]
-    \begin{subfigure}{0.32\linewidth}
+    \begin{subfigure}{0.33\linewidth}
         \centering
         \includegraphics[width=\linewidth]{figures/screenshots/condition_3d_l_x}
         \caption{$3D_l$}
     \end{subfigure}%
     \hfill
-    \begin{subfigure}{0.32\linewidth}
+    \begin{subfigure}{0.33\linewidth}
         \centering
         \includegraphics[width=\linewidth]{figures/screenshots/condition_3d_h_x}
         \caption{$3D_h$}
     \end{subfigure}%\\
     \hfill
-    \begin{subfigure}{0.32\linewidth}
+    \begin{subfigure}{0.33\linewidth}
         \centering
         \includegraphics[width=\linewidth]{figures/screenshots/condition_2d_x}
         \caption{$2D$}
@@ -70,7 +70,7 @@ Das heißt, die Probanden durchliefen insgesamt 18~Iterationen, wobei sechs unte
 Die Reihenfolge der Iterationen innerhalb einer Kondition war zufällig bestimmt, wobei darauf geachtet wurde, dass bei einem Wechsel der Konditionen die gleiche Karte nicht zweimal aufeinander folgte.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\linewidth]{figures/screenshots/maps_all}
+    \includegraphics[width=\linewidth]{figures/screenshots/maps_all}
     \caption{Die sechs verwendeten Kartenlayouts. %
     Alle \textcolor{red}{rot} markierte Räume werden mit Bällen gefüllt. %
     Der Zielraum ist \textcolor{green}{grün} markiert. %
@@ -159,14 +159,14 @@ Unter anderem beantworteten die Probanden Fragen zu ihrer präferierten Kartenva
 Die Probanden wurden auch befragt, ob sie sich einen Einsatz von 3D-Megamaps mit MR-HMDs in der realen Welt sowohl in Innen- als auch Außenbereichen vorstellen können.
 
 \section{Testgruppe}
-An der Nutzerstudie nahmen 15~Personen teil ($P_0, \dots, P_{14}$), davon 10~männlich und 5~weiblich.
+An der Nutzerstudie nahmen 15~Personen teil ($P_0, \dots, P_{14}$), davon 10 männlich und 5 weiblich.
 Die Probanden befinden sich in einem Altersbereich von 23 bis 35 Jahren.
 12 der Probanden gaben an, bereits Vorerfahrungen mit VR oder MR gemacht zu haben.
 Alle Probanden verwenden Kartenanwendung zur Orientierung und Navigation im Freien.
 8 der Probanden benutzen außerdem Karten zur Navigation innerhalb von Gebäuden.
 Darunter sind 4 Probanden, die digitale Indoor-Kartenanwendung nutzen.
 
-Vier der Probanden sind Brillenträger von denen zwei die Brille aus Bequemlichkeitsgründen während des Tests abnahmen.
+Vier der Probanden sind Brillenträger, von denen zwei die Brille aus Bequemlichkeitsgründen während des Tests abnahmen.
 Zwei der Probanden sprachen Englisch und füllten ins Englische übersetzte Versionen der Fragebögen aus.
 Die Muttersprache aller anderen Probanden ist Deutsch.
 Keiner der Probanden war in die Inhalte der Masterarbeit oder der Nutzerstudie eingeweiht.
@@ -233,14 +233,13 @@ Die entsprechenden Mittelwerte und Standardabweichungen sind in \autoref{tab:sea
 Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
 Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\num{18.31} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\num{27.44} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\num{28.84} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
 Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/analysis/searchtime_boxplot}
     \caption{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
     \label{fig:searchtimes}
 \end{figure}
-
-\begin{table}[h!]
+\begin{table}[h]
     \centering
     \caption{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
@@ -259,7 +258,7 @@ Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu 
 \autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Werten.
 Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittelt.
 Die Tests weisen keinen signifikanten Zusammenhang der Variablen auf.
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/correlation_time_sbsod_scatter}
     \caption{Scatterplot zur Überprüfung der Korrelation zwischen SBSOD Wertung und Suchzeit.}
@@ -271,7 +270,7 @@ Neben der Suchzeit wurde auch die Zahl der falsch ausgewählten Räume (die Nich
 Über die insgesamt 252 Suchaufgaben (14~Probanden $\times$ 3~Konditionen $\times$ 6~Karten) wurden in drei Fällen (\SI{1,19}{\percent}) vor dem Zielraum falsche Räume ausgewählt.
 \autoref{tab:error_searching} zeigt eine Übersicht der entsprechenden Events.
 Die Fehler treten jeweils in der ersten Kondition der getesteten Sequenz auf (jedoch nicht in der ersten Karte).
-\begin{table}
+\begin{table}[h]
     \centering
     \caption{Übersicht der Anzahl der falsch ausgewählten Räume während der Suchaufgabe.}
     \label{tab:error_searching}
@@ -289,7 +288,7 @@ Da die Abweichung sowohl in positiven Winkeln (Abweichung nach rechts) als auch 
 Andernfalls würden die Werte sich bei der Mittelwertbildung gegenseitig aufheben.
 Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(\ang{7,79} $\pm$ \ang{7,22}), $3D_h$~(\ang{7,84} $\pm$ \ang{7,44}) und $2D$~(\ang{6,62} $\pm$ \ang{5,28}) nahe beieinander.
 Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen nachweisen.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset}
     \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung von der tatsächlichen Linie zur Raummitte (ohne vertikale Abweichung).}
@@ -303,14 +302,14 @@ Der Friedman-Test bestätigt signifikante Unterschiede zwischen den Karten ($\ch
 Die horizontale Abweichung bei Karte~3 ist signifikant größer als bei Karte~1 ($z = \num{-4,483}, p < \num{0,001}$), Karte~2 ($z = \num{-4,195}, p < \num{0,001}$), Karte~5 ($z = \num{-3,432}, p < \num{0,001}$) und Karte~6 ($z = \num{-3,37}, p < \num{0,001}$).
 Auch die hohe Abweichung bei Karte~4 ist gegenüber Karte~1 ($z = \num{-3,782}, p < \num{0,001}$), Karte~2 ($z = \num{-3,395}, p < \num{0,001}$), Karte~5 ($z = \num{-2,044}, p < \num{0,05}$) und Karte~6 ($z = \num{-2,17}, p < \num{0,05}$) signifikant.
 Weiterhin gibt es bei Karte~5 eine signifikant größere Abweichung als bei Karte~1 ($z = \num{-2,645}, p < \num{0,008}$), was durch die Ausreißer (siehe \autoref{fig:horizontal_offset_per_map}) begünstigt wird.
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.75\linewidth]{figures/analysis/horizontal_offset_per_map}
     \caption{Absolute horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
     \label{fig:horizontal_offset_per_map}
 \end{figure}%
 
-\begin{table}[h!]
+\begin{table}[h]
     \centering
     \caption{Mittelwert $\mu$ und Standardabweichung der absoluten horizontalen Abweichung pro Karte in $\degree$.}
     \label{tab:herror_per_map}
@@ -343,7 +342,7 @@ Die Überlegung ist, dass Probanden, die sich mehr Zeit für die Schätzung der 
 \autoref{fig:pointing_time_vs_error} zeigt die absolute horizontale Abweichung in Bezug zur benötigten Schätzzeit.
 Weder grafisch, noch doch Anwendung des Spearman-Tests, ist eine Korrelation zwischen den beiden Variablen erkennbar.
 Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgegeben haben, sind für den Zeitraum \emph{nach} 10~Sekunden zu wenig Messungen vorhanden, um eine zuverlässige Aussage über eine potentielle Korrelation treffen zu können.
-\begin{figure}[hb]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/analysis/pointing_time_vs_error}
     \caption{Plot der Schätzungszeit gegen die absolute horizontale Abweichung. %
@@ -376,14 +375,12 @@ Durchschnittlich bewerteten die Probanden die $2D$-Variante am besten ($\mu = \n
 Dahinter liegen die Megamaps mit $3D_l$ ($\mu = \num{72,29} \pm \num{17,27}$) und $3D_h$ ($\mu = \num{65,21} \pm \num{18.06}$).
 Ein paarweiser t-Test zeigt, dass die höhere Bewertung von $2D$ gegenüber $3D_l$ ($t = 2.452, p < 0.05$) und $3D_h$ ($t = 3.988, p < 0.005$) statistisch signifikant ist.
 Zwischen den beiden 3D-Konditionen gibt es keine statistisch signifikanten Unterschiede.
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/analysis/usability}
     \caption{Bewertung der Nutzbarkeit der einzelnen Konditionen.}
     \label{fig:usability}
 \end{figure}
-
-
 
 \section{Diskussion der Ergebnisse}
 
@@ -391,46 +388,44 @@ Zwischen den beiden 3D-Konditionen gibt es keine statistisch signifikanten Unter
 Sowohl die Zeitmessungen als auch die Präferenzen der Probanden für die Suchaufgabe ist eindeutig.
 Die 2D-Variante ist hier den beiden 3D-Megamaps mit einer durchschnittlichen Differenz von fast \SI{10}{\second} weit überlegen.
 Es gibt drei Gründe, durch die sich dieses Ergebnis erklären lässt:
-\begin{itemize}
-    \item
-    Für die Suchaufgabe wurden die Bälle in den Räumen platziert.
-    Die Bälle befanden sich dabei auf Fußbodenhöhe des jeweiligen Raums.
-    Auf den 3D-Megamaps wurden sie dabei teilweise durch die Wände der Räume und die geöffneten Türen verdeckt.
-    Die Probanden mussten sich von Raum zu Raum bewegen, um in die Räume zu schauen und die Bälle sehen zu können, was zusätzliche Zeit in Anspruch nahm.
-    Aus den Gesprächen ergab sich, dass dieser Effekt auf der hohen Megamap zusätzlich verstärkt wurde.
-    $P_{14}$ meint, dass man \enquote{bei 3D [\dots] gefühlt in jeden Raum reingucken [muss].}
-    Die zusätzliche Höhe der Megamap vom Boden sorgte für einen flacheren Blickwinkel auf die Karte, wodurch die Räume schlechter eingesehen werden konnten als auf der niedrigen Megamap.
-    Einige Male wurde Bälle nicht gesehen, wodurch die Probanden die Räume mehrmals ablaufen mussten, bis sie den Zielraum entdeckten.
-    Auf der 2D-Karte bestand dieser Nachteil nicht, da es in der zweidimensionalen Ansicht in diesem Sinn keine Wände gibt und die Bälle nicht verdeckt werden.
-    Die Probanden schauten hier automatisch von oben auf die Karte und konnten so direkt in \emph{alle} Räume schauen.
-    
-    \item
-    Verbunden mit dem ersten Problem ist das unterschiedliche Sichtfeld der Karte zwischen den Konditionen.
-    Bei der 2D-Karte standen die Probanden mehrere Meter von der Karte entfernt und schauten \enquote{von oben} auf sie hinab.
-    Die 2D-Karte war somit zu jeder Zeit komplett im Blickfeld der Probanden, wodurch alle Räume und Bälle sowie der eigene Positionsmarker sichtbar waren.
-    Bei den 3D-Megamaps hingegen sieht das Konzept vor, dass die Probanden inmitten der Karte stehen und von ihr umgeben werden.
-    Das bedeutet, dass der Teil der Megamap, der sich hinter den Probanden befindet, nicht einsehbar ist.
-    Demnach können sich Probanden nur auf einen kleinen Teil der Karte konzentrieren.
-    Dies ist eine direkte Konsequenz aus der Übertragung der Megamap von der Dritte-Person-Perspektive aus TCTD in die Erste-Person-Perspektive.
-    Einige Probanden versuchten dieses Problem zu umgehen, indem sie sich bei jeder Karte zuerst \enquote{aus der Karte heraus} bewegten, um einen Überblick des Grundrisses zu bekommen.
-    $P_7$ fühlte sich von der hohen Megamap eingeengt und sagt dazu, dass er \enquote{erst einmal da rausgehen und außen herum laufen [muss].}
-    
-    Ein weiteres Problem war, dass sich bei den 3D-Karten der Positionsmarker des Probanden unter Umständen außerhalb des Blickfelds befand.
-    Die Probanden verloren somit während der Suche den Bezug zum Laborraum.
-    $P_9$ beschreibt, dass sie jedes Mal nach dem Lab-Raum suchen musste, weil sie \enquote{voll auf die Bälle fixiert} war.
-    Der Verlust von visuellem Kontext außerhalb des Blickfelds wird z.B. in Videospielen durch die Anzeige von Markern auf Kompassleisten oder Minikarten ausgeglichen.
-    In der Literatur lassen sich Ansätze finden, die Gleiches für die Anwendung auf AR-VR-HMDs umsetzen \autocites{Lin2017a}{Gruenefeld2017}.
-    Für den konkreten Prototyp schlägt $P_3$ vor, eine visuelle Line vom Positionsmarker zur aktuellen Position des Nutzers zu ziehen.
-    
-    \item
-    Die Probanden beschrieben, dass zum Merken der Richtung für die Schätzungsaufgabe auf den Karten unterschiedliche \enquote{Taktiken} notwendig seien.
-    In der Tat folgten fast alle Probanden auf den 3D-Megamaps der gleichen Vorgehensweise und kehrten vor der Auswahl des Zielraums zuerst zum Laborraum auf der Karte zurück, um sich so für die Schätzungsaufgabe die Richtung merken zu können.
-    Ein Nutzer zielte während des Ablaufens der Karte mit dem Controller immer auf den Raum, in dem er die höchste Zahl an Bällen gezählt hatte ($P_{14}$).
-    Auf der 2D-Karte hingegen waren diese Taktiken nicht notwendig.
-    Hier orientierten sich die Probanden für das Merken der Richtung an besonderen Merkmalen auf der Karte, z.B. der Säule im Laborraum oder den Türen.
-    Einige der Probanden nutzen auch die Rotation des Positionsmarkers aus, um sich den Winkel für die korrekte Drehung zum Zielraum zu merken.
-    Z.B. bevorzugten $P_4$ und $P_6$ die 2D-Karte für die Richtungsschätzung, da diese Variante \enquote{gewohnter} sei.
-\end{itemize}
+
+\paragraph{1.} Für die Suchaufgabe wurden die Bälle in den Räumen platziert.
+Die Bälle befanden sich dabei auf Fußbodenhöhe des jeweiligen Raums.
+Auf den 3D-Megamaps wurden sie dabei teilweise durch die Wände der Räume und die geöffneten Türen verdeckt.
+Die Probanden mussten sich von Raum zu Raum bewegen, um in die Räume zu schauen und die Bälle sehen zu können, was zusätzliche Zeit in Anspruch nahm.
+Aus den Gesprächen ergab sich, dass dieser Effekt auf der hohen Megamap zusätzlich verstärkt wurde.
+$P_{14}$ meint, dass man \enquote{bei 3D [\dots] gefühlt in jeden Raum reingucken [muss].}
+Die zusätzliche Höhe der Megamap vom Boden sorgte für einen flacheren Blickwinkel auf die Karte, wodurch die Räume schlechter eingesehen werden konnten als auf der niedrigen Megamap.
+Einige Male wurde Bälle nicht gesehen, wodurch die Probanden die Räume mehrmals ablaufen mussten, bis sie den Zielraum entdeckten.
+Auf der 2D-Karte bestand dieser Nachteil nicht, da es in der zweidimensionalen Ansicht in diesem Sinn keine Wände gibt und die Bälle nicht verdeckt werden.
+Die Probanden schauten hier automatisch von oben auf die Karte und konnten so direkt in \emph{alle} Räume schauen.
+
+\paragraph{2.}
+Verbunden mit dem ersten Problem ist das unterschiedliche Sichtfeld der Karte zwischen den Konditionen.
+Bei der 2D-Karte standen die Probanden mehrere Meter von der Karte entfernt und schauten \enquote{von oben} auf sie hinab.
+Die 2D-Karte war somit zu jeder Zeit komplett im Blickfeld der Probanden, wodurch alle Räume und Bälle sowie der eigene Positionsmarker sichtbar waren.
+Bei den 3D-Megamaps hingegen sieht das Konzept vor, dass die Probanden inmitten der Karte stehen und von ihr umgeben werden.
+Das bedeutet, dass der Teil der Megamap, der sich hinter den Probanden befindet, nicht einsehbar ist.
+Demnach können sich Probanden nur auf einen kleinen Teil der Karte konzentrieren.
+Dies ist eine direkte Konsequenz aus der Übertragung der Megamap von der Dritte-Person-Perspektive aus TCTD in die Erste-Person-Perspektive.
+Einige Probanden versuchten dieses Problem zu umgehen, indem sie sich bei jeder Karte zuerst \enquote{aus der Karte heraus} bewegten, um einen Überblick des Grundrisses zu bekommen.
+$P_7$ fühlte sich von der hohen Megamap eingeengt und sagt dazu, dass er \enquote{erst einmal da rausgehen und außen herum laufen [muss].}
+
+Ein weiteres Problem war, dass sich bei den 3D-Karten der Positionsmarker des Probanden unter Umständen außerhalb des Blickfelds befand.
+Die Probanden verloren somit während der Suche den Bezug zum Laborraum.
+$P_9$ beschreibt, dass sie jedes Mal nach dem Lab-Raum suchen musste, weil sie \enquote{voll auf die Bälle fixiert} war.
+Der Verlust von visuellem Kontext außerhalb des Blickfelds wird z.B. in Videospielen durch die Anzeige von Markern auf Kompassleisten oder Minikarten ausgeglichen.
+In der Literatur lassen sich Ansätze finden, die Gleiches für die Anwendung auf AR-VR-HMDs umsetzen \autocites{Lin2017a}{Gruenefeld2017}.
+Für den konkreten Prototyp schlägt $P_3$ vor, eine visuelle Line vom Positionsmarker zur aktuellen Position des Nutzers zu ziehen.
+
+\paragraph{3.}
+Die Probanden beschrieben, dass zum Merken der Richtung für die Schätzungsaufgabe auf den Karten unterschiedliche \enquote{Taktiken} notwendig seien.
+In der Tat folgten fast alle Probanden auf den 3D-Megamaps der gleichen Vorgehensweise und kehrten vor der Auswahl des Zielraums zuerst zum Laborraum auf der Karte zurück, um sich so für die Schätzungsaufgabe die Richtung merken zu können.
+Ein Nutzer zielte während des Ablaufens der Karte mit dem Controller immer auf den Raum, in dem er die höchste Zahl an Bällen gezählt hatte ($P_{14}$).
+Auf der 2D-Karte hingegen waren diese Taktiken nicht notwendig.
+Hier orientierten sich die Probanden für das Merken der Richtung an besonderen Merkmalen auf der Karte, z.B. der Säule im Laborraum oder den Türen.
+Einige der Probanden nutzen auch die Rotation des Positionsmarkers aus, um sich den Winkel für die korrekte Drehung zum Zielraum zu merken.
+Z.B. bevorzugten $P_4$ und $P_6$ die 2D-Karte für die Richtungsschätzung, da diese Variante \enquote{gewohnter} sei.
 
 Ein Aspekt, der sich (laut den Probanden) weniger auf die Performance auswirkte, als zuvor angenommen, war der Komfort der HMD-Nutzung.
 Da die Probanden für die 3D-Megamaps die meiste Zeit in Richtung Boden schauen mussten, wurde der Kopf in einer geneigten Position gehalten.
