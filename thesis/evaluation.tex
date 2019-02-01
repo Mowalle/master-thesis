@@ -203,12 +203,6 @@ Darüber hinaus wurden kontinuierlich die Positionen und Rotationen des HMDs und
 In den folgenden Abschnitten werden die Ergebnisse aus der Nutzerstudie präsentiert und statistisch analysiert.
 
 \subsection{Santa Barbara Sense-of-Direction Skala}
-\begin{figure}[b]
-    \centering
-    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
-    \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
-    \label{fig:sbsod}
-\end{figure}
 Die SBSOD-Skala liefert eine Selbsteinschätzung der Probanden ihres Orientierungssinns.
 Zur Auswertung der SBSOD-Skala werden die positiv formulierten Elemente invertiert bewertet.
 Der Mittelwert über die individuellen Bewertungen ist die SBSOD-Wertung \parencite{Hegarty2002}.
@@ -216,6 +210,12 @@ Der Mittelwert über die individuellen Bewertungen ist die SBSOD-Wertung \parenc
 Von den 14 Probanden erreichten 12 (\SI{85,71}{\percent}) einen Wert über 3 (\enquote{neutral}).
 Im Schnitt wurde eine Bewertung von 3,38 ($\pm$ 0,41) erzielt.
 Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=0.9\linewidth]{figures/analysis/sbsod}
+    \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
+    \label{fig:sbsod}
+\end{figure}
 
 \subsection{Effektivität und Effizienz bei Raumsuche}
 \subsubsection*{Suchzeit}
@@ -231,9 +231,9 @@ Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifi
     \centering
     \captionof{table}{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
-    \begin{tabular}{rccc}
+    \begin{tabular}{@{}rccc@{}}
         \toprule
-        {} & \multicolumn{3}{c}{Suchzeit [\SI{}{\second}]} \\
+        {} & \multicolumn{3}{c@{}}{Suchzeit [\SI{}{\second}]} \\
         {} &          $3D_l$ &          $3D_h$ &          $2D$ \\
         \midrule
         $\mu$    &  $\num{27.44}$     &  $\num{28.84}$     &  $\num{18.31}$ \\
@@ -244,7 +244,7 @@ Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifi
 \hfill
 \begin{minipage}{0.63\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/searchtime_boxplot}
+    \includegraphics[trim={0cm, 0cm, 0.5cm, 0cm}, clip, width=\linewidth, height=8cm, keepaspectratio]{figures/analysis/searchtime_boxplot}
     \captionof{figure}{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
     \label{fig:searchtimes}
 \end{minipage}%
@@ -268,7 +268,7 @@ Neben der Suchzeit wurde auch die Zahl der falsch ausgewählten Räume (die Nich
 In beiden Fällen traten die Fehler in der ersten Kondition der entsprechenden Testsequenz ein (allerdings nicht in der ersten Karte).
 \begin{table}[h]
     \centering
-    \caption{Übersicht der Anzahl der falsch ausgewählten Räume während der Suchaufgabe.}
+    \caption{Zahl der falsch ausgewählten Räume während der Suchaufgabe.}
     \label{tab:error_searching}
     \begin{tabular}{rccccc}\toprule
         Proband                  & Kondition               & Karte    & Suchzeit [\SI{}{\second}] & \# Fehler & Sequenz  \\\midrule
@@ -291,7 +291,7 @@ Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(\ang{7,79} $\pm$ \ang{7,
 Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen nachweisen.
 \begin{figure}[h]
     \centering
-    \includegraphics[trim={0cm, 0	.5cm, 1.5cm, 1.5cm}, clip, height=0.45\textheight]{figures/analysis/horizontal_offset}
+    \includegraphics[trim={0.5cm, 0.5cm, 1.75cm, 1.5cm}, clip, height=0.45\textheight]{figures/analysis/horizontal_offset}
     \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung von der tatsächlichen Linie zur Raummitte (ohne vertikale Abweichung).}
     \label{fig:horizontal_offset}
 \end{figure}
@@ -315,7 +315,7 @@ Weiterhin gibt es bei Karte~5 eine signifikant größere Abweichung als bei Kart
 \end{table}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/horizontal_offset_per_map}
+    \includegraphics[trim={0cm, 0cm, 0.65cm, 0cm}, clip, width=\linewidth]{figures/analysis/horizontal_offset_per_map}
     \caption{Absolute horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
     \label{fig:horizontal_offset_per_map}
 \end{figure}%
@@ -332,8 +332,8 @@ Der paarweise Vergleich weist nicht auf statistisch signifikante Unterschiede hi
 Allerdings ist eine Tendenz zu erkennen, dass die Probanden sich in der $2D$ Kondition mehr Zeit gelassen haben als in $3D_l$ ($z = -7.947,	p = 0.083$).
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/pointing_time}
-    \caption{Vergleich zwischen der mittleren Schätzungszeit der Konditionen, die die Probanden für die Abgabe einer Richtungsschätzung benötigten.}
+    \includegraphics[trim={0cm, 0cm, 0cm, 0.5cm}, clip, width=\linewidth]{figures/analysis/pointing_time}
+    \caption{Vergleich zwischen der mittleren Schätzungszeit zwischen den Konditionen.}
     \label{fig:pointing_time}
 \end{figure}
 
@@ -342,22 +342,21 @@ Die Überlegung ist, dass Probanden, die sich mehr Zeit für die Schätzung der 
 \autoref{fig:pointing_time_vs_error} zeigt die absolute horizontale Abweichung in Bezug zur benötigten Schätzzeit.
 Weder grafisch, noch durch Anwenden des Spearman-Tests, ist eine Korrelation zwischen den beiden Variablen erkennbar.
 Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgegeben haben, sind für den Zeitraum \emph{nach} 10~Sekunden zu wenig Messungen vorhanden, um eine zuverlässige Aussage über eine potentielle Korrelation treffen zu können.
-\begin{figure}[h!]
+
+\begin{figure}[p]
     \centering
     \includegraphics[trim={1.2cm, 0.5cm, 2cm, 0.5cm}, clip, width=\linewidth]{figures/analysis/pointing_time_vs_error}
     \caption{Plot der Schätzungszeit gegen die absolute horizontale Abweichung. %
     Eine Korrelation ist nicht erkennbar.}
     \label{fig:pointing_time_vs_error}
 \end{figure}
-
-\begin{figure}[h!]
+\begin{figure}[p]
     \centering
     \includegraphics[width=0.75\linewidth]{figures/analysis/hitrate_per_user}
     \caption{Trefferrate des Zielraums über alle Probanden zwischen den Konditionen.}
     \label{fig:hitrate_per_user}
 \end{figure}
 
-\vspace{-0.5cm}
 \subsubsection*{Trefferrate}
 Neben der Abweichung wurde auch die Trefferrate (ob der Zielraum bei der Schätzung getroffen wurde oder nicht) gemessen.
 \autoref{fig:hitrate_per_user} zeigt einen Boxplot der Trefferrate über alle Probanden zwischen den einzelnen Konditionen.
