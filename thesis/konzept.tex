@@ -250,7 +250,6 @@ Unter Umständen werden auch die Ticketverfügbarkeit und -preise angezeigt.
 
 \emph{Öffnungszeiten} informieren Nutzer über den Zugang zu Orten in der Umgebung, vor allem Gebäuden.
 Dank der Integration der Öffnungszeiten müssen Nutzer nicht weitere Informationen abrufen, um zu schauen, ob das Ziel zur aktuellen Zeit erreicht werden kann.
-Wie \autoref{fig:gm_opening_hours} zeigt sind beispielsweise die Öffnungszeiten in Google Maps in der Attributsansicht zu finden.
 Zuletzt sind auch Informationen über das \emph{aktuelle Besucheraufkommen an Orten} als Event-Element verfügbar.
 Nutzer können zum Beispiel einsehen, ob ein großer Andrang auf ein Geschäft besteht und so lange Wartezeiten beim Schlangestehen vermeiden.
 
@@ -476,7 +475,7 @@ Die virtuelle Megamap kann an den Stellen dieser Meshes transparent gerendert we
 
 \subsection{Beschaffung von Gebäudedaten und Generierung der Karten}
 Für die Darstellung als Megamap ist ein 3D-Modell des Gebäudes erforderlich.
-Eine automatisierte Generierung des Modells basierend auf Gebäudedaten ist wünschenswert, damit das Modell nicht per Hand erstellt werden muss und immer die aktuellsten Daten des Gebäudes nutzt.
+Eine automatisierte Generierung des Modells basierend auf Gebäudedaten ist wünschenswert, damit das Modell nicht per Hand erstellt werden muss.
 Ein möglicher Ansatz ist, die Grundrisse des jeweiligen Gebäudes zu georeferenzieren und in einer entsprechenden Datenbank wie z.\,B. OpenStreetMap zu veröffentlichen.
 Die Megamap-Anwendung kann auf die georeferenzierten Grundriss-Daten über die Programmierschnittstelle (\emph{Application Programming Interface} (API)) zugreifen und daraus 3D-Modelle generieren.
 Die Wände des Gebäudes können z.\,B. als Polygon-Features mit dem OSM-Tag \lstinline{height} angelegt werden, die Türen würden durch Rechtecke mit dem Tag \lstinline{min_height} repräsentiert.

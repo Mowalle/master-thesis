@@ -68,7 +68,7 @@ Durch die Verwendung eines 3D-Modells wird außerdem die 3D-Rekonstruktionsfunkt
 Wie auch die HoloLens erstellt die Magic Leap One durch aktives Tracking der Umwelt intern ein 3D-Modell der Umgebung.
 Dieses wird für die Kollisionsberechnung mit den virtuellen Inhalten verwendet.
 So können virtuelle Objekte mit realen Gegenständen interagieren (z.\,B. läuft ein Charakter über einen realen Tisch oder ein virtueller Bildschirm wird an einer realen Wand platziert).
-Durch die Verwendung eines 3D-Modells der Umgebung im Megamap-Prototypen ist Möglichkeit der Interaktion mit der Umwelt implizit gegeben.
+Durch die Verwendung eines 3D-Modells der Umgebung im Megamap-Prototyp die Interaktion mit der Umwelt implizit möglich.
 \begin{figure}[h!]
     \begin{subfigure}{0.5\textwidth}
         \centering
@@ -100,14 +100,15 @@ Der Grundriss des Raums wurde im Modellierungsprogramm \emph{Blender} mithilfe d
 Das Modell wurde als \texttt{.fbx} in Unity importiert und mit diversen virtuellen Requisiten ergänzt, um den Raum realistischer und dem Original ähnlicher wirken zu lassen.
 
 \subsection*{Synchronisation der realen und virtuellen Position}
-Damit die virtuelle Umgebung als Ersatz für die reale Umgebung verwendet werden kann muss sichergestellt werden, dass die Rotation des virtuellen Raums der des realen Raums entspricht \emph{und} dass die Position des Nutzers in der virtuellen Welt seiner Position in der realen Welt entspricht.
+Damit die virtuelle Umgebung als Ersatz für die reale Umgebung verwendet werden kann muss sichergestellt werden, dass die Rotation des virtuellen Raums der des realen Raums entspricht.
+Außerdem müssen die Positionen der Nutzer zwischen der virtuellen und realen Welt übereinstimmen.
 Der Prototyp muss dafür vorab in zwei Schritten konfiguriert werden:
 
 \paragraph{Erster Schritt:}
 Während der Kalibrierung der Vive legt der Nutzer den Spielebereich (die sogenannte \emph{Play Area}) fest.
 Dies ist der Bereich, in dem sich keine Hindernisse für den Nutzer befinden und der für die Basisstationen sichtbar ist.
 Hierfür zieht der Nutzer mit den Controllern ein Rechteck nach, welches dann als Spielebereich gesetzt wird.
-Es wichtig, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \lstinline{Player}-Objekts in Unity verläuft.
+Zu beachten ist, dass die längere Seite des Rechtecks orthogonal zur Ausgangsrotation des \lstinline{Player}-Objekts in Unity verläuft.
 Die aktuell getrackte Rotation des HMDs wird relativ zur Ausrichtung der Play Area gemessen.
 Da SteamVR automatisch die längeren Seiten der Play Area als Vorder- bzw. Rückseite betrachtet, müssen diese orthogonal zur Blickrichtung des \lstinline{Player}-Objekts verlaufen.
 Im Fall des entwickelten Prototypen bedeutet dies, dass die Vorderseite der Play Area parallel zu der Wand des Labors verlaufen muss, an der sich die Eingangstür und Tische befinden (siehe \autoref{fig:lab_environment}).
@@ -220,9 +221,7 @@ Standardmäßig werden über das Feld \lstinline|showUpperOnly| nur die oberen v
 \section{Erstellung der Indoor-Karten}
 \label{sec:indoor_maps}
 Wie bereits erwähnt ist das eigentliche 3D-Modell, welches das Layout des Gebäudes repräsentiert, vom \lstinline|Megamap|-Skript getrennt.
-Für den in dieser Arbeit entwickelten Prototypen werden vorab erstellte 3D-Modelle eingesetzt, die in Blender mit dem Archimesh-Werkzeug modelliert wurden.
-Ansätze zur automatisierten Generierung von Gebäudemodellen werden in \autoref{sec:building_data_automation} untersucht.
-
+Für den in dieser Arbeit entwickelten Prototyp werden vorab erstellte 3D-Modelle eingesetzt, die in Blender mit dem Archimesh-Werkzeug modelliert wurden.
 Die erstellten Karten sind 3D-Modelle, bei denen die einzelnen Räume als separate GameObjects in Unity verfügbar sind.
 \autoref{fig:room_hierarchy} zeigt schematisch, wie die Objekthierarchie für die Indoor-Karten in Unity aufgebaut ist.
 
