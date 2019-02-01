@@ -71,7 +71,7 @@ Die Reihenfolge der Iterationen innerhalb einer Kondition war zufällig bestimmt
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/screenshots/maps_all}
-    \caption{Die sechs verwendeten Kartenlayouts. %
+    \caption{Die sechs Kartenlayouts. %
     Alle \textcolor{red}{rot} markierte Räume werden mit Bällen gefüllt. %
     Der Zielraum ist \textcolor{green}{grün} markiert. %
     Der Laborraum ist der Raum mit der Säule (weißer Punkt).}
@@ -149,12 +149,12 @@ Zuerst wurde die 3D-Megamap gezeigt, danach die 2D-Kondition.
 Die Probanden konnten entscheiden, ob sie das Tutorial wiederholen oder fortfahren wollen.
 
 Nach dem Tutorial durchliefen die Probanden die Konditionen und Aufgaben, wie sie in \autoref{sec:conditions_and_tasks} beschrieben sind.
-Zwischen den Kondition setzten die Probanden das HMD ab und füllten am Laptop einen Fragebogen zur zuletzt getesteten Kartenvariante aus (siehe \autoref{appendix:sus}).
+Zwischen den Kondition setzten die Probanden das HMD ab und füllten am Laptop einen Fragebogen zur zuletzt getesteten Kartenvariante aus (siehe Anhang \autoref{appendix:sus}).
 Die Fragebögen basierten auf der \emph{System~Usability~Scale} (SUS) \autocite{Brooke2013}, wurden jedoch für das Anwendungsgebiet von Karten angepasst.
 Die Bewertung der einzelnen Aussagen erfolgte über eine 5-Punkte-Likert-Skala.
 
 Nach Abschluss des letzten Fragebogens wurde mit den Probanden ein kurzes (5--10 Minuten) Leitfadeninterview geführt.
-Unter anderem beantworteten die Probanden Fragen zu ihrer präferierten Kartenvariante für die Suche und Richtungsschätzung, ihr Vorgehen beim Suchen, sowie Verbesserungsvorschlägen.
+Unter anderem beantworteten die Probanden Fragen (siehe Anhang \autoref{appendix:interview}) zu ihrer präferierten Kartenvariante für die Suche und Richtungsschätzung, ihr Vorgehen beim Suchen, sowie Verbesserungsvorschlägen.
 Die Probanden wurden auch befragt, ob sie sich einen Einsatz von 3D-Megamaps mit MR-HMDs in der realen Welt sowohl in Innen- als auch Außenbereichen vorstellen könnten.
 
 \section{Testgruppe}
@@ -211,7 +211,7 @@ Im Schnitt wurde eine Bewertung von 3,38 ($\pm$ 0,41) erzielt.
 Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
 \begin{figure}[h!]
     \centering
-    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=0.9\linewidth]{figures/analysis/sbsod}
+    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
     \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
     \label{fig:sbsod}
 \end{figure}
@@ -223,10 +223,19 @@ Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
 \autoref{fig:searchtimes} zeigt die durchschnittlichen Suchzeiten bis zur Auswahl des Zielraums über alle Karten pro Kondition.
 Die entsprechenden Mittelwerte und Standardabweichungen sind zur Übersicht in \autoref{tab:searchtime_overview} aufgeführt.
 Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
-Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\SI{18.31}{\second} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\SI{27.44}{\second} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\SI{28.84}{\second} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
+Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\SI{18.31}{\second} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ \mbox{($\SI{27.44}{\second} \pm \SI{13.39}{\second},$} \mbox{$z=\num{-6.003}$}, \mbox{$p<\num{0.001}$)} und $3D_h$ ($\SI{28.84}{\second} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
 Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist hingegen nicht signifikant.
 
+Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer kürzeren Suchzeit führt.
+\autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Wertungen.
+Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittelt.
+Die Tests weisen keinen signifikanten Zusammenhang der Variablen auf.
+
+\noindent
 \begin{minipage}{0.3\linewidth}
+    
+    \vspace{1cm}
+    
     \centering
     \captionof{table}{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
@@ -247,12 +256,7 @@ Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist hingegen nicht signi
     \captionof{figure}{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
     \label{fig:searchtimes}
 \end{minipage}%
-\vspace{1em}
 
-Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer kürzeren Suchzeit führt.
-\autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Wertungen.
-Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSOD-Wertung und der durchschnittlichen Suchzeit ermittelt.
-Die Tests weisen keinen signifikanten Zusammenhang der Variablen auf.
 \begin{figure}[h]
     \centering
     \includegraphics[trim={0cm, 0cm, 1.25cm, 1.25cm}, clip, width=0.75\linewidth]{figures/analysis/correlation_time_sbsod_scatter}

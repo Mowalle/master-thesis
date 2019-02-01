@@ -194,10 +194,15 @@ Anders als die \emph{spezifische} Suche wird bei der offenen Suche nach Attribut
 Den Nutzern werden alle zutreffende Zielalternativen innerhalb eines Bereichs angezeigt, sodass sie zwischen diesen auswählen können.
 In den untersuchten Anwendungen werden alle möglichen Alternativen durch Ortsmarkierungen hervorgehoben.
 \autoref{fig:bm_open_search} zeigt eine offene Suche nach Hotels in Bremen.
-\begin{figure}[h]
+\begin{figure}[p]
 	\includegraphics[width=\linewidth]{figures/map-app_examples/bm_open_search_2}
 	\caption{Offene Suche nach Hotels in Bing Maps liefert mehrere Alternativen.}
 	\label{fig:bm_open_search}
+\end{figure}
+\begin{figure}[p]
+    \includegraphics[trim={0cm, 2.5cm, 0cm, 0cm}, clip, width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
+    \caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
+    \label{fig:bm_sorting}
 \end{figure}
 
 Die \emph{Nahbereichssuche} ist eine Interaktion, mit der ein definierter Bereich der Karte unter Suchkriterien nach Orten durchsucht werden kann.
@@ -210,11 +215,6 @@ Nutzer können hiermit Umgebungen erkunden, an denen sie sich selber nicht befin
 Beispielsweise lassen sich Restaurants nach der gewünschten Küche filtern (siehe \autoref{fig:bm_sorting}), oder Hotels nach Preisklasse.
 So müssen die Nutzer nicht sämtliche verfügbare Alternativen per Hand durchgehen, um zu prüfen, ob die Alternativen ihren Vorstellungen entsprechen.
 Sie können mit der Filterung und Sortierung irrelevanter Orte ausblenden und beim Suchen von Zielen Zeit sparen.
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{figures/map-app_examples/bm_filter_sorting}
-    \caption{Anzeige und Sortierung von griechischen Restaurants mit einer 4-Sterne-Bewertung oder höher (in Bing Maps).}
-    \label{fig:bm_sorting}
-\end{figure}
 
 Das Nähe-Element \emph{Ortsnachbarschaft} ist ein Element, welches in der Ansicht über die Ortsinformationen integriert ist.
 Hierbei handelt es sich um eine Liste von weiteren Nutzer-relevanten Orten, die sich in der Nähe des aktuell betrachteten Orts befinden.
@@ -376,10 +376,10 @@ Ein Beispiel ist die augmentierte Exploration der Gebäude der Universität Brem
 Neue Studierende oder Gäste der Universität können durch die Megamap bei der Suche nach Büros von Mitarbeitern, öffentlichen Druckern, Essensmöglichkeiten, Toiletten etc. unterstützt werden.
 Da die meisten der Universitätsgebäude mehrstöckig sind, ist der Einsatz einer dreidimensionalen Karte zur Exploration interessant.
 Auch der Einsatz in Einkaufszentren oder Flughäfen ist denkbar.
-\begin{figure}[bht]
+\begin{figure}[thb]
 	\centering
-    \framebox[\width]{
-		\includegraphics[width=0.75\linewidth]{figures/concept/overview}
+    \framebox[\linewidth]{
+		\includegraphics[width=0.9\linewidth]{figures/concept/overview}
 	}
 	\caption{Konzeptzeichnung einer Megamap. %
 		A:~Nutzer trägt ein HMD. %
@@ -411,8 +411,8 @@ So können die Nutzer auch Orte und Objekte finden, die auf dem aktuellen Stockw
 \vfill
 \begin{figure}[h]
 	\centering
-    \framebox[\width]{
-		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.7\linewidth]{figures/concept/3d_condition}
+    \framebox[\linewidth]{
+		\includegraphics[trim={4cm, 0, 3cm, 5cm}, clip, width=0.95\linewidth]{figures/concept/3d_condition}
 	}
 	\caption{Konzeptzeichnung Megamap für Stockwerkwechsel, Filter und Suche.}
 	\label{fig:concept_indoor_view}
@@ -465,6 +465,13 @@ Durch die 3D-Rekonstruktion ergeben sich grobe Meshes der Umgebungsobjekte und W
 Die virtuelle Megamap kann an den Stellen dieser Meshes transparent gerendert werden, wodurch der Effekt aus TCTD nachgestellt wird.
 
 \subsection{Beschaffung von Gebäudedaten und Generierung der Karten}
+\begin{figure}[h]
+    \centering
+    \includegraphics[trim={17cm, 1cm, 1cm, 0.7cm}, clip, width=0.85\linewidth]{figures/concept/osm_Indoor2_0_elements}
+    \caption{Beispiel des Simple Indoor Tagging Schemas in OpenStreetMap. %
+        \quelle{\cite{OpenStreetMapFoundation2018c}; Ausschnitt durch Verfasser.}}
+    \label{fig:osm_simple-indoor-tagging}
+\end{figure}
 Für die Darstellung als Megamap ist ein 3D-Modell des Gebäudes erforderlich.
 Eine automatisierte Generierung des Modells basierend auf Gebäudedaten ist wünschenswert, damit das Modell nicht per Hand erstellt werden muss.
 Ein möglicher Ansatz ist, die Grundrisse des jeweiligen Gebäudes zu georeferenzieren und in einer entsprechenden Datenbank wie z.\,B. OpenStreetMap zu veröffentlichen.
@@ -477,15 +484,6 @@ Ergänzend hierzu unterstützt OSM das \emph{Simple Indoor Tagging Schema}.
 \autoref{fig:osm_simple-indoor-tagging} zeigt, wie das Schema auf ein Gebäudelayout angewendet werden kann.
 Da dieses Schema zum regulären Tagging in OSM kompatibel ist, können Indoor- und Outdoor-Daten in der selben Datenbank verwaltet werden \parencite{OpenStreetMapFoundation2018c}.
 Konkrete Möglichkeiten, die Daten aus OSM abzurufen und für die Megamap zu verwenden, werden in \autoref{chap:closing} diskutiert.
-\begin{figure}[tbh]
-    \centering
-    \framebox[\width] {
-        \includegraphics[trim={17cm, 0, 0, 0}, clip, width=0.9\linewidth]{figures/concept/osm_Indoor2_0_elements}
-    }
-    \caption{Beispiel des Simple Indoor Tagging Schemas in OpenStreetMap. %
-    \quelle{\cite{OpenStreetMapFoundation2018c}; Ausschnitt durch Verfasser.}}
-    \label{fig:osm_simple-indoor-tagging}
-\end{figure}
 
 %
 \cleardoublepage
