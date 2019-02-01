@@ -24,7 +24,7 @@ Neben Anwendungen für den Desktop oder mobile Endgeräte bietet Unity native Un
 Zusätzlich zu diesen vorgefertigten Komponenten können auch Skript-Komponenten zu den GameObjects hinzugefügt werden.
 Dies ermöglicht Entwicklern, komplett neues Verhalten für Objekte in die Engine zu integrieren.
 Die Skripte werden in C\# oder einem Javascript-Dialekt geschrieben.
-Die Skripte erben von der Unity-Klasse \lstinline|MonoBehaviour|, wodurch sie in den Lebenszyklus von Unity-Objekten aufgenommen werden und Eventmethoden wie z.B. \lstinline|Start()|, \lstinline|Update()|, \lstinline|FixedUpdate()| usw. erhalten \parencite{UnityTechnologies2018c}.
+Die Skripte erben von der Unity-Klasse \lstinline|MonoBehaviour|, wodurch sie in den Lebenszyklus von Unity-Objekten aufgenommen werden und Eventmethoden wie z.\,B. \lstinline|Start()|, \lstinline|Update()|, \lstinline|FixedUpdate()| usw. erhalten \parencite{UnityTechnologies2018c}.
 
 Eine Besonderheit bei Unity im Vergleich zu anderen Engines sind die \emph{Prefabs}.
 Dabei handelt es sich um abgespeicherte Konfigurationen von GameObjects inklusive derer Komponenten.
@@ -45,7 +45,7 @@ Ebenso werden 3D-Modelle der Hand angezeigt, wobei sich die Finger der virtuelle
 Das Prefab übernimmt außerdem das stereoskopische Rendern, sodass auf dem HMD für jedes Auge ein anderes Bild angezeigt wird, wodurch der Eindruck von räumlicher Tiefe entsteht.
 
 Für diese Arbeit wird außerdem das \lstinline{Interactable}-SteamVR-Skript verwendet.
-Durch dieses Skript können GameObjects mit einer \lstinline{Collider}-Komponente auf die virtuellen Hände bzw. Controller reagieren und interaktive gemacht werden (z.B. Aufnehmen und werfen von Objekten, anklicken von Knöpfen etc.).
+Durch dieses Skript können GameObjects mit einer \lstinline{Collider}-Komponente auf die virtuellen Hände bzw. Controller reagieren und interaktive gemacht werden (z.\,B. Aufnehmen und werfen von Objekten, anklicken von Knöpfen etc.).
 Die Verwendungen dieses Skripts für den Megamap-Prototypen werden an entsprechender Stelle in den folgenden Abschnitten näher beschrieben.
 
 \section{Virtuelle Laborumgebung}
@@ -67,7 +67,7 @@ In zukünftigen Arbeiten könnte damit der Megamap-Prototyp auf MR-HMDs eingeset
 Durch die Verwendung eines 3D-Modells wird außerdem die 3D-Rekonstruktionsfunktion der Magic Leap One nachgeahmt.
 Wie auch die HoloLens erstellt die Magic Leap One durch aktives Tracking der Umwelt intern ein 3D-Modell der Umgebung.
 Dieses wird für die Kollisionsberechnung mit den virtuellen Inhalten verwendet.
-So können virtuelle Objekte mit realen Gegenständen interagieren (z.B. läuft ein Charakter über einen realen Tisch oder ein virtueller Bildschirm wird an einer realen Wand platziert).
+So können virtuelle Objekte mit realen Gegenständen interagieren (z.\,B. läuft ein Charakter über einen realen Tisch oder ein virtueller Bildschirm wird an einer realen Wand platziert).
 Durch die Verwendung eines 3D-Modells der Umgebung im Megamap-Prototypen ist Möglichkeit der Interaktion mit der Umwelt implizit gegeben.
 \begin{figure}[h!]
     \begin{subfigure}{0.5\textwidth}
@@ -162,7 +162,7 @@ Eine strukturelle Übersicht des Objekts wird in \autoref{fig:unity_megamap_obje
 Das Objekt setzt sich aus drei Teilen zusammen, die jeweils durch eigene Komponenten repräsentiert werden:
 
 Das Skript \textbf{\lstinline{Megamap}} bietet allgemeine Einstellungsmöglichkeiten zur Darstellung der Megamap.
-Es lassen sich z.B. die Skalierung oder die Höhe vom Boden ändern.
+Es lassen sich z.\,B. die Skalierung oder die Höhe vom Boden ändern.
 Weiterhin bietet das Skript die Methoden \lstinline{Show()} und \lstinline{Hide()}, mit denen die Karte angezeigt bzw. ausgeblendet werden kann.
 Falls dabei das Feld \lstinline{useAnimation} auf \lstinline{true} gesetzt ist, wird die Karte beim Anzeigen von einer 1:1 Raumgröße auf die eingestellte Skalierung nach und nach herunterskaliert (beim Ausblenden analog ein Hochskalieren).
 Die Megamap wird standardmäßig Nutzer-zentriert platziert.
