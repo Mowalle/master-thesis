@@ -51,7 +51,7 @@ Diese Probleme müssen für einen zukünftigen Einsatz der Megamap in MR-Anwendu
 Der aktuelle Prototyp hat den Nachteil, dass die Gebäudekarten vorab als 3D-Modell per Hand erstellt werden müssen.
 Dies ist einerseits ein erheblicher zeitlicher Aufwand, andererseits limitiert es die Anwendung auf die vorab modellierten Gebäude.
 Für eine (mobile) MR-Anwendung wäre es wünschenswert, wenn die Daten des Gebäudes, in dem sich der Nutzer aktuell befindet, für die Megamap auf Abruf verfügbar wären.
-Zwei Alternativen für eine semi-automatisierte Beschaffung der Kartendaten wurden während der Implementierung ausprobiert, konnten jedoch aufgrund von unterschiedlichen Problemen nicht in den Prototyp integriert werden.
+Zwei Alternativen für eine semi-automatisierte Beschaffung der Kartendaten wurden während der Implementierung ausprobiert, konnten aber aufgrund von unterschiedlichen Problemen nicht in den Prototyp integriert werden.
 Im Sinne der Dokumentation und als Grundlage für zukünftige Arbeiten werden die untersuchten Ansätze dennoch beschrieben.
 
 Die \textbf{erste} Alternative ist das \emph{WRLD SDK} (fortan \enquote{WRLD}).
@@ -116,11 +116,11 @@ Ein georeferenzierter Lageplan des Gebäudes kann auf die Mapbox-Server geladen 
 \end{figure}
 Bei der Verwendung von Mapbox für Gebäudelayouts entstanden visuelle Artefakte (fehlende oder hinzugefügte Wände, Artefaktpolygone) die aus Rundungs- und Präzisionsfehlern resultierten \parencite{Kahyaoglu2017, Mapbox2018c}.
 Daher wurde sich gegen einen Ansatz mit Mapbox entschieden.
-Für Anwendungen, bei denen eine Megamap für Außenbereiche entworfen werden soll, bietet sich das Mapbox SDK jedoch weiterhin an.
+Für Anwendungen, bei denen eine Megamap für Außenbereiche entworfen werden soll, bietet sich das Mapbox SDK weiterhin an.
 
 \section{Ausblick}
-In dieser Arbeit wurde das grundlegende Konzept für die augmentierte Kartenexploration mittels einer Megamap entwickelt.
-Die Möglichkeiten für zukünftige Ansätze in MR sind jedoch keineswegs abgehandelt.
+In dieser Arbeit wurde das grundlegende Konzept für die augmentierte Kartenexploration anhand einer Megamap entwickelt.
+Die Möglichkeiten für zukünftige Ansätze in MR sind keineswegs abgehandelt.
 Sowohl das Konzept als auch der Prototyp sollen der Anstoß für weitere Forschung in diesem Bereich sein.
 Da die Idee für die Megamap aus einem Spiel entstammt ist es naheliegend, andere Navigations- und Explorationselemente aus Spielen mit der Megamap zu kombinieren.
 Beispielsweise könnte ein MR-HUD eine Minikarte oder eine Kompassleiste zeigen, wenn die Megamap ausgeblendet wird.
