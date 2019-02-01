@@ -122,7 +122,7 @@ Durch das User Setup wurden die Probanden abgelenkt, was diesen Vorteil der 3D-K
     \caption{Mit dem \enquote{User Setup} wurde vor der Raumsuche die Startposition und Blickrichtung zwischen den Konditionen angeglichen. %
     Vor der Schätzung der Richtung wurden die Probanden außerdem abgelenkt. %
     \textbf{(\subref{sfig:user_setup_floor})} Die Probanden mussten sich zuerst auf das 'X' stellen. %
-    \textbf{(\subref{sfig:user_setup_wall})} Danach mussten die Probanden für \SI{2}{\second} auf das Ziel an der Wand schauen.}
+    \textbf{(\subref{sfig:user_setup_wall})} Danach mussten die Probanden für zwei Sekunden auf das Ziel an der Wand schauen.}
     \label{fig:user_setup}
 \end{figure}
 
@@ -203,6 +203,12 @@ Darüber hinaus wurden kontinuierlich die Positionen und Rotationen des HMDs und
 In den folgenden Abschnitten werden die Ergebnisse aus der Nutzerstudie präsentiert und statistisch analysiert.
 
 \subsection{Santa Barbara Sense-of-Direction Skala}
+\begin{figure}[b]
+    \centering
+    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
+    \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
+    \label{fig:sbsod}
+\end{figure}
 Die SBSOD-Skala liefert eine Selbsteinschätzung der Probanden ihres Orientierungssinns.
 Zur Auswertung der SBSOD-Skala werden die positiv formulierten Elemente invertiert bewertet.
 Der Mittelwert über die individuellen Bewertungen ist die SBSOD-Wertung \parencite{Hegarty2002}.
@@ -210,12 +216,6 @@ Der Mittelwert über die individuellen Bewertungen ist die SBSOD-Wertung \parenc
 Von den 14 Probanden erreichten 12 (\SI{85,71}{\percent}) einen Wert über 3 (\enquote{neutral}).
 Im Schnitt wurde eine Bewertung von 3,38 ($\pm$ 0,41) erzielt.
 Der höchste erreichte Wert ist 4,07, der niedrigste Wert ist 2,67.
-\begin{figure}[h]
-    \centering
-    \includegraphics[trim={3cm, 0, 2.5cm, 0}, clip, width=\linewidth]{figures/analysis/sbsod}
-    \caption{Erzielte SBSOD-Werte mit $\mu = \num{3,38}$ und $\sigma = \num{0,41}$.}
-    \label{fig:sbsod}
-\end{figure}
 
 \subsection{Effektivität und Effizienz bei Raumsuche}
 \subsubsection*{Suchzeit}
@@ -226,15 +226,10 @@ Die entsprechenden Mittelwerte und Standardabweichungen sind zur Übersicht in \
 Zwischen den drei Konditionen ist nach dem Friedman-Test ein signifikanter Unterschied festzustellen ($\chi^2(2) = \num{63.5}, p < 0.001$).
 Ein paarweiser Wilcoxon-Vorzeichen-Rang-Test zwischen den einzelnen Konditionen zeigt, dass die Suche nach dem Zielraum in $2D$ ($\SI{18.31}{\second} \pm \SI{9.3}{\second}$) signifikant schneller ist als in $3D_l$ ($\SI{27.44}{\second} \pm \SI{13.39}{\second}, z=\num{-6.003}, p<\num{0.001}$) und $3D_h$ ($\SI{28.84}{\second} \pm \SI{10.08}{\second}, z=\num{-7.136}, p<0.001$).
 Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifikant.
-\begin{figure}[h]
+
+\begin{minipage}{0.3\linewidth}
     \centering
-    \includegraphics[width=0.7\linewidth]{figures/analysis/searchtime_boxplot}
-    \caption{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
-    \label{fig:searchtimes}
-\end{figure}
-\begin{table}[h]
-    \centering
-    \caption{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
+    \captionof{table}{Mittelwert $\mu$ und Standardabweichung $\sigma$ der Suchzeit über alle Karten je Kondition.}
     \label{tab:searchtime_overview}
     \begin{tabular}{rccc}
         \toprule
@@ -245,7 +240,15 @@ Der Unterschied der Suchzeit zwischen $3D_l$ und $3D_h$ ist jedoch nicht signifi
         $\sigma$ &  $\pm \num{13.39}$ &  $\pm \num{10.08}$ &   $\pm \num{9.3}$ \\
         \bottomrule
     \end{tabular}
-\end{table}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.63\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/searchtime_boxplot}
+    \captionof{figure}{Boxplot der durchschnittlichen Suchzeiten (in Sekunden) über alle Karten je Kondition.}
+    \label{fig:searchtimes}
+\end{minipage}%
+\vspace{1em}
 
 Weiterhin stellt sich die Frage, ob ein \enquote{besserer} Orientierungssinn zu einer kürzeren Suchzeit führt.
 \autoref{fig:correlation_time_sbsod} zeigt die durchschnittliche Suchzeit der Probanden in Bezug zu den ermittelten SBSOD-Wertungen.
@@ -253,7 +256,7 @@ Für jede Kondition wird Spearmans Rangkorrelationskoeffizient zwischen der SBSO
 Die Tests weisen keinen signifikanten Zusammenhang der Variablen auf.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/correlation_time_sbsod_scatter}
+    \includegraphics[trim={0cm, 0cm, 1.25cm, 1.25cm}, clip, width=0.75\linewidth]{figures/analysis/correlation_time_sbsod_scatter}
     \caption{Scatterplot zur Überprüfung der Korrelation zwischen SBSOD-Wertung und Suchzeit.}
     \label{fig:correlation_time_sbsod}
 \end{figure}
@@ -278,7 +281,7 @@ In beiden Fällen traten die Fehler in der ersten Kondition der entsprechenden T
 
 \subsubsection*{Genauigkeit der Schätzung}
 Da in den Tests nur Layouts mit einem Stockwerk eingesetzt wurden, spiegelt die vertikale Abweichung bei der Richtungsschätzung lediglich die Fähigkeit der Probanden wieder, auf die Mitte des Laborraums zu zielen.
-Folglich sind die Werte im Vergleich zur horizontalen Abweichung kleiner und unterscheiden sich kaum zwischen den Konditionen ($3D_l$: $\mu = \ang{5,74} \pm \ang{4,47}$; $3D_h$: $\mu = \ang{5,63} \pm \ang{4,06}$; $2D:$ $\mu = \ang{6,08} \pm \ang{4,8}$; absolute vertikale Abweichung).
+Folglich sind die Werte im Vergleich zur horizontalen Abweichung kleiner und unterscheiden sich kaum zwischen den Konditionen (\mbox{$3D_l$: $\mu = \ang{5,74} \pm \ang{4,47}$}; \mbox{$3D_h$: $\mu = \ang{5,63} \pm \ang{4,06}$}; \mbox{$2D:$ $\mu = \ang{6,08} \pm \ang{4,8}$}; absolute vertikale Abweichung).
 Daher werden die Ergebnisse der vertikalen Abweichung im Folgenden nicht weiter beachtet.
 
 \autoref{fig:horizontal_offset} zeigt das Ergebnis der Richtungsschätzung.
@@ -288,7 +291,7 @@ Wie zu erkennen ist, liegen die Mittelwerte von $3D_l$~(\ang{7,79} $\pm$ \ang{7,
 Der Friedman-Test kann keine signifikanten Unterschiede zwischen den Konditionen nachweisen.
 \begin{figure}[h]
     \centering
-    \includegraphics[height=0.45\textheight]{figures/analysis/horizontal_offset}
+    \includegraphics[trim={0cm, 0	.5cm, 1.5cm, 1.5cm}, clip, height=0.45\textheight]{figures/analysis/horizontal_offset}
     \caption{Horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung von der tatsächlichen Linie zur Raummitte (ohne vertikale Abweichung).}
     \label{fig:horizontal_offset}
 \end{figure}
@@ -300,13 +303,6 @@ Der Friedman-Test bestätigt signifikante Unterschiede zwischen den Karten ($\ch
 Die horizontale Abweichung bei Karte~3 ist signifikant größer als bei Karte~1 ($z = \num{-4,483}, p < \num{0,001}$), Karte~2 ($z = \num{-4,195}, p < \num{0,001}$), Karte~5 ($z = \num{-3,432}, p < \num{0,001}$) und Karte~6 ($z = \num{-3,37}, p < \num{0,001}$).
 Auch die hohe Abweichung bei Karte~4 ist gegenüber Karte~1 ($z = \num{-3,782}, p < \num{0,001}$), Karte~2 ($z = \num{-3,395}, p < \num{0,001}$), Karte~5 ($z = \num{-2,044}, p < \num{0,05}$) und Karte~6 ($z = \num{-2,17}, p < \num{0,05}$) signifikant.
 Weiterhin gibt es bei Karte~5 eine signifikant größere Abweichung als bei Karte~1 ($z = \num{-2,645}, p < \num{0,008}$), was durch die Ausreißer (siehe \autoref{fig:horizontal_offset_per_map}) begünstigt wird.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figures/analysis/horizontal_offset_per_map}
-    \caption{Absolute horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
-    \label{fig:horizontal_offset_per_map}
-\end{figure}%
-
 \begin{table}[h]
     \centering
     \caption{Mittelwert $\mu$ und Standardabweichung der absoluten horizontalen Abweichung pro Karte in $\degree$.}
@@ -317,6 +313,12 @@ Weiterhin gibt es bei Karte~5 eine signifikant größere Abweichung als bei Kart
         $\pm \ang{4,03}$ & $\pm \ang{3,3}$ & $\pm \ang{6,98}$ & $\pm \ang{9,07}$ & $\pm \ang{4,94}$ & $\pm \ang{7,05}$ \\\bottomrule
     \end{tabular}
 \end{table}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figures/analysis/horizontal_offset_per_map}
+    \caption{Absolute horizontale Abweichung in $\degree$ (Grad) bei der Richtungsschätzung pro Karte.}
+    \label{fig:horizontal_offset_per_map}
+\end{figure}%
 
 Wird der Unterschied zwischen der positiven und negativen horizontalen Abweichung mit einbezogen, ist eine Tendenz zu einem Ausschlag nach links (negativ) der horizontalen Abweichungen zu erkennen.
 Von den insgesamt 252~Richtungsschätzungen weichen 158 (\SI{62,7}{\percent}) nach links ab.
@@ -340,26 +342,28 @@ Die Überlegung ist, dass Probanden, die sich mehr Zeit für die Schätzung der 
 \autoref{fig:pointing_time_vs_error} zeigt die absolute horizontale Abweichung in Bezug zur benötigten Schätzzeit.
 Weder grafisch, noch durch Anwenden des Spearman-Tests, ist eine Korrelation zwischen den beiden Variablen erkennbar.
 Da die meisten Probanden ihre Schätzung innerhalb der ersten 10~Sekunden abgegeben haben, sind für den Zeitraum \emph{nach} 10~Sekunden zu wenig Messungen vorhanden, um eine zuverlässige Aussage über eine potentielle Korrelation treffen zu können.
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=\linewidth]{figures/analysis/pointing_time_vs_error}
+    \includegraphics[trim={1.2cm, 0.5cm, 2cm, 0.5cm}, clip, width=\linewidth]{figures/analysis/pointing_time_vs_error}
     \caption{Plot der Schätzungszeit gegen die absolute horizontale Abweichung. %
     Eine Korrelation ist nicht erkennbar.}
     \label{fig:pointing_time_vs_error}
 \end{figure}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/analysis/hitrate_per_user}
+    \caption{Trefferrate des Zielraums über alle Probanden zwischen den Konditionen.}
+    \label{fig:hitrate_per_user}
+\end{figure}
+
+\vspace{-0.5cm}
 \subsubsection*{Trefferrate}
 Neben der Abweichung wurde auch die Trefferrate (ob der Zielraum bei der Schätzung getroffen wurde oder nicht) gemessen.
 \autoref{fig:hitrate_per_user} zeigt einen Boxplot der Trefferrate über alle Probanden zwischen den einzelnen Konditionen.
 Es ist anzumerken, dass für die Berechnung eines Treffers die vertikale Abweichung mit einbezogen wurde.
 Die höchste durchschnittliche Trefferrate zeigten die Nutzer in $3D_h$ ($\mu = \SI{79,8}{\percent} \pm \SI{26,3}{\percent}$), gefolgt von $2D$ ($\mu = \SI{76,2}{\percent} \pm \SI{23,3}{\percent}$) und schließlich $3D_l$ ($\mu = \SI{75}{\percent} \pm \SI{20,4}{\percent}$).
 Ein Friedman-Test ergab keine signifikanten Unterschiede zwischen den Konditionen.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/analysis/hitrate_per_user}
-    \caption{Trefferrate des Zielraums über alle Probanden zwischen den Konditionen.}
-    \label{fig:hitrate_per_user}
-\end{figure}
 
 \subsection{Fragebögen zur Nutzungsfreundlichkeit}
 Die Fragebögen enthielten sowohl positiv als auch negativ formulierte Aussagen in einer ungleichmäßigen Reihenfolge, denen die Probanden auf einer Skala von 1 bis 5 zustimmen oder sie ablehnen konnten.
