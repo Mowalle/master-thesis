@@ -1,8 +1,8 @@
 \chapter{Fazit}
 \label{chap:closing}
 % TODO: Forschungsfrage nochmal aufgreifen?
-Die digitale Unterstützung der Navigation und Exploration durch augmentierte Inhalte ist ein Thema, das in der Vergangenheit bereits ausgiebig von Forschung und Industrie behandelt wurde.
-Die Idee, eine augmentierte Karte als Megamap um die Nutzer herum in die Umgebung zu integrieren, ist aber bisher nur aus Videospielen wie z.\,B. \emph{Tom Clancy's The Division} bekannt.
+Die digitale Unterstützung der Navigation und Exploration durch augmentierte Inhalte ist ein Thema, das in der Vergangenheit bereits von Forschung und Industrie behandelt wurde.
+Die Idee, eine augmentierte Karte als Megamap um die Nutzer herum in die Umgebung zu integrieren, ist bisher nur aus Videospielen wie z.\,B. \emph{Tom Clancy's The Division} bekannt.
 In der vorliegenden Masterarbeit wurde untersucht, ob sich eine solche Megamap auch für die \enquote{reale} Welt umsetzen lässt.
 Zu diesem Zweck wurde das Konzept einer Megamap für den Einsatz mit einem Mixed-Reality-HMD entwickelt.
 Virtuelle Gebäudekarten sollen als Megamap in das reale Umfeld der Nutzer projiziert werden, sodass diese sich einen Überblick der Umgebung verschaffen können.
@@ -50,9 +50,9 @@ Diese Probleme müssen für einen zukünftigen Einsatz der Megamap in MR-Anwendu
 \subsection*{Beschaffung der Indoor-Kartendaten}
 Der aktuelle Prototyp hat den Nachteil, dass die Gebäudekarten vorab als 3D-Modell per Hand erstellt werden müssen.
 Dies ist einerseits ein erheblicher zeitlicher Aufwand, andererseits limitiert es die Anwendung auf die vorab modellierten Gebäude.
-Für eine (mobile) MR-Anwendung wäre es wünschenswert, wenn die Daten des Gebäudes, in dem sich der Nutzer aktuell befindet, für die Megamap auf Abruf verfügbar wären.
-Zwei Alternativen für eine semi-automatisierte Beschaffung der Kartendaten wurden während der Implementierung ausprobiert, konnten aber aufgrund von unterschiedlichen Problemen nicht in den Prototyp integriert werden.
-Im Sinne der Dokumentation und als Grundlage für zukünftige Arbeiten werden die untersuchten Ansätze dennoch beschrieben.
+Für eine (mobile) MR-Anwendung wäre es wünschenswert, wenn die Daten des Gebäudes, in dem sich die Nutzer aktuell befinden, für die Megamap auf Abruf verfügbar wären.
+Zwei Alternativen für eine semi-automatisierte Beschaffung der Kartendaten wurden während der Implementierung erforscht, konnten aber aufgrund von unterschiedlichen Problemen nicht in den Prototyp integriert werden.
+Im Sinne der Dokumentation und als Grundlage für zukünftige Arbeiten werden die untersuchten Ansätze hier beschrieben.
 
 Die \textbf{erste} Alternative ist das \emph{WRLD SDK} (fortan \enquote{WRLD}).
 Es ist ein Framework, um interaktive 3D-Karten für Unity zu erstellen und anzuzeigen.
@@ -64,7 +64,7 @@ Danach sind die Indoor-Karten für alle Nutzer von WRLD zugänglich.
 Zudem können die Indoor-Karten mit Einrichtungsgegenständen versehen werden, um die sie natürlicher aussehen zu lassen.
 \autoref{fig:wrld_indoor} zeigt die Interaktion mit WRLDs Indoor-Karten.
 Der Nachteil von WRLD ist, dass es keine Offline-Nutzung erlaubt.
-Imaginäre Gebäude-Layouts, wie sie von der Nutzerstudie in dieser Arbeit vorausgesetzt werden, können daher nicht auf die WRLD-Server hochgeladen und verwendet werden.
+Imaginäre Gebäude-Layouts, wie sie von der Nutzerstudie in dieser Arbeit vorausgesetzt wurden, können daher nicht auf die WRLD-Server hochgeladen und verwendet werden.
 Eine zukünftige Megamap-Implementierung für reale Gebäude könnte aber durchaus von diesem SDK Gebrauch machen.
 \begin{figure}[h]
     \begin{subfigure}{0.49\textwidth}
@@ -100,7 +100,7 @@ Eine zukünftige Megamap-Implementierung für reale Gebäude könnte aber durcha
     \label{fig:wrld_indoor}
 \end{figure}
 
-Die \textbf{zweite} ausprobierte Alternative ist das Mapbox SDK für Unity.
+Die \textbf{zweite} Alternative ist das Mapbox SDK für Unity.
 Mapbox bietet sowohl Raster-Tiles (Satellitenbilder) als auch Vektor-Tiles (vektorbasierte Straßen- und Gebäudeumrisse) an.
 Es bezieht seine Daten über unterschiedliche Provider, einschließlich OpenStreetMap \autocite{Mapbox2018}.
 Sofern die OpenStreetMap-Daten Informationen über die Beschaffenheit der Gebäude liefern, wie z.\,B. die Höhe, können diese Daten für eine 3D-Visualisierung mit Mapbox ausgelesen werden.
@@ -123,7 +123,7 @@ In dieser Arbeit wurde das grundlegende Konzept für die augmentierte Kartenexpl
 Die Möglichkeiten für zukünftige Ansätze in MR sind keineswegs abgehandelt.
 Sowohl das Konzept als auch der Prototyp sollen der Anstoß für weitere Forschung in diesem Bereich sein.
 Da die Idee für die Megamap aus einem Spiel entstammt ist es naheliegend, andere Navigations- und Explorationselemente aus Spielen mit der Megamap zu kombinieren.
-Beispielsweise könnte ein MR-HUD eine Minikarte oder eine Kompassleiste zeigen, wenn die Megamap ausgeblendet wird.
+Beispielsweise könnte ein MR-HUD, eine Minikarte oder eine Kompassleiste angezeigt werden, wenn die Megamap ausgeblendet wird.
 
 Die Probanden wurden zum Ende des Interviews über ihre Meinung für potentielle Anwendungen einer Megamap befragt.
 Viele der Probanden konnten sich den Einsatz der Megamap für komplexe, mehrstöckige Gebäude vorstellen, wie z.\,B. in Einkaufszentren oder Flughäfen.
